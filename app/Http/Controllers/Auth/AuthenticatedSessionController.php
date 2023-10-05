@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,13 +24,15 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $user = User::find($request->user()->id);
+
+        return $this->authenticated($request, $user);
     }
 
     /**
@@ -44,5 +47,17 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        //dd($user);
+        if ($user->hasRole('admin')) {
+            return redirect('/dashboard');
+        } elseif ($user->hasRole('client')) {
+            return redirect('/');
+        }
+
+        return redirect('login'); // Redirige a la página principal en caso de no coincidir con ningún rol
     }
 }
