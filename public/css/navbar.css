@@ -213,6 +213,7 @@
   border: none;
   color: #000;
   border: none;
+  text-align: center;
 }
 .search-select:focus { outline: none;}
 .search-select option.option{
