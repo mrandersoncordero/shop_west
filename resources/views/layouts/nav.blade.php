@@ -81,8 +81,8 @@
                       <a href="#" class="title-category">Linea de Sella Juntas <i class="fa-solid fa-angles-right"></i></a>
                       <div class="submenu-subcategoria">
                           <ul>
-                              <li><a href="#"><ion-icon name="radio-button-on-outline"></ion-icon>D' Color</a></li>
-                              <li><a href="#"><ion-icon name="radio-button-on-outline"></ion-icon>D' Color Marmolina</a></li>
+                              <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>D' Color</a></li>
+                              <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>D' Color Marmolina</a></li>
                           </ul>
                       </div>
                   </div>
