@@ -13,10 +13,10 @@
 	--light-blue: #275a9d;
 	--gris: #e9eef5 ;
 	--orange:#ec8e39;
-    --red: #ff0033;
+  --red: #ff0033;
     
-    --ssm: .8rem;
-	--sm: 1.2rem;
+  --ssm: .8rem;
+	--sm: 1rem;
 	--md: 2rem;
 	--lg: 3rem;
 }
@@ -71,7 +71,7 @@ li {
 }
 .gif img {
   width: 100%;
-  height: 75vh;
+  height: 400px;
 }
 
 /* main */
