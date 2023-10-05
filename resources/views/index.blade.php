@@ -10,10 +10,10 @@
 </div>
   
 <main>
-    <aside class="primary-banner">
+    {{-- <aside class="primary-banner">
         <img src="{{ asset('images/planta-barquisimeto.png') }}" alt="">
         <h1 class="h1">Tu proveedor confiable de materiales de construcción y adhesivos de calidad</h1>
-    </aside>
+    </aside> --}}
     
     <section class="product-section">
         <header>
