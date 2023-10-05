@@ -77,12 +77,28 @@
             
         </article>
     </section>
-  
-    <section class="proyectos">
+    
+    <section>
         <header>
             <h2 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Proyectos<i class="fa-solid fa-quote-right quotes"></i></h2>
-            <p>Realiza tus proyectos de construcción con Productos Occidente, C.A. Nuestra calidad y experiencia en el sector te brindan soluciones confiables y asesoramiento personalizado para lograr resultados exitosos</p>
         </header>
+        <section class="categories">
+            <article class="category" style="background: url({{ asset('images/categories/pegamentos.png') }})">
+                <div><p>HOLA</p></div>
+            </article>
+            <article class="category" style="background: url({{ asset('images/categories/sella_juntas.png') }})">
+                <div><p>HOLA</p></div>
+            </article>
+            <article class="category" style="background: url({{ asset('images/categories/construccion.png') }})">
+                <div><p>HOLA</p></div>
+            </article>
+        </section>
     </section>
+
+    <section class="proyectos">
+
+    </section>
+
+
 </main>
 @endsection
