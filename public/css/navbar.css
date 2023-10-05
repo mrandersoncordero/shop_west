@@ -41,12 +41,11 @@
   justify-content: space-evenly;
   gap: 24px;
   width: 100%;
-  height: 80px;
 }
 
 .nav-img {
-  width: 250px;
-  margin-left: 10px;
+  width: 200px;
+  margin-left: 20px;
 }
 
 .navbar-content .ul {
@@ -87,7 +86,7 @@
 }
 
 .submenu .title-category {
-  font-size: 1rem;
+  font-size: var(--sm);
   color: var(--blue);
   font-weight: 600;
   
@@ -136,7 +135,7 @@
   align-items: center;
   gap: 10px;
 
-  font-size: 1rem;
+  font-size: var(--ssm);
   color: var(--black);
 }
 
@@ -144,7 +143,7 @@
   --ionicon-stroke-width: 2px;
   border: 2px solid blue;
   border-radius: 50%;
-  padding: 0;
+
 }
 
 .submenu-subcategoria ul li a ion-icon {
@@ -152,8 +151,8 @@
   top: 25%;
   left: 0;
 
-  width: .8rem;
-  height: .8rem;
+  width: .6rem;
+  height: .6rem;
 }
 
 .submenu-subcategoria ul li a:hover {
