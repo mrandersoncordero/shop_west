@@ -25,6 +25,8 @@ class CheckRole
     foreach ($roles as $role) {
         if (auth()->user()->hasRole($role)) {
             return $next($request);
+        }else{
+            return redirect('/');
         }
     }
 
