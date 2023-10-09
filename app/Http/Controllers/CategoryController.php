@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class CategoryController extends Controller
 {
-    //
     public function index()
     {
         return view('admin.category.index', [
@@ -23,6 +23,11 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
+        App::setLocale('es');
+
+        $request->validate([
+            'name' => 'required|unique:categories,name'
+        ]);
 
         //dd($request->all());
         $category = Category::create([
@@ -40,6 +45,11 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
+        App::setLocale('es');
+        
+        $request->validate([
+            'name' => 'required|unique:categories,name,' . $category->id,
+        ]);
 
         //dd($request->all());
         $category->update([

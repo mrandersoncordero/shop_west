@@ -13,13 +13,23 @@
         @csrf
         @method('PUT')
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="name" value="{{ $category->name }}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name', $category->name)}}">
             <label for="floatingInput">Name</label>
+            @error('name')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div> 
+            @enderror
         </div>
         
         <div class="form-floating">
-            <textarea class="form-control" name="description" rows="5">{{ $category->description }}</textarea>
-            <label for="floatingTextarea">Description</label>
+          <textarea class="form-control @error('description') is-invalid @enderror " name="description" rows="5">{{ old('description',$category->description)}}</textarea>
+          <label for="floatingTextarea">Description</label>
+          @error('description')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
         </div>
 
         <div style="display: flex; align-items: center; margin-top: 10px;">

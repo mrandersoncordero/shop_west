@@ -45,7 +45,7 @@
 
 
 </div>
-<div id="modal" class="modal-container">
+<div id="modal" class="modal-container" @if($errors->has('name') || $errors->has('description')) style="visibility: visible;" @endif>
     <div class="modal_content">
         <div class="modal_header">
             <div>
