@@ -17,12 +17,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px;
+  width: 80px;
   background: #ffffff;
   padding: 6px 16px;
   height: 100%;
   box-shadow: 5px 0 30px rgba(0, 0, 0, 1);
   transition: all .5s ease;
+  z-index: 90;
 }
 .sidebar.active{
   width: 240px;
@@ -77,7 +78,7 @@ body {
 .sidebar .src input {
   position: absolute;
   height: 100%;
-  width: calc(100% - 50px);
+  width: 100%;
   left: 0;
   top: 0;
   border-radius: 20px;
@@ -176,17 +177,26 @@ body {
 
 .home_content {
   position: absolute;
-  height: 100%;
-  width: calc(100% - 300px);
   left: 80px;
+  height: 100%;
+  width: 90%;
+  padding: 12px 24px;
+  margin-top: 14px;
   transition: all .5s ease;
+  z-index: 1;
+}
+
+.header_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .home_content .text {
   font-size: 25px;
   font-weight: 500;
   color: #242424;
-  padding: 12px 24px;
+  margin-bottom: 20px;
 }
 
 .sidebar.active ~ .home_content {
