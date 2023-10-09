@@ -1,12 +1,14 @@
 @csrf
 
-<label for="" class="uppercase text-gray-700 text-xs">Name</label>
-<input type="text" name="name" class="rounded border-gray-200 w-full mb-4" value="{{ $category->name }}">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" name="name" value="{{ $category->name }}">
+  <label for="floatingInput">Name</label>
+</div>
+<div class="form-floating">
+  <textarea class="form-control" name="description" rows="5">{{ $category->description }}</textarea>
+  <label for="floatingTextarea">Description</label>
+</div>
 
-<label for="" class="uppercase text-gray-700 text-xs">Description</label>
-<textarea name="description" rows="5" class="rounded border-gray-200 w-full mb-4 text-black">{{ $category->description }}</textarea>
-
-<div class="flex justify-between items-center">
-  <a href="{{ route('categories.index') }}" class="text-indigo-600">Volver</a>
-  <input type="submit" value="Enviar" class="text-xs bg-gray-800 text-white rounded px-4 py-2">
+<div style="display: flex; align-items: center; margin-top: 10px;">
+  <input type="submit" value="Enviar" class="btn btn-primary">
 </div>
