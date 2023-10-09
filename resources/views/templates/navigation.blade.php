@@ -25,38 +25,38 @@
     </li>
     <li>
       <a href="{{ route('categories.index') }}">
-        <i class='bx bx-line-chart' ></i>
-        <span class="link_name">Workout Statictic</span>
+        <i class='bx bxs-category' ></i>
+        <span class="link_name">Categories</span>
       </a>
-      <span class="tooltip">Workout Statictic</span>
+      <span class="tooltip">Categories</span>
     </li>
     <li>
       <a href="#">
-        <i class='bx bx-calendar-event'></i>
-        <span class="link_name">Workout Plan</span>
+        <i class='bx bxs-box'></i>
+        <span class="link_name">Products</span>
       </a>
-      <span class="tooltip">Workout Plan</span>
+      <span class="tooltip">Products</span>
     </li>
     <li>
       <a href="#">
-        <i class='bx bxs-bolt'></i>
-        <span class="link_name">Distance Map</span>
+        <i class='bx bx-list-ul' ></i>
+        <span class="link_name">Orders</span>
       </a>
-      <span class="tooltip">Distance Map</span>
+      <span class="tooltip">Orders</span>
     </li>
     <li>
       <a href="#">
-        <i class='bx bxs-heart-circle'></i>
-        <span class="link_name">Diet Food Menu</span>
+        <i class='bx bx-dollar' ></i>
+        <span class="link_name">Payments</span>
       </a>
-      <span class="tooltip">Diet Food Menu</span>
+      <span class="tooltip">Payments</span>
     </li>
     <li>
       <a href="#">
-        <i class='bx bxs-pie-chart'></i>
-        <span class="link_name">Personal Record</span>
+        <i class='bx bxs-user'></i>
+        <span class="link_name">Users</span>
       </a>
-      <span class="tooltip">Personal Record</span>
+      <span class="tooltip">Users</span>
     </li>
   </ul>
 </nav>
