@@ -19,7 +19,7 @@ Route::resource('users', UserController::class);
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('admin.index');
+        return view('admin.admin');
     })->name('dashboard');
 
     Route::controller(CategoryController::class)->group(function () {
