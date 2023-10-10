@@ -16,6 +16,7 @@
 .modal_content {
   position: relative;
   height: auto;
+  max-height: 500px;
   border-radius: 10px;
   text-align: center;
   display: flex;
@@ -26,6 +27,7 @@
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
+  overflow-y: scroll;
 }
 
 
