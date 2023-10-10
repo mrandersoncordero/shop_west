@@ -1,20 +1,16 @@
 <?php
 
 // Controller
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\SubcategoryController;
 // Laravel
 use Illuminate\Support\Facades\Route;
 
-Route::controller(PageController::class)->group(function() {
+Route::controller(PageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
-
-Route::resource('categories', CategoryController::class);
-Route::resource('users', UserController::class);
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
@@ -22,12 +18,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         return view('admin.admin');
     })->name('dashboard');
 
-    Route::controller(CategoryController::class)->group(function () {
-        Route::get('/dashboard/categories', 'index')->name('categories.index');
-        Route::get('/dashboard/categories/create', 'create')->name('categories.create');
-        Route::get('/dashboard/categories/{category}/edit', 'edit')->name('categories.edit');
-        Route::delete('/dashboard/categories/{category}/destroy', 'destroy')->name('categories.destroy');
-    });
+    Route::resource('dashboard/categories', CategoryController::class)->except('show', 'create');
+    Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show');
 });
 
 Route::middleware('auth')->group(function () {
@@ -36,4 +28,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
