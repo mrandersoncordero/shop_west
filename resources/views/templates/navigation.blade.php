@@ -38,7 +38,7 @@
       <span class="tooltip">Subcategories</span>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ route('products.index') }}">
         <i class='bx bxs-box'></i>
         <span class="link_name">Products</span>
       </a>
