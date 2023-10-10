@@ -14,7 +14,8 @@
         <thead>
             <tr>
               <th scope="col">Name</th>
-              <th scope="col">description</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
               <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
         <tr class="">
             <td class="">{{ $subcategory->name }}</td>
             <td class="">{{ $subcategory->description }}</td>
+            <td class="">{{ $subcategory->category->name }}</td>
             <td>
                 <a href="{{ route('subcategories.edit', $subcategory) }}" class="edit">Editar</a>
                 <form action="{{ route('subcategories.destroy', $subcategory) }}" method="POST">
