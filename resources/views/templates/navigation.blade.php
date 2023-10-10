@@ -31,6 +31,13 @@
       <span class="tooltip">Categories</span>
     </li>
     <li>
+      <a href="{{ route('subcategories.index') }}">
+        <i class='bx bxs-category-alt' ></i>
+        <span class="link_name">Subcategories</span>
+      </a>
+      <span class="tooltip">Subcategories</span>
+    </li>
+    <li>
       <a href="#">
         <i class='bx bxs-box'></i>
         <span class="link_name">Products</span>
