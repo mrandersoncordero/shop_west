@@ -17,12 +17,12 @@ return new class extends Migration
             $table->unsignedBigInteger('subcategory_id');
             $table->foreign('subcategory_id')->references('id')->on('subcategories');
 
-            $table->string('code');
+            $table->string('code', 80);
             $table->string('name', 80);
             $table->tinyInteger('weight');
-            $table->string('format');
-            $table->string('yield');
-            $table->string('traffic');
+            $table->string('format', 100)->nullable();
+            $table->string('yield', 100)->nullable();
+            $table->string('traffic', 100)->nullable();
             $table->float('price');
             $table->string('image');
             
