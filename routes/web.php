@@ -2,6 +2,7 @@
 
 // Controller
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SubcategoryController;
@@ -19,7 +20,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     })->name('dashboard');
 
     Route::resource('dashboard/categories', CategoryController::class)->except('show', 'create');
-    Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show');
+    Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show', 'create');
+    Route::resource('dashboard/products', ProductController::class)->except('show', 'create');
 });
 
 Route::middleware('auth')->group(function () {
