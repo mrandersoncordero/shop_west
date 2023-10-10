@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class CategoryController extends Controller
 {
@@ -23,10 +22,10 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        App::setLocale('es');
 
         $request->validate([
-            'name' => 'required|unique:categories,name'
+            'name' => 'required|unique:categories,name',
+            'description' => 'required|string|max:255',
         ]);
 
         //dd($request->all());
@@ -45,10 +44,10 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
-        App::setLocale('es');
         
         $request->validate([
             'name' => 'required|unique:categories,name,' . $category->id,
+            'description' => 'required|string|max:255',
         ]);
 
         //dd($request->all());
