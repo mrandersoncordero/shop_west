@@ -21,7 +21,17 @@
           </div> 
           @enderror
         </div>
-        {{ $errors }}
+
+        <div class="form-floating mb-3">
+          <textarea class="form-control @error('description') is-invalid @enderror " name="description" rows="5">{{ old('description', $product->description)}}</textarea>
+          <label for="floatingTextarea">Description</label>
+          @error('description')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
+        </div>
+
         <div class="form-floating mb-3">
           <select class="form-select" id="Subcategory" name="subcategory_id">
             <option selected></option>

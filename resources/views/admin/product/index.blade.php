@@ -60,7 +60,7 @@
   </table>
 </div>
 
-<div id="modal" class="modal-container" @if($errors->has('name') || $errors->has('code') || $errors->has('weight') || $errors->has('format') || $errors->has('yield') || $errors->has('traffic') || $errors->has('price') || $errors->has('image')) style="visibility: visible;" @endif>
+<div id="modal" class="modal-container" @if($errors->has('name') || $errors->has('description') || $errors->has('code') || $errors->has('weight') || $errors->has('format') || $errors->has('yield') || $errors->has('traffic') || $errors->has('price') || $errors->has('image')) style="visibility: visible;" @endif>
     <div class="modal_content">
         <div class="modal_header">
             <div>
