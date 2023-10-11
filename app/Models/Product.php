@@ -13,6 +13,7 @@ class Product extends Model
         'subcategory_id',
         'code',
         'name',
+        'description',
         'weight',
         'format',
         'yield',
