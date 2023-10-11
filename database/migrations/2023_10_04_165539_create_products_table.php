@@ -19,6 +19,7 @@ return new class extends Migration
 
             $table->string('code', 80);
             $table->string('name', 80);
+            $table->string('description', 500);
             $table->tinyInteger('weight');
             $table->string('format', 100)->nullable();
             $table->string('yield', 100)->nullable();
