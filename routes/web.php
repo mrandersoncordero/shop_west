@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/products', 'products_view')->name('products_view');
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
