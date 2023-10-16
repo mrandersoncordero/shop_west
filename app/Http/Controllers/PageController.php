@@ -12,4 +12,10 @@ class PageController extends Controller
             'products' => Product::take(5)->get(),
         ]);
     }
+
+    public function products_view() {
+        return view('page.products', [
+            'products' => Product::all(),
+        ]);
+    }
 }
