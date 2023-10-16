@@ -100,7 +100,7 @@
                         <li class="glide__slide">
                             <img src="{{ asset('images/projects/lidotel.png') }}" alt="" style="width: 100%; height: 300px;">
                         </li>
-                        <li class "glide__slide">
+                        <li class="glide__slide">
                             <img src="{{ asset('images/projects/catedral.jpg') }}" alt="" style="width: 100%; height: 300px;">
                         </li>
                         <li class="glide__slide">
@@ -112,8 +112,8 @@
                 <div class="glide" style="position: initial">
     
                     <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
             </div>
