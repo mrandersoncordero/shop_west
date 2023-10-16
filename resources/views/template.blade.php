@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/utils.css') }}">
   <!-- fontawesone -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -18,10 +19,11 @@
   @yield('content')
   
 
-  @yield('scripts')
   <script src="{{ asset('js/navbar.js') }}"></script>
   <!-- IONICONS -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  @yield('scripts')
+
 </body>
 </html>
