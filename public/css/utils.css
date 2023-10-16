@@ -1,0 +1,82 @@
+/* ---- banner-top ---- */
+.banner-top {
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+  height: 250px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.banner-top > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.338);
+  z-index: 1;
+}
+
+.banner-top h1 {
+  color: var(--white);
+  text-align: center;
+  font-size: 24px;
+  z-index: 2;
+  padding: 24px;
+}
+
+/* container_carrousel */
+.container_carrousel {
+  margin: 40px 0;
+}
+/* alinear elementos y centrar*/
+.align_items_carrousel {
+  display: flex;
+  justify-content: center;
+}
+
+/* header line with color */
+.header_line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+  padding: 12px;
+  background: var(--red);
+
+}
+
+.header_line h1 {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 24px;
+}
+
+/* modificar estilo de botones para el carrousel */
+
+.glide__arrow--left,
+.glide__arrow--right{
+  font-size: 20px;
+  color: black;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* contenido dentro de los div en el carrousel */
+.products_carrousel--container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.products_carrousel--container div a {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 14px;
+  color: #3e3e3e;
+}
