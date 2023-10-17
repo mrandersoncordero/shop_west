@@ -11,11 +11,11 @@
       </div>
   </div>
   <div class="navbar-content">
-      <a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="" class="nav-img"></a>
+      <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="" class="nav-img"></a>
       <ul class="ul">
           <li><a href="#" class="underline">Nosotros</a></li>
           <li><a href="#" class="underline">Proyectos</a></li>
-          <li><a href="#" class="underline">Productos</a>
+          <li><a href="{{ route('products_view') }}" class="underline">Productos</a>
               <div class="submenu">
                   <div class="submenu-categorias">
                       <a href="#" class="title-category">Linea de Pegamentos <i class="fa-solid fa-angles-right"></i></a>
