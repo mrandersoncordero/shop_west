@@ -14,7 +14,7 @@
 </div>
   
 <main>
-   
+
     <section class="product-section">
         <header>
             <h1 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Productos confiables de construcción y adhesivos<i class="fa-solid fa-quote-right quotes"></i></h1>
@@ -35,7 +35,7 @@
                     </p>
                     @break
                     @endforeach
-                    <a href="">IR A PRODUCTOS</a>
+                    <a href="{{ route('products_view') }}">IR A PRODUCTOS</a>
                 </div>
             </div>
             <div class="diana-de-productos">
