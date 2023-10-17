@@ -18,4 +18,17 @@ class PageController extends Controller
             'products' => Product::all(),
         ]);
     }
+
+    public function product_detail($id)
+    {
+        $product = Product::find($id);
+        
+        if (!$product) {
+            return redirect()->route('error.page');
+        }
+
+        return view('page.product_detail', [
+            'product' => $product,
+        ]);
+    }
 }
