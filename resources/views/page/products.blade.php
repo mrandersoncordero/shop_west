@@ -20,30 +20,19 @@
       <section class="glide" style="position: relative" id="space1">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/Imperplus.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
+            @foreach ($products as $product)
+              @if ($product->subcategory->category->id == 1) 
+              {{--  Pegamentos --}}
+              <li class="glide__slide align_items_carrousel">
+                <div class="products_carrousel--container">
+                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <div>
+                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/Imperplus.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/Imperplus.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
+              </li> 
+              @endif 
+            @endforeach
           </ul>
         </div>
 
@@ -69,30 +58,19 @@
       <section class="glide" style="position: relative" id="space2">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/OccireparadorP.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
+            @foreach ($products as $product)
+              @if ($product->subcategory->category->id == 2) 
+              {{--  Construccion --}}
+              <li class="glide__slide align_items_carrousel">
+                <div class="products_carrousel--container">
+                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <div>
+                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/OccireparadorP.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/OccireparadorP.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
+              </li> 
+              @endif 
+            @endforeach
           </ul>
         </div>
 
@@ -119,30 +97,19 @@
       <section class="glide" style="position: relative" id="space3">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/PSupremo.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
+            @foreach ($products as $product)
+              @if ($product->subcategory->category->id == 3) 
+              {{--  Sella Juntas --}}
+              <li class="glide__slide align_items_carrousel">
+                <div class="products_carrousel--container">
+                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <div>
+                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/PSupremo.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide align_items_carrousel">
-              <div class="products_carrousel--container">
-                <img src="{{ asset('images/products/PSupremo.png') }}" alt="" style="width: 100%; height: 300px;">
-                <div>
-                  <a href="#">ver descripcion</a>
-                </div>
-              </div>
-            </li>
+              </li> 
+              @endif 
+            @endforeach
           </ul>
         </div>
 
