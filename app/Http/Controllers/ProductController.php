@@ -66,7 +66,7 @@ class ProductController extends Controller
             'subcategory_id' => 'required',
             'code' => 'required|string|max:80',
             'name' => 'required|unique:subcategories,name,'. $product->id,
-            'description' => 'required|string|max:200',
+            'description' => 'required|string|max:255',
             'weight' => 'nullable|integer',
             'format' => 'nullable|string|max:100',
             'yield' => 'nullable|string|max:100',
