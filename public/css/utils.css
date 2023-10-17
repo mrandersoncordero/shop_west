@@ -80,3 +80,110 @@
   font-size: 14px;
   color: #3e3e3e;
 }
+
+/* menu entre vistas */
+.menu_between_views {
+  margin: 24px 0px 24px 0px;
+  padding: 12px 4px 12px 24px;
+  background: var(--gris);
+}
+.menu_between_views ul {
+  display: flex;
+  align-items: center;
+}
+.menu_between_views ul li{
+  padding: 0px 4px;
+}
+.menu_between_views ul li a {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--blue);
+}
+.menu_between_views ul li a:hover {
+  text-decoration: underline;
+  color: var(--red);
+}
+
+.menu_between_views ul li .latest_section {
+  color: var(--red);
+}
+
+/* detalle de productos */
+.container_image--product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.container_image--product section:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.diana_detail--primary {
+  height: 400px;
+  width: 400px;
+  border: 1px solid rgb(76, 157, 255);
+  border-radius: 50%;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.diana_detail--primary .diana_detail--secondary {
+  height: 350px;
+  width: 350px;
+  padding: 12px;
+  background: var(--gris);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diana_detail--primary .diana_detail--secondary img {
+  position: absolute;
+  width: 300px;
+  height: 380px;
+  top: 0;
+}
+
+.content_detail--product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 0px 12px;
+}
+.container_image--product header h2 {
+  font-size: 1.8rem;
+}
+.container_image--product article p {
+  font-size: 1.2rem;
+}
+.container_image--product article .description {
+  margin: 24px 0px;
+}
+.container_image--product article .specifications {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container_image--product article .specifications span {
+  font-weight: bold;
+}
+
+
+.container_add--truck {
+  width: 100%;
+}
+.container_add--truck button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
