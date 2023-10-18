@@ -68,19 +68,25 @@
         </header>
         <article class="container-categories">
             <div class="category">
-                <a href="#" style="background: url({{asset('images/categoriy_pegamento.jpg')}})"></a>
+                <a href="#" style="background: url({{asset('images/categoriy_pegamento.jpg')}}); display: flex; align-items: center; justify-content: center;">
+                <img src="{{ asset('icons/pegamentos.png') }}" alt="" width="50%">
+                </a>
                 <p>
                     <a href="#" style="color: var(--blue)">Linea de pegamentos</a>
                 </p>
             </div>
             <div class="category">
-                <a href="#" style="background: url({{asset('images/category_construccion.jpg')}})"></a>
+                <a href="#" style="background: url({{asset('images/category_construccion.jpg')}}); display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ asset('icons/contruccion.png') }}" alt="" width="50%">
+                </a>
                 <p>
                     <a href="#" style="color: var(--red)">Linea de construcción</a>
                 </p>
             </div>
             <div class="category">
-                <a href="#" style="background: url({{asset('images/category_sella_juntas.jpg')}})"></a>
+                <a href="#" style="background: url({{asset('images/category_sella_juntas.jpg')}}); display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ asset('icons/sella_juntas.png') }}" alt="" width="50%">
+                </a>
                 <p>
                     <a href="#" style="color: var(--blue)">Linea de sella juntas</a>
                 </p>
