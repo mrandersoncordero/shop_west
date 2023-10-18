@@ -17,75 +17,23 @@
           <li><a href="#" class="underline">Proyectos</a></li>
           <li><a href="{{ route('products_view') }}" class="underline">Productos</a>
               <div class="submenu">
-                  <div class="submenu-categorias">
-                      <a href="#" class="title-category">Linea de Pegamentos <i class="fa-solid fa-angles-right"></i></a>
-                      <div class="submenu-subcategoria">
-                          <div>
-                              <header><a href="#" class="title-subcategory">Basicos <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Pego Standard Gris</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Pego Extra Blanco</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Premiun</a></li>
-                              </ul>
-                          </div>
-                          <div>
-                              <header><a href="#" class="title-subcategory">Profesional <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Pego Premiun Gris Grueso</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Super Extra Blanco</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Super Standard Gris</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Super Extra Porcelanato</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Super Extra Piscina</a></li>
-                              </ul>
-                          </div>
-                          <div>
-                              <header><a href="#" class="title-subcategory">Flexible <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Pego Supremo Blanco</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="submenu-categorias">
-                      <a href="#" class="title-category">Linea de Construccion <i class="fa-solid fa-angles-right"></i></a>
-                      <div class="submenu-subcategoria">
-                          <div>
-                              <header><a href="#" class="title-subcategory">Revestimiento <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occifriso</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occifriso AR</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occifriso Proyectado</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occifriso Texturizado</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occimix</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Stuco</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Imperplus</a></li>
-                              </ul>
-                          </div>
-                          <div>
-                              <header><a href="#" class="title-subcategory">Pegamentos <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occibloque</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occiteja</a></li>
-                              </ul>
-                          </div>
-                          <div>
-                              <header><a href="#" class="title-subcategory">Estructural <i class="fa-solid fa-angle-right"></i></a></header>
-                              <ul>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occiconcreto</a></li>
-                                  <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>Occiconcreto Reforzado</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="submenu-categorias">
-                      <a href="#" class="title-category">Linea de Sella Juntas <i class="fa-solid fa-angles-right"></i></a>
-                      <div class="submenu-subcategoria">
-                          <ul>
-                              <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>D' Color</a></li>
-                              <li><a href="#"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>D' Color Marmolina</a></li>
-                          </ul>
-                      </div>
-                  </div>
+                @foreach ($categories as $category)
+                <div class="submenu-categorias">
+                    <a href="{{ route('products_by_category', $category->id) }}" class="title-category">Linea de {{ $category->name }} <i class="fa-solid fa-angles-right"></i></a>
+                    <div class="submenu-subcategoria">
+                        @foreach ($category->subcategories as $subcategory)
+                        <div>
+                            <header><a href="#" class="title-subcategory">{{ $subcategory->name }} <i class="fa-solid fa-angle-right"></i></a></header>
+                            <ul>
+                                @foreach ($subcategory->products as $product)
+                                <li><a href="{{ route('product_detail', $product->id) }}" style="text-transform: uppercase"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>{{ $product->name }}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
               </div>
           </li>
           <li><a href="#" class="underline">Contacto</a></li>
