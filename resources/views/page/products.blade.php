@@ -13,7 +13,7 @@
     </section>
 
     <article class="container_carrousel">
-      <header class="header_line">
+      <header class="header_line"  style="margin-bottom: 24px">
         <h1>Linea de pegamentos</h1>
       </header>
 
@@ -51,7 +51,7 @@
     </section>
 
     <article class="container_carrousel">
-      <header class="header_line">
+      <header class="header_line" style="margin-bottom: 24px">
         <h1>Linea de construccion</h1>
       </header>
 
@@ -90,7 +90,7 @@
     </section>
 
     <article class="container_carrousel">
-      <header class="header_line">
+      <header class="header_line" style="margin-bottom: 24px">
         <h1>Linea de sella juntas</h1>
       </header>
 
