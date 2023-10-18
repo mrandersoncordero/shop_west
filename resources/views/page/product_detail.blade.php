@@ -9,7 +9,7 @@
     <section class="banner-top" style="background-image: url({{ asset('images/banner_pego.png') }});">
     </section>
 
-    <div class="menu_between_views">
+    <div class="menu_between_views" style="margin-top: 24px">
       <ul>
         <li>
           <a href="{{ route('index') }}"><i class="fa-solid fa-house"></i></a>
@@ -25,6 +25,12 @@
         </div>
         <li>
           <a href="{{ route('products_by_category', $product->subcategory->category->id) }}">{{$product->subcategory->category->name}}</a>
+        </li>
+        <div class="separation_section_menu">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <li>
+          <a href="{{ route('products_by_subcategory', $product->subcategory->id) }}">{{$product->subcategory->name}}</a>
         </li>
         <div class="separation_section_menu">
           <i class="fa-solid fa-angle-right"></i>
