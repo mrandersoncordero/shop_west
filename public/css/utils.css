@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 24px 0;
+  margin: 24px 0px 0px 0px;
   padding: 12px;
   background: var(--red);
 
@@ -83,7 +83,7 @@
 
 /* menu entre vistas */
 .menu_between_views {
-  margin: 24px 0px 24px 0px;
+  margin: 0px 0px 24px 0px;
   padding: 12px 4px 12px 24px;
   background: var(--gris);
 }
