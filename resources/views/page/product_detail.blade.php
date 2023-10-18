@@ -24,7 +24,7 @@
           <i class="fa-solid fa-angle-right"></i>
         </div>
         <li>
-          <a href="#">{{$product->subcategory->category->name}}</a>
+          <a href="{{ route('products_by_category', $product->subcategory->category->id) }}">{{$product->subcategory->category->name}}</a>
         </li>
         <div class="separation_section_menu">
           <i class="fa-solid fa-angle-right"></i>
@@ -69,8 +69,8 @@
             </div>
 
             <form class="container_add--truck">
-              <button>
-                <div>Agregar al carrito</div>
+              <button type="submit" class="margin-top-content">
+                <div><img src="{{ asset('icons/camion_compra.png') }}" alt=""><p>Agregar al carrito</p></div>
               </button>
             </form>
           </article>
