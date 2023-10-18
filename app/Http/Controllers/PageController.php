@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -46,6 +47,17 @@ class PageController extends Controller
 
         return view('page.products_by_category', [
             'category' => $category,
+            'categories' => $categories,
+        ]);
+    }
+
+    public function products_by_subcategory($id)
+    {
+        $subcategory = Subcategory::find($id);
+        $categories = Category::all();
+
+        return view('page.products_by_subcategory', [
+            'subcategory' => $subcategory,
             'categories' => $categories,
         ]);
     }
