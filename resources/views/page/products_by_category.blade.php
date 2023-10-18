@@ -9,30 +9,31 @@
     <section class="banner-top" style="background-image: url({{ asset('images/banner_pego.png') }});">
     </section>
 
-    <div class="menu_between_views">
-      <ul>
-        <li>
-          <a href="{{ route('index') }}"><i class="fa-solid fa-house"></i></a>
-        </li>
-        <div class="separation_section_menu">
-          <i class="fa-solid fa-angle-right"></i>
-        </div>
-        <li>
-          <a href="{{ route('products_view') }}">Productos</a>
-        </li>
-        <div class="separation_section_menu">
-          <i class="fa-solid fa-angle-right"></i>
-        </div>
-        <li>
-          <a href="{{ route('products_by_category', $category->id) }}">{{ $category->name }}</a>
-        </li>
-      </ul>
-    </div>
-
     <section class="container_products">
       <header class="header_line">
         <h1>Linea de {{ $category->name}}</h1>
       </header>
+      
+      <div class="menu_between_views">
+        <ul>
+          <li>
+            <a href="{{ route('index') }}"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <div class="separation_section_menu">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <li>
+            <a href="{{ route('products_view') }}">Productos</a>
+          </li>
+          <div class="separation_section_menu">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <li>
+            <a href="{{ route('products_by_category', $category->id) }}">{{ $category->name }}</a>
+          </li>
+        </ul>
+      </div>
+
       <article class="products">
       @foreach ($category->subcategories as $subcategory)
         @foreach ($subcategory->products as $product)
