@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -29,6 +30,15 @@ class PageController extends Controller
 
         return view('page.product_detail', [
             'product' => $product,
+        ]);
+    }
+
+    public function products_by_category($id)
+    {
+        $category = Category::find($id);
+
+        return view('page.products_by_category', [
+            'category' => $category,
         ]);
     }
 }
