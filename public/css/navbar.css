@@ -171,13 +171,19 @@
   margin-right: 20px;
 }
 .icon-nav a {
+  padding: 6px 8px;
   font-size: var(--sm);
   color: var(--black);
+  border-radius: 5px;
+  border: 1px solid transparent;
 }
-.icon-nav div:nth-child(2){
+.icon-nav a:hover {
+  border: 1px solid #c5c4c4;
+}
+.icon-nav .icon_truck{
   position: relative;
 }
-.icon-nav div:nth-child(2) span {
+.icon-nav .icon_truck span {
   position: absolute;
   text-align: center;
   background-color: var(--gris);
@@ -302,6 +308,68 @@
 	transition: max-height 0.5s ease;
 }
 /* -- end menu-mobile -- */
+
+.icon-user {
+  position: relative;
+}
+
+.icon-user .menu_user {
+  position: absolute;
+  top: 20px;
+  left: -180px;
+
+  width: 200px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  transition: all .8s;
+}
+
+.menu_user .menu_user--header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  padding: 6px;
+}
+.menu_user .menu_user--header p {
+  font-size: 0.9rem;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.menu_user ul li {
+  width: 100%;
+}
+.menu_user ul li a {
+  display: inline-block;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+  font-size: .875rem;
+  border-radius: 0;
+  border: 0px;
+}
+.menu_user ul li a:hover{
+  background: #efefef;
+  border: 0px;
+}
+
+.menu_user form button {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  font-size: .875rem;
+  color: var(--black);
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.menu_user form button:hover {
+  background: #efefef;
+}
 
 @media screen and (max-width: 1280px) {
   .submenu-subcategoria div ul li a  {
