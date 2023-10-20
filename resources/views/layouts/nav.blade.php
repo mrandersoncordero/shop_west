@@ -54,7 +54,38 @@
                   </div>
               </form>
           </div>
-          <div>
+          <div class="icon-user">
+            <a href="#" id="action_menu_user"><i class="fa-solid fa-user"></i></a>
+            <div class="menu_user inactive">
+                @auth
+                <div class="menu_user--header">
+                    <p>Bienvenido, {{ Auth::user()->name }}</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">Perfil</a>
+                    </li>
+                    <li>
+                        <a href="#">Pedidos</a>
+                    </li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+                @else
+                <ul>
+                    <li>
+                        <a href="{{ route('login') }}">Iniciar sesion</a>
+                    </li>
+                </ul>      
+                @endauth
+            </div>
+          </div>
+
+          <div class="icon_truck">
             <a href="#"><i class="fa-solid fa-truck"></i></a>
             @if(session()->has('cart'))
                 @php
@@ -65,9 +96,6 @@
                     <span>{{ $count += $item['quantity']}}</span>
                 @endforeach
             @endif
-          </div>
-          <div class="icon-user">
-              <a href="#"><i class="fa-solid fa-user"></i></a>
           </div>
           <div class="icon-bars">
               <ion-icon name="reorder-four-outline" id="icon-hamburguer"></ion-icon>
