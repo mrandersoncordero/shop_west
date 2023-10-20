@@ -1,0 +1,90 @@
+.container_cart_view {
+  width: 100%;
+}
+.content_card {
+  margin: 24px;
+}
+.container_cart_view .container_card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.content_card {
+  display: grid;
+  grid-template-columns: auto 300px auto;
+  gap: 24px;
+}
+.cart_content_image img {
+  width: 160px;
+  height: 200px;
+}
+
+.container_cart_view .cart_information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.container_cart_view .cart_information p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.container_cart_view .cart_information span{
+  font-weight: bold;
+}
+
+.container_cart_view .cart_actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cart_actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.cart_actions #quantity {
+  width: 50px;
+  padding: 5px;
+}
+.cart_actions .cart_update,
+.cart_actions .cart_delete,
+.cart_actions .cart_clear {
+  display: flex;
+  align-items: center;
+}
+.cart_actions .cart_update {
+  display: flex;
+  gap: 12px;
+}
+
+.cart_update button .fa-pen-to-square,
+.cart_delete button .fa-trash,
+.cart_clear button .fa-bitbucket{
+  color: #ffffff ;
+  padding: 4px;
+}
+.cart_update button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #090ccf;
+  font-size: 20px;
+}
+.cart_delete button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #e10b0b;
+  font-size: 20px;
+}
+.cart_clear button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #e9e5dd;
+  font-size: 20px;
+}
+
+.content_confirt_purchase {
+  
+}
