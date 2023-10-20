@@ -55,8 +55,16 @@
               </form>
           </div>
           <div>
-              <a href="#"><i class="fa-solid fa-truck"></i></a>
-              <span>7</span>
+            <a href="#"><i class="fa-solid fa-truck"></i></a>
+            @if(session()->has('cart'))
+                @php
+                    $count = 0;
+                    $cart = session('cart');
+                @endphp
+                @foreach ($cart as $item)
+                    <span>{{ $count += $item['quantity']}}</span>
+                @endforeach
+            @endif
           </div>
           <div class="icon-user">
               <a href="#"><i class="fa-solid fa-user"></i></a>
