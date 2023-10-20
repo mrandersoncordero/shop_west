@@ -2,6 +2,7 @@
 
 // Controller
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
@@ -9,6 +10,9 @@ use App\Http\Controllers\SubcategoryController;
 // Laravel
 use Illuminate\Support\Facades\Route;
 
+/**
+ * Rutas de la tienda
+ */
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/products', 'products_view')->name('products_view');
@@ -17,6 +21,21 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/products/category/{id}', 'products_by_category')->name('products_by_category');
 });
 
+/**
+ * Rutas par el carrito
+ */
+Route::middleware(['auth', 'role:client|admin'])->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/edit', [CartController::class, 'editProductCart'])->name('cart.edit');
+    Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::delete('/cart/remove/{product}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+    Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+});
+
+/**
+ * Rutas del panel administrativo
+ */
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/dashboard', function () {
