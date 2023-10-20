@@ -40,7 +40,11 @@
         </li>
       </ul>
     </div>
-
+    {{-- @if(session('success'))
+    <div class="alert alert-success" role="alert">
+      {{ session('success') }}
+    </div>
+    @endif --}}
     <section class="container_product_detail">
       <article class="container_image--product">
         <section>
@@ -74,7 +78,8 @@
               </div>
             </div>
 
-            <form class="container_add--truck">
+            <form action="{{ route('cart.add', $product->id) }}" method="POST" class="container_add--truck">
+              @csrf
               <button type="submit" class="margin-top-content">
                 <div><img src="{{ asset('icons/camion_compra.png') }}" alt=""><p>Agregar al carrito</p></div>
               </button>
