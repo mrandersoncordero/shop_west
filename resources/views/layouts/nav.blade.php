@@ -54,8 +54,10 @@
                   </div>
               </form>
           </div>
+          {{-- ICON USER --}}
           <div class="icon-user">
             <a href="#" id="action_menu_user"><i class="fa-solid fa-user"></i></a>
+            {{-- DROPDOWN MENU USER --}}
             <div class="menu_user inactive">
                 @auth
                 <div class="menu_user--header">
@@ -85,6 +87,7 @@
             </div>
           </div>
 
+          {{-- ICON TRUCK --}}
           <div class="icon_truck">
             <a href="#"><i class="fa-solid fa-truck"></i></a>
             @if(session()->has('cart'))
