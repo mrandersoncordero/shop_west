@@ -47,7 +47,8 @@
           </div>
           <div class="product_despcription">
             <a href="{{ route('product_detail', $product->id) }}">{{ $product->name }}</a>
-            <form class="container_add--truck center_content ">
+            <form action="{{ route('cart.add', $product->id) }}" method="POST" class="container_add--truck center_content ">
+              @csrf
               <button type="submit">
                 <div><img src="{{ asset('icons/camion_compra.png') }}" alt=""></div>
               </button>
