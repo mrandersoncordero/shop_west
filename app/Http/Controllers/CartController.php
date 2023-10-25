@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\PaymentType;
 use App\Models\Product;
 use App\Models\ProductsOfOrder;
 use Illuminate\Http\Request;
@@ -35,11 +36,13 @@ class CartController extends Controller
                 return view('cart.index', [
                     'products' => $products,
                     'categories' => Category::all(),
+                    'payment_types' => PaymentType::all()
                 ]);
             }else{
                 return view('cart.index', [
                     'products' => '',
                     'categories' => Category::all(),
+                    'payment_types' => PaymentType::all()
                 ]);
             }
         }else{
@@ -149,9 +152,13 @@ class CartController extends Controller
         }
     }
     
-    public function checkout()
+    public function checkout(Request $request)
     {
         if (Auth::check()) {
+            $request->validate([
+                'payment_type_id' => 'required|integer',
+                'price_total' => 'required',
+            ]);
             // Obtén el carrito actual desde la sesión
             $cart = session('cart', []);
             // Obtener el usuario autenticado
@@ -160,6 +167,9 @@ class CartController extends Controller
             $order = new Order([
                 'user_id' => $user->id,
                 'is_active' => 1,
+                'payment_type_id' => $request->payment_type_id,
+                'status_id' => 2,
+                'price_total' => $request->price_total
             ]);
             $order->save();
 
