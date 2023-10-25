@@ -3,6 +3,7 @@
 @section('head_content')
 <title>Pegoccidente - Cart</title>
 <link rel="stylesheet" href="{{ asset('css/view_cart.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 @endsection
 
 @section('content')
@@ -14,6 +15,9 @@
     </header>
     <article class="container_card">
       <section>
+    @php
+    $price_total = 0;
+    @endphp
     @if ($products)
     @foreach ($products as $key => $item)
       {{-- productos --}}
@@ -29,6 +33,7 @@
             <p><span>Nombre: </span>{{ $item['product']->name }}</p>
             <p><span>Codigo: </span>{{ $item['product']->code }}</p>
             <p><span>Peso: </span>{{ $item['product']->weight }} Kg</p>
+            <p><span>Precio: </span>{{ $item['product']->price }}$</p>
           </section>
   
           <section class="cart_actions">
@@ -38,6 +43,14 @@
               <div>
                 <label for="quantity">Cantidad</label>
                 <input type="number" id="quantity" name="quantity" value="{{ $item['quantity'] }}">
+                @php
+                if ($item['quantity'] > 1) {
+                  $price_item = $item['quantity'] * $item['product']->price;
+                  $price_total += $price_item;
+                }else{
+                  $price_total += $item['product']->price;
+                }
+                @endphp
                 <input type="hidden" name="product_id" value="{{ $item['product']->id }}">
               </div>
               <button type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -59,11 +72,31 @@
       </section>
       <section class="content_confirt_purchase">
         
+        <div class="container">
+          <div>
+            <p>Total a pagar: <b>{{ $price_total }}$</b></p>
+          </div>
 
-        <form action="{{ route('cart.checkout') }}" method="POST">
-          @csrf
-          <button type="submit">Comfirmar compra</button>
-        </form>
+          <form action="{{ route('cart.checkout') }}" method="POST">
+            @csrf
+            <input type="hidden" name="price_total" value="{{ $price_total }}">
+            <div class="form-floating">
+                <select class="form-select @error('payment_type_id') is-invalid @enderror" id="floatingSelect" name="payment_type_id"
+                @foreach ($payment_types as $item)
+                  <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+              </select>
+              <label for="floatingSelect">Selecciona el tipo de pago</label>
+              @error('payment_type_id')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
+            </div>
+            <button type="submit">Comfirmar compra</button>
+          </form>
+
+        </div>
       </section>
     </article>
 
@@ -76,4 +109,8 @@
 </main>
 
 @include('templates.footer')
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 @endsection
