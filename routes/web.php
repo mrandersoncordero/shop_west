@@ -3,6 +3,7 @@
 // Controller
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
@@ -21,16 +22,19 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/products/category/{id}', 'products_by_category')->name('products_by_category');
 });
 
-/**
- * Rutas par el carrito
- */
+
 Route::middleware(['auth', 'role:client|admin'])->group(function () {
+    /**
+     * Rutas del carrito
+     */
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/edit', [CartController::class, 'editProductCart'])->name('cart.edit');
     Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::delete('/cart/remove/{product}', [CartController::class, 'removeFromCart'])->name('cart.remove');
     Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
     Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
+    Route::get('/my_orders', [OrderController::class, 'view_index'])->name('order.index');
 });
 
 /**
@@ -45,6 +49,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('dashboard/categories', CategoryController::class)->except('show', 'create');
     Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show', 'create');
     Route::resource('dashboard/products', ProductController::class)->except('show', 'create');
+    Route::resource('dashboard/orders', OrderController::class)->except('show', 'create', 'store');
 });
 
 Route::middleware('auth')->group(function () {
