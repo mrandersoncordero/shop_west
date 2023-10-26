@@ -45,7 +45,7 @@
       <span class="tooltip">Products</span>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ route('orders.index') }}">
         <i class='bx bx-list-ul' ></i>
         <span class="link_name">Orders</span>
       </a>
