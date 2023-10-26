@@ -68,7 +68,7 @@
                         <a href="#">Perfil</a>
                     </li>
                     <li>
-                        <a href="#">Pedidos</a>
+                        <a href="{{ route('order.index') }}">Pedidos</a>
                     </li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
