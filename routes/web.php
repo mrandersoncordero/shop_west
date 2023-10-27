@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\UserController;
 // Laravel
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show', 'create');
     Route::resource('dashboard/products', ProductController::class)->except('show', 'create');
     Route::resource('dashboard/orders', OrderController::class)->except('show', 'create', 'store');
+    Route::resource('dashboard/users', UserController::class)->except('show', 'create');
 });
 
 Route::middleware('auth')->group(function () {
