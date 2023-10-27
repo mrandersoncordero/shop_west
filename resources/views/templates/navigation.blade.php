@@ -59,7 +59,7 @@
       <span class="tooltip">Payments</span>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ route('users.index') }}">
         <i class='bx bxs-user'></i>
         <span class="link_name">Users</span>
       </a>
