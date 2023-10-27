@@ -50,3 +50,7 @@
 .modal_header div i {
   font-size: 20px;
 }
+
+.visible {
+  visibility: visible;
+}
