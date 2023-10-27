@@ -18,11 +18,12 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             // Properties
+            $table->string('dni', 11);
             $table->string('first_name', 40);
-            $table->string('las_name', 40);
-            $table->string('address');
-            $table->string('phone_number', 12);
-            $table->date('birthday_date');
+            $table->string('last_name', 40);
+            $table->string('address', 255);
+            $table->string('phone_number', 17);
+            $table->date('birthday_date')->nullable();
             $table->timestamps();
         });
     }
