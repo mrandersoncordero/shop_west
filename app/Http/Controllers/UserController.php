@@ -39,6 +39,7 @@ class UserController extends Controller
             'address' => 'required|string|max:255',
             'phone_number' => 'required|string|max:17',
             'birthday_date' => 'nullable|date',
+            'withholding_tax' => 'nullable|string|max:5',
             'name' => 'required|string|max:64|unique:users,name',
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => ['required', 'confirmed', Password::defaults()],
@@ -62,6 +63,7 @@ class UserController extends Controller
             'address' => $request->address,
             'phone_number' => $request->phone_number,
             'birthday_date' => $request->birthday_date,
+            'withholding_tax' => $request->withholding_tax,
         ]);
         $profile->save();
 
@@ -77,6 +79,7 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        //dd($request->all());
         $request->validate([
             'dni' => 'required|string|max:11|unique:profiles,dni,'. $user->profile->id,
             'first_name' => ['required', 'string', 'max:50'],
@@ -84,6 +87,7 @@ class UserController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:17'],
             'birthday_date' => ['nullable', 'date'],
+            'withholding_tax' => 'nullable|string|max:6',
             'name' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user->id)],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'role' => ['required', 'string'],
@@ -92,7 +96,6 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
             'is_active' => 1,
         ]);
 
@@ -109,6 +112,7 @@ class UserController extends Controller
                 'address' => $request->address,
                 'phone_number' => $request->phone_number,
                 'birthday_date' => $request->birthday_date,
+                'withholding_tax' => $request->withholding_tax,
             ]);
         } else {
             // El usuario no tiene un perfil existente, así que crea uno nuevo
@@ -120,6 +124,7 @@ class UserController extends Controller
                 'address' => $request->address,
                 'phone_number' => $request->phone_number,
                 'birthday_date' => $request->birthday_date,
+                'withholding_tax' => $request->withholding_tax,
             ]);
         }
 
