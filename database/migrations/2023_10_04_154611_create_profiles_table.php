@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('address', 255);
             $table->string('phone_number', 17);
             $table->date('birthday_date')->nullable();
+            $table->float('withholding_tax')->nullable();
             $table->timestamps();
         });
     }
