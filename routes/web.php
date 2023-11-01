@@ -36,6 +36,7 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
     Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
     Route::get('/my_orders', [OrderController::class, 'view_index'])->name('order.index');
+    Route::get('/my_orders/{order}', [OrderController::class, 'view_edit'])->name('order.edit');
 });
 
 /**
