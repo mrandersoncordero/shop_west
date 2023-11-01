@@ -22,6 +22,14 @@ class OrderController extends Controller
         ]);
     }
 
+    public function view_edit(Order $order)
+    {
+        return view('order.edit', [
+            'order' => $order,
+            'categories' => Category::all(),
+        ]);
+    }
+
     public function index()
     {
         $orders = Order::all();
