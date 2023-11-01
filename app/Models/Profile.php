@@ -17,6 +17,7 @@ class Profile extends Model
         'address',
         'phone_number',
         'birthday_date',
+        'withholding_tax',
     ];
     
     protected $table = 'profiles';
