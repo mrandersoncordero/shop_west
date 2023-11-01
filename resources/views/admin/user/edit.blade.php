@@ -72,7 +72,31 @@
       </div> 
     @enderror
     </div>
-    
+
+    <div class="form-floating mb-3">
+      <select class="form-select @error('withholding_tax') is-invalid @enderror" name="withholding_tax">
+        @if ($user->profile->withholding_tax == 0.0 || null)
+        <option value="0.0" selected>0%</option>
+        <option value="0.75">75%</option>
+        <option value="100">100%</option>
+        @elseif($user->profile->withholding_tax == 0.75)
+        <option value="0.0">0%</option>
+        <option value="0.75" selected>75%</option>
+        <option value="100">100%</option>
+        @else
+        <option value="0.0">0%</option>
+        <option value="0.75">75%</option>
+        <option value="100" selected>100%</option>
+        @endif
+      </select>
+      <label for="Subcategory">Retencion de IVA</label>
+      @error('withholding_tax')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div> 
+      @enderror
+    </div>
+
     <div class="form-floating mb-3">
       <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name', $user->name)}}">
       <label for="floatingInput">Nombre de usuario</label>
