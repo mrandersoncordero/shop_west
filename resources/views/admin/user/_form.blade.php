@@ -50,6 +50,20 @@
 </div>
 
 <div class="form-floating mb-3">
+  <select name="withholding_tax" class="form-select @error('withholding_tax') is-invalid @enderror">
+    <option value="0.0" selected>0%</option>
+    <option value="0.75">75%</option>
+    <option value="100">100%</option>
+  </select>
+  <label for="Subcategory">Retencion de IVA</label>
+  @error('withholding_tax')
+  <div class="invalid-feedback">
+    {{ $message }}
+  </div> 
+  @enderror
+</div>
+
+<div class="form-floating mb-3">
   <input type="date" class="form-control @error('birthday_date') is-invalid @enderror " name="birthday_date" value="{{ old('birthday_date','')}}">
   <label for="floatingInput">Fecha de nacimiento</label>
   @error('birthday_date')
