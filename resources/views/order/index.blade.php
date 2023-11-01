@@ -12,12 +12,12 @@
   <header class="header_line" style="margin: 24px 0;">
     <h1>Mis pedidos</h1>
   </header>
-  <table id="myTable" class="display">
+  <table id="myTable" class="display ">
     <thead>
       <tr>
         <th>#</th>
         <th>Estado</th>
-        <th>Precio Total</th>
+        <th>Subtotal</th>
         <th>Fecha de creacion</th>
         <th>Actions</th>
       </tr>
@@ -29,7 +29,10 @@
         <td>{{ $order->status->name }}</td>
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
-        <td><button>actions</button> <button>ver</button></td>
+        <td>
+          <button>actions</button>
+          <a href="{{ route('order.edit', $order->id) }}">ver</a>
+        </td>
       </tr>
       @endforeach
     </tbody>
