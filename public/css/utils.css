@@ -248,3 +248,11 @@
 .margin-top-content {
   margin-top: 12px;
 }
+
+/*container_order_buy*/
+.container_order_buy {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  padding: 0px 12px;
+}
