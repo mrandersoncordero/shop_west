@@ -20,5 +20,10 @@ class Profile extends Model
         'withholding_tax',
     ];
     
+    public function full_name()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
     protected $table = 'profiles';
 }
