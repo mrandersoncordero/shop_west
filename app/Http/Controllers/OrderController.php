@@ -47,5 +47,12 @@ class OrderController extends Controller
         ]);
     }
 
-    
+    public function change_status_order(Request $request, Order $order)
+    {
+        $order->update([
+            'status_id' => $request->status_id,
+        ]);
+
+        return redirect()->route('orders.index');
+    }
 }
