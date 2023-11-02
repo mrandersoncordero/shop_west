@@ -98,6 +98,11 @@
               $total_price = $subtotal_with_iva - $withholding_tax;
             }
           }
+
+          // Formatea las variables para limitar a 2 decimales
+          $iva = number_format($iva, 2);
+          $igtf = number_format($igtf, 2);
+          $total_price = number_format($total_price, 2);
           @endphp
           <tr>
             <td>IVA</td>
