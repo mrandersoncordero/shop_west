@@ -2,110 +2,143 @@
 
 @section('head_content')
 <title>Dashboard</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 @endsection
 
 @section('content')
-<div class="home_content">
-    <div class="header_container">
-        <h1 class="text">Edit order</h1>
-    </div>
-    <form action="" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="">
-          <label for="floatingInput">Name</label>
-          @error('name')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
+<main class="home_content">
+  <div class="header_container">
+    <h1 class="text">Edit order <b>#{{ $order->id }}</b></h1>
+  </div>
 
-        <div class="form-floating mb-3">
-          <textarea class="form-control @error('description') is-invalid @enderror " name="description" rows="5"></textarea>
-          <label for="floatingTextarea">Description</label>
-          @error('description')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
+  <section class="container_product_buy_client">
 
-        
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" value="">
-          <label for="floatingInput">Code</label>
-          @error('code')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="form-floating mb-3">
-          <input type="number" class="form-control @error('weight') is-invalid @enderror " name="weight" value="">
-          <label for="floatingInput">Weight</label>
-          @error('weight')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control @error('format') is-invalid @enderror " name="format" value="">
-          <label for="floatingInput">Format</label>
-          @error('format')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control @error('yield') is-invalid @enderror " name="yield" value="">
-          <label for="floatingInput">Yield</label>
-          @error('yield')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control @error('traffic') is-invalid @enderror " name="traffic" value="">
-          <label for="floatingInput">Traffic</label>
-          @error('traffic')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="form-floating mb-3">
-          <input type="number" class="form-control @error('price') is-invalid @enderror " name="price" value="">
-          <label for="floatingInput">Price</label>
-          @error('price')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
-        
-        <div class="input-group mb-3">
-          <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
-          <label class="input-group-text" for="image">Upload</label>
-          @error('image')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div> 
-          @enderror
-        </div>
+    <article class="info_user">
+      {{-- Informacion del usuario --}}
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floating_username" value="{{ $order->user->profile->full_name() }}" disabled>
+        <label for="floating_username">Nombre de usuario</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floating_dni" value="{{ $order->user->profile->dni }}" disabled>
+        <label for="floating_dni">DNI</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" name="description" rows="5" id="floating_address" disabled>{{ $order->user->profile->address }}</textarea>
+        <label for="floating_address">Direccion</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floating_phone_number" value="{{ $order->user->profile->phone_number }}" disabled>
+        <label for="floating_phone_number">Numero de Telefono</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floating_withholding_tax" value="{{ $order->user->profile->withholding_tax }}" disabled>
+        <label for="floating_withholding_tax">Retencion de IVA</label>
+      </div>
+    </article>
 
-        <div style="display: flex; align-items: center;">
-            <input type="submit" value="Enviar" class="btn btn-primary">
-        </div>
-    </form>
-</div>   
+    <article class="data_order_buy">
+      <table id="table_detail_order" class="display table table-bordered">
+        <thead>
+          <tr>
+            <th>#code</th>
+            <th>Nombre del producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach ($order->order_products as $item)
+        <tr>
+          <th>{{ $item->product->code }}</th>
+          <th>{{ $item->product->name }}</th>
+          <th>{{ $item->quantity }}</th>
+          <th>{{ $item->product->price }}$</th>
+        </tr>
+        @endforeach
+        </tbody>
+      </table>
+
+      <table id="table_detail_order" class="display table table-bordered mt-4">
+        <thead>
+          <tr>
+            <th>Total Pedido</th>
+            <th>{{ $order->price_total }}$</th>
+          </tr>
+        </thead>
+        <tbody>
+          @php
+          $subtotal = $order->price_total;
+          $iva = ($order->price_total * 0.16);
+
+          $subtotal_with_iva = $subtotal + $iva;
+          
+          if ($order->payment_type_id == 2) {
+            /**
+            * si el tipo de pago es en divisas en efectivo 
+            * hacer operaciones con IGTF
+            */
+            $igtf = ($subtotal_with_iva * 0.03);
+
+            if($order->user->profile->withholding_tax == 100) {
+              $total_price = $subtotal_with_iva + $igtf - $iva;
+            }else{
+              $withholding_tax = $iva * $order->user->profile->withholding_tax;
+              $total_price = $subtotal_with_iva + $igtf - $withholding_tax;
+            }
+
+          }else{
+            
+            if($order->user->profile->withholding_tax == 100) {
+              $total_price = $subtotal_with_iva - $iva;
+            }else{
+              $withholding_tax = $iva * $order->user->profile->withholding_tax;
+              $total_price = $subtotal_with_iva - $withholding_tax;
+            }
+          }
+
+          // Formatea las variables para limitar a 2 decimales
+          $iva = number_format($iva, 2);
+          $igtf = number_format($igtf, 2);
+          $total_price = number_format($total_price, 2);
+          @endphp
+          <tr>
+            <td>IVA</td>
+            <th>{{ $iva }}$</th>
+          </tr>
+          @if ($order->payment_type_id == 2)
+          <tr>
+            <td>IGTF</td>
+            <th>{{ $igtf }}$</th>
+          </tr>    
+          @endif
+          <tr>
+            <th>Total a pagar</th>
+            <th>
+            {{ $total_price }}$
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+</main>   
+@endsection
+
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+  let table_detail_order = new DataTable("#table_detail_order", {
+    paging: false,
+    responsive: true,
+    info: false,
+    columnDefs: [
+        { targets: [0, 1, 2, 3], searchable: true }
+    ]
+  });
+</script>
 @endsection
