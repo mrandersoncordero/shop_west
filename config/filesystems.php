@@ -51,6 +51,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'proof_of_payment' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/proof_of_payment'),
+            'url' => env('APP_URL').'/proof_of_payment',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -79,6 +86,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('product') => storage_path('app/public/products'),
+        public_path('proof_of_payment') => storage_path('app/public/proof_of_payment'),
     ],
 
 ];
