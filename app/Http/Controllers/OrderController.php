@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +25,11 @@ class OrderController extends Controller
 
     public function view_edit(Order $order)
     {
+        $isset_payment = Payment::all()->where('order_id', $order->id);
         return view('order.edit', [
             'order' => $order,
             'categories' => Category::all(),
+            'isset_payment' => $isset_payment,
         ]);
     }
 
