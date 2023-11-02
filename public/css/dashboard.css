@@ -54,3 +54,10 @@
 .visible {
   visibility: visible;
 }
+
+/* detail order user */
+.container_product_buy_client {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+}
