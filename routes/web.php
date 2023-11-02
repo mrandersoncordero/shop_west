@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 // Laravel
@@ -37,6 +38,7 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
 
     Route::get('/my_orders', [OrderController::class, 'view_index'])->name('order.index');
     Route::get('/my_orders/{order}', [OrderController::class, 'view_edit'])->name('order.edit');
+    Route::resource('/store/payment', PaymentController::class)->except('edit', 'update', 'show');
 });
 
 /**
