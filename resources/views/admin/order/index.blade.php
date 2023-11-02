@@ -35,10 +35,30 @@
           @csrf
           @method('DELETE')
           <input 
-              type="submit" 
-              value="Eliminar" 
-              class=""
-              onclick="return confirm('Desea Eliminar?')"
+            type="submit" 
+            value="Eliminar" 
+            class=""
+            onclick="return confirm('Desea Eliminar?')"
+          >
+          </form>
+          <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
+          @csrf
+          @method('PUT')
+          <input type="hidden" value="1" name="status_id">
+          <input 
+            type="submit" 
+            value="Aprobar" 
+            class=""
+          >
+          </form>
+          <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
+          @csrf
+          @method('PUT')
+          <input type="hidden" value="3" name="status_id">
+          <input 
+            type="submit" 
+            value="Rechazar" 
+            class=""
           >
           </form>
         </td>
