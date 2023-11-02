@@ -30,7 +30,7 @@
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
         <td>
-          <a href="#" class="edit">Ver</a>
+          <a href="{{ route('orders.edit', $order)}}" class="edit">Ver</a>
           <form action="" method="POST">
           @csrf
           @method('DELETE')
