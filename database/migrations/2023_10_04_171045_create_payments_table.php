@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders');
             $table->string('bank_reference');
+            $table->string('file');
             $table->timestamps();
         });
     }
