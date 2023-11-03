@@ -256,3 +256,25 @@
   gap: 24px;
   padding: 0px 12px;
 }
+
+/* bart_status_order */
+.bart_status_order {
+  width: 80%;
+  padding: 2px 0px 2px 10%;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.in_process {
+  background-color: orange;
+}
+.approved {
+  background-color: green;
+}
+.rejected{
+  background-color: #ff0033;
+}
