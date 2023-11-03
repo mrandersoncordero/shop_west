@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<main style="margin-top: 100px; height: 100%">
+<main style="margin-top: 100px; height: 90vh">
   <header class="header_line" style="margin: 24px 0;">
     <h1>Mis pedidos</h1>
   </header>
@@ -26,7 +26,19 @@
       @foreach ($orders_by_user as $key => $order)
       <tr>
         <td>{{ $order->id }}</td>
-        <td>{{ $order->status->name }}</td>
+        <td>
+          <p class="bart_status_order
+          @if ($order->status->id == 1)
+          approved
+          @elseif($order->status->id == 2)
+          in_process
+          @else
+          rejected
+          @endif
+          ">
+            <span>{{ $order->status->name }}</span>
+          </p>
+        </td>
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
         <td>
