@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 use Illuminate\Validation\Rules\Password;
@@ -67,6 +69,8 @@ class UserController extends Controller
         ]);
         $profile->save();
 
+        Mail::to($user->email)->send(new WelcomeMail($user));
+        
         return redirect()->route('users.edit', $user);
     }
 
