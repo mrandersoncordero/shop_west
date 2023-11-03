@@ -16,10 +16,10 @@
 <main>
 
     <section class="product-section">
-        <header>
-            <h1 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Productos confiables de construcción y adhesivos<i class="fa-solid fa-quote-right quotes"></i></h1>
+        <header class="header_line" style="margin-bottom: 24px">
+            <h1>Productos confiables de construcción y adhesivos</h1>
         </header>
-        <article class="productos-destacados">
+        <article class="productos-destacados" style="padding-top: 12px">
             <div class="content">
                 <div class="titulo-destacado">
                     <div><i class="fa-solid fa-star"></i></div>
