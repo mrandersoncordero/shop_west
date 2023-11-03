@@ -35,7 +35,7 @@
             <i class="fa-solid fa-angle-right"></i>
           </div>
           <li>
-            <a href="{{ route('products_by_subcategory', $subcategory->id) }}">{{ $subcategory->name }}</a>
+            <a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="latest_section">{{ $subcategory->name }}</a>
           </li>
         </ul>
       </div>

@@ -29,7 +29,7 @@
             <i class="fa-solid fa-angle-right"></i>
           </div>
           <li>
-            <a href="{{ route('products_by_category', $category->id) }}">{{ $category->name }}</a>
+            <a href="{{ route('products_by_category', $category->id) }}" class="latest_section">{{ $category->name }}</a>
           </li>
         </ul>
       </div>
