@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/handelgothic-tl');
+                
 * {
 	padding:0;
 	margin:0;
@@ -31,10 +33,10 @@ body {
   background: var(--white);
 }
 a{
-    text-decoration: none;
+  text-decoration: none;
 }
 li {
-    list-style: none;
+  list-style: none;
 }
 
 p,
@@ -44,6 +46,10 @@ ul {
 }
 ul{
   padding-left: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HandelGothic TL', sans-serif;  
 }
 /* --- animacion para los href --- */
 .underline {
@@ -93,7 +99,6 @@ main {
   color: var(--blue);
   text-align: center;
   font-weight: 600;
-  text-shadow: 1px 1px 2px black;
   margin-bottom: 24px;
 }
 .quotes{
@@ -134,6 +139,7 @@ main {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'HandelGothicRegular', sans-serif !important;
 }
 .container-categories .category p a{
   height: 100%;
@@ -151,6 +157,7 @@ main {
   text-transform: uppercase;
   font-size: 2rem;
   margin-bottom: 12px;
+  font-weight: 500;
 }
 .productos-destacados .content #descripcion-producto {
   font-size: 1rem;
@@ -194,7 +201,7 @@ main {
 .productos-destacados .content .titulo-destacado h2 {
   text-transform: uppercase;
   color:#292929;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 2em;
 }
 /* Diana de productos destacados*/
