@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<main style="margin-top: 100px; height: 90vh">
+<main style="margin-top: 100px;">
   {{-- BANNER --}}
   <section class="container_cart_view">
     <header class="header_line">
