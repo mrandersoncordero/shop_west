@@ -26,17 +26,28 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->description }}</td>
                 <td>
-                    <a href="{{ route('categories.edit', $category) }}" class="edit">Editar</a>
-                    <form action="{{ route('categories.destroy', $category) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input 
-                        type="submit" 
-                        value="Eliminar" 
-                        class=""
-                        onclick="return confirm('Desea Eliminar?')"
-                    >
-                    </form>
+                    <div class="dropdown">
+                        <a class="btn " href="#" data-bs-toggle="dropdown">
+                          <img src="{{ asset('icons/elipsis.svg')}}" alt="">
+                        </a>
+
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="{{ route('categories.edit', $category) }}" class="dropdown-item">Editar</a></li>
+                          <li>
+                            <form action="{{ route('categories.destroy', $category) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input 
+                                    type="submit" 
+                                    value="Eliminar" 
+                                    class="dropdown-item"
+                                    onclick="return confirm('Desea Eliminar?')"
+                                >
+                            </form>
+                          </li>
+                        </ul>
+                    </div>
                 </td>
             </tr>
             @empty

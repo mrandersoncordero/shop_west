@@ -34,37 +34,50 @@
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
         <td>
-          <a href="{{ route('orders.edit', $order)}}" class="edit">Ver</a>
-          <form action="" method="POST">
-          @csrf
-          @method('DELETE')
-          <input 
-            type="submit" 
-            value="Eliminar" 
-            class=""
-            onclick="return confirm('Desea Eliminar?')"
-          >
-          </form>
-          <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
-          @csrf
-          @method('PUT')
-          <input type="hidden" value="1" name="status_id">
-          <input 
-            type="submit" 
-            value="Aprobar" 
-            class=""
-          >
-          </form>
-          <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
-          @csrf
-          @method('PUT')
-          <input type="hidden" value="3" name="status_id">
-          <input 
-            type="submit" 
-            value="Rechazar" 
-            class=""
-          >
-          </form>
+          <div class="dropdown">
+              <a class="btn " href="#" data-bs-toggle="dropdown">
+                <img src="{{ asset('icons/elipsis.svg')}}" alt="">
+              </a>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ route('orders.edit', $order)}}" class="dropdown-item">Editar</a></li>
+                <li>
+                  <form action="" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <input 
+                          type="submit" 
+                          value="Eliminar" 
+                          class="dropdown-item"
+                          onclick="return confirm('Desea Eliminar?')"
+                      >
+                  </form>
+                  <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" value="1" name="status_id">
+                      <input 
+                          type="submit" 
+                          value="Aprobar" 
+                          class="dropdown-item"
+                          onclick="return confirm('Desea cambair el estado de la orden a aprobado?')"
+                      >
+                  </form>
+                  <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" value="3" name="status_id">
+                      <input 
+                          type="submit" 
+                          value="Rechazar" 
+                          class="dropdown-item"
+                          onclick="return confirm('Desea cambair el estado de la orden a rechazado?')"
+                      >
+                  </form>
+                </li>
+              </ul>
+          </div>
         </td>
       </tr>
       @empty

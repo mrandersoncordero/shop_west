@@ -30,17 +30,28 @@
         <td>{{ '@'.$user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
-          <a href="{{ route('users.edit', $user->id) }}" class="edit">Ver</a>
-          <form action="{{ route('users.destroy', $user) }}" method="POST">
-          @csrf
-          @method('DELETE')
-          <input 
-            type="submit" 
-            value="Eliminar" 
-            class=""
-            onclick="return confirm('Desea Eliminar?')"
-          >
-          </form>
+          <div class="dropdown">
+              <a class="btn " href="#" data-bs-toggle="dropdown">
+                <img src="{{ asset('icons/elipsis.svg')}}" alt="">
+              </a>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{ route('users.edit', $user->id) }}" class="dropdown-item">Editar</a></li>
+                <li>
+                  <form action="{{ route('users.destroy', $user) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <input 
+                          type="submit" 
+                          value="Eliminar" 
+                          class="dropdown-item"
+                          onclick="return confirm('Desea Eliminar?')"
+                      >
+                  </form>
+                </li>
+              </ul>
+          </div>
         </td>
       </tr>
       @empty

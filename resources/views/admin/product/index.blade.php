@@ -41,12 +41,28 @@
                     <td><a href="{{ asset("product/$product->image") }}">{{ $product->image }}</a></td>
                     <td>{{ $product->created_at }}</td>
                     <td>
-                        <a href="{{ route('products.edit', $product) }}" class="edit">Editar</a>
-                        <form action="{{ route('products.destroy', $product) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Eliminar" onclick="return confirm('Desea Eliminar?')">
-                        </form>
+                        <div class="dropdown">
+                            <a class="btn " href="#" data-bs-toggle="dropdown">
+                              <img src="{{ asset('icons/elipsis.svg')}}" alt="">
+                            </a>
+    
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="{{ route('products.edit', $product) }}" class="dropdown-item">Editar</a></li>
+                              <li>
+                                <form action="{{ route('products.destroy', $product) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input 
+                                        type="submit" 
+                                        value="Eliminar" 
+                                        class="dropdown-item"
+                                        onclick="return confirm('Desea Eliminar?')"
+                                    >
+                                </form>
+                              </li>
+                            </ul>
+                        </div>
                     </td>
                 </tr>
             @empty
