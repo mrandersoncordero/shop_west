@@ -69,9 +69,9 @@
           </form>
         @else
           <div class="container mt-4">
+            <p>El metodo de pago de esta orden de compra es: <b>{{ $order->payment_type->name}}</b></p>
             <p>Estamos comprobando tu pago, uno de nuestros administradores se pondra en contacto contigo al comprobar dicho pago.</p>
             <div>
-              <p>El metodo de pago de esta orden de compra es: <b>{{ $order->payment_type->name}}</b></p>
               @foreach ($isset_payment as $item)
               <p><b>Referencia bancaria:</b> {{$item->bank_reference }}</p>
               <a href="{{ asset("proof_of_payment/$item->file" )}}">comprobante de pago</a>
