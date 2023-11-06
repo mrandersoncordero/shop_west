@@ -16,6 +16,7 @@
         <th>#</th>
         <th>Nombre de usuario</th>
         <th>Estado</th>
+        <th>Tipo de pago</th>
         <th>Precio Total</th>
         <th>Fecha de creacion</th>
         <th>Actions</th>
@@ -27,6 +28,7 @@
         <td>{{ $order->id }}</td>
         <td>{{ '@'.$order->user->name }}</td>
         <td>{{ $order->status->name }}</td>
+        <td>{{ $order->payment_type->name }}</td>
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
         <td>
