@@ -2,6 +2,8 @@
 
 @section('head_content')
 <title>Dashboard</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
 @section('content')
@@ -10,7 +12,7 @@
         <h1 class="text">Categories and subcategories</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
-    <table class="table table-hover">
+    <table class="table table-bordered table-hover" id="table_category">
         <thead>
             <tr>
               <th scope="col">Name</th>
@@ -18,29 +20,31 @@
               <th scope="col">Actions</th>
             </tr>
         </thead>
-    @forelse ($categories as $category)
-        <tr class="">
-            <td class="">{{ $category->name }}</td>
-            <td class="">{{ $category->description }}</td>
-            <td>
-                <a href="{{ route('categories.edit', $category) }}" class="edit">Editar</a>
-                <form action="{{ route('categories.destroy', $category) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input 
-                    type="submit" 
-                    value="Eliminar" 
-                    class=""
-                    onclick="return confirm('Desea Eliminar?')"
-                >
-                </form>
-            </td>
-        </tr>
-    @empty
-        <div class="p-6 text-gray-900">
-            {{ __("Sin datos") }}
-        </div>
-    @endforelse
+        <tbody>
+            @forelse ($categories as $category)
+            <tr>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->description }}</td>
+                <td>
+                    <a href="{{ route('categories.edit', $category) }}" class="edit">Editar</a>
+                    <form action="{{ route('categories.destroy', $category) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input 
+                        type="submit" 
+                        value="Eliminar" 
+                        class=""
+                        onclick="return confirm('Desea Eliminar?')"
+                    >
+                    </form>
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="3">Sin datos</td>
+            </tr>
+            @endforelse
+        </tbody>
   </table>
 
 
@@ -58,4 +62,17 @@
         </form>
     </div>
 </div>    
+@endsection
+
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+  let table_category = new DataTable("#table_category", {
+    responsive: true,
+    columnDefs: [
+        { targets: [0, 1, 2], searchable: true }
+    ]
+  });
+</script>
 @endsection

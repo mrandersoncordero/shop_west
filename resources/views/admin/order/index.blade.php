@@ -2,6 +2,8 @@
 
 @section('head_content')
 <title>Dashboard</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
 @section('content')
@@ -10,7 +12,7 @@
     <h1 class="text">Ordenes de usuarios</h1>
     {{-- <button id="buttonModal" class="btn btn-primary">Crear</button> --}}
   </div>
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered" id="table_order">
     <thead>
       <tr>
         <th>#</th>
@@ -89,4 +91,17 @@
         </form>
     </div>
 </div>    
+@endsection
+
+@section('scripts')
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+  <script>
+    let table_order = new DataTable("#table_order", {
+      responsive: true,
+      columnDefs: [
+          { targets: [0, 1, 2, 3, 4, 5], searchable: true }
+      ]
+    });
+  </script>
 @endsection

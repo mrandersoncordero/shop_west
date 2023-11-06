@@ -2,6 +2,7 @@
 
 @section('head_content')
 <title>Dashboard - Products</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 @endsection
 
 @section('content')
@@ -10,57 +11,54 @@
         <h1 class="text">Products</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered" id="table-product">
         <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Code</th>
-              <th scope="col">Name</th>
-              <th scope="col">Weight</th>
-              <th scope="col">Format</th>
-              <th scope="col">Yield</th>
-              <th scope="col">Traffic</th>
-              <th scope="col">Price</th>
-              <th scope="col">Image</th>
-              <th scope="col">Created_at</th>
-              <th scope="col">Actions</th>
+                <th scope="col">#</th>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Format</th>
+                <th scope="col">Yield</th>
+                <th scope="col">Traffic</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Created_at</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
-    @forelse ($products as $product)
-        <tr class="">
-            <td class="">{{ $product->id }}</td>
-            <td class="">{{ $product->code }}</td>
-            <td class="">{{ $product->name }}</td>
-            <td class="">{{ $product->weight }}</td>
-            <td class="">{{ $product->format }}</td>
-            <td class="">{{ $product->yield }}</td>
-            <td class="">{{ $product->traffic }}</td>
-            <td class="">{{ $product->price }}</td>
-            <td class=""><a href="{{ asset("product/$product->image" )}}">{{ $product->image }}</a></td>
-            <td class="">{{ $product->created_at }}</td>
-            <td>
-                <a href="{{ route('products.edit', $product) }}" class="edit">Editar</a>
-                <form action="{{ route('products.destroy', $product) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input 
-                    type="submit" 
-                    value="Eliminar" 
-                    class=""
-                    onclick="return confirm('Desea Eliminar?')"
-                >
-                </form>
-            </td>
-        </tr>
-    @empty
-        <div class="p-6 text-gray-900">
-            {{ __("Sin datos") }}
-        </div>
-    @endforelse
-  </table>
+        <tbody>
+            @forelse ($products as $product)
+                <tr>
+                    <td>{{ $product->id }}</td>
+                    <td>{{ $product->code }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->weight }}</td>
+                    <td>{{ $product->format }}</td>
+                    <td>{{ $product->yield }}</td>
+                    <td>{{ $product->traffic }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td><a href="{{ asset("product/$product->image") }}">{{ $product->image }}</a></td>
+                    <td>{{ $product->created_at }}</td>
+                    <td>
+                        <a href="{{ route('products.edit', $product) }}" class="edit">Editar</a>
+                        <form action="{{ route('products.destroy', $product) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar" onclick="return confirm('Desea Eliminar?')">
+                        </form>
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="11">Sin datos</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
 </div>
 
-<div id="modal" class="modal-container" @if($errors->has('name') || $errors->has('description') || $errors->has('code') || $errors->has('weight') || $errors->has('format') || $errors->has('yield') || $errors->has('traffic') || $errors->has('price') || $errors->has('image')) style="visibility: visible;" @endif>
+<div id="modal" class="modal-container" @if($errors->any()) style="visibility: visible;" @endif>
     <div class="modal_content">
         <div class="modal_header">
             <div>
@@ -72,5 +70,20 @@
             @include('admin.product._form')
         </form>
     </div>
-</div>    
+</div>
+@endsection
+
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        let table = $('#table-product').DataTable({
+            responsive: true,
+            columnDefs: [
+                { targets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], searchable: true }
+            ]
+        });
+    });
+</script>
 @endsection

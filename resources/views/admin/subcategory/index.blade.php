@@ -2,6 +2,8 @@
 
 @section('head_content')
 <title>Dashboard - Subcategories</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
 @section('content')
@@ -10,7 +12,7 @@
         <h1 class="text">Subcategories</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered" id="table_subcategory">
         <thead>
             <tr>
               <th scope="col">Name</th>
@@ -19,30 +21,30 @@
               <th scope="col">Actions</th>
             </tr>
         </thead>
-    @forelse ($subcategories as $subcategory)
-        <tr class="">
-            <td class="">{{ $subcategory->name }}</td>
-            <td class="">{{ $subcategory->description }}</td>
-            <td class="">{{ $subcategory->category->name }}</td>
-            <td>
-                <a href="{{ route('subcategories.edit', $subcategory) }}" class="edit">Editar</a>
-                <form action="{{ route('subcategories.destroy', $subcategory) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input 
-                    type="submit" 
-                    value="Eliminar" 
-                    class=""
-                    onclick="return confirm('Desea Eliminar?')"
-                >
-                </form>
-            </td>
-        </tr>
-    @empty
-        <div class="p-6 text-gray-900">
-            {{ __("Sin datos") }}
-        </div>
-    @endforelse
+        @forelse ($subcategories as $subcategory)
+            <tr class="">
+                <td class="">{{ $subcategory->name }}</td>
+                <td class="">{{ $subcategory->description }}</td>
+                <td class="">{{ $subcategory->category->name }}</td>
+                <td>
+                    <a href="{{ route('subcategories.edit', $subcategory) }}" class="edit">Editar</a>
+                    <form action="{{ route('subcategories.destroy', $subcategory) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input 
+                        type="submit" 
+                        value="Eliminar" 
+                        class=""
+                        onclick="return confirm('Desea Eliminar?')"
+                    >
+                    </form>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="4">Sin datos</td>
+            </tr>
+        @endforelse
   </table>
 
 
@@ -60,4 +62,19 @@
         </form>
     </div>
 </div>    
+@endsection
+
+@section('scripts')
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+  <script>
+    let table_subcategory = new DataTable("#table_subcategory", {
+      paging: false,
+      responsive: true,
+      info: false,
+      columnDefs: [
+          { targets: [0, 1, 2], searchable: true }
+      ]
+    });
+  </script>
 @endsection
