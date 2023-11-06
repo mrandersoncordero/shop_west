@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<main style="margin-top: 100px">
+<main style="margin-top: 100px; height: 90vh">
   {{-- BANNER --}}
   <section class="container_cart_view">
     <header class="header_line">
@@ -72,7 +72,7 @@
       </section>
       <section class="content_confirt_purchase">
         
-        <div class="container">
+        <div class="container mt-4">
           <div>
             <p>Total a pagar: <b>{{ $price_total }}$</b></p>
           </div>
@@ -93,7 +93,7 @@
               </div> 
               @enderror
             </div>
-            <button type="submit">Comfirmar compra</button>
+            <button type="submit" class="mt-4 btn btn-secondary">Comfirmar compra</button>
           </form>
 
         </div>
