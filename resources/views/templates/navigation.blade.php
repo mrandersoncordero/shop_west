@@ -52,7 +52,7 @@
       <span class="tooltip">Orders</span>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ route('payments.index') }}">
         <i class='bx bx-dollar' ></i>
         <span class="link_name">Payments</span>
       </a>
