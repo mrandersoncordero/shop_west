@@ -101,8 +101,10 @@
           }
 
           // Formatea las variables para limitar a 2 decimales
+          if ($order->payment_type_id == 2) {
+            $igtf = number_format($igtf, 2);
+          }
           $iva = number_format($iva, 2);
-          $igtf = number_format($igtf, 2);
           $total_price = number_format($total_price, 2);
           @endphp
           <tr>
