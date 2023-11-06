@@ -10,7 +10,7 @@
     <!-- Contenedor principal con margen inferior y color de texto gris -->
     <div style="margin-bottom: 4px; background-color: #f7f7f7; text-align: center; font-weight: bold; padding: 16px; display: flex; flex-direction: column; align-items: center;">
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <img src="https://www.pegoccidente.com/_nuxt/img/logo-white.42e7c10.png" alt="Logo de la tienda" style="max-width: 200px;" />
+        <img src="{{ asset('images/logo.png')}}" alt="Logo de la tienda" style="max-width: 200px;" />
       </div>
     </div>
 
