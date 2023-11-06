@@ -15,4 +15,9 @@ class Payment extends Model
         'bank_reference',
         'file',
     ];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }
