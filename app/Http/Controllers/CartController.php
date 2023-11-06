@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CreateOrderMail;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\PaymentType;
@@ -9,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductsOfOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -184,7 +186,9 @@ class CartController extends Controller
             }
             
             session()->forget('cart');
-
+            
+            Mail::to('acorderofigueroa7@gmail.com')->send(new CreateOrderMail($user, $order));
+            
             return redirect()->route('index')->with('success', 'Orden creada');
         }else{
             return redirect()->route('login');
