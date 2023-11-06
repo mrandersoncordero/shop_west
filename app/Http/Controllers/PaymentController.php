@@ -12,6 +12,13 @@ class PaymentController extends Controller
 {
     //
 
+    public function index()
+    {
+        return view('admin.payment.index', [
+            'payments' => Payment::all(),
+        ]);
+    }
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -55,4 +62,6 @@ class PaymentController extends Controller
 
         return redirect()->route('order.index');
     }
+
+
 }
