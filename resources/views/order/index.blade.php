@@ -19,6 +19,7 @@
         <th>Estado</th>
         <th>Subtotal</th>
         <th>Fecha de creacion</th>
+        <th>Metodo de pago</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -41,9 +42,9 @@
         </td>
         <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
+        <td>{{ $order->payment_type->name }}</td>
         <td>
-          <button>actions</button>
-          <a href="{{ route('order.edit', $order->id) }}">ver</a>
+          <a href="{{ route('order.edit', $order->id) }}"><i class="fa-solid fa-eye"></i></a>
         </td>
       </tr>
       @endforeach
