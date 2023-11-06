@@ -36,6 +36,9 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
     Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
     Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
+    /**
+     * Rutas de mis ordenes de compra
+     */
     Route::get('/my_orders', [OrderController::class, 'view_index'])->name('order.index');
     Route::get('/my_orders/{order}', [OrderController::class, 'view_edit'])->name('order.edit');
     Route::resource('/store/payment', PaymentController::class)->except('edit', 'update', 'show');
@@ -56,6 +59,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('dashboard/orders', OrderController::class)->except('show', 'create', 'store');
     Route::put('dashboard/orders/change_status/{order}', [OrderController::class, 'change_status_order'])->name('orders.change_status_order');
     Route::resource('dashboard/users', UserController::class)->except('show', 'create');
+
+    Route::resource('dashboard/payments', PaymentController::class)->except('show', 'store', 'destroy', 'edit', 'update');
 });
 
 Route::middleware('auth')->group(function () {
