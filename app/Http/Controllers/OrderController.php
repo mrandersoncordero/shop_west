@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ChangeOrderStatusMail;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -55,6 +57,8 @@ class OrderController extends Controller
         $order->update([
             'status_id' => $request->status_id,
         ]);
+        
+        Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
 
         return redirect()->route('orders.index');
     }
