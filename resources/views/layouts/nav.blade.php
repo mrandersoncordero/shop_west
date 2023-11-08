@@ -89,7 +89,7 @@
 
           {{-- ICON TRUCK --}}
           <div class="icon_truck">
-            <button><i class="fa-solid fa-truck"></i></button>
+            <button id="button_truck"><i class="fa-solid fa-truck" ></i></button>
             @if(session()->has('cart'))
                 @php
                     $count = 0;
@@ -99,6 +99,60 @@
                     <span>{{ $count += $item['quantity']}}</span>
                 @endforeach
             @endif
+            <aside class="container_cart--menu inactive" id="container_truck_menu">
+                <div class="title-container">
+                  <img src="{{ asset('icons/flechita.svg') }}" alt="arrow">
+                  <p class="title">My order</p>
+                </div>
+                <div class="my-order-content">
+                    <div class="content-detail">
+                        @php
+                            $price_total = 0;
+                        @endphp
+                        @foreach ($cart_products as $item)
+                        {{-- listar productos del carrito --}}
+                        <div class="shopping-cart">
+                            {{-- imagen --}}
+                            <figure>
+                                <img src="{{ asset("product/{$item['product']->image}") }}" alt="{{ $item['product']->name }}">
+                            </figure>
+                            <div>
+                                <p>{{ $item['product']->name }}</p>
+                                <p>{{ $item['product']->price}}$</p>
+                            </div>
+                            <form action="{{ route('cart.remove', $item['product']->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">
+                                    <img src="{{ asset('icons/close.svg') }}" alt="close">
+                                </button>
+                            </form>
+                        </div>
+                        @php
+                        if ($item['quantity'] > 1) {
+                          $price_item = $item['quantity'] * $item['product']->price;
+                          $price_total += $price_item;
+                        }else{
+                          $price_total += $item['product']->price;
+                        }
+                        @endphp
+
+                        @endforeach
+                    </div>
+                    <div class="order">
+                        <p>
+                          <span class="span_total">Total</span>
+                        </p>
+                        <p>{{ $price_total }}$</p>
+                    </div>
+
+                    <a href="{{ route('cart.index') }}" class="link_detail_cart">Ver detalle del carrito</a>
+
+                    <a href="{{ route('cart.index') }}" class="primary-button">
+                        Confirmar
+                    </a>
+                </div>
+            </aside>
           </div>
           <div class="icon-bars">
               <ion-icon name="reorder-four-outline" id="icon-hamburguer"></ion-icon>
