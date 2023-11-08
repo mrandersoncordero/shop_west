@@ -376,6 +376,119 @@
   background: #efefef;
 }
 
+
+/* container cart menu*/
+.container_cart--menu {
+  position: absolute;
+  max-width: 360px;
+  width: 360px;
+  padding: 24px 12px;
+  top: 32px;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content-detail {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.container_cart--menu .title-container {
+  display: flex;
+  margin-bottom: 12px;
+}
+.container_cart--menu .title-container img {
+  transform: rotate(180deg);
+  margin-right: 14px;
+}
+.container_cart--menu .title {
+  font-weight: bold;
+}
+.container_cart--menu .shopping-cart {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+  
+}
+.container_cart--menu .shopping-cart figure {
+  margin: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.container_cart--menu .shopping-cart figure img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.container_cart--menu .shopping-cart form button {
+  border: 0px !important;
+  cursor: pointer;
+}
+.container_cart--menu .shopping-cart p:nth-child(2) {
+  color: #c7c7c7;
+}
+.container_cart--menu .shopping-cart p:nth-child(3) {
+  font-weight: bold;
+}
+
+.container_cart--menu .order {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  background-color: #F7F7F7;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+.container_cart--menu .order p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.container_cart--menu .order p .span_total:nth-child(1) {
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+}
+.container_cart--menu .order p:nth-child(2) {
+  text-align: end;
+  font-weight: bold;
+}
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff0033 !important;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff !important;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+}
+.link_detail_cart {
+  display: inline-block;
+  width: 100%;
+  padding: 0 4px 4px 0;
+  text-align: right;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: bold;
+  color: rgb(0, 136, 255);
+}
+@media (max-width: 640px) {
+  .container_cart--menu {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1280px) {
   .submenu-subcategoria div ul li a  {
       font-size: .8rem;
