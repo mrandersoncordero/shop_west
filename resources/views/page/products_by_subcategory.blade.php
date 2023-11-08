@@ -67,7 +67,3 @@
 
 @include('templates.footer')
 @endsection
-
-@section('scripts')
-  <script src="{{ asset('js/message.js') }}"></script>
-@endsection
