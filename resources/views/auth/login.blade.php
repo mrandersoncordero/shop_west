@@ -1,47 +1,61 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Productos Occidente - Iniciar sesion</title>
 
-    <form method="POST" action="{{ route('login') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+    body{
+      background-color: rgb(243 244 246 / 1);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container d-flex align-items-center" style="height: 100vh;">
+    <div class="pt-4 d-flex flex-column align-items-center mx-auto my-auto" style="max-width: 500px;" >
+      <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-75">
+
+      <form method="POST" action="{{ route('login') }}" class="form-control p-4">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <!-- email -->
+        <div class="form-group mb-3">
+          <label for="correo_electronico">Correo electronico</label>
+          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="correo_electronico" required>
+          @error('email')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
+        </div>
+        
+        <!-- password -->
+        <div class="form-group">
+          <label for="contraseña">Contraseña</label>
+          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="contraseña" required>
+          @error('password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="pt-4 d-flex flex-row justify-content-end align-items-center" style="gap: 20px">
+          <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
+          <button type="submit" class="btn btn-secondary">Iniciar sesion</button>
         </div>
+        
+      </form>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+    </div>
+  </main>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+</html>
