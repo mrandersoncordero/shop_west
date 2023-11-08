@@ -56,7 +56,7 @@
           </div>
           {{-- ICON USER --}}
           <div class="icon-user">
-            <a href="#" id="action_menu_user"><i class="fa-solid fa-user"></i></a>
+            <button id="action_menu_user"><i class="fa-solid fa-user"></i></button>
             {{-- DROPDOWN MENU USER --}}
             <div class="menu_user inactive">
                 @auth
@@ -89,7 +89,7 @@
 
           {{-- ICON TRUCK --}}
           <div class="icon_truck">
-            <a href="#"><i class="fa-solid fa-truck"></i></a>
+            <button><i class="fa-solid fa-truck"></i></button>
             @if(session()->has('cart'))
                 @php
                     $count = 0;
