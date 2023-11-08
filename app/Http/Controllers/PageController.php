@@ -11,17 +11,23 @@ class PageController extends Controller
 {
     public function index() {
         $categories = Category::all();
+
+        $cart = new CartController();
         return view('page.index', [
             'products' => Product::take(5)->get(),
             'categories' => $categories,
+            'cart_products' => $cart->show_products()
         ]);
     }
 
     public function products_view() {
         $categories = Category::all();
+
+        $cart = new CartController();
         return view('page.products', [
             'products' => Product::all(),
             'categories' => $categories,
+            'cart_products' => $cart->show_products()
         ]);
     }
 
@@ -29,7 +35,8 @@ class PageController extends Controller
     {
         $product = Product::find($id);
         $categories = Category::all();
-        
+        $cart = new CartController();
+
         if (!$product) {
             return redirect()->route('error.page');
         }
@@ -37,6 +44,7 @@ class PageController extends Controller
         return view('page.product_detail', [
             'product' => $product,
             'categories' => $categories,
+            'cart_products' => $cart->show_products()
         ]);
     }
 
@@ -44,10 +52,12 @@ class PageController extends Controller
     {
         $category = Category::find($id);
         $categories = Category::all();
+        $cart = new CartController();
 
         return view('page.products_by_category', [
             'category' => $category,
             'categories' => $categories,
+            'cart_products' => $cart->show_products()
         ]);
     }
 
@@ -55,10 +65,12 @@ class PageController extends Controller
     {
         $subcategory = Subcategory::find($id);
         $categories = Category::all();
+        $cart = new CartController();
 
         return view('page.products_by_subcategory', [
             'subcategory' => $subcategory,
             'categories' => $categories,
+            'cart_products' => $cart->show_products()
         ]);
     }
 }
