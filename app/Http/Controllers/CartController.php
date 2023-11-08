@@ -38,7 +38,8 @@ class CartController extends Controller
                 return view('cart.index', [
                     'products' => $products,
                     'categories' => Category::all(),
-                    'payment_types' => PaymentType::all()
+                    'payment_types' => PaymentType::all(),
+                    'cart_products' => $this->show_products()
                 ]);
             }else{
                 return view('cart.index', [
@@ -210,6 +211,35 @@ class CartController extends Controller
                 'title' => 'Pedido creado con exito',
                 'content' => 'Nuestros administradores revisaran tu pedido.'
             ]);
+        }else{
+            return redirect()->route('login');
+        }
+    }
+
+    public function show_products()
+    {
+        if (Auth::check()) {
+            $cart = session('cart', []);
+            $products = array();
+            if ($cart) {
+                
+                foreach ($cart as $key => $value) {
+                    $product = Product::find($value['product_id']);
+    
+                    if (!$product) {
+                        echo 'error';
+                    }else{
+                        $products[$key] = [
+                            'product' => $product,
+                            'quantity' => $value['quantity'],
+                        ];
+                    }
+                }
+                //dd($products);
+                return $products;
+            }else{
+                return $products;
+            }
         }else{
             return redirect()->route('login');
         }
