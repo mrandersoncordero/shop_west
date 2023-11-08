@@ -8,6 +8,10 @@
 
 @section('content')
 <main style="margin-top: 100px;">
+  {{-- incluir message --}}
+  @if (session('message'))
+  @include('templates.message')
+  @endif
   {{-- BANNER --}}
   <section class="container_cart_view">
     <header class="header_line">
@@ -113,4 +117,5 @@
 
 @section('scripts')
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/message.js') }}"></script>
 @endsection
