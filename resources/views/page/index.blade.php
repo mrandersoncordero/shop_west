@@ -14,6 +14,10 @@
 </div>
   
 <main>
+    {{-- incluir message --}}
+    @if (session('message'))
+    @include('templates.message')
+    @endif
 
     <section class="product-section">
         <header class="header_line" style="margin-bottom: 24px">

@@ -9,6 +9,10 @@
 
 @section('content')
   <main style="margin-top: 5%">
+    {{-- incluir message --}}
+    @if (session('message'))
+    @include('templates.message')
+    @endif
     <section class="banner-top" style="background-image: url({{ asset('images/banner_pego.png') }});">
     </section>
 
