@@ -218,9 +218,9 @@ class CartController extends Controller
 
     public function show_products()
     {
+        $products = array();
         if (Auth::check()) {
             $cart = session('cart', []);
-            $products = array();
             if ($cart) {
                 
                 foreach ($cart as $key => $value) {
@@ -241,7 +241,7 @@ class CartController extends Controller
                 return $products;
             }
         }else{
-            return redirect()->route('login');
+            return $products;
         }
     }
 }
