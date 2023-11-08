@@ -65,5 +65,16 @@
       </a>
       <span class="tooltip">Users</span>
     </li>
+    <li>
+      <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit">
+          <i class='bx bx-log-out-circle'></i>
+        <span class="link_name">Cerrar sesion</span>
+        </button>
+      </form>
+      </a>
+      <span class="tooltip">Cerrar sesion</span>
+    </li>
   </ul>
 </nav>
