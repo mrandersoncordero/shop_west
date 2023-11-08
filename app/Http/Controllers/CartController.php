@@ -85,7 +85,11 @@ class CartController extends Controller
             }
 
             session(['cart' => $cart]);
-            return back()->with('success', 'Producto agregado al carrito');
+            return back()->with('message', [
+                'class' => 'border_color-success',
+                'title' => 'Producto agregado al carrito',
+                'content' => 'El producto "'.mb_strtolower($product->name, 'UTF-8').'" ha sido agregado satisfactoriamente.'
+            ]);
         } else {
             // El usuario no está autenticado, redirige a la página de inicio de sesión
             return redirect()->route('login');
@@ -108,7 +112,11 @@ class CartController extends Controller
             }
 
             session(['cart' => $cart]);
-            return back()->with('success', 'Producto actualizado en el carrito');
+            return back()->with('message', [
+                'class' => 'border_color-update',
+                'title' => 'Modificacion',
+                'content' => 'La cantidad del producto se ha actualizado.'
+            ]);
         }else{
             // El usuario no está autenticado, redirige a la página de inicio de sesión
             return redirect()->route('login');  
@@ -133,8 +141,11 @@ class CartController extends Controller
 
             // Acctualiza el carrito en la sesión
             session(['cart' => $cart]);
-    
-            return redirect()->route('cart.index'); // Redirige de nuevo a la página del carrito
+            return back()->with('message', [
+                'class' => 'border_color-destroy',
+                'title' => 'Producto removido.',
+                'content' => 'El producto ha sido removido sin problemas'
+            ]);
         } else {
             // El usuario no está autenticado, redirige a la página de inicio de sesión
             return redirect()->route('login');
@@ -147,7 +158,11 @@ class CartController extends Controller
             session()->forget('cart');
             
             // Redirige a la página del carrito vacío u a donde desees
-            return back()->with('success', 'Carrito vaciado correctamente');
+            return back()->with('message', [
+                'class' => 'border_color-clear',
+                'title' => 'Vaciar carrito.',
+                'content' => 'El carrito ha sido vaciado correctamente.'
+            ]);
         } else {
             // El usuario no está autenticado, redirige a la página de inicio de sesión
             return redirect()->route('login');
@@ -189,7 +204,12 @@ class CartController extends Controller
             
             Mail::to('acorderofigueroa7@gmail.com')->send(new CreateOrderMail($user, $order));
             
-            return redirect()->route('index')->with('success', 'Orden creada');
+            
+            return back()->with('message', [
+                'class' => 'border_color-success',
+                'title' => 'Pedido creado con exito',
+                'content' => 'Nuestros administradores revisaran tu pedido.'
+            ]);
         }else{
             return redirect()->route('login');
         }
