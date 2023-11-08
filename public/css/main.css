@@ -23,13 +23,9 @@
 	--lg: 3rem;
 }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('fonts/Roboto-Regular.ttf') format('truetype');
-}
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   background: var(--white);
 }
 a{
@@ -50,6 +46,9 @@ ul{
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'HandelGothic TL', sans-serif;  
+}
+.hidden {
+  visibility: hidden;
 }
 /* --- animacion para los href --- */
 .underline {
