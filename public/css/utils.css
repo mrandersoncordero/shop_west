@@ -278,3 +278,56 @@
 .rejected{
   background-color: #ff0033;
 }
+/* message */
+.container_message {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  width: 340px;
+  gap: 8px;
+  height: 80px;
+  border: 1px solid #00000038;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.container_message .content {
+  padding: 6px;
+}
+.container_message .content .cont_title {
+  font-size: .9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.container_message .content .message_description p {
+  font-size: .8rem;
+}
+.border_color-success {
+  border-left: 10px solid green;
+}
+.border_color-destroy {
+  border-left: 10px solid red;
+}
+.border_color-update {
+  border-left: 10px solid rgb(255, 94, 0);
+}
+.border_color-clear {
+  border-left: 10px solid rgb(181, 188, 181);
+}
+.container_close--message {
+  padding-right: 8px;
+}
+
+.container_message span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.container_message:hover{
+  background-color: #efefef;
+}
