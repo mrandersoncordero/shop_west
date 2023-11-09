@@ -6,6 +6,7 @@ use App\Mail\ChangeOrderStatusMail;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Payment;
+use App\Http\Controllers\CartController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -16,22 +17,26 @@ class OrderController extends Controller
     public function view_index()
     {
         $user = Auth::user();
+        $cart = new CartController();
 
         $orders_by_user = Order::all()->where('user_id', $user->id);
 
         return view('order.index', [
             'orders_by_user' => $orders_by_user,
             'categories' => Category::all(),
+            'cart_products' => $cart->show_products()
         ]);
     }
 
     public function view_edit(Order $order)
     {
+        $cart = new CartController();
         $isset_payment = Payment::all()->where('order_id', $order->id);
         return view('order.edit', [
             'order' => $order,
             'categories' => Category::all(),
             'isset_payment' => $isset_payment,
+            'cart_products' => $cart->show_products()
         ]);
     }
 
