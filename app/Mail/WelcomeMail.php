@@ -34,6 +34,6 @@ class WelcomeMail extends Mailable
     public function build()
     {
         return $this->subject('Bienvenido a la tienda Productos Occidente') // Define el asunto del correo
-                    ->view('emails.welcome'); // Define la vista del correo
+                    ->view('mails.welcome'); // Define la vista del correo
     }
 }

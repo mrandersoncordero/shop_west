@@ -37,6 +37,6 @@ class CreateOrderMail extends Mailable
     public function build()
     {
         return $this->subject("Orden creada por el usuario {$this->user->profile->full_name()}") // Define el asunto del correo
-                    ->view('emails.create_order'); // Define la vista del correo
+                    ->view('mails.create_order'); // Define la vista del correo
     }
 }
