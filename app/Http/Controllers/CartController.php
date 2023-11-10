@@ -45,7 +45,8 @@ class CartController extends Controller
                 return view('cart.index', [
                     'products' => '',
                     'categories' => Category::all(),
-                    'payment_types' => PaymentType::all()
+                    'payment_types' => PaymentType::all(),
+                    'cart_products' => $this->show_products()
                 ]);
             }
         }else{
