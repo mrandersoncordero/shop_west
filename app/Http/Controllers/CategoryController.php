@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,7 +34,11 @@ class CategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('categories.edit', $category);
+        return redirect()->route('categories.edit', $category)->with('message', [
+            'class' => 'alert--success',
+            'title' => 'Categoría creada correctamente',
+            'content' => "La categoria ({$category->name}) hasido creada."
+        ]);
     }
 
     public function edit(Category $category)
@@ -56,12 +60,36 @@ class CategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('categories.edit', $category);
+        return redirect()->route('categories.edit', $category)->with('message', [
+            'class' => 'alert--warning',
+            'title' => 'Categoría actualizada correctamente',
+            'content' => "La categoria ({$category->name}) hasido actulizada."
+        ]);
     }
 
     public function destroy(Category $category)
     {
-        $category->delete();
-        return back();
+        try {
+            $category->delete();
+            return back()->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Categoría eliminada correctamente',
+                'content' => "La categoria ({$category->name}) hasido eliminada."
+            ]);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            
+            // Verifica si la excepción es por violación de clave externa
+            if ($errorCode == 1451) {
+                return back()->with('message', [
+                    'class' => 'alert--danger',
+                    'title' => 'Error',
+                    'content' => "No se puede eliminar la categoría porque tiene subcategorías asociadas"
+                ]);
+            }
+    
+            // Si no es una violación de clave externa, lanza la excepción nuevamente
+            throw $e;
+        }
     }
 }

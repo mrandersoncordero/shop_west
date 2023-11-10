@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Subcategory;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -57,7 +58,11 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.edit', $product);
+        return redirect()->route('products.edit', $product)->with('message', [
+            'class' => 'alert--success',
+            'title' => 'Producto creado exitosamente',
+            'content' => "El producto {$product->name} ha sido creado."
+        ]);
     }
 
     public function update(Request $request, Product $product)
@@ -87,7 +92,11 @@ class ProductController extends Controller
                 'traffic' => $request->traffic,
                 'price' => $request->price
             ]);
-            return redirect()->route('products.edit', $product);
+            return redirect()->route('products.edit', $product)->with('message', [
+                'class' => 'alert--warning',
+                'title' => 'Producto actualizado correctamente',
+                'content' => "El producto {$product->name} fue actualizado correctamente"
+            ]);
         }else{
             $this->validate($request,[
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -108,7 +117,11 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'image' => $imageName, 
             ]);
-            return redirect()->route('products.edit', $product);
+            return redirect()->route('products.edit', $product)->with('message', [
+                'class' => 'alert--warning',
+                'title' => 'Producto actualizado correctamente',
+                'content' => "El producto {$product->name} fue actualizado correctamente"
+            ]);
         }
     }
 
@@ -122,7 +135,24 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        $product->delete();
-        return back();
+        try {
+            $product->delete();
+
+            return back()->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Producto eliminado correctamente',
+                'content' => "El producto {$product->name} fue eliminado correctamente"
+            ]);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+
+            if ($errorCode == 1451) {
+                return back()->with('message', [
+                    'class' => 'alert--danger',
+                    'title' => 'Error',
+                    'content' => "No se puede eliminar el producto ({$product->name}) por que posee valores asociados"
+                ]);
+            }
+        }
     }
 }

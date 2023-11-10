@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Payment;
 use App\Http\Controllers\CartController;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -66,5 +67,28 @@ class OrderController extends Controller
         Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
 
         return redirect()->route('orders.index');
+    }
+
+    public function destroy(Order $order)
+    {
+        try {
+            $order->delete();
+
+            return back()->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Orden eliminada correctamente',
+                'content' => "Pedido #{$order->id} eliminado correctamente"
+            ]);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+
+            if ($errorCode == 1451) {
+                return back()->with('message', [
+                    'class' => 'alert--danger',
+                    'title' => 'Error',
+                    'content' => "No se puede eliminar el pedido #{$order->id} por que posee valores asociados"
+                ]);
+            }
+        }
     }
 }

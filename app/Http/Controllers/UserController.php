@@ -71,7 +71,11 @@ class UserController extends Controller
 
         Mail::to($user->email)->send(new WelcomeMail($user));
         
-        return redirect()->route('users.edit', $user);
+        return redirect()->route('users.edit', $user)->with('message', [
+            'class' => 'alert--success',
+            'title' => 'Usuario creado correctamente',
+            'content' => "El Ususario {$user->name} ha sido creado correctamente."
+        ]);
     }
 
     public function edit(User $user): View
@@ -132,7 +136,11 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect()->route('users.edit', $user);
+        return redirect()->route('users.edit', $user)->with('message', [
+            'class' => 'alert--warning',
+            'title' => 'Usuario actualizado correctamente',
+            'content' => "El Ususario @{$user->name} fue actualizado correctamente"
+        ]);
 
         
     }

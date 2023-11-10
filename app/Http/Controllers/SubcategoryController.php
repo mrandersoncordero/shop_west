@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Subcategory;
 use App\Models\Category;
+use Illuminate\Database\QueryException;
 
 class SubcategoryController extends Controller
 {
@@ -31,7 +32,11 @@ class SubcategoryController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->route('subcategories.edit', $subcategory);
+        return redirect()->route('subcategories.edit', $subcategory)->with('message', [
+            'class' => 'alert--success',
+            'title' => 'Subcategoria creada correctamente',
+            'content' => "La subcategoria ({$subcategory->name}) ha sido creada."
+        ]);
     }
 
     public function edit(Subcategory $subcategory)
@@ -57,12 +62,35 @@ class SubcategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('subcategories.edit', $subcategory);
+        return redirect()->route('subcategories.edit', $subcategory)->with('message', [
+            'class' => 'alert--warning',
+            'title' => 'Subcategoria actualizada correctamente',
+            'content' => "La subcategoria ({$subcategory->name}) ha sido actulizada."
+        ]);
     }
 
     public function destroy(Subcategory $subcategory)
     {
-        $subcategory->delete();
-        return back();
+        try {
+            $subcategory->delete();
+            return back()->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Subcategoria Eliminada correctamente',
+                'content' => "La subcategoria ({$subcategory->name}) ha sido eliminada."
+            ]);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+
+            if ($errorCode == 1451) {
+                return back()->with('message', [
+                    'class' => 'alert--danger',
+                    'title' => 'Error',
+                    'content' => 'Lo sentimos no podemos eliminar la subcategoria porque tiene datos asociados'
+                ]);
+            }
+
+            throw $e;
+        }
+        
     }
 }
