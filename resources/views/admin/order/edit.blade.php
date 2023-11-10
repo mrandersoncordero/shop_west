@@ -6,8 +6,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
-@section('content')
-<main class="home_content">
+@section('content_primary')
+
   <div class="header_container">
     <h1 class="text">Edit order <b>#{{ $order->id }}</b></h1>
   </div>
@@ -125,7 +125,7 @@
       </table>
     </article>
   </section>
-</main>   
+  
 @endsection
 
 @section('scripts')

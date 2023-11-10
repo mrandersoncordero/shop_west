@@ -4,10 +4,10 @@
 <title>Dashboard</title>
 @endsection
 
-@section('content')
-<div class="home_content">
+@section('content_primary')
+
     <div class="header_container">
-        <h1 class="text">Edit subcategory "{{ $subcategory->name }}"</h1>
+      <h1 class="text">Editar subcategoria "{{ $subcategory->name }}"</h1>
     </div>
     <form action="{{ route('subcategories.update', $subcategory) }}" method="post">
         @csrf
@@ -45,5 +45,5 @@
             <input type="submit" value="Enviar" class="btn btn-primary">
         </div>
     </form>
-</div>   
+   
 @endsection

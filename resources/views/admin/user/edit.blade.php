@@ -4,8 +4,8 @@
 <title>Dashboard</title>
 @endsection
 
-@section('content')
-<div class="home_content">
+@section('content_primary')
+
   <div class="header_container">
     <h1 class="text">Edit category "{{ $user->name }}"</h1>
   </div>
@@ -139,5 +139,5 @@
       <input type="submit" value="Enviar" class="btn btn-primary">
     </div>
   </form>
-</div>   
+  
 @endsection

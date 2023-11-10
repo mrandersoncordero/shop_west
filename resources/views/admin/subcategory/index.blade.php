@@ -6,8 +6,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
-@section('content')
-<div class="home_content">
+@section('content_primary')
+
     <div class="header_container">
         <h1 class="text">Subcategories</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
@@ -57,22 +57,23 @@
             </tr>
         @endforelse
   </table>
+    
+@endsection
 
-
-</div>
+@section('content_secondary')
 <div id="modal" class="modal-container" @if($errors->has('name') || $errors->has('description')) style="visibility: visible;" @endif>
-    <div class="modal_content">
-        <div class="modal_header">
-            <div>
-                <p>Crear categoria</p>
-                <i class='bx bx-x' id="close"></i>
-            </div>
-        </div>
-        <form action="{{ route('subcategories.store') }}" method="post" class="mt-4">
-            @include('admin.subcategory._form')
-        </form>
-    </div>
-</div>    
+  <div class="modal_content">
+      <div class="modal_header">
+          <div>
+              <p>Crear categoria</p>
+              <i class='bx bx-x' id="close"></i>
+          </div>
+      </div>
+      <form action="{{ route('subcategories.store') }}" method="post" class="mt-4">
+          @include('admin.subcategory._form')
+      </form>
+  </div>
+</div>
 @endsection
 
 @section('scripts')

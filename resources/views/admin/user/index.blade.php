@@ -6,8 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
 
-@section('content')
-<div class="home_content">
+@section('content_primary')
 
   <div class="header_container">
     <h1 class="text">Lista de Usuarios</h1>
@@ -62,8 +61,9 @@
     </tbody>
   </table>
 
-</div>
+@endsection
 
+@section('content_secondary')
 <div id="modal" class="modal-container @if($errors->has('first_name') || $errors->has('last_name') || $errors->has('dni') || $errors->has('address') || $errors->has('phone_number') || $errors->has('birthday_date') || $errors->has('name') || $errors->has('email') || $errors->has('password') || $errors->has('password_confirmation') || $errors->has('role')) visible @endif">
   <div class="modal_content">
     <div class="modal_header">
@@ -77,7 +77,6 @@
     </form>
   </div>
 </div>
-
 @endsection
 
 @section('scripts')

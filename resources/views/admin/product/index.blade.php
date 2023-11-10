@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 @endsection
 
-@section('content')
-<div class="home_content">
+@section('content_primary')
+
     <div class="header_container">
         <h1 class="text">Products</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
@@ -72,8 +72,10 @@
             @endforelse
         </tbody>
     </table>
-</div>
 
+@endsection
+
+@section('content_secondary')
 <div id="modal" class="modal-container" @if($errors->any()) style="visibility: visible;" @endif>
     <div class="modal_content">
         <div class="modal_header">
