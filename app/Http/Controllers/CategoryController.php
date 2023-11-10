@@ -37,7 +37,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.edit', $category)->with('message', [
             'class' => 'alert--success',
             'title' => 'Categoría creada correctamente',
-            'content' => "La categoria ({$category->name}) hasido creada."
+            'content' => "La categoria ({$category->name}) ha sido creada."
         ]);
     }
 
@@ -48,7 +48,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, Category $category)
     {
-        
+
         $request->validate([
             'name' => 'required|unique:categories,name,' . $category->id,
             'description' => 'required|string|max:255',
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.edit', $category)->with('message', [
             'class' => 'alert--warning',
             'title' => 'Categoría actualizada correctamente',
-            'content' => "La categoria ({$category->name}) hasido actulizada."
+            'content' => "La categoria ({$category->name}) ha sido actulizada."
         ]);
     }
 
@@ -72,13 +72,13 @@ class CategoryController extends Controller
         try {
             $category->delete();
             return back()->with('message', [
-                'class' => 'alert--success',
+                'class' => 'alert--danger',
                 'title' => 'Categoría eliminada correctamente',
-                'content' => "La categoria ({$category->name}) hasido eliminada."
+                'content' => "La categoria ({$category->name}) ha sido eliminada."
             ]);
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
-            
+
             // Verifica si la excepción es por violación de clave externa
             if ($errorCode == 1451) {
                 return back()->with('message', [
@@ -87,7 +87,7 @@ class CategoryController extends Controller
                     'content' => "No se puede eliminar la categoría porque tiene subcategorías asociadas"
                 ]);
             }
-    
+
             // Si no es una violación de clave externa, lanza la excepción nuevamente
             throw $e;
         }

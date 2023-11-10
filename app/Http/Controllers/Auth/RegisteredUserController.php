@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
             'is_active' => 1,
         ]);
 
-        $user->assignRole('client');
+        $user->assignRole('admin');
         event(new Registered($user));
         //Auth::login($user);
 
