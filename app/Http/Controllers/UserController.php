@@ -22,6 +22,7 @@ class UserController extends Controller
     {
         return view('admin.user.index', [
             'users' => User::all(),
+            'roles' => \Spatie\Permission\Models\Role::where('name', '<>', 'super')->get(),
         ]);
     }
     /**
@@ -81,7 +82,8 @@ class UserController extends Controller
     public function edit(User $user): View
     {
         return view('admin.user.edit', [
-            'user' => $user
+            'user' => $user,
+            'roles' => \Spatie\Permission\Models\Role::where('name', '<>', 'super')->get(),
         ]);
     }
 
