@@ -115,8 +115,9 @@
 
 <div class="form-floating mb-3">
   <select name="role" class="form-select @error('role') is-invalid @enderror">
-    <option value="client">Cliente</option>
-    <option value="admin">Admin</option>
+    @foreach ($roles as $role)
+    <option value="{{ $role->name }}">{{ $role->name }}</option>
+    @endforeach
   </select>
   <label for="Subcategory">Tipo de usuario</label>
   @error('role')

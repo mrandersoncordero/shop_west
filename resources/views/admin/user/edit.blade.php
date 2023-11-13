@@ -119,13 +119,13 @@
     
     <div class="form-floating mb-3">
       <select class="form-select @error('role') is-invalid @enderror" name="role">
-        @if ($user->getRoleNames()->implode(', ') == 'client') 
-        <option value="client" selected>Cliente</option>
-        <option value="admin" >Admin</option>
-        @else
-        <option value="client" >Cliente</option>
-        <option value="admin" selected>Admin</option>
-        @endif
+        @foreach ($roles as $role)
+          @if ($user->getRoleNames()->implode(', ') == 'client')
+          <option value="{{ $role->name }}" selected>{{ $role->name }}</option>
+          @else
+          <option value="{{ $role->name }}">{{ $role->name }}</option>
+          @endif
+        @endforeach
       </select>
       <label for="Subcategory">Tipo de usuario</label>
       @error('role')
