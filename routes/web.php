@@ -47,7 +47,7 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
 /**
  * Rutas del panel administrativo
  */
-Route::middleware(['auth', 'role:admin|superuser'])->group(function () {
+Route::middleware(['role:admin|superuser'])->group(function () {
 
     Route::get('/dashboard', function () {
         return view('admin.admin');
