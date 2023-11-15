@@ -28,7 +28,7 @@
       <tr class="">
         <td>{{ $user->id }}</td>
         <td>{{ '@'.$user->name }}</td>
-        <td>{{ $user->roles[0]->name }}</td>
+        <td>{{ $user->role->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
           <div class="dropdown">
@@ -37,11 +37,9 @@
               </a>
 
               <ul class="dropdown-menu">
-                @can('edit articles')
                 <li>
                   <a href="{{ route('users.edit', $user->id) }}" class="dropdown-item">Editar</a>
                 </li>
-                @endcan
                 <li>
                   <form action="{{ route('users.destroy', $user) }}" method="POST">
                       @csrf
