@@ -1,4 +1,7 @@
 
+.modal-backdrop {
+  z-index: 0 !important;
+}
 .modal-container {
   position: absolute;
   top: 0;
