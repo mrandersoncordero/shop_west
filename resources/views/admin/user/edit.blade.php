@@ -2,12 +2,43 @@
 
 @section('head_content')
 <title>Dashboard</title>
+
 @endsection
 
 @section('content_primary')
 
   <div class="header_container">
     <h1 class="text">Edit category "{{ $user->name }}"</h1>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Permisos de usuario
+      </button>
+      <form action="" class="dropdown-menu p-2 from-permissions" style="width: 250px">
+      @foreach ($permissions as $permission)
+        @if (!$user_permissions->isEmpty())
+          @foreach ($user_permissions as $user_permission)
+            @if ($user_permission->permission_id == $permission->id)
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}" checked>
+              <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
+            </div>
+            @else
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}">
+              <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
+            </div>
+            @endif
+          @endforeach
+        @else
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}">
+          <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
+        </div>
+        @endif
+      @endforeach
+        <button type="submit" class="btn btn-sm btn-primary" style="width 100%">Guardar</button>
+      </form>
+    </div>
   </div>
   <form action="{{ route('users.update', $user) }}" method="post">
 
