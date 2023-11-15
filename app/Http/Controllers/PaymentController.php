@@ -14,11 +14,13 @@ class PaymentController extends Controller
 
     public function index()
     {
-        return view('admin.payment.index', [
-            'payments' => Payment::all(),
-        ]);
+        if (Auth::user()->hasPermission(17, 'No tienes permisos para ver pagos')) {
+            return view('admin.payment.index', [
+                'payments' => Payment::all(),
+            ]);
+        }
     }
-    
+
     public function store(Request $request)
     {
         $request->validate([

@@ -43,51 +43,58 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::all();
+        if (Auth::user()->hasPermission(13, 'No tienes permisos para ver ordenes de compra')) {
+            $orders = Order::all();
 
-        return view('admin.order.index', [
-            'orders' => $orders
-        ]);
+            return view('admin.order.index', [
+                'orders' => $orders
+            ]);
+        }
     }
 
     public function edit(Order $order)
     {
-
-        return view('admin.order.edit', [
-            'order' => $order
-        ]);
+        if (Auth::user()->hasPermission(14, 'No tienes permisos para ver detalle de la orden de compra')) {
+            return view('admin.order.edit', [
+                'order' => $order
+            ]);
+        }
     }
 
     public function change_status_order(Request $request, Order $order)
     {
-        $order->update([
-            'status_id' => $request->status_id,
-        ]);
-        
-        Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
+        if (Auth::user()->hasPermission(16, 'No tienes permisos para cambiar estado de la orden de compra')) {
+            $order->update([
+                'status_id' => $request->status_id,
+            ]);
+            
+            Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
 
-        return redirect()->route('orders.index');
+            return redirect()->route('orders.index');
+        }
     }
 
     public function destroy(Order $order)
     {
-        try {
-            $order->delete();
+        if (Auth::user()->hasPermission(15, 'No tienes permisos para eliminar orden de compra')) {
+            try {
+                $order->delete();
 
-            return back()->with('message', [
-                'class' => 'alert--success',
-                'title' => 'Orden eliminada correctamente',
-                'content' => "Pedido #{$order->id} eliminado correctamente"
-            ]);
-        } catch (QueryException $e) {
-            $errorCode = $e->errorInfo[1];
-
-            if ($errorCode == 1451) {
                 return back()->with('message', [
-                    'class' => 'alert--danger',
-                    'title' => 'Error',
-                    'content' => "No se puede eliminar el pedido #{$order->id} por que posee valores asociados"
+                    'class' => 'alert--success',
+                    'title' => 'Orden eliminada correctamente',
+                    'content' => "Pedido #{$order->id} eliminado correctamente"
                 ]);
+            } catch (QueryException $e) {
+                $errorCode = $e->errorInfo[1];
+
+                if ($errorCode == 1451) {
+                    return back()->with('message', [
+                        'class' => 'alert--danger',
+                        'title' => 'Error',
+                        'content' => "No se puede eliminar el pedido #{$order->id} por que posee valores asociados"
+                    ]);
+                }
             }
         }
     }
