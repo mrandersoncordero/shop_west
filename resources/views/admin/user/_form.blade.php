@@ -114,9 +114,9 @@
 </div>
 
 <div class="form-floating mb-3">
-  <select name="role" class="form-select @error('role') is-invalid @enderror">
+  <select name="role_id" class="form-select @error('role') is-invalid @enderror">
     @foreach ($roles as $role)
-    <option value="{{ $role->name }}">{{ $role->name }}</option>
+    <option value="{{ $role->id }}">{{ $role->name }}</option>
     @endforeach
   </select>
   <label for="Subcategory">Tipo de usuario</label>

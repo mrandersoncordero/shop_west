@@ -120,10 +120,10 @@
     <div class="form-floating mb-3">
       <select class="form-select @error('role') is-invalid @enderror" name="role">
         @foreach ($roles as $role)
-          @if ($user->getRoleNames()->implode(', ') == 'client')
-          <option value="{{ $role->name }}" selected>{{ $role->name }}</option>
+          @if ($user->role->id == $role->id)
+          <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
           @else
-          <option value="{{ $role->name }}">{{ $role->name }}</option>
+          <option value="{{ $role->id }}">{{ $role->name }}</option>
           @endif
         @endforeach
       </select>
