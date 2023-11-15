@@ -52,9 +52,9 @@ class AuthenticatedSessionController extends Controller
     protected function authenticated(Request $request, $user)
     {
         //dd($user);
-        if ($user->hasRole('admin')) {
+        if ($user->role_id == 1 || $user->role_id == 2) {
             return redirect('/dashboard');
-        } elseif ($user->hasRole('client')) {
+        } elseif ($user->role_id == 3) {
             return redirect('/');
         }
 
