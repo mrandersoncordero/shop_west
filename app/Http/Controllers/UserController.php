@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeMail;
+use App\Models\Permission;
 use App\Models\Profile;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\UserPermission;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -92,6 +94,8 @@ class UserController extends Controller
             return view('admin.user.edit', [
                 'user' => $user,
                 'roles' => Role::all(),
+                'permissions' => Permission::all(),
+                'user_permissions' => UserPermission::where('user_id', $user->id)->get()
             ]);
         }
     }
