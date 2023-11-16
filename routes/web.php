@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 // Laravel
@@ -61,6 +62,8 @@ Route::middleware(['role:admin|superuser'])->group(function () {
     Route::resource('dashboard/users', UserController::class)->except('show', 'create');
 
     Route::resource('dashboard/payments', PaymentController::class)->except('show', 'store', 'destroy', 'edit', 'update');
+
+    Route::post('dashboard/add_permission_user', [PermissionController::class, 'addPermission'])->name('user.addPermission');
 });
 
 Route::middleware('auth')->group(function () {
