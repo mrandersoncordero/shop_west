@@ -193,10 +193,12 @@ class CartController extends Controller
             $order->save();
 
             foreach ($cart as $key => $value) {
+                $product = Product::find($value['product_id']);
                 $products_of_order = new ProductsOfOrder([
                     'order_id' => $order->id,
                     'product_id' => $value['product_id'],
                     'quantity' => $value['quantity'],
+                    'price' => $product->price,
                 ]);
 
                 $products_of_order->save();
