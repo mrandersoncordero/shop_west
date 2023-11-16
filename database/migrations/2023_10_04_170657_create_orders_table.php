@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
+
             $table->boolean('is_active');
 
             $table->unsignedBigInteger('payment_type_id');
-            $table->foreign('payment_type_id')->references('id')->on('payment_types');
+            $table->foreign('payment_type_id')
+                ->references('id')
+                ->on('payment_types');
             
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('order_statuses');
