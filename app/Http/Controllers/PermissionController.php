@@ -2,27 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserRole;
+use App\Models\UserPermission;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
 {
-    public function assignRoleUser(Request $request) {
+    public function addPermission(Request $request) 
+    {
 
-        $request->validate([
-            'user_id' => 'required|integer',
-            'permission_id' => 'required|integer'
-        ]);
+        //dd($request);
+        
+        $delete_permissions_user = UserPermission::where('user_id', $request->user_id)->delete();
 
-        $user_role = UserRole::create([
-            'user_id' => $request->user_id,
-            'permission_id' => $request->permission_id
-        ]);
-        $user_role->save();
+        foreach ($request->permissions as $key => $value) {
+            $create_user_permission = UserPermission::create([
+                'user_id' => $request->user_id,
+                'permission_id' => $value
+            ]);
+
+            $create_user_permission->save();
+        }
 
         return back()->with('message', [
             'class' => 'alert--success',
-            'title' => 'Usuario creado correctamente',
+            'title' => 'Actulizacion de Roles',
             'content' => "Roles agregados correctamente"
         ]);
     }
