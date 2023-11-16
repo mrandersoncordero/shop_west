@@ -10,6 +10,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\UserPermission;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -160,8 +161,25 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         if (Auth::user()->hasPermission(21, 'No tienes permisos para eliminar usuarios')) {
-            $user->delete();
-            return back();
+            try {
+                $user->delete();
+
+                return back()->with('message', [
+                    'class' => 'alert--success',
+                    'title' => 'Usuario eliminado correctamente',
+                    'content' => "El Usuario {$user->name} fue eliminado correctamente"
+                ]);
+            } catch (QueryException $e) {
+                $errorCode = $e->errorInfo[1];
+
+                if ($errorCode == 1451) {
+                    return back()->with('message', [
+                        'class' => 'alert--danger',
+                        'title' => 'Error',
+                        'content' => "No se puede eliminar el usuario ({$user->name}) por que posee valores asociados."
+                    ]);
+                }
+            }
         }
     }
 }
