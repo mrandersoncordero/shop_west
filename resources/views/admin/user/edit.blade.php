@@ -13,29 +13,18 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Permisos de usuario
       </button>
-      <form action="" class="dropdown-menu p-2 from-permissions" style="width: 250px">
-      @foreach ($permissions as $permission)
-        @if (!$user_permissions->isEmpty())
-          @foreach ($user_permissions as $user_permission)
-            @if ($user_permission->permission_id == $permission->id)
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}" checked>
-              <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
-            </div>
-            @else
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}">
-              <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
-            </div>
-            @endif
-          @endforeach
-        @else
+      <form action="{{ route('user.addPermission') }}" method="post" class="dropdown-menu p-2 from-permissions" style="width: 250px">
+        @csrf
+        <input type="hidden" name="user_id" value="{{$user->id}}">
+        @foreach ($permissions as $permission)
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}">
+          @php
+            $isChecked = $user_permissions->contains('permission_id', $permission->id);
+          @endphp
+          <input class="form-check-input" type="checkbox" role="switch" name="permissions[]" value="{{ $permission->id }}" {{ $isChecked ? 'checked' : '' }}>
           <label class="form-check-label" style="font-size: 1rem">{{ $permission->name }}</label>
         </div>
-        @endif
-      @endforeach
+        @endforeach
         <button type="submit" class="btn btn-sm btn-primary" style="width 100%">Guardar</button>
       </form>
     </div>
