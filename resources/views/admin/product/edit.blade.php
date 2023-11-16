@@ -4,7 +4,7 @@
 <title>Dashboard</title>
 @endsection
 
-@section('content')
+@section('content_primary')
 <div class="home_content">
     <div class="header_container">
         <h1 class="text">Edit product "{{ $product->name }}"</h1>
