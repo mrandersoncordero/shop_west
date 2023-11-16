@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
         ]);
 
 
-        // crear usuario
+        // crear usuario Administrador 2
         $user = User::create([
             'role_id' => 2,
             'name' => 'Administrador2',
@@ -69,6 +69,25 @@ class UserSeeder extends Seeder
             'last_name' => 'trator2',
             'address' => 'la zona 2',
             'phone_number' => '04121234567',
+            'birthday_date' => now()->subYears(25),
+            'withholding_tax' => 0,
+        ]);
+
+        // crear usuario cliente
+        $user = User::create([
+            'role_id' => 3,
+            'name' => 'ancord',
+            'email' => 'ander.dev@gmail.com',
+            'password' => bcrypt('v-123456')
+        ]);
+        // crear perfil
+        Profile::create([
+            'user_id' => $user->id,
+            'dni' => '30325069',
+            'first_name' => 'Anderson',
+            'last_name' => 'Cordero',
+            'address' => 'la zona 2',
+            'phone_number' => '04129062253',
             'birthday_date' => now()->subYears(25),
             'withholding_tax' => 0,
         ]);
