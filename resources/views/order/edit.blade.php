@@ -102,10 +102,10 @@
             <td>{{ $item->product->code }}</td>
             <td>{{ $item->product->name }}</td>
             <td>{{ $item->quantity }}</td>
-            <td>{{ $item->product->price }}$</td>
+            <td>{{ $item->price }}$</td>
             <td>
             @php
-              $quantity = $item->product->price * $item->quantity
+              $quantity = $item->price * $item->quantity
             @endphp
             {{ $quantity }}$
             </td>
