@@ -84,7 +84,7 @@
   </div> 
   @enderror
 </div>
-{{ $errors }}
+
 <div class="form-floating mb-3">
   <input type="number" class="form-control @error('price') is-invalid @enderror " name="price" value="{{ old('price','')}}">
   <label for="floatingInput">Price</label>
