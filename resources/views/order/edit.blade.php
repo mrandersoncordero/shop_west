@@ -80,8 +80,14 @@
           </div>
         @endif
 
-      @else
+      @elseif($order->status->id == 2)
         <p>Su pedido esta siendo revisado</p>
+      @elseif($order->status->id == 3)
+        <p>Su pedido ha sido rechazado, para mas informacion puedes consultar a nuestro asesor de ventas.</p>
+      @elseif($order->status->id == 4)
+        <p>En estos momentos su pago esta siendo comprobado, cuando este proceso finalice se le notificara por correo para luego ser atendido por nuestro asesor de ventas.</p>
+      @else
+        <p>Enhorabuena!! tu pago ha sido comprobado, espera nuestro correo, te contactaremos.</p>
       @endif
 
     </article>
