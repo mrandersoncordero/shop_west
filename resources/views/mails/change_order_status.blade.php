@@ -28,11 +28,18 @@
         <p style="margin-bottom: 16px; font-size: 1.25rem;">{{ $order->user->profile->full_name()}} tu pedido #{{ $order->id }} esta siendo revisado por uno de nuestros administradores.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Cuando el estado de tu orden sea cambiado se te notificara tanto por correo y por via telefonica.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Recuerda que si tienes alguna consulta extra puedes contactar con nuestro <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank" data-v-c02e9916="">asesor de ventas</a> que te indicara como proceder.</p>
-      @else
+      @elseif($order->status_id == 3)
         <!-- Párrafos con márgenes inferiores y fuente en negrita -->
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Lo sentimos {{ $order->user->profile->full_name()}} tu pedido #{{ $order->id }} ha sido rechazado.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Lamentamos que tu pedido alla sido rechazado, si quieres saber mas acerca de esto contacta a nuestro <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank" data-v-c02e9916="">asesor de ventas</a> que te indicara como proceder.</p>
-
+      @elseif($order->status_id == 4)
+      <!-- Párrafos con márgenes inferiores y fuente en negrita -->
+      <p style="margin-bottom: 16px; font-size: 1.25rem;">{{ $order->user->profile->full_name()}} El comprobante de pago que has registrado esta siendo comprobado por nuestros administradores.</p>
+      <p style="margin-bottom: 16px; font-size: 1.25rem;">Apenas se confirme tu pago uno de nuestros administradores se pondra en contacto contigo.</p>
+      @else
+      <!-- Párrafos con márgenes inferiores y fuente en negrita -->
+      <p style="margin-bottom: 16px; font-size: 1.25rem;">{{ $order->user->profile->full_name()}}, hemos comprobado tu pago en breves estaremos en contacto por correo o via telefonica.</p>
+      <p style="margin-bottom: 16px; font-size: 1.25rem;">Si necesitas contactarnos puedes hacerlo por <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank" data-v-c02e9916="">aca.</a> </p>
       @endif
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Gracia por preferirnos.</p>
 

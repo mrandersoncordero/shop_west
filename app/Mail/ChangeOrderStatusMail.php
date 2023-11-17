@@ -39,8 +39,14 @@ class ChangeOrderStatusMail extends Mailable
         }elseif ($this->order->status_id == 2) {
             return $this->subject("Su pedido Nº{$this->order->id} esta en proceso") // Define el asunto del correo
             ->view('mails.change_order_status'); // Define la vista del correo
-        }else{
+        }elseif ($this->order->status_id == 3) {
             return $this->subject("Su pedido Nº{$this->order->id} ha sido rechazado") // Define el asunto del correo
+            ->view('mails.change_order_status'); // Define la vista del correo
+        }elseif ($this->order->status_id == 4) {
+            return $this->subject("Comprobando registro de pago de la orden Nº{$this->order->id} ") // Define el asunto del correo
+            ->view('mails.change_order_status'); // Define la vista del correo
+        }else{
+            return $this->subject("El pago del pedido Nº{$this->order->id} ha sido comprobado ") // Define el asunto del correo
             ->view('mails.change_order_status'); // Define la vista del correo
         }
     }
