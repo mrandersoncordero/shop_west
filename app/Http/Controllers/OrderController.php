@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Payment;
 use App\Http\Controllers\CartController;
+use App\Models\OrderStatus;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,8 @@ class OrderController extends Controller
             $orders = Order::all();
 
             return view('admin.order.index', [
-                'orders' => $orders
+                'orders' => $orders,
+                'order_status' => OrderStatus::all(),
             ]);
         }
     }
