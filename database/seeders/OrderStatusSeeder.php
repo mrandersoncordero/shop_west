@@ -17,6 +17,7 @@ class OrderStatusSeeder extends Seeder
         OrderStatus::create(['name' => 'Aprobado']);
         OrderStatus::create(['name' => 'En proceso']);
         OrderStatus::create(['name' => 'Rechazado']);
-
+        OrderStatus::create(['name' => 'Comprobando pago']);
+        OrderStatus::create(['name' => 'Pago comprobado']);
     }
 }
