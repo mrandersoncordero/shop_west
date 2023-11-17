@@ -77,7 +77,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'role_id' => 3,
             'name' => 'ancord',
-            'email' => 'ander.dev@gmail.com',
+            'email' => 'acordero.dev@gmail.com',
             'password' => bcrypt('v-123456')
         ]);
         // crear perfil
