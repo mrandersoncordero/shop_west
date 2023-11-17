@@ -42,7 +42,7 @@
       </div> 
     @enderror
     </div>
-    
+
     <div class="form-floating mb-3">
       <input type="text" class="form-control @error('last_name') is-invalid @enderror " name="last_name" value="{{ old('last_name', $user->profile->last_name)}}">
       <label for="floatingInput">Apellido</label>
@@ -138,7 +138,7 @@
     </div>
     
     <div class="form-floating mb-3">
-      <select class="form-select @error('role') is-invalid @enderror" name="role">
+      <select class="form-select @error('role') is-invalid @enderror" name="role_id">
         @foreach ($roles as $role)
           @if ($user->role->id == $role->id)
           <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
