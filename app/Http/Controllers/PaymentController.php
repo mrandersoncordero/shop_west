@@ -64,7 +64,9 @@ class PaymentController extends Controller
         
             $payment->save();
             $order = Order::find($request->order_id);
-
+            $order->update([
+                'status_id' => 4
+            ]);
 
             Mail::to('acorderofigueroa7@gmail.com')->send(new PaymentRegisterMail(Auth::user(), $order));
         }
