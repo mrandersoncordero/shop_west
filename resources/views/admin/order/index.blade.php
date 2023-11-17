@@ -53,28 +53,20 @@
                           onclick="return confirm('Desea Eliminar?')"
                       >
                   </form>
+
+                  @foreach ($order_status as $status)
                   <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
                     @csrf
                     @method('PUT')
-                    <input type="hidden" value="1" name="status_id">
+                    <input type="hidden" value="{{ $status->id}}" name="status_id">
                       <input 
                           type="submit" 
-                          value="Aprobar" 
+                          value="{{ $status->name }}" 
                           class="dropdown-item"
-                          onclick="return confirm('Desea cambair el estado de la orden a aprobado?')"
+                          onclick="return confirm('Desea cambiar el estado de la orden a {{ $status->name }}?')"
                       >
                   </form>
-                  <form action="{{ route('orders.change_status_order', $order) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" value="3" name="status_id">
-                      <input 
-                          type="submit" 
-                          value="Rechazar" 
-                          class="dropdown-item"
-                          onclick="return confirm('Desea cambair el estado de la orden a rechazado?')"
-                      >
-                  </form>
+                  @endforeach
                 </li>
               </ul>
           </div>
