@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PaymentRegisterMail;
+use App\Models\Order;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -60,6 +63,10 @@ class PaymentController extends Controller
             ]);
         
             $payment->save();
+            $order = Order::find($request->order_id);
+
+
+            Mail::to('acorderofigueroa7@gmail.com')->send(new PaymentRegisterMail(Auth::user(), $order));
         }
 
         return redirect()->route('order.index');
