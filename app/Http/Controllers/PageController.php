@@ -73,4 +73,34 @@ class PageController extends Controller
             'cart_products' => $cart->show_products()
         ]);
     }
+
+    public function about() {
+        $categories = Category::all();
+
+        $cart = new CartController();
+        return view('page.about', [
+            'categories' => $categories,
+            'cart_products' => $cart->show_products()
+        ]);
+    }
+
+    public function project() {
+        $categories = Category::all();
+
+        $cart = new CartController();
+        return view('page.project', [
+            'categories' => $categories,
+            'cart_products' => $cart->show_products()
+        ]);
+    }
+
+    public function contact() {
+        $categories = Category::all();
+
+        $cart = new CartController();
+        return view('page.contact', [
+            'categories' => $categories,
+            'cart_products' => $cart->show_products()
+        ]);
+    }
 }
