@@ -88,7 +88,7 @@
           </div>
 
           {{-- ICON TRUCK --}}
-          <div class="icon_truck">
+          <div class="icon_truck @if(!Auth::user()) inactive @endif">
             <button id="button_truck"><i class="fa-solid fa-truck" ></i></button>
             @if(session()->has('cart'))
                 @php

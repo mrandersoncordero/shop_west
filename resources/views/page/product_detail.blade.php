@@ -82,12 +82,14 @@
               </div>
             </div>
 
+            @auth
             <form action="{{ route('cart.add', $product->id) }}" method="POST" class="container_add--truck">
               @csrf
               <button type="submit" class="margin-top-content">
                 <div><img src="{{ asset('icons/camion_compra.png') }}" alt=""><p>Agregar al carrito</p></div>
               </button>
             </form>
+            @endauth
           </article>
           
         </section>
