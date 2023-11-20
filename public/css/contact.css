@@ -1,0 +1,19 @@
+.menu_contact div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+.menu_contact div a{
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.menu_contact .fa-whatsapp, .menu_contact .fa-envelope {
+  color: var(--blue);
+  font-size: 3rem;
+}
+
+.menu_contact div a p:nth-child(2){
+  color: var(--grey);
+}
