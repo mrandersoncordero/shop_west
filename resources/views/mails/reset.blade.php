@@ -7,7 +7,7 @@
 <body style="margin: 0; padding: 0; background-color: #f4f4f4f4; font-family: Arial, sans-serif; text-align: center; display:flex; align-items:center; justify-content:center;">
 
   <div style="width: 80%; margin-top:24px; margin:auto;">
-    <div style="background-color: #ffffff; width: 40%; margin: auto;">
+    <div style="background-color: #ffffff; width: 100%; margin: auto;">
       <!-- Contenedor principal con margen inferior y color de texto gris -->
       <div style="margin-bottom: 4px; background-color: #ffffff; text-align: center; font-weight: bold; padding: 16px; display: flex; flex-direction: column; align-items: center;">
         <div style="display: flex; flex-direction: column; align-items: center;">
