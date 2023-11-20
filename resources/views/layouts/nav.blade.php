@@ -163,8 +163,9 @@
 
   <div class="mobile-navbar">
       <ul>
-          <li><a href="index.html" class="underline">Nosotros</a></li>
-          <li><a href="index.html" class="underline">Proyectos</a></li>
+          <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
+          <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
+          <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
           <li class="mobile-menu" id="submenu-down">
               <a href="#" class="line-down underline" id="submenu-down-two">Linea de Pegamentos<i class="fa-solid fa-angle-down" id="angle"></i></ion-icon></a>
               <ul class="mobile-submenu">
@@ -182,7 +183,6 @@
               </ul>
           </li>
           <li><a href="index.html" class="underline">Linea D' Sella Juntas</a></li>
-          <li><a href="index.html#contacto" class="underline">Contacto</a></li>
       </ul>
   </div>
 </nav>
