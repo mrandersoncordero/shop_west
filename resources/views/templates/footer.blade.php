@@ -5,7 +5,7 @@
       </article>
       <article class="footer_section_secondary">
           <div class="rights">
-              <p>Pegoocidente - Todos los derechos reservados &copy; desarrollado por Branar, C.A.</p>
+              <p>Productos Occidente - Todos los derechos reservados &copy; desarrollado por Branar, C.A.</p>
           </div>
           <div class="container_socials">
               <ul>
