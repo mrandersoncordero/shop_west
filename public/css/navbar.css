@@ -535,4 +535,12 @@
   .nav-img { width: 150px; margin: 0; }
   .navbar-content { gap: 12px; }
   .form-search { width: 200px;}
+
+  .navbar-content {
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .icon-nav {
+    gap: 0px;
+  }
 }

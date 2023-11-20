@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 /* main */
 main {
   width: 100%;
-  margin-top: 24px;
+  margin-top: 100px;
 }
 .product-section {
   margin: 48px 8px;
@@ -301,7 +301,7 @@ main {
   background: var(--red);
 }
 .container_footer .footer_section_primary img {
-  width: 10%;
+  width: 30%;
 }
 
 .container_footer .footer_section_secondary {
@@ -323,4 +323,23 @@ main {
 .container_footer .footer_section_secondary .container_socials ul li a {
   color: var(--white);
   font-size: 30px;
+}
+
+@media screen and (max-width: 620px) {
+  .container_footer .footer_section_primary img {
+    width: 32%;
+  }
+  .container_footer .footer_section_secondary {
+    flex-direction: column-reverse !important;
+  }
+  .container_footer .footer_section_secondary p{
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .container_footer .footer_section_primary img {
+    width: 140px !important;
+  }
 }
