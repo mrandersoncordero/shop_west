@@ -1,5 +1,8 @@
 /* 400px */
-
+p {
+  color: var(--grey);
+  line-height: 1.4rem;
+}
 .carrousel_glide_white {
   max-width: 350px;
 }
@@ -7,6 +10,7 @@
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
+  margin-bottom: 24px;
 }
 .glide__arrow--right {
   right: -1em;
@@ -34,6 +38,7 @@
   font-size: 1.4rem;
   text-transform: uppercase;
   text-align: center;
+  color: var(--blue);
 }
 .content_primary .content_about img {
   width: 80px;
@@ -43,7 +48,70 @@
   text-align: justify;
 }
 
+.sucursales {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.container_sucursales--info header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container_sucursales--info header img{
+  width: 40px;
+}
+.container_sucursales--info header h2{
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--blue);
+}
 
+.sucursal--content p {
+  padding: 12px;
+  text-align: justify;
+}
+
+.container_sucursales--image {
+  margin: auto;
+}
+.container_sucursales--image .sucursal img {
+  width: 100%;
+}
+.container_sucursales--image .sucursal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 12px;
+  margin: auto;
+}
+.container_sucursales--image .sucursal div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 12px;
+  bottom: -10px;
+  width: 200px;
+  background-color: var(--blue);
+  padding: 18px 24px;
+  z-index: 20;
+}
+.container_sucursales--image .sucursal div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -40px;
+  border-top: 58.85px solid transparent;
+  border-left: 41px solid var(--blue)
+}
+
+.container_sucursales--image .sucursal div p {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 525px) {
   main {
@@ -66,8 +134,18 @@
     place-items: center;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .carrousel_glide_white {
     max-width: 600px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sucursales {
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+  .sucursal img {
+    width: 400px !important;
   }
 }
