@@ -13,8 +13,8 @@
   <div class="navbar-content">
       <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="" class="nav-img"></a>
       <ul class="ul">
-          <li><a href="#" class="underline">Nosotros</a></li>
-          <li><a href="#" class="underline">Proyectos</a></li>
+          <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
+          <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
           <li><a href="{{ route('products_view') }}" class="underline">Productos</a>
               <div class="submenu">
                 @foreach ($categories as $category)
@@ -36,7 +36,7 @@
                 @endforeach
               </div>
           </li>
-          <li><a href="#" class="underline">Contacto</a></li>
+          <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
       </ul>
       <div class="icon-nav">
           <div>
