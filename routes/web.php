@@ -17,13 +17,17 @@ use Illuminate\Support\Facades\Route;
 /**
  * Rutas de la tienda
  */
-Route::controller(PageController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/products', 'products_view')->name('products_view');
-    Route::get('/products/article/{id}', 'product_detail')->name('product_detail');
-    Route::get('/products/subcategory/{id}', 'products_by_subcategory')->name('products_by_subcategory');
-    Route::get('/products/category/{id}', 'products_by_category')->name('products_by_category');
-});
+
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/products', [PageController::class, 'products_view'])->name('products_view');
+Route::get('/products/article/{id}', [PageController::class, 'product_detail'])->name('product_detail');
+Route::get('/products/subcategory/{id}', [PageController::class, 'products_by_subcategory'])->name('products_by_subcategory');
+Route::get('/products/category/{id}', [PageController::class, 'products_by_category'])->name('products_by_category');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/project', [PageController::class, 'project'])->name('project');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+  
+
 
 
 Route::middleware(['auth', 'role:client|admin'])->group(function () {
