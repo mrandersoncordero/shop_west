@@ -53,6 +53,9 @@ p {
   grid-template-columns: 1fr;
   gap: 24px;
 }
+.container_sucursales--info {
+  width: 400px;
+}
 .container_sucursales--info header{
   display: flex;
   flex-direction: column;
