@@ -308,12 +308,10 @@
 	padding-left: 20px;
 	transition: max-height 0.5s ease;
 }
+.mobile-menu a, .mobile-menu p { cursor: pointer; }
 /* -- end menu-mobile -- */
 
-.icon-user {
-  position: relative;
-}
-
+.icon-user {position: relative;}
 .icon-user .menu_user {
   position: absolute;
   top: 32px;
