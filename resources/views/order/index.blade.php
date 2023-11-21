@@ -20,7 +20,7 @@
         <th>Subtotal</th>
         <th>Fecha de creacion</th>
         <th>Metodo de pago</th>
-        <th>Actions</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>

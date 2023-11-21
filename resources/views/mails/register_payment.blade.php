@@ -19,10 +19,10 @@
 
       <div style="width: 96%; padding: 16px;">
         <!-- Párrafos con márgenes inferiores y fuente en negrita -->
-        <p style="margin-bottom: 16px; font-size: 1.25rem;">El usuario, {{ '@'.$user->name }} ha anexado su comprobante de pago para el pedido #{{ $order->id }}.</p>
-        <p style="margin-bottom: 16px; font-size: 1.25rem;">Comprueba cuanto antes el comprobante de pago y recuerda cambiar el estatus del pedido.</p>
-        <p style="margin-bottom: 16px; font-size: 1.25rem;">Una vez este confirmado dicho comprobante contacte con el cliente, {{ $user->first_name.' '.$user->last_name}}.</p>
-        <p style="margin-bottom: 16px; font-size: 1.25rem;">La informacion de contacto del cliente es: <b>correo:</b> {{ $user->email }} y su <b>telefono:</b> {{ $user->phone_number}}.</p>
+        <p style="margin-bottom: 4px; font-size: 1.1rem;">El usuario, {{ '@'.$user->name }} ha anexado su comprobante de pago para el pedido #{{ $order->id }}.</p>
+        <p style="margin-bottom: 4px; font-size: 1.1rem;">Comprueba cuanto antes el comprobante de pago y recuerda cambiar el estatus del pedido.</p>
+        <p style="margin-bottom: 4px; font-size: 1.1rem;">Una vez este confirmado dicho comprobante contacte con el cliente, {{ $user->first_name.' '.$user->last_name}}.</p>
+        <p style="margin-bottom: 4px; font-size: 1.1rem;">La informacion de contacto del cliente es: <b>correo:</b> {{ $user->email }} y su <b>telefono:</b> {{ $user->profile->phone_number }}.</p>
 
       </div>
 

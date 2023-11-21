@@ -2,7 +2,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name','')}}">
-  <label for="floatingInput">Name</label>
+  <label for="floatingInput">Nombre</label>
   @error('name')
   <div class="invalid-feedback">
     {{ $message }}
@@ -12,7 +12,7 @@
 
 <div class="form-floating mb-3">
   <textarea class="form-control @error('description') is-invalid @enderror " name="description" rows="5">{{ old('description', '')}}</textarea>
-  <label for="floatingTextarea">Description</label>
+  <label for="floatingTextarea">Descripcion</label>
   @error('description')
   <div class="invalid-feedback">
     {{ $message }}
@@ -27,7 +27,7 @@
         <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
     @endforeach
   </select>
-  <label for="Subcategory">Subcategory</label>
+  <label for="Subcategory">Subcategoria</label>
   @error('subcategory_id')
   <div class="invalid-feedback">
     {{ $message }}

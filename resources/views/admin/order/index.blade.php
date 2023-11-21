@@ -21,7 +21,7 @@
         <th>Tipo de pago</th>
         <th>Precio Total</th>
         <th>Fecha de creacion</th>
-        <th>Actions</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -41,7 +41,7 @@
 
               <ul class="dropdown-menu">
                 <li>
-                  <a href="{{ route('orders.edit', $order)}}" class="dropdown-item">Editar</a></li>
+                  <a href="{{ route('orders.edit', $order)}}" class="dropdown-item">Ver</a></li>
                 <li>
                   <form action="{{ route('orders.destroy', $order) }}" method="POST">
                       @csrf

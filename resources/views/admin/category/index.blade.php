@@ -9,15 +9,15 @@
 @section('content_primary')
 
     <div class="header_container">
-        <h1 class="text">Categories and subcategories</h1>
+        <h1 class="text">Categorias y subcategorias</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
     <table class="table table-bordered table-hover" id="table_category">
         <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">description</th>
-              <th scope="col">Actions</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>

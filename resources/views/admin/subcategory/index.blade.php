@@ -9,16 +9,16 @@
 @section('content_primary')
 
     <div class="header_container">
-        <h1 class="text">Subcategories</h1>
+        <h1 class="text">Subcategoria</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
     <table class="table table-hover table-bordered" id="table_subcategory">
         <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Category</th>
-              <th scope="col">Actions</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Acciones</th>
             </tr>
         </thead>
         @forelse ($subcategories as $subcategory)

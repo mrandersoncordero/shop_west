@@ -1,30 +1,30 @@
 @extends('templates.dashboard')
 
 @section('head_content')
-<title>Dashboard - Products</title>
+<title>Dashboard - Productos</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 @endsection
 
 @section('content_primary')
 
     <div class="header_container">
-        <h1 class="text">Products</h1>
+        <h1 class="text">Productos</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
     <table class="table table-hover table-bordered" id="table-product">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Code</th>
-                <th scope="col">Name</th>
-                <th scope="col">Weight</th>
-                <th scope="col">Format</th>
-                <th scope="col">Yield</th>
-                <th scope="col">Traffic</th>
-                <th scope="col">Price</th>
-                <th scope="col">Image</th>
-                <th scope="col">Created_at</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Formato</th>
+                <th scope="col">Rendimiento</th>
+                <th scope="col">Trafico</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Creado el</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>

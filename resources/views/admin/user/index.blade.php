@@ -18,9 +18,9 @@
       <tr>
         <th>#</th>
         <th>Nombre de usuario</th>
-        <th>Email</th>
+        <th>Correo</th>
         <th>Tipo de usuario</th>
-        <th>Actions</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>

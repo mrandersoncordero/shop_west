@@ -21,7 +21,7 @@
         <b>Nombre o razon social:</b> {{ $order->user->profile->first_name }}
       </p>
       <p>
-        <b>DNI:</b> {{ $order->user->profile->dni}}
+        <b>CI o RIF:</b> {{ $order->user->profile->dni}}
       </p>
       <p>
         <b>Direccion:</b> {{ $order->user->profile->address }}

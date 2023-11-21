@@ -9,7 +9,7 @@
 @section('content_primary')
 
   <div class="header_container">
-    <h1 class="text">Edit order <b>#{{ $order->id }}</b></h1>
+    <h1 class="text">Orden <b>#{{ $order->id }}</b></h1>
   </div>
 
   <section class="container_product_buy_client">
@@ -22,7 +22,7 @@
       </div>
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floating_dni" value="{{ $order->user->profile->dni }}" disabled>
-        <label for="floating_dni">DNI</label>
+        <label for="floating_dni">CI o RIF</label>
       </div>
       <div class="form-floating mb-3">
         <textarea class="form-control" name="description" rows="5" id="floating_address" disabled>{{ $order->user->profile->address }}</textarea>

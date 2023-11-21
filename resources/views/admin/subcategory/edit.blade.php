@@ -14,7 +14,7 @@
         @method('PUT')
         <div class="form-floating mb-3">
             <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name', $subcategory->name)}}">
-            <label for="floatingInput">Name</label>
+            <label for="floatingInput">Nombre</label>
             @error('name')
             <div class="invalid-feedback">
               {{ $message }}
@@ -24,7 +24,7 @@
         
         <div class="form-floating mb-3">
           <textarea class="form-control @error('description') is-invalid @enderror " name="description" rows="5">{{ old('description',$subcategory->description)}}</textarea>
-          <label for="floatingTextarea">Description</label>
+          <label for="floatingTextarea">Descripcion</label>
           @error('description')
           <div class="invalid-feedback">
             {{ $message }}
@@ -38,7 +38,7 @@
               <option value="{{ $category->id }}" @if ($category->id == $subcategory->id) @selected(true) @endif>{{ $category->name }}</option>
             @endforeach
           </select>
-          <label>Category</label>
+          <label>Categoria</label>
         </div>
 
         <div style="display: flex; align-items: center;">

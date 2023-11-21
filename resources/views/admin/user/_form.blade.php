@@ -21,7 +21,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('dni') is-invalid @enderror " name="dni" value="{{ old('dni','')}}">
-  <label for="floatingInput">Documento de identidad</label>
+  <label for="floatingInput">CI o RIF</label>
   @error('dni')
   <div class="invalid-feedback">
     {{ $message }}

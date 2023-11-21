@@ -8,7 +8,7 @@
 @section('content_primary')
 
   <div class="header_container">
-    <h1 class="text">Edit category "{{ $user->name }}"</h1>
+    <h1 class="text">Editar CAtegoria "{{ $user->name }}"</h1>
     <div class="dropdown">
       @if (Auth::user()->role->id == 1)
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +57,7 @@
 
     <div class="form-floating mb-3">
       <input type="text" class="form-control @error('dni') is-invalid @enderror " name="dni" value="{{ old('dni', $user->profile->dni )}}">
-      <label for="floatingInput">Documento de identidad</label>
+      <label for="floatingInput">CI o RIF</label>
       @error('dni')
       <div class="invalid-feedback">
         {{ $message }}
