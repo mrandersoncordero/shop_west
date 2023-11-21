@@ -26,6 +26,7 @@ Route::get('/products/category/{id}', [PageController::class, 'products_by_categ
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/project', [PageController::class, 'project'])->name('project');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/search', [PageController::class, 'search'])->name('search');
   
 
 
