@@ -40,14 +40,9 @@
       </ul>
       <div class="icon-nav">
           <div>
-              <form action="" class="form-search">
-                  <select name="" class="search-select">
-                      <option value="">Pegamentos</option>
-                      <option value="">Construccion</option>
-                      <option value="">Juntas</option>
-                  </select>
+              <form action="{{ route('search') }}" method="GET" class="form-search">
                   <div class="div-search-input">
-                      <input type="text"  placeholder="Buscar Producto" class="search-input">
+                      <input type="text" name="search" placeholder="Buscar Producto" class="search-input">
                       <button class="button-search">
                           <i class="fa-solid fa-magnifying-glass"></i>
                       </button>
