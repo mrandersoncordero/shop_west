@@ -103,4 +103,20 @@ class PageController extends Controller
             'cart_products' => $cart->show_products()
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $categories = Category::all();
+        $products = Product::where('name', 'LIKE', "%{$search}%")->paginate();
+        $cart = new CartController();
+
+        return view('page.search', [
+            'search' => $search,
+            'products' => $products,
+            'categories' => $categories,
+            'cart_products' => $cart->show_products(),
+        ]);
+    }
 }
