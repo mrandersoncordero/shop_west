@@ -10,6 +10,7 @@
   <div class="header_container">
     <h1 class="text">Edit category "{{ $user->name }}"</h1>
     <div class="dropdown">
+      @if (Auth::user()->role->id == 1)
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Permisos de usuario
       </button>
@@ -27,6 +28,7 @@
         @endforeach
         <button type="submit" class="btn btn-sm btn-primary" style="width 100%">Guardar</button>
       </form>
+      @endif
     </div>
   </div>
   <form action="{{ route('users.update', $user) }}" method="post">
