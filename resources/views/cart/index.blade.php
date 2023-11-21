@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<main style="margin-top: 100px;">
+<main style="display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh;">
   {{-- incluir message --}}
   @if (session('message'))
   @include('templates.message')
