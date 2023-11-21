@@ -158,26 +158,22 @@
 
   <div class="mobile-navbar">
       <ul>
-          <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
-          <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
-          <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
-          <li class="mobile-menu" id="submenu-down">
-              <a href="#" class="line-down underline" id="submenu-down-two">Linea de Pegamentos<i class="fa-solid fa-angle-down" id="angle"></i></ion-icon></a>
-              <ul class="mobile-submenu">
-                  <li><a href="productos.html#2" class="underline">Basicos<i class="fa-solid fa-angle-right"></i></a></li>
-                  <li><a href="productos.html#3" class="underline">Profesional<i class="fa-solid fa-angle-right"></i></a></li>
-                  <li><a href="productos.html#4" class="underline">Flexible<i class="fa-solid fa-angle-right"></i></a></li>
-              </ul>
-          </li>
-          <li class="mobile-menu" id="submenu-down">
-              <a href="#" class="line-down underline" id="submenu-down-two">Linea de Construccion<i class="fa-solid fa-angle-down" id="angle"></i></ion-icon></a>
-              <ul class="mobile-submenu">
-                  <li><a href="productos.html#2" class="underline">Revestimiento<i class="fa-solid fa-angle-right"></i></a></li>
-                  <li><a href="productos.html#3" class="underline">Pegamentos<i class="fa-solid fa-angle-right"></i></a></li>
-                  <li><a href="productos.html#4" class="underline">Estructural<i class="fa-solid fa-angle-right"></i></a></li>
-              </ul>
-          </li>
-          <li><a href="index.html" class="underline">Linea D' Sella Juntas</a></li>
+        <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
+        <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
+        <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
+        @foreach ($categories as $category)
+        <li class="mobile-menu" id="submenu-down">
+            <p class="line-down underline" id="submenu-down-two">
+                Linea de {{ $category->name }}
+                <i class="fa-solid fa-angle-down" id="angle"></i>
+            </p>
+            <ul class="mobile-submenu">
+            @foreach ($category->subcategories as $subcategory)
+                <li><a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="underline">{{ $subcategory->name }}</a></li>
+            @endforeach
+            </ul>
+        </li>
+        @endforeach
       </ul>
   </div>
 </nav>
