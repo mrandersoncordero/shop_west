@@ -531,7 +531,10 @@
 @media screen and (max-width: 525px) {
   .top-navbar { display: none; }
   .nav-img { width: 150px; margin: 0; }
-  .navbar-content { gap: 12px; }
+  .navbar-content { 
+    gap: 12px;
+    justify-content: space-evenly !important; 
+  }
   .form-search { width: 200px;}
 
   .navbar-content {
@@ -542,3 +545,24 @@
     gap: 0px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .navbar-content { 
+    padding: 8px 2px;
+    gap: 12px !important 
+  }
+  .nav-img {
+    width: 120px;
+  }
+  .search-input {
+    font-size: .9rem;
+  }
+  .form-search {
+    width: 150px;
+    height: 34px;
+  }
+  .icon-nav {
+    gap: 20px;
+  }
+}
+

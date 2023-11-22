@@ -3,6 +3,9 @@ p {
   color: var(--grey);
   line-height: 1.4rem;
 }
+footer p {
+  color: var(--white);
+}
 .carrousel_glide_white {
   max-width: 350px;
 }
@@ -13,10 +16,10 @@ p {
   margin-bottom: 24px;
 }
 .glide__arrow--right {
-  right: -1em;
+  right: -.9em;
 }
 .glide__arrow--left {
-  left: -1em;
+  left: -.9em;
 }
 .content_primary .content_about {
   display: flex;
@@ -116,11 +119,6 @@ p {
   font-weight: bold;
 }
 
-@media screen and (max-width: 525px) {
-  main {
-    margin-top: 44px !important;
-  }
-}
 
 @media screen and (max-width: 749px) {
   .content_primary {
@@ -150,5 +148,10 @@ p {
   }
   .sucursal img {
     width: 400px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container_sucursales--info {
+    width: 100% !important;
   }
 }

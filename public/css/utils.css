@@ -331,3 +331,60 @@
 .container_message:hover{
   background-color: #efefef;
 }
+
+@media screen and (max-width: 800px)  {
+  .diana_detail--primary {
+    height: 350px;
+    width: 350px;
+  }
+  .diana_detail--primary .diana_detail--secondary {
+    height: 300px;
+    width: 300px;
+  }
+  .diana_detail--primary .diana_detail--secondary img {
+    width: 250px;
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 700px)  {
+  .diana_detail--primary {
+    height: 300px;
+    width: 300px;
+  }
+  .diana_detail--primary .diana_detail--secondary {
+    height: 250px;
+    width: 250px;
+  }
+  .diana_detail--primary .diana_detail--secondary img {
+    width: 214px;
+    height: 282px;
+  }
+}
+
+@media screen and (max-width: 600px)  {
+
+  .container_image--product { grid-template-columns: repeat(1, 1fr) !important; }
+  .diana_detail--primary {
+    height: 280px;
+    width: 280px;
+  }
+  .diana_detail--primary .diana_detail--secondary {
+    height: 230px;
+    width: 230px;
+  }
+  .diana_detail--primary .diana_detail--secondary img {
+    width: 200px;
+    height: 270px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .banner-top { height: 200px; }
+  
+  .products { grid-template-columns: repeat(1, 1fr); gap: 24px; }
+
+  .menu_between_views ul li a { font-size: .9rem; }
+  .menu_between_views { padding: 12px 4px 12px 2px; }
+}

@@ -29,7 +29,7 @@
               {{--  Pegamentos --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
-                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>
@@ -67,7 +67,7 @@
               {{--  Construccion --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
-                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>
@@ -106,7 +106,7 @@
               {{--  Sella Juntas --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
-                  <img src="{{ asset("product/$product->image" )}}" alt="" style="width: 100%; height: 300px;">
+                  <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>

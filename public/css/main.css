@@ -163,6 +163,7 @@ main {
   font-size: 1rem;
   color: #323232;
   margin-bottom: 12px;
+  line-height: 1.2rem;
 }
 .productos-destacados .content a {
   font-size: .8rem;
@@ -326,6 +327,17 @@ main {
   font-size: 30px;
 }
 
+.products_carrousel--container img {
+  height: 300px;
+  width: 100%;
+}
+@media screen and (max-width: 880px) {
+  .productos-destacados {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .container_footer .footer_section_primary img {
     width: 32%;
@@ -339,8 +351,73 @@ main {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .gif { padding-top: 15% !important; }
+  .gif img{ height: 100%;}
+  main { margin-top: 60px !important;  }
+
+  .header_line h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .diana-principal {
+    width: 350px;
+    height: 350px;
+  }
+  .diana-secundaria {
+    width: 300px;
+    height: 300px;
+  }
+
+  .diana-container .diana-secundaria img{ width: 110px; }
+  .diana-imagen-secundaria {  width: 80px; }
+
+  .banner .banner_image { height: 100%; }
+
+  .container-categories {
+    flex-direction: column;
+    margin: 0px !important;
+  }
+  .container-categories .category { width: 70%; }
+  .container-categories .category  a img {width: 30%; }
+} 
+@media screen and (max-width: 420px)  {
+
+  .productos-destacados .content {
+    width: 100%;
+    padding: 8px;
+  }
+  .productos-destacados .content .titulo-destacado h2,
+  .productos-destacados .content .titulo-producto-destacado {
+    font-size: 1.6em;
+  }
+  .header_line h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .diana-principal {
+    width: 300px;
+    height: 300px;
+  }
+  .diana-secundaria {
+    width: 250px;
+    height: 250px;
+  }
+
+  .diana-container .diana-secundaria img{ width: 90px; }
+  .diana-imagen-secundaria {  width: 70px; }
+
+  .products_carrousel--container img {
+    height: 300px;
+    width: 240px;
+  }
+}
+
 @media screen and (min-width: 740px) {
   .container_footer .footer_section_primary img {
     width: 140px !important;
   }
 }
+

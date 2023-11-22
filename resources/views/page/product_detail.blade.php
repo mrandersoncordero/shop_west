@@ -22,12 +22,6 @@
           <i class="fa-solid fa-angle-right"></i>
         </div>
         <li>
-          <a href="{{ route('products_view') }}">Productos</a>
-        </li>
-        <div class="separation_section_menu">
-          <i class="fa-solid fa-angle-right"></i>
-        </div>
-        <li>
           <a href="{{ route('products_by_category', $product->subcategory->category->id) }}">{{$product->subcategory->category->name}}</a>
         </li>
         <div class="separation_section_menu">
