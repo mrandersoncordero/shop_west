@@ -162,36 +162,38 @@
         <p>Bienvenido, {{ Auth::user()->name }}</p>
     </div>
     @endauth
-    <ul>
-        <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
-        <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
-        <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
-        @foreach ($categories as $category)
-        <li class="mobile-menu" id="submenu-down">
-            <p class="line-down underline" id="submenu-down-two">
-                Linea de {{ $category->name }}
-                <i class="fa-solid fa-angle-down" id="angle"></i>
-            </p>
-            <ul class="mobile-submenu">
-            @foreach ($category->subcategories as $subcategory)
-                <li><a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="underline">{{ $subcategory->name }}</a></li>
+    <div class="mobile_navbar--container">
+        <ul>
+            <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
+            <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
+            <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
+            @foreach ($categories as $category)
+            <li class="mobile-menu" id="submenu-down">
+                <p class="line-down underline" id="submenu-down-two">
+                    Linea de {{ $category->name }}
+                    <i class="fa-solid fa-angle-down" id="angle"></i>
+                </p>
+                <ul class="mobile-submenu">
+                @foreach ($category->subcategories as $subcategory)
+                    <li><a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="underline">{{ $subcategory->name }}</a></li>
+                @endforeach
+                </ul>
+            </li>
             @endforeach
-            </ul>
-        </li>
-        @endforeach
-    </ul>
+        </ul>
 
-    @auth
-    <ul class="mobile_menu_bottom">
-        <li><a href="#" class="underline">Mi cuenta</a></li>
-        <li><a href="{{ route('order.index') }}" class="underline">Mis Pedidos</a></li>
-        <li>
-            <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit">Cerrar sesion</button>
-            </form>
-        </li>
-    </ul>
-    @endauth
+        @auth
+        <ul class="mobile_menu_bottom">
+            <li><a href="#" class="underline">Mi cuenta</a></li>
+            <li><a href="{{ route('order.index') }}" class="underline">Mis Pedidos</a></li>
+            <li>
+                <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">Cerrar sesion</button>
+                </form>
+            </li>
+        </ul>
+        @endauth
+    </div>
   </div>
 </nav>
