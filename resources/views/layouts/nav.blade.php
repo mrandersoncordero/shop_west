@@ -82,6 +82,9 @@
             </div>
           </div>
 
+          <div class="icon-bars">
+            <ion-icon name="reorder-four-outline" id="icon-hamburguer"></ion-icon>
+          </div>
           {{-- ICON TRUCK --}}
           <div class="icon_truck @if(!Auth::user()) inactive @endif">
             <button id="button_truck"><i class="fa-solid fa-truck" ></i></button>
@@ -148,9 +151,6 @@
                     </a>
                 </div>
             </aside>
-          </div>
-          <div class="icon-bars">
-              <ion-icon name="reorder-four-outline" id="icon-hamburguer"></ion-icon>
           </div>
       </div>
   </div>
