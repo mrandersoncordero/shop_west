@@ -274,23 +274,34 @@
     cursor: pointer;
 }
 .mobile-navbar {
-    background: var(--white);
-
-    position: absolute;
+  position: relative;
+  background: var(--white);
+  position: absolute;
 	top: 100%;
-    left: -250px;
-    width: 250px;
+  left: -250px;
+  width: 250px;
 	height: 100vh;
-    overflow-y: auto;
-    transition: 0.4s;
-	display: none;
+  overflow-y: auto;
+  transition: 0.4s;
+	display: none;    
+  box-shadow: 5px 1px 2px rgba(0, 0, 0, 0.2);
 }
+.mobile_navbar--header {
+  padding: 12px;
+  background-color: #dfdfdf;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-bottom: 1px solid #818181;
+}
+
 .mobile-navbar ul{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 	width: 100%;
 	transition: 0.3s ease all;
+  padding-left: 12px;
 }
 .mobile-navbar ul li {
 	margin-bottom: 14px;
@@ -309,6 +320,25 @@
 	transition: max-height 0.5s ease;
 }
 .mobile-menu a, .mobile-menu p { cursor: pointer; }
+.mobile_menu_bottom {
+  border-top: 1px solid #d0d0d0;
+  position: absolute;
+  bottom: 40px;
+}
+.mobile_menu_bottom li a {
+  color: #000;
+  font-size: .9rem;
+}
+.mobile_menu_bottom li form button {
+  color: #b41f1f;
+  font-size: .9rem;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
 /* -- end menu-mobile -- */
 
 .icon-user {position: relative;}

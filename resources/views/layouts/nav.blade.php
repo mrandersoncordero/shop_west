@@ -157,7 +157,12 @@
 
 
   <div class="mobile-navbar">
-      <ul>
+    @auth
+    <div class="mobile_navbar--header">
+        <p>Bienvenido, {{ Auth::user()->name }}</p>
+    </div>
+    @endauth
+    <ul>
         <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
         <li><a href="{{ route('contact') }}" class="underline">Contacto</a></li>
         <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
@@ -174,6 +179,19 @@
             </ul>
         </li>
         @endforeach
-      </ul>
+    </ul>
+
+    @auth
+    <ul class="mobile_menu_bottom">
+        <li><a href="#" class="underline">Mi cuenta</a></li>
+        <li><a href="{{ route('order.index') }}" class="underline">Mis Pedidos</a></li>
+        <li>
+            <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">Cerrar sesion</button>
+            </form>
+        </li>
+    </ul>
+    @endauth
   </div>
 </nav>

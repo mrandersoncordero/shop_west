@@ -18,7 +18,7 @@
       <h1>Detalles del carrito de compras</h1>
     </header>
     <article class="container_card">
-      <section>
+      <section class="cart_content_products">
     @php
     $price_total = 0;
     @endphp
@@ -64,11 +64,6 @@
               @method('DELETE')
               <button type="submit"><i class="fa-solid fa-trash"></i></button>
             </form>
-            <form action="{{ route('cart.clear') }}" method="POST" class="cart_clear">
-              @csrf
-              @method('DELETE')
-              <button type="submit"><i class="fa-brands fa-bitbucket"></i></button>
-            </form>
           </section>
 
         </section>
@@ -97,7 +92,15 @@
               </div> 
               @enderror
             </div>
-            <button type="submit" class="mt-4 btn btn-secondary">Comfirmar compra</button>
+            <div class="mt-4" style="display: flex; justify-content: flex-start; gap: 12px;">
+
+            <button type="submit" class="btn btn-secondary">Comfirmar compra</button>
+            <form action="{{ route('cart.clear') }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-secondary"><i class="fa-brands fa-bitbucket"></i></button>
+            </form>
+            </div>
           </form>
 
         </div>
