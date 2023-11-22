@@ -3,10 +3,17 @@
 */
 const menuHamburguer = document.getElementById('icon-hamburguer');
 
+
 menuHamburguer.addEventListener('click', function() {
     const mobileNavbar = document.querySelector('.mobile-navbar');
 
     const icon = document.querySelector('#icon-hamburguer');
+
+    verify_active_message();
+
+    if (!menu_truck.classList.contains('inactive')) {
+      menu_truck.classList.add('inactive');
+    }
 
     if (icon.getAttribute('name') == 'reorder-four-outline') {
         mobileNavbar.style.left = '0px';

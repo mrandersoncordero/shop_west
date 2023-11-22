@@ -16,6 +16,13 @@ function verify_active_message() {
 }
 action_menu_truck.addEventListener('click', () => {
   // console.log(menu_user.classList.contains('inactive'));
+  const mobileNavbar = document.querySelector('.mobile-navbar');
+  const icon = document.querySelector('#icon-hamburguer');
+  
+  if(mobileNavbar.style.left == '0px') {
+    mobileNavbar.style.left = '-260px';
+    icon.setAttribute('name','reorder-four-outline');
+  }
 
   if(menu_user.classList.contains('inactive')) {
     // Si menu_user esta inactivo
