@@ -17,6 +17,10 @@
     <header class="header_line">
       <h1>Detalles del carrito de compras</h1>
     </header>
+
+    <div style="margin: 12px 0px;">
+      <img src="{{ asset('images/metodos_de_pago.jpg') }}" alt="" style="width: 100%;">
+    </div>
     <article class="container_card">
       <section class="cart_content_products">
     @php
@@ -109,9 +113,6 @@
 
   </section>
 
-
-  @else
-    <p>no hay nada</p>
   @endif
 </main>
 
