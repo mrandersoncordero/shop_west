@@ -554,8 +554,8 @@
 
 @media screen and (max-width: 420px) {
   .navbar-content { 
-    padding: 8px 2px;
-    gap: 12px !important 
+    padding: 8px 1px;
+    gap: 0 !important;
   }
   .nav-img {
     width: 120px;
@@ -568,7 +568,7 @@
     height: 34px;
   }
   .icon-nav {
-    gap: 20px;
+    gap: 4px;
   }
 }
 
