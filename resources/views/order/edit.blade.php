@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<main style="margin-top: 100px; height: 90vh">
+<main style="display: flex; flex-direction: column; min-height: 100vh;">
   <header class="header_line" style="margin: 24px 0;">
     <h1>Pedido #{{ $order->id }}</h1>
   </header>
@@ -92,97 +92,101 @@
 
     </article>
     <article class="data_order_product">
-      <table id="table_detail_order" class="display table table-bordered">
-        <thead>
-          <tr>
-            <th>#COD</th>
-            <th>Descripcion</th>
-            <th>Cantidad</th>
-            <th>Precio unitario</th>
-            <th>Precio total</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($order->order_products as $item)
-          <tr>
-            <td>{{ $item->product->code }}</td>
-            <td>{{ $item->product->name }}</td>
-            <td>{{ $item->quantity }}</td>
-            <td>{{ $item->price }}$</td>
-            <td>
-            @php
-              $quantity = $item->price * $item->quantity
-            @endphp
-            {{ $quantity }}$
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table id="table_detail_order" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#COD</th>
+              <th>Descripcion</th>
+              <th>Cantidad</th>
+              <th>Precio unitario</th>
+              <th>Precio total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($order->order_products as $item)
+            <tr>
+              <td>{{ $item->product->code }}</td>
+              <td>{{ $item->product->name }}</td>
+              <td>{{ $item->quantity }}</td>
+              <td>{{ $item->price }}$</td>
+              <td>
+              @php
+                $quantity = $item->price * $item->quantity
+              @endphp
+              {{ $quantity }}$
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
 
-      <table id="table_detail_order" class="display table table-bordered mt-4">
-        <thead>
-          <tr>
-            <th>Total Pedido</th>
-            <th>{{ $order->price_total }}$</th>
-          </tr>
-        </thead>
-        <tbody>
-          @php
-          $subtotal = $order->price_total;
-          $iva = ($order->price_total * 0.16);
+      <div class="table-responsive">
+        <table id="table_detail_order" class="table table-bordered mt-4">
+            <thead>
+              <tr>
+                <th>Total Pedido</th>
+                <th>{{ $order->price_total }}$</th>
+              </tr>
+            </thead>
+            <tbody>
+              @php
+              $subtotal = $order->price_total;
+              $iva = ($order->price_total * 0.16);
 
-          $subtotal_with_iva = $subtotal + $iva;
-          
-          if ($order->payment_type_id == 2) {
-            /**
-            * si el tipo de pago es en divisas en efectivo 
-            * hacer operaciones con IGTF
-            */
-            $igtf = ($subtotal_with_iva * 0.03);
+              $subtotal_with_iva = $subtotal + $iva;
+              
+              if ($order->payment_type_id == 2) {
+                /**
+                * si el tipo de pago es en divisas en efectivo 
+                * hacer operaciones con IGTF
+                */
+                $igtf = ($subtotal_with_iva * 0.03);
 
-            if($order->user->profile->withholding_tax == 100) {
-              $total_price = $subtotal_with_iva + $igtf - $iva;
-            }else{
-              $withholding_tax = $iva * $order->user->profile->withholding_tax;
-              $total_price = $subtotal_with_iva + $igtf - $withholding_tax;
-            }
+                if($order->user->profile->withholding_tax == 100) {
+                  $total_price = $subtotal_with_iva + $igtf - $iva;
+                }else{
+                  $withholding_tax = $iva * $order->user->profile->withholding_tax;
+                  $total_price = $subtotal_with_iva + $igtf - $withholding_tax;
+                }
 
-          }else{
-            
-            if($order->user->profile->withholding_tax == 100) {
-              $total_price = $subtotal_with_iva - $iva;
-            }else{
-              $withholding_tax = $iva * $order->user->profile->withholding_tax;
-              $total_price = $subtotal_with_iva - $withholding_tax;
-            }
-          }
+              }else{
+                
+                if($order->user->profile->withholding_tax == 100) {
+                  $total_price = $subtotal_with_iva - $iva;
+                }else{
+                  $withholding_tax = $iva * $order->user->profile->withholding_tax;
+                  $total_price = $subtotal_with_iva - $withholding_tax;
+                }
+              }
 
-          // Formatea las variables para limitar a 2 decimales
-          $iva = number_format($iva, 2);
-          if($order->payment_type_id == 2) {
-            $igtf = number_format($igtf, 2);
-          }
-          $total_price = number_format($total_price, 2);
-          @endphp
-          <tr>
-            <td>IVA</td>
-            <th>{{ $iva }}$</th>
-          </tr>
-          @if ($order->payment_type_id == 2)
-          <tr>
-            <td>IGTF</td>
-            <th>{{ $igtf }}$</th>
-          </tr>    
-          @endif
-          <tr>
-            <th>Total a pagar</th>
-            <th>
-            {{ $total_price }}$
-            </th>
-          </tr>
-        </tbody>
-      </table>
+              // Formatea las variables para limitar a 2 decimales
+              $iva = number_format($iva, 2);
+              if($order->payment_type_id == 2) {
+                $igtf = number_format($igtf, 2);
+              }
+              $total_price = number_format($total_price, 2);
+              @endphp
+              <tr>
+                <td>IVA</td>
+                <th>{{ $iva }}$</th>
+              </tr>
+              @if ($order->payment_type_id == 2)
+              <tr>
+                <td>IGTF</td>
+                <th>{{ $igtf }}$</th>
+              </tr>    
+              @endif
+              <tr>
+                <th>Total a pagar</th>
+                <th>
+                {{ $total_price }}$
+                </th>
+              </tr>
+            </tbody>
+        </table>
+      </div>
     </article>
   </section>
 
