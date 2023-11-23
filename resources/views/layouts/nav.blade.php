@@ -193,6 +193,10 @@
                 </form>
             </li>
         </ul>
+        @else
+        <ul class="mobile_menu_bottom">
+            <li><a href="{{ route('login') }}">Iniciar sesion</a></li>
+        </ul>
         @endauth
     </div>
   </div>
