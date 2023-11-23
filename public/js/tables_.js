@@ -2,7 +2,10 @@ let table = new DataTable("#myTable", {
     responsive: true,
     columnDefs: [
         { targets: [0, 1, 2, 3], searchable: true }
-    ]
+    ],
+    info: false,
+    searching: false,
+    lengthChange: false
 });
 
 let table_detail_order = new DataTable("#table_detail_order", {
