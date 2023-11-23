@@ -332,6 +332,22 @@
   background-color: #efefef;
 }
 
+.table-responsive {
+  padding: 0px 12px;
+}
+.data_order_product {
+  overflow: scroll;
+}
+
+@media screen and (max-width: 1000px)  {
+  .container_order_buy {
+    grid-template-columns: 1fr;
+  }
+  .table-responsive {
+    overflow-x: scroll;
+  }
+}
+
 @media screen and (max-width: 800px)  {
   .diana_detail--primary {
     height: 350px;
