@@ -74,6 +74,9 @@
               <div>
                 <p><span>Trafico:</span> {{ $product->traffic }}</p>
               </div>
+              <div>
+                <p><span>Precio:</span> {{ $product->price }}$</p>
+              </div>
             </div>
 
             @auth
