@@ -71,7 +71,7 @@
   <div class="modal_content">
     <div class="modal_header">
       <div>
-        <p>Crear categoria</p>
+        <p>Crear Usuario</p>
         <i class='bx bx-x' id="close"></i>
       </div>
     </div>
