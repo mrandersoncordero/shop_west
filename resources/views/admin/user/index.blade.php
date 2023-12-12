@@ -18,8 +18,8 @@
       <tr>
         <th>#</th>
         <th>Nombre de usuario</th>
-        <th>Correo</th>
         <th>Tipo de usuario</th>
+        <th>Correo</th>
         <th>Acciones</th>
       </tr>
     </thead>
