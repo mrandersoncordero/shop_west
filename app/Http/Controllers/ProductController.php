@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductRating;
 use App\Models\Subcategory;
 use App\Models\User;
 use Illuminate\Database\QueryException;
@@ -167,4 +168,40 @@ class ProductController extends Controller
             }
         }
     }
+
+    public function rateProduct(Request $request, $productId) {
+        $user = Auth::user();
+        $product = Product::findOrFail($productId);
+        $comment = $request->input('comment');
+        // Verifica si el usuario ya calificó el producto
+        $existingRating = ProductRating::where('product_id', $productId)
+            ->where('user_id', $user->id)
+            ->first();
+    
+        if ($existingRating) {
+            // Si el usuario ya calificó, actualiza la calificación y el comentario
+
+            if (empty(trim($comment))) {
+                // Si el comentario es vacio
+                $existingRating->update([
+                    'rating' => $request->input('rating'),
+                ]);
+            }else{
+                $existingRating->update([
+                    'rating' => $request->input('rating'),
+                    'comment' => $request->input('comment'),
+                ]);
+            }
+        } else {
+            // Si no, crea una nueva calificación con comentario
+            $product->ratings()->create([
+                'user_id' => $user->id,
+                'rating' => $request->input('rating'),
+                'comment' => $request->input('comment'),
+            ]);
+        }
+    
+        return redirect()->back()->with('success', 'Calificación y comentario agregados exitosamente');
+    }
+    
 }
