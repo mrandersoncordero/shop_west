@@ -2,6 +2,8 @@
 
 @section('head_content')
   <title>Pegoccidente - Article {{ $product->name }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 @endsection
 
 @section('content')
@@ -88,7 +90,130 @@
             </form>
             @endauth
           </article>
-          
+
+          <!-- Agrega tu enlace a Font Awesome y tu estilo -->
+
+          <style>
+              .checked {
+                  color: orange;
+              }
+          </style>
+
+          <!-- Agrega el contenedor para las estrellas -->
+          <div style="display: flex; width:100%; gap: 4px; margin-top: 4px;">
+            <span style="">{{ $averageRating }}</span>
+            <div class="star-rating" data-rating="{{ $averageRating }}">
+                @for ($i = 1; $i <= 5; $i++)
+                    @if ($i <= $averageRating)
+                        <span class="fa fa-star checked"></span>
+                    @else
+                        <span class="fa fa-star"></span>
+                    @endif
+                @endfor
+            </div>
+          </div>
+
+          <!-- Agrega tu función de JavaScript -->
+          <script>
+              // Función para pintar las estrellas
+              function paintStars(rating) {
+                  const stars = document.querySelector('.star-rating');
+                  const percentage = (rating / 5) * 100; // Convertir la calificación en un porcentaje
+                  console.log(percentage);
+                  //stars.style.width = `${percentage}%`; // Establecer el ancho del contenedor de estrellas
+              }
+
+              // Obtener el promedio de calificación del contenedor y pintar las estrellas
+              const averageRating = parseFloat(document.querySelector('.star-rating').getAttribute('data-rating'));
+              paintStars(averageRating);
+          </script>
+
+        </section>
+
+        {{-- seccion de comentarios --}}
+        <section style="padding: 8px;">
+          <div>
+            <h3>Escribir opinión de este producto</h3>
+            <p>Comparte tu opinión con otros clientes</p>
+          </div>
+
+          {{-- formulario --}}
+          <form 
+            action="{{ route('products.rate', ['productId' => $product->id]) }}" 
+            method="POST"
+            style="margin-top: 8px;"
+          >
+            @csrf
+
+            <div class="form-floating">
+              <select 
+                name="rating"
+                class="form-select form-select-lg mb-3" 
+                id="floatingSelect" 
+                aria-label="Floating label select example"
+              >
+                <option value="1" style="color: orange;">★</option>
+                <option value="2" style="color: orange;">★★</option>
+                <option value="3" style="color: orange;">★★★</option>
+                <option value="4" style="color: orange;">★★★★</option>
+                <option value="5" style="color: orange;" selected>★★★★★</option>
+              </select>
+              <label for="floatingSelect">Califica</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea 
+                class="form-control" 
+                name="comment"
+                placeholder="Escribe tu comentario aquí"
+                id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Comentario</label>
+            </div>
+
+            <button 
+              type="submit"
+              class="btn btn-primary mb-3"
+            >Calificar</button>
+          </form>
+
+          <h4>Opiniones de clientes</h4>
+
+          {{-- Lista de comentarios --}}
+          <div class="">
+            @forelse ($product_rating as $item)
+
+              @if ($item->product_id == $product->id)
+              
+              <div class="container border rounded-2 mt-2">
+                {{-- User --}}
+                <div class="user">
+                  <i class="fa-solid fa-circle-user"></i><span>{{ $item->user->profile->full_name() }}</span>
+                </div>
+                
+                {{-- Rating --}}
+                <div class="start_rating">
+                  {{ $item->rating}}
+                @for ($i = 1; $i <= 5; $i++)
+                  @if ($item->rating >= $i)
+                    <span class="fa fa-star checked"></span>
+                  @else
+                    <span class="fa fa-star"></span>
+                  @endif
+                @endfor
+                </div>
+
+                <div class="comment">
+                  <p>{{ $item->comment }}</p>
+                </div>
+
+              </div>
+
+              @endif
+
+            @empty
+
+            @endforelse
+          </div>
         </section>
       </article>
     </section>
@@ -96,4 +221,6 @@
   </main>
 
 @include('templates.footer')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 @endsection
