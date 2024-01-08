@@ -48,6 +48,11 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
     Route::get('/my_orders', [OrderController::class, 'view_index'])->name('order.index');
     Route::get('/my_orders/{order}', [OrderController::class, 'view_edit'])->name('order.edit');
     Route::resource('/store/payment', PaymentController::class)->except('edit', 'update', 'show');
+
+    /**
+     * Rating
+     */
+    Route::post('/products/{productId}/rate', [ProductController::class, 'rateProduct'])->name('products.rate');
 });
 
 /**
