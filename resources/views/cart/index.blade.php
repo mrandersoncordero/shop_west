@@ -101,7 +101,6 @@
             <button type="submit" class="btn btn-secondary">Comfirmar compra</button>
             <form action="{{ route('cart.clear') }}" method="POST">
               @csrf
-              @method('DELETE')
               <button type="submit" class="btn btn-secondary"><i class="fa-brands fa-bitbucket"></i></button>
             </form>
             </div>
