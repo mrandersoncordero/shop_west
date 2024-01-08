@@ -132,49 +132,50 @@
 
         {{-- seccion de comentarios --}}
         <section style="padding: 8px;">
+
+          @auth
           <div>
             <h3>Escribir opinión de este producto</h3>
             <p>Comparte tu opinión con otros clientes</p>
           </div>
-
-          {{-- formulario --}}
-          <form 
-            action="{{ route('products.rate', ['productId' => $product->id]) }}" 
-            method="POST"
-            style="margin-top: 8px;"
-          >
-            @csrf
-
-            <div class="form-floating">
-              <select 
-                name="rating"
-                class="form-select form-select-lg mb-3" 
-                id="floatingSelect" 
-                aria-label="Floating label select example"
-              >
-                <option value="1" style="color: orange;">★</option>
-                <option value="2" style="color: orange;">★★</option>
-                <option value="3" style="color: orange;">★★★</option>
-                <option value="4" style="color: orange;">★★★★</option>
-                <option value="5" style="color: orange;" selected>★★★★★</option>
-              </select>
-              <label for="floatingSelect">Califica</label>
-            </div>
-
-            <div class="form-floating mb-3">
-              <textarea 
-                class="form-control" 
-                name="comment"
-                placeholder="Escribe tu comentario aquí"
-                id="floatingTextarea"></textarea>
-              <label for="floatingTextarea">Comentario</label>
-            </div>
-
-            <button 
-              type="submit"
-              class="btn btn-primary mb-3"
-            >Calificar</button>
-          </form>
+            {{-- formulario --}}
+            <form 
+              action="{{ route('products.rate', ['productId' => $product->id]) }}" 
+              method="POST"
+              style="margin-top: 8px;"
+            >
+              @csrf
+              <div class="form-floating">
+                <select 
+                  name="rating"
+                  class="form-select form-select-lg mb-3" 
+                  id="floatingSelect" 
+                  aria-label="Floating label select example"
+                >
+                  <option value="1" style="color: orange;">★</option>
+                  <option value="2" style="color: orange;">★★</option>
+                  <option value="3" style="color: orange;">★★★</option>
+                  <option value="4" style="color: orange;">★★★★</option>
+                  <option value="5" style="color: orange;" selected>★★★★★</option>
+                </select>
+                <label for="floatingSelect">Califica</label>
+              </div>
+            
+              <div class="form-floating mb-3">
+                <textarea 
+                  class="form-control" 
+                  name="comment"
+                  placeholder="Escribe tu comentario aquí"
+                  id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Comentario</label>
+              </div>
+            
+              <button 
+                type="submit"
+                class="btn btn-primary mb-3"
+              >Calificar</button>
+            </form>
+          @endauth
 
           <h4>Opiniones de clientes</h4>
 
