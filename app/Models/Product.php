@@ -26,4 +26,8 @@ class Product extends Model
     {
         return $this->belongsTo(Subcategory::class);
     }
+
+    public function ratings() {
+        return $this->hasMany(ProductRating::class);
+    }
 }
