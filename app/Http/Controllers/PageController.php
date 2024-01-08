@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\ProductRating;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
@@ -41,10 +42,16 @@ class PageController extends Controller
             return redirect()->route('error.page');
         }
 
+        $ratings = $product->ratings()->pluck('rating')->toArray(); // Obtener todas las calificaciones del producto
+
+        $averageRating = count($ratings) > 0 ? array_sum($ratings) / count($ratings) : 0; // Calcular el promedio
+
         return view('page.product_detail', [
             'product' => $product,
             'categories' => $categories,
-            'cart_products' => $cart->show_products()
+            'cart_products' => $cart->show_products(),
+            'averageRating' => $averageRating,
+            'product_rating' => ProductRating::all(),
         ]);
     }
 
