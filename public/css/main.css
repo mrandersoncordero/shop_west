@@ -270,7 +270,12 @@ main {
 
 .banner .banner_image {
   width: 100%;
-  height: 220px;
+  height: 230px;
+}
+
+.banner .banner_image_2 {
+  width: 100%;
+  height: 300px;
 }
 
 .products_content {
@@ -374,6 +379,7 @@ main {
   .diana-imagen-secundaria {  width: 80px; }
 
   .banner .banner_image { height: 100%; }
+  .banner .banner_image_2 { height: 100%; }
 
   .container-categories {
     flex-direction: column;
