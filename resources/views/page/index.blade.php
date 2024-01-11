@@ -63,7 +63,7 @@
     </section>
 
     <div class="banner">
-        <img src="{{ asset('images/calidad_que_perdura.png') }}" alt="" class="banner_image_2">
+        <img src="{{ asset('images/calidad_que_perdura.jpg') }}" alt="" class="banner_image_2">
     </div>
 
     <section class="categories">
@@ -99,7 +99,7 @@
     </section>
 
     <div class="banner">
-        <img src="{{ asset('images/siempre_imitados_nunca_igualados.png') }}" alt="" class="banner_image">
+        <img src="{{ asset('images/siempre_imitados_nunca_igualados.jpg') }}" alt="" class="banner_image_2">
     </div>
 
     <section class="projects">
