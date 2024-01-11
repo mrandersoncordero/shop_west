@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="gif">
-    <img src="{{ asset('images/bann.gif') }}" alt="pego gif">
+    <img src="{{ asset('images/empresa_lider.gif') }}" alt="pego gif">
 </div>
   
 <main>
@@ -63,7 +63,7 @@
     </section>
 
     <div class="banner">
-        <img src="{{ asset('images/banner_pego.png') }}" alt="" class="banner_image">
+        <img src="{{ asset('images/calidad_que_perdura.png') }}" alt="" class="banner_image_2">
     </div>
 
     <section class="categories">
@@ -97,6 +97,10 @@
             </div>
         </article>
     </section>
+
+    <div class="banner">
+        <img src="{{ asset('images/siempre_imitados_nunca_igualados.png') }}" alt="" class="banner_image">
+    </div>
 
     <section class="projects">
         <header>

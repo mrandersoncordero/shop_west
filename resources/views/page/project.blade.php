@@ -13,6 +13,10 @@
 
   
 <main>
+    <div class="banner">
+        <img src="{{ asset('images/banner_pego.png') }}" style="margin:0px;" class="banner_image">
+    </div>
+
     <header class="header_line">
         <h1>Proyectos con Nuestros Productos</h1>
     </header>
