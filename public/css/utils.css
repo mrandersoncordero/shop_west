@@ -139,8 +139,8 @@
   width: 90px;
   position: absolute;
   z-index: 5;
-  top: 0;
-  right: 0;
+  top: -10px;
+  right: -5px;
 }
 
 .diana_detail--primary .diana_detail--secondary {
@@ -410,4 +410,9 @@
 
   .menu_between_views ul li a { font-size: .9rem; }
   .menu_between_views { padding: 12px 4px 12px 2px; }
+
+  .diana_detail--primary img.sello_garantia {
+    width: 90px;
+    right: -10px;
+  }
 }
