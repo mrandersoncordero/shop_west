@@ -135,6 +135,13 @@
   justify-content: center;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
+.diana_detail--primary img.sello_garantia {
+  width: 90px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+}
 
 .diana_detail--primary .diana_detail--secondary {
   height: 350px;

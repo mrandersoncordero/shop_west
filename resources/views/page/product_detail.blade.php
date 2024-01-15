@@ -50,6 +50,7 @@
         <section>
           {{-- Imagen --}}
           <div class="diana_detail--primary">
+            <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
             <div class="diana_detail--secondary">
               <img src="{{ asset("product/$product->image" )}}" alt="">
             </div>
