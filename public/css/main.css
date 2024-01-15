@@ -307,7 +307,7 @@ main {
   background: var(--red);
 }
 .container_footer .footer_section_primary img {
-  width: 30%;
+  width: 25%;
 }
 
 .container_footer .footer_section_secondary {
@@ -339,6 +339,13 @@ main {
   .productos-destacados {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .gif img{
+    height: 100% !important;
+  }
+  main { 
+    margin-top: 0;
   }
 }
 
