@@ -15,15 +15,9 @@
 
     <section class="container_products">
       <header class="header_line">
-        <h1>Busqueada relacionada con "{{ $search }}"</h1>
+        <h1>Busqueda relacionada con "{{ $search }}"</h1>
       </header>
-      <div class="menu_between_views">
-        <ul>
-          <li>
-            <a href="{{ route('index') }}"><i class="fa-solid fa-house"></i></a>
-          </li>
-        </ul>
-      </div>
+
       <article class="products">
       @foreach ($products as $product)
         <section class="product_card">

@@ -16,7 +16,7 @@
 
     <section class="container_products">
       <header class="header_line">
-        <h1>Sublinea de {{ $subcategory->name}}</h1>
+        <h1>Sublinea {{ $subcategory->name}}</h1>
       </header>
       <div class="menu_between_views">
         <ul>

@@ -100,7 +100,7 @@
             <aside class="container_cart--menu inactive" id="container_truck_menu">
                 <div class="title-container">
                   <img src="{{ asset('icons/flechita.svg') }}" alt="arrow">
-                  <p class="title">My order</p>
+                  <p class="title">Mi orden</p>
                 </div>
                 <div class="my-order-content">
                     <div class="content-detail">
