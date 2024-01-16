@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
 <!-- Optional Theme Stylesheet -->
 <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 @endsection
 
@@ -65,6 +66,50 @@
     <div class="banner">
         <img src="{{ asset('images/calidad_que_perdura.jpg') }}" alt="" class="banner_image_2">
     </div>
+    
+    <section class="section_catalog">
+        <article>
+            <div>
+                <h2>Descarga nuestro catalogo</h2>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Descargar
+                </button>
+                  
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Ingresa los datos</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form  action="{{ route('interested-clients.store') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                  <label for="first_name" class="form-label">Nombre</label>
+                                  <input type="text" name="first_name" class="form-control" id="first_name">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="last_name" class="form-label">Apellido</label>
+                                  <input type="text" name="last_name" class="form-control" id="last_name">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="email" class="form-label">Correo</label>
+                                  <input type="email" name="email" class="form-control" id="email">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                  
+            </div>
+            <img src="{{ asset('images/portada_catalogo.png') }}" alt="">
+        </div>
+    </section>
 
     <section class="categories">
         <header>
@@ -136,6 +181,7 @@
 </main>
 
 @include('templates.footer')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <script>
     let products = @json($products);
