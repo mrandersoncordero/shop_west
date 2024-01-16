@@ -3,6 +3,7 @@
 // Controller
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\InterestedClientController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -27,7 +28,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/project', [PageController::class, 'project'])->name('project');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/search', [PageController::class, 'search'])->name('search');
-  
+Route::post('/interested-clients', [InterestedClientController::class, 'store'])->name('interested-clients.store');
 
 
 
