@@ -99,6 +99,10 @@
                                   <label for="email" class="form-label">Correo</label>
                                   <input type="email" name="email" class="form-control" id="email">
                                 </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="accept" value="1">
+                                    <label class="form-check-label" name="accept" for="accept">Aceptas recibir promociones y descuentos?</label>
+                                </div>                                
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
