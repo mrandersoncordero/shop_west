@@ -18,6 +18,8 @@ class InterestedClientController extends Controller
             'accept' => 'boolean',
         ]);
 
+        $clientData = $request->all();
+
         // Verificar si el correo ya existe
         $existingClient = InterestedClient::where('email', $request->input('email'))->first();
         
@@ -25,13 +27,13 @@ class InterestedClientController extends Controller
             // Enviar correo si el cliente ya existe
             // Puedes personalizar esta lógica según tus necesidades
             // Por ejemplo, puedes enviar un recordatorio o una oferta especial.
-            Mail::to($existingClient->email)->send(new CatalogMail($existingClient));
+            Mail::to($existingClient->email)->send(new CatalogMail($existingClient, $clientData));
         } else {
             // Crear un nuevo cliente solo si no existe
             $interestedClient = InterestedClient::create($request->all());
 
             // Envía el correo si deseas hacerlo también para nuevos clientes
-            Mail::to($interestedClient->email)->send(new CatalogMail($interestedClient));
+            Mail::to($interestedClient->email)->send(new CatalogMail($interestedClient, $clientData));
         }
 
         return redirect()->back()->with('message', [

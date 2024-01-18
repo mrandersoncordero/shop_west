@@ -15,15 +15,17 @@ class CatalogMail extends Mailable
     use Queueable, SerializesModels;
 
     public $interestedClient;
+    public $clientData;
 
     /**
      * Create a new message instance.
      *
      * @param User $user
      */
-    public function __construct( InterestedClient $interestedClient)
+    public function __construct( InterestedClient $interestedClient, $clientData)
     {
         $this->interestedClient = $interestedClient;
+        $this->clientData = $clientData;
     }
 
     /**
