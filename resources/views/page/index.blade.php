@@ -72,7 +72,7 @@
             <div>
                 <h2>Descarga nuestro catalogo</h2>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Descargar
                 </button>
                   
@@ -103,7 +103,7 @@
                                     <input type="checkbox" class="form-check-input" id="accept" value="1">
                                     <label class="form-check-label" name="accept" for="accept">Aceptas recibir promociones y descuentos?</label>
                                 </div>                                
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Submit</button>
                             </form>
                         </div>
                       </div>
