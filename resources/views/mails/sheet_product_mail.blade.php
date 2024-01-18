@@ -14,7 +14,7 @@
         <td style="text-align: left; padding: 16px;">
           <div>
             <p style="padding-top: 4px; font-size: 1.25rem;">Hola {{ $clientData['first_name'] }}.</p>
-            <p style="padding-top: 4px; font-size: 1.25rem;">Gracias por solicitar la ficah tecnica del producto {{ $product->name }}. Puedes descargarlo desde <a href="{{$product->url_sheet}}">aquí</a>.</p>
+            <p style="padding-top: 4px; font-size: 1.25rem;">Gracias por solicitar la ficha tecnica del producto {{ $product->name }}. Puedes descargarlo desde <a href="{{$product->url_sheet}}">aquí</a>.</p>
             <p style="padding-top: 4px; font-size: 1.25rem;">En esa ficha podras observar toda la informacion acerca de: </p>
             <ul>
               <li style="font-size: 1.25rem;">Descripción</li>
