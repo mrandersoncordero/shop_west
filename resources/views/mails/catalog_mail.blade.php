@@ -15,8 +15,8 @@
         </div>
       </div>
 
-      <a href="https://drive.google.com/file/d/19pLX2yW0eiyP6nta2QMFRkbK9gU2Ih8M/view?usp=sharing">enlace de catalogo</a>
-      <p>https://drive.google.com/file/d/19pLX2yW0eiyP6nta2QMFRkbK9gU2Ih8M/view?usp=sharing</p>
+      <a href="https://drive.google.com/file/d/1XDgWmJXARPk95MIM8WB654Na2nYXCxhC/view?usp=drive_link">enlace de catalogo</a>
+      <p>https://drive.google.com/file/d/1XDgWmJXARPk95MIM8WB654Na2nYXCxhC/view?usp=drive_link</p>
       <img src="{{ asset('images/portada_catalogo.png') }}" alt="">
       <div style="margin-bottom: 4px; background-color: #f7f7f7; text-align: center; font-weight: bold; padding: 16px; display: flex; flex-direction: column; align-items: center;">
         <p>Pegoccidente - Todos los derechos reservados &copy; desarrollado por Branar, C.A.</p>
