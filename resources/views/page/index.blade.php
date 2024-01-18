@@ -105,7 +105,7 @@
                                 </div>
                                 
                                 <input type="hidden" name="name_mail" value="catalog">
-                                <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Submit</button>
+                                <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Enviar</button>
                             </form>
                         </div>
                       </div>
