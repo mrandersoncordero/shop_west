@@ -114,7 +114,7 @@
             </div>
           </div>
           <button type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Descargar
+            Obtener ficha de producto
         </button>
           
         <!-- Modal -->
