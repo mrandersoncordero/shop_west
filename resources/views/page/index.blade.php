@@ -102,7 +102,9 @@
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="accept" value="1">
                                     <label class="form-check-label" name="accept" for="accept">Aceptas recibir promociones y descuentos?</label>
-                                </div>                                
+                                </div>
+                                
+                                <input type="hidden" name="name_mail" value="cataog">
                                 <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Submit</button>
                             </form>
                         </div>
