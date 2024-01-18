@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('traffic', 100)->nullable();
             $table->float('price');
             $table->string('image');
+            $table->string('url_sheet')->nullable();
             
             $table->timestamps();
         });

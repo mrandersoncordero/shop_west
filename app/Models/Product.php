@@ -20,6 +20,7 @@ class Product extends Model
         'traffic',
         'price',
         'image',
+        'url_sheet',
     ];
 
     public function subcategory()
