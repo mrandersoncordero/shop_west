@@ -55,6 +55,7 @@ footer p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  place-items: center;
 }
 .container_sucursales--info {
   width: 400px;
