@@ -86,7 +86,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)4-10',
             'traffic' => '',
             'price' => 10,
-            'image' => 'Imperplus.png'
+            'image' => 'Imperplus.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1IqQjX1sfDlFnTsdTcTcShqjkhw8jZdr9/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 7,
@@ -98,7 +99,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '',
             'traffic' => '',
             'price' => 20,
-            'image' => 'DColorMarmolina.png'
+            'image' => 'DColorMarmolina.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1qJTs54ojR50Y4w1W_uxe6pBIFYrOGrvR/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -110,7 +112,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '',
             'traffic' => 'Medio',
             'price' => 20,
-            'image' => 'PPremiumGris.png'
+            'image' => 'PPremiumGris.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1uXZEEz3xGnJY0NkSCAY2qiFGcEEE4xP5/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -122,7 +125,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1',
             'traffic' => 'Medio',
             'price' => 20,
-            'image' => 'OccireparadorP.png'
+            'image' => 'OccireparadorP.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 3,
@@ -134,7 +138,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)2.5',
             'traffic' => 'Alto',
             'price' => 10,
-            'image' => 'PSupremo.png'
+            'image' => 'PSupremo.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -146,7 +151,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3.5-5',
             'traffic' => 'Alto',
             'price' => 20,
-            'image' => 'SuperExtraPiscina.png'
+            'image' => 'SuperExtraPiscina.png',
+            'url_sheet' => 'https://drive.google.com/file/d/16eFaIxMfqJfSKDLTpfUzK3HXJxb1mZgg/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 1,
@@ -158,19 +164,21 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)2.6-3.5',
             'traffic' => 'Bajo',
             'price' => 14,
-            'image' => 'Standard gris.png'
+            'image' => 'Standard gris.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1GbRlURQOQAlWvBBJryI9fVwiapUSQAwB/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 1,
             'code' => 'LDPPEB123',
-            'name' => "PEGO STANDARD BLANCO",
+            'name' => "PEGO EXTRA BLANCO",
             'description' => 'Adhesivo (Pego) a base de cemento blanco, arena sílice de granulometría controlada y aditivos químicos que mejoran el manejo y adherencia del producto en la instalación de cerámicas de alta y media absorción. Para uso en interiores y exteriores.',
             'weight' => 14,
             'format' => 'cerámicas 30x30cm',
             'yield' => '(m2)2.6-3.5',
             'traffic' => 'Bajo',
             'price' => 14,
-            'image' => 'Extra blanco.png'
+            'image' => 'Extra blanco.png',
+            'url_sheet' => ''
         ]);
         Product::create([
             'subcategory_id' => 1,
@@ -182,7 +190,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3.5-5',
             'traffic' => 'Medio',
             'price' => 20,
-            'image' => 'Premium gris.png'
+            'image' => 'Premium gris.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1uXZEEz3xGnJY0NkSCAY2qiFGcEEE4xP5/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -194,7 +203,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3.5-5',
             'traffic' => 'Alto',
             'price' => 20,
-            'image' => 'Super standard gris.png'
+            'image' => 'Super standard gris.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1GbRlURQOQAlWvBBJryI9fVwiapUSQAwB/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -206,7 +216,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3.4',
             'traffic' => 'Alto',
             'price' => 20,
-            'image' => 'Super extra porcelanato.png'
+            'image' => 'Super extra porcelanato.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1wrBZd-Qx9dGgoJYRTmg9egCjBZK00ekE/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -218,7 +229,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occifriso.png'
+            'image' => 'Occifriso.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -230,7 +242,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occifriso AR.png'
+            'image' => 'Occifriso AR.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1w86wf7DrQTi0pK6ziltGffHDodJiUdm4/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -242,7 +255,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1-1.5',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occifriso proyectado.png'
+            'image' => 'Occifriso proyectado.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1PdLRvw6ZmRS818ZWg9gvRplJqlHnPZ4E/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -254,7 +268,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1-1,5',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occifriso texturizado.png'
+            'image' => 'Occifriso texturizado.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -266,7 +281,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)6-10',
             'traffic' => '',
             'price' => 10,
-            'image' => 'Occimix.png'
+            'image' => 'Occimix.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -278,7 +294,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)6-10',
             'traffic' => '',
             'price' => 10,
-            'image' => 'Stuco.png'
+            'image' => 'Stuco.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1hpjSnY-vlAALjkQWAvhuoqfAPWegCZVR/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 5,
@@ -291,7 +308,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)1',
             'traffic' => '',
             'price' => 10,
-            'image' => 'Occibloque.png'
+            'image' => 'Occibloque.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1j6gnCrT6SrqlXwBN5Ng-mj4rdo_fHGgs/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 5,
@@ -303,7 +321,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3',
             'traffic' => '',
             'price' => 10,
-            'image' => 'Occiteja.png'
+            'image' => 'Occiteja.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1f3JlbI-SCPGu2DsE_0nAjMZVP_LR938X/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 6,
@@ -315,7 +334,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occiconcreto.png'
+            'image' => 'Occiconcreto.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1NwSdM9DEgayRJYnHVrvoYXOS0Sefw2RV/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 6,
@@ -328,7 +348,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3',
             'traffic' => '',
             'price' => 20,
-            'image' => 'Occiconcreto reforzado.png'
+            'image' => 'Occiconcreto reforzado.png',
+            'url_sheet' => 'https://drive.google.com/file/d/1Lrk598lzRKRNMrRu3iuPrtkzHSF54Lgb/view?usp=sharing'
         ]);
         Product::create([
             'subcategory_id' => 7,
@@ -340,7 +361,8 @@ class DatabaseSeeder extends Seeder
             'yield' => '(m2)3',
             'traffic' => '',
             'price' => 2,
-            'image' => "D' color.png"
+            'image' => "D' color.png",
+            'url_sheet' => 'https://drive.google.com/file/d/1rIiUkSzbK9SOL5DSzxStLL2u0hIQlgnl/view?usp=sharing'
         ]);
 
         // \App\Models\User::factory()->create([
