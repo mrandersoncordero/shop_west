@@ -33,29 +33,85 @@
         </div>
     </aside>
     <section>
-        <form class="container">
+        <form action="{{ route('send.email') }}" method="POST" class="container">
+            @csrf
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name_complete" placeholder="joe">
+                <input 
+                    type="text" 
+                    class="form-control @error('complete_name') is-invalid @enderror" 
+                    id="name_complete"
+                    placeholder="joe"
+                    name="complete_name"
+                >
                 <label for="name_complete">Nombre completo</label>
+                @error('complete_name')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="correo" placeholder="name@example.com">
-                <label for="correo">Correo electronico</label>
+                <input 
+                    type="email" 
+                    class="form-control @error('email') is-invalid @enderror" 
+                    id="email" 
+                    placeholder="name@example.com"
+                    name="email"
+                >
+                <label for="email">Correo electronico</label>
+                @error('complete_name')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="phone_number" placeholder="name@example.com">
+                <input 
+                    type="text" 
+                    class="form-control @error('phone_number') is-invalid @enderror" 
+                    id="phone_number" 
+                    placeholder="name@example.com"
+                    name="phone_number"
+                >
                 <label for="phone_number">Numero de telefono</label>
+                @error('phone_number')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="subject" placeholder="joe">
+                <input 
+                    type="text" 
+                    class="form-control @error('subject') is-invalid @enderror" 
+                    id="subject" 
+                    placeholder="joe"
+                    name="subject"
+                >
                 <label for="subject">Asunto</label>
+                @error('subject')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" row="4" id="comment"></textarea>
+                <textarea 
+                    class="form-control @error('comment') is-invalid @enderror" 
+                    placeholder="Leave a comment here" 
+                    row="4" 
+                    id="comment"
+                    name="comment"
+                ></textarea>
                 <label for="comment">Comentario</label>
+                @error('comment')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
             </div>
 
-            <button type="button" class="btn btn-primary mt-4">Enviar</button>
+            <button type="submit" class="btn btn-primary mt-4">Enviar</button>
         </form>
     </section>
 </main>
