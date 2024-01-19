@@ -139,8 +139,8 @@
   width: 90px;
   position: absolute;
   z-index: 5;
-  top: -10px;
-  right: -5px;
+  bottom: 112px;
+  right: 20px;
 }
 
 .diana_detail--primary .diana_detail--secondary {

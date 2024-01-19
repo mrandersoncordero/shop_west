@@ -342,10 +342,29 @@ main {
   color: var(--white);
   font-size: 30px;
 }
-
+.products_carrousel--container {
+  position: relative;
+}
 .products_carrousel--container img {
   height: 300px;
   width: 100%;
+}
+.products_carrousel--container .garantia img {
+  width: 60px !important;
+  height: 55px !important;
+  position: absolute;
+  bottom: 100px;
+  right: -10px;
+}
+.product_img {
+  position: relative;
+}
+.product_img .garantia img {
+  width: 60px !important;
+  height: 55px !important;
+  position: absolute;
+  bottom: 33px;
+  right: -18px;
 }
 @media screen and (max-width: 880px) {
   .productos-destacados {
