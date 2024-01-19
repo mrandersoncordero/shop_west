@@ -14,6 +14,9 @@
 @section('content')
   
 <main>
+    @if (session('message'))
+    @include('templates.message')
+    @endif
     <header class="header_line"  style="margin-bottom: 24px">
         <h1>CONTACTANOS</h1>
     </header>

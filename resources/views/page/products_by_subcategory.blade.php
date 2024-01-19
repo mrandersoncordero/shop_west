@@ -47,6 +47,9 @@
       @foreach ($subcategory->products as $product)
         <section class="product_card">
           <div class="product_img">
+            <div class="garantia">
+              <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
+            </div>
             <a href="{{ route('product_detail', $product->id) }}"><img src="{{ asset("product/$product->image" )}}" alt="{{ $product->name }}"></a>
           </div>
           <div class="product_despcription">

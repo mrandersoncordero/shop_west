@@ -29,6 +29,9 @@
               {{--  Pegamentos --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
+                  <div class="garantia">
+                    <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
+                  </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
@@ -67,6 +70,9 @@
               {{--  Construccion --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
+                  <div class="garantia">
+                    <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
+                  </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
@@ -106,6 +112,9 @@
               {{--  Sella Juntas --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
+                  <div class="garantia">
+                    <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
+                  </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
