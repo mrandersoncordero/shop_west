@@ -1,13 +1,12 @@
 <nav class="navbar">
   <div class="top-navbar">
       <div>
-          <span><a href="#"><i class="fa-solid fa-envelope"></i> info@pegoccidente.com</a></span>
-          <span><a href="#"><i class="fa-brands fa-whatsapp"></i> +58 416 - 4567084</a></span>
+          <span><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> info@pegoccidente.com</a></span>
+          <span><a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank"><i class="fa-brands fa-whatsapp"></i> +58 416 - 4567084</a></span>
       </div>
       <div>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/ProdOccidente" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/prodoccidente?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </div>
   </div>
   <div class="navbar-content">
