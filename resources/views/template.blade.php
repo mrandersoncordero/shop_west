@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{-- Favicon --}}
+  <link rel="icon" href="{{ asset('icons/diana.ico') }}" type="image/x-icon">
+
+  {{-- Metaetiquetas para redes sociales  --}}
+  <meta property="og:image" content="{{ asset('icons/diana.ico') }}">
+  <meta property="og:image:secure_url" content="{{ asset('icons/diana.ico') }}">
+  <meta property="og:image:type" content="image/x-icon">
+  <meta property="og:image:width" content="64"> <!-- Ancho del icono en píxeles -->
+  <meta property="og:image:height" content="64"> <!-- Altura del icono en píxeles -->
+  
   @yield('head_content')
 
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
