@@ -36,11 +36,14 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h4>Productos Utilizados:</h4>
+                            <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
-                                <li>SÚPER EXTRA PORCELANATO</li>
-                                <li>IMPERPLUS</li>
-                                <li>OCCIREPARADOR</li>
+                                <li>
+                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('product_detail', 1) }}">IMPERPLUS</a>
+                                </li>
                                 <!-- Agrega más productos según sea necesario -->
                             </ul>
                         </div>
@@ -56,12 +59,11 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h4>Productos Utilizados:</h4>
+                            <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
-                                <li>SÚPER EXTRA PORCELANATO</li>
-                                <li>IMPERPLUS</li>
-                                <li>OCCIREPARADOR</li>
-                                <!-- Agrega más productos según sea necesario -->
+                                <li>
+                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -71,17 +73,16 @@
                 <div class="container">
                     <div class="front" style="background-image: url({{ asset('images/projects/lidotel.png') }})">
                         <div class="inner">
-                            <p>Lidotel</p>
+                            <p>Residencia colinas del viento</p>
                         </div>
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h4>Productos Utilizados:</h4>
+                            <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
-                                <li>SÚPER EXTRA PORCELANATO</li>
-                                <li>IMPERPLUS</li>
-                                <li>OCCIREPARADOR</li>
-                                <!-- Agrega más productos según sea necesario -->
+                                <li>
+                                    <a href="{{ route('product_detail', 1) }}">IMPERPLUS</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -96,12 +97,11 @@
                     </div>
                     <div class="back">
                         <div class="inner">
-                            <h4>Productos Utilizados:</h4>
+                            <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
-                                <li>SÚPER EXTRA PORCELANATO</li>
-                                <li>IMPERPLUS</li>
-                                <li>OCCIREPARADOR</li>
-                                <!-- Agrega más productos según sea necesario -->
+                                <li>
+                                    <a href="{{ route('product_detail', 17) }}">STUCO</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
