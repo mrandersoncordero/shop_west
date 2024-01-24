@@ -200,6 +200,74 @@
             </div>
         </div>
     </section>
+
+    <div class="container" style="margin: 34px">
+        <header>
+            <h2 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Testimonios<i class="fa-solid fa-quote-right quotes"></i></h2>
+        </header>
+        <div class="glide" style="position: relative" id="space3">
+
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="testimony_container">
+                            <div class="testimony_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                            </div>
+                            <div class="testimony_data_user">
+                                <div class="testimony_user">
+                                    <img src="{{ asset('') }}" alt="">
+                                    <p>Anderson Cordero</p>
+                                </div>
+                            </div>
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="testimony_container">
+                            <div class="testimony_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                            </div>
+                            <div class="testimony_data_user">
+                                <div class="testimony_user">
+                                    <img src="{{ asset('') }}" alt="">
+                                    <p>Anderson Cordero</p>
+                                </div>
+                            </div>
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="testimony_container">
+                            <div class="testimony_text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                            </div>
+                            <div class="testimony_data_user">
+                                <div class="testimony_user">
+                                    <img src="{{ asset('') }}" alt="">
+                                    <p>Anderson Cordero</p>
+                                </div>
+                            </div>
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">...</div>
+              
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                  <button class="glide__bullet" data-glide-dir="=0"></button>
+                  <button class="glide__bullet" data-glide-dir="=1"></button>
+                  <button class="glide__bullet" data-glide-dir="=2"></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 @include('templates.footer')
@@ -217,7 +285,7 @@
     };
     new Glide('#space1', config1).mount()
 
-    const config = {
+    const config2 = {
         type: 'carousel',
         perView: 3,
         breakpoints: {
@@ -229,6 +297,22 @@
             }
         }
     };
-    new Glide('#space2', config).mount()
+    new Glide('#space2', config2).mount()
+
+    const config3 = {
+        perView: 2,
+        focusAt: 'center',
+        breakpoints: {
+            800: {
+            perView: 1
+            },
+        }
+    };
+    const glide1 = new Glide('#space3', config3).mount()
+    config3.addEventListener('change', function (event) {
+        glide1.update({
+            type: event.target.value
+        })
+    })
 </script>
 @endsection

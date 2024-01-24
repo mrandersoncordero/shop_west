@@ -27,7 +27,7 @@
 
 body {
   font-family: sans-serif;
-  background: var(--white);
+  background: #ebebeb;
 }
 a{
   text-decoration: none;
@@ -369,6 +369,43 @@ main {
   position: absolute;
   bottom: 33px;
   right: -18px;
+}
+
+.testimony_container {
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  padding: 24px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.testimony_container .testimony_text {
+  padding: 12px;
+}
+.testimony_container .testimony_text p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center !important;
+}
+.quote-left {
+  position: absolute;
+  height: 3rem;
+  top: -5px;
+  left: 10px;
+}
+.quote-right {
+  position: absolute;
+  height: 3rem;
+  bottom: -5px;
+  right: 10px;
+}
+.glide__bullet {
+  background-color: #ff0033 !important;
 }
 @media screen and (max-width: 880px) {
   .productos-destacados {
