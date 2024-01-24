@@ -201,7 +201,7 @@
         </div>
     </section>
 
-    <div class="container" style="margin: 34px">
+    <div class="" style="margin: 34px">
         <header>
             <h2 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Testimonios<i class="fa-solid fa-quote-right quotes"></i></h2>
         </header>
