@@ -62,10 +62,6 @@
             </div>
         </article>
     </section>
-
-    <div class="banner">
-        <img src="{{ asset('images/calidad_que_perdura.jpg') }}" alt="" class="banner_image_2">
-    </div>
     
     <section class="section_catalog">
         <article>
@@ -117,6 +113,30 @@
         </div>
     </section>
 
+    <div class="glide" style="position: relative" id="space1">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+                <img src="{{ asset('images/banners/banner_1.jpg') }}" alt="" style="width: 100%; height: 100%;">
+            </li>
+            <li class="glide__slide">
+                <img src="{{ asset('images/banners/banner_2.jpg') }}" alt="" style="width: 100%; height: 100%;">
+            </li>
+            <li class="glide__slide">
+                <img src="{{ asset('images/banners/banner_3.jpg') }}" alt="" style="width: 100%; height: 100%;">
+            </li>
+          </ul>
+        </div>
+
+        <div class="glide" style="position: initial" id="space1">
+
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i></button>
+          </div>
+        </div>
+    </div>
+    
     <section class="categories">
         <header>
             <h1 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Categorias<i class="fa-solid fa-quote-right quotes"></i></h1>
@@ -149,16 +169,12 @@
         </article>
     </section>
 
-    <div class="banner">
-        <img src="{{ asset('images/siempre_imitados_nunca_igualados.jpg') }}" alt="" class="banner_image_2">
-    </div>
-
     <section class="projects">
         <header>
             <h2 class="h2"><i class="fa-solid fa-quote-left quotes"></i>Proyectos<i class="fa-solid fa-quote-right quotes"></i></h2>
         </header>
         <div class="container">
-            <div class="glide" style="position: relative">
+            <div class="glide" style="position: relative" id="space2">
     
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
@@ -174,7 +190,7 @@
                     </ul>
                 </div>
     
-                <div class="glide" style="position: initial">
+                <div class="glide" style="position: initial" id="space2">
     
                     <div class="glide__arrows" data-glide-el="controls">
                         <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i></button>
@@ -195,6 +211,12 @@
 <script src="{{ asset('js/productos_destacados.js') }}"></script>
 <script src="{{ asset('js/glide.min.js') }}"></script>
 <script>
+    const config1 = {
+      type: 'carousel',
+      perView: 1
+    };
+    new Glide('#space1', config1).mount()
+
     const config = {
         type: 'carousel',
         perView: 3,
@@ -207,6 +229,6 @@
             }
         }
     };
-    new Glide('.glide', config).mount()
+    new Glide('#space2', config).mount()
 </script>
 @endsection
