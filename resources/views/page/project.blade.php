@@ -14,7 +14,7 @@
   
 <main>
     <div class="banner">
-        <img src="{{ asset('images/banner_pego.png') }}" style="margin:0px;" class="banner_image">
+        <img src="{{ asset('images/banners/banner_pego.png') }}" style="margin:0px;" class="banner_image">
     </div>
 
     <header class="header_line">
