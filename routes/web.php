@@ -54,6 +54,12 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
      * Rating
      */
     Route::post('/products/{productId}/rate', [ProductController::class, 'rateProduct'])->name('products.rate');
+    /**
+     * Profile
+     */
+    Route::get('/profile/view/{user}', [UserController::class, 'viewProfile'])->name('user.view');
+    Route::get('/profile/edit/{user}', [UserController::class, 'editProfile'])->name('user.edit');
+    Route::post('/profile/update/{user}', [UserController::class, 'updateProfile'])->name('user.update');
 });
 
 /**

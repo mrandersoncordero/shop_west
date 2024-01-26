@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeMail;
+use App\Models\Category;
 use App\Models\Permission;
 use App\Models\Profile;
 use App\Models\Role;
@@ -181,5 +182,53 @@ class UserController extends Controller
                 }
             }
         }
+    }
+
+    public function viewProfile(): View
+    {
+        $user = Auth::user();
+
+        $cart = new CartController();
+        return view('user.profile', [
+            'user' => $user,
+            'categories' => Category::all(),
+            'cart_products' => $cart->show_products()
+        ]);
+    }
+
+    public function updateProfile(Request $request): RedirectResponse
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'dni' => 'required|string|max:11|unique:profiles,dni,'. $user->profile->id,
+            'first_name' => ['required', 'string', 'max:50'],
+            'last_name' => ['required', 'string', 'max:50'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'string', 'max:17'],
+            'birthday_date' => ['nullable', 'date'],
+        ]);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
+
+        $user->profile->update([
+            'dni' => $request->dni,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'address' => $request->address,
+            'phone_number' => $request->phone_number,
+            'birthday_date' => $request->birthday_date,
+        ]);
+
+        return redirect()->route('user.profile')->with('message', [
+            'class' => 'alert--success',
+            'title' => 'Perfil actualizado correctamente',
+            'content' => 'Tu perfil ha sido actualizado correctamente.',
+        ]);
     }
 }

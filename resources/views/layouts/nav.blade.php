@@ -59,7 +59,7 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#">Perfil</a>
+                        <a href="{{ route('user.view', Auth::user()) }}">Perfil</a>
                     </li>
                     <li>
                         <a href="{{ route('order.index') }}">Pedidos</a>

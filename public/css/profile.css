@@ -1,0 +1,40 @@
+.profile {
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.profile-container {
+    padding: 24px;
+}
+.profile-information header {
+    margin-bottom: 12px;
+}
+.profile-information header h2 {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #000;
+}
+.profile-information header p {
+    font-size: .9rem;
+    color: #494949;
+}
+
+.profile-box {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    padding: 2%;
+}
+
+
+.profile-container form label.form-label {
+    font-size: .9rem;
+    color: #494949;
+}
+.profile-container form input.form-control {
+    box-shadow: none;
+}
+.profile-container form input.form-control{
+    width: 50%;
+}
