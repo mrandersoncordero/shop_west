@@ -9,7 +9,9 @@
 
 @section('content')
   <main class="profile">
-
+    @if (session('message'))
+    @include('templates.message')
+    @endif
     <div class="profile-header">
       <header class="header_line">
         <h1>Perfil de Usuario</h1>
@@ -26,56 +28,87 @@
         </header>
 
         <div>
-          <form action="{{ route('user.update') }}" method="POST">
+          <form action="{{ route('user.update', Auth::user()) }}" method="POST">
             @csrf
             {{-- username --}}
             <div class="mb-3">
-              <label for="Username" class="form-label">Nombre de Usuario</label>
-              <input type="text" class="form-control" id="Username" name="name" value="{{ $user->name }}">
-              {{-- <div class="invalid-feedback">
-                invalid-feedbaack
-              </div> --}}
+              <label for="Username" class="form-label ">Nombre de Usuario</label>
+              <input type="text" class="form-control @error('name') is-invalid @enderror" id="Username" name="name" value="{{ old('name', $user->name)}}">
+              @error('name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- email --}}
             <div class="mb-3">
               <label for="Email" class="form-label">Correo Electronico</label>
-              <input type="email" class="form-control" id="Email" name="email" value="{{ $user->email }}">
+              <input type="email" class="form-control @error('email') is-invalid @enderror" id="Email" name="email" value="{{ old('email', $user->email) }}">
+              @error('email')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- dni --}}
             <div class="mb-3">
               <label for="DNI" class="form-label">Cedula o RIF</label>
-              <input type="text" class="form-control" id="DNI" name="dni" value="{{ $user->profile->dni }}">
-              {{-- <div class="invalid-feedback">
-                invalid-feedbaack
-              </div> --}}
+              <input type="text" class="form-control @error('dni') is-invalid @enderror" id="DNI" name="dni" value="{{ old('dni', $user->profile->dni) }}">
+              @error('dni')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- first_name --}}
             <div class="mb-3">
               <label for="first_name" class="form-label">Nombre</label>
-              <input type="first_name" class="form-control" name="first_name" id="Email" value="{{ $user->profile->first_name }}">
+              <input type="first_name" class="form-control @error('first_name') is-invalid @enderror" name="first_name" id="Email" value="{{ old('first_name', $user->profile->first_name) }}">
+              @error('first_name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- last_name --}}
             <div class="mb-3">
               <label for="last_name" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="last_name" name="last_name" value="{{ $user->profile->last_name }}">
-              {{-- <div class="invalid-feedback">
-                invalid-feedbaack
-              </div> --}}
+              <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name" name="last_name" value="{{ old('last_name', $user->profile->last_name) }}">
+              @error('last_name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- address --}}
             <div class="mb-3">
               <label for="address" class="form-label">Direccion</label>
-              <input type="email" class="form-control" id="address" name="address" value="{{ $user->profile->address }}">
+              <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $user->profile->address) }}">
+              @error('address')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- phone_number --}}
             <div class="mb-3">
               <label for="phone_number" class="form-label">Numero de telefono</label>
-              <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ $user->profile->phone_number }}">
+              <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" value="{{ old('phone_number', $user->profile->phone_number) }}">
+              @error('phone_number')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             <div class="mb-3">
               {{-- birthday_date --}}
               <label for="birthday_date" class="form-label">Fecha de nacimiento</label>
-              <input type="date" class="form-control" id="birthday_date" name="birthday_date" value="{{ $user->profile->birthday_date }}">
+              <input type="date" class="form-control @error('birthday_date') is-invalid @enderror" id="birthday_date" name="birthday_date" value="{{ old('birthday_date', $user->profile->birthday_date) }}">
+              @error('birthday_date')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>
@@ -94,7 +127,7 @@
         </header>
 
         <div>
-          <form action="{{ route('') }}" method="POST">
+          <form action="{{-- --}}" method="POST">
             @csrf
             {{-- current password --}}
             <div class="mb-3">

@@ -196,9 +196,8 @@ class UserController extends Controller
         ]);
     }
 
-    public function updateProfile(Request $request): RedirectResponse
+    public function updateProfile(Request $request, User $user): RedirectResponse
     {
-        $user = Auth::user();
 
         $request->validate([
             'name' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user->id)],
@@ -225,8 +224,8 @@ class UserController extends Controller
             'birthday_date' => $request->birthday_date,
         ]);
 
-        return redirect()->route('user.profile')->with('message', [
-            'class' => 'alert--success',
+        return redirect()->route('user.view', $user)->with('message', [
+            'class' => 'border_color-success',
             'title' => 'Perfil actualizado correctamente',
             'content' => 'Tu perfil ha sido actualizado correctamente.',
         ]);
