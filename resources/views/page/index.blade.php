@@ -2,6 +2,9 @@
 
 @section('head_content')
 <title>Pegoccidente - Shop</title>
+<meta name="description" content="En Productos Occidente, nos dedicamos a la fabricación de pegamentos y morteros de construcción. Contamos con una amplia experiencia en el sector, desde 1983, lo que nos ha permitido desarrollar productos de la más alta calidad. Nuestros productos están fabricados con los mejores materiales y bajo los más estrictos controles de calidad. Esto nos permite ofrecer a nuestros clientes productos duraderos y resistentes, permitiendo que las obras perduren en el tiempo">
+<meta name="keywords" content="Pego standard gris, Pego extra blanco premium, premium gris grueso, Súper Extra Blanco, Super Standard Gris, Súper Extra Porcelanato, Súper Extra Piscina, Pego Supremo Blanco,	Occifriso,	Occimix,	Stuco,	Imperplus,	Occibloque,	Occiteja,	Occiconcreto, D' COLOR
+">	
 <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
 <!-- Optional Theme Stylesheet -->
 <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
