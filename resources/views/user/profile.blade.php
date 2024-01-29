@@ -127,28 +127,37 @@
         </header>
 
         <div>
-          <form action="{{-- --}}" method="POST">
+          <form action="{{ route('user.changePassword') }}" method="POST">
             @csrf
             {{-- current password --}}
             <div class="mb-3">
               <label for="Current_password" class="form-label">Contraseña actual</label>
-              <input type="text" class="form-control" id="Current_password" name="current_password">
-              {{-- <div class="invalid-feedback">
-                invalid-feedbaack
-              </div> --}}
+              <input type="text" class="form-control @error('current_password') is-invalid @enderror" id="Current_password" name="current_password" value="{{ old('current_password') }}">
+              @error('current_password')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- new password --}}
             <div class="mb-3">
               <label for="New_password" class="form-label">Nueva contraseña</label>
-              <input type="text" class="form-control" id="New_password" name="new_password">
+              <input type="text" class="form-control @error('new_password') is-invalid @enderror" id="New_password" name="new_password" value="{{ old('new_password') }}">
+              @error('new_password')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             {{-- confirm password --}}
             <div class="mb-3">
               <label for="Confirm_password" class="form-label">Confirmar contraseña</label>
-              <input type="text" class="form-control" id="Confirm_password" name="confirm_password">
-              {{-- <div class="invalid-feedback">
-                invalid-feedbaack
-              </div> --}}
+              <input type="text" class="form-control @error('new_password_confirmation') is-invalid @enderror" id="Confirm_password" name="new_password_confirmation" value="{{ old('new_password_confirmation') }}">
+              @error('new_password_confirmation')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div> 
+              @enderror
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>

@@ -57,9 +57,10 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
     /**
      * Profile
      */
-    Route::get('/profile/view/{user}', [UserController::class, 'viewProfile'])->name('user.view');
+    Route::get('/profile/view/', [UserController::class, 'viewProfile'])->name('user.view');
     Route::get('/profile/edit/{user}', [UserController::class, 'editProfile'])->name('user.edit');
     Route::post('/profile/update/{user}', [UserController::class, 'updateProfile'])->name('user.update');
+    Route::post('/profile/change-password', [UserController::class, 'changePassword'])->name('user.changePassword');
 });
 
 /**

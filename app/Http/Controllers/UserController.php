@@ -224,10 +224,54 @@ class UserController extends Controller
             'birthday_date' => $request->birthday_date,
         ]);
 
-        return redirect()->route('user.view', $user)->with('message', [
+        return redirect()->route('user.view')->with('message', [
             'class' => 'border_color-success',
             'title' => 'Perfil actualizado correctamente',
             'content' => 'Tu perfil ha sido actualizado correctamente.',
+        ]);
+    }
+
+    public function changePassword(Request $request): RedirectResponse
+    {
+        // Validamos los campos del formulario
+        $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        // Obtenemos el usuario autenticado
+        $user = Auth::user();
+
+        // Verificamos si la contraseña actual coincide con la almacenada en la base de datos
+        if (!Hash::check($request->current_password, $user->password)) {
+            // Si no coincide, redirigimos de vuelta con un mensaje de error
+            return redirect()->back()->with('message', [
+                'class' => 'border_color-danger',
+                'title' => 'Error',
+                'content' => 'La contraseña actual no coincide con la del usuario',
+            ]);
+        }
+
+        // Verificamos que la nueva contraseña sea diferente de la actual
+        if ($request->current_password == $request->new_password) {
+            // Si son iguales, redirigimos de vuelta con un mensaje de error
+            return redirect()->back()->with('message', [
+                'class' => 'border_color-danger',
+                'title' => 'Error',
+                'content' => 'La nueva contraseña debe ser diferente de la actual.',
+            ]);
+        }
+
+        // Actualizamos la contraseña del usuario en la base de datos
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        // Redirigimos a la página del perfil del usuario con un mensaje de éxito
+        return redirect()->route('user.view')->with('message', [
+            'class' => 'border_color-success',
+            'title' => 'Contraseña actualizada correctamente',
+            'content' => 'Tu contraseña ha sido actualizada correctamente.',
         ]);
     }
 }
