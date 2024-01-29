@@ -14,7 +14,9 @@
 
 @section('content')
 <div class="gif">
-    <img src="{{ asset('images/empresa_lider.gif') }}" alt="pego gif">
+    <video autoplay loop muted playsinline>
+        <source src="{{ asset('images/empresa_lider.mp4') }}" type="video/mp4" />
+    </video>
 </div>
   
 <main>
