@@ -2,6 +2,11 @@
 
 @section('head_content')
   <title>Pegoccidente - Products</title>
+	<meta name="description" content="Descubre nuestra amplia gama de productos de alta calidad para la construcción, que incluye sublíneas de basica, profesional, flexible, revestimiento, pegamentos, estructural y sellas juntas. Con Productos Occidente, puedes confiar en la calidad y durabilidad de tus proyectos. Visita nuestra página web para explorar nuestra amplia gama de productos y encontrar la solución perfecta para tus necesidades de construcción.">
+  <meta name="keywords" content="Pego Standard Gris, Pego Extra Blanco,	Premium Gris, Pego Premium Gris Grueso, Súper Extra Piscina, Pego Supremo Blanco, Occifriso, Occiteja, Occiconcreto, Occiconcreto Reforzado
+">	
+
+
   {{-- Glide js --}}
   <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
