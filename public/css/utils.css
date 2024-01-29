@@ -56,11 +56,16 @@
 }
 
 .header_line h1 {
+  position: relative;
   text-transform: uppercase;
   color: var(--white);
   font-size: 24px;
 }
-
+.header_line h1 img {
+  position: absolute;
+  width: 100px;
+  top: -50px;
+}
 /* modificar estilo de botones para el carrousel */
 
 .glide__arrow--left,

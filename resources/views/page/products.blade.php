@@ -23,7 +23,10 @@
 
     <article class="container_carrousel">
       <header class="header_line"  style="margin-bottom: 24px">
-        <h1>Linea de pegamentos</h1>
+        <h1>
+          Linea de pegamentos
+          <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia2" alt="sello de garantia">
+        </h1>
       </header>
 
       <section class="glide" style="position: relative" id="space1">
@@ -64,7 +67,10 @@
 
     <article class="container_carrousel">
       <header class="header_line" style="margin-bottom: 24px">
-        <h1>Linea de construccion</h1>
+        <h1>
+          Linea de construccion
+          <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia2" alt="sello de garantia">
+        </h1>
       </header>
 
       <section class="glide" style="position: relative" id="space2">
@@ -106,7 +112,10 @@
 
     <article class="container_carrousel">
       <header class="header_line" style="margin-bottom: 24px">
-        <h1>Linea de sella juntas</h1>
+        <h1>
+          Linea de sella juntas
+          <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia2" alt="sello de garantia">
+        </h1>
       </header>
 
       <section class="glide" style="position: relative" id="space3">

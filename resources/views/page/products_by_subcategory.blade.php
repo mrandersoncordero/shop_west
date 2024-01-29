@@ -18,13 +18,16 @@
     @if (session('message'))
     @include('templates.message')
     @endif
-    <section class="banner-top" style="background-image: url({{ asset('images/banner_pego.png') }});">
+    <section class="banner-top" style="background-image: url({{ asset('images/banners/banner_pego.png') }});">
     </section>
 
 
     <section class="container_products">
       <header class="header_line">
-        <h1>Sublinea {{ $subcategory->name}}</h1>
+        <h1>
+          Sublinea {{ $subcategory->name}}
+          <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia2" alt="sello de garantia">
+        </h1>
       </header>
       <div class="menu_between_views">
         <ul>
