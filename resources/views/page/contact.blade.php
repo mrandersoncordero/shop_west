@@ -2,6 +2,9 @@
 
 @section('head_content')
 <title>Pegoccidente - Shop</title>
+	<meta name="description" content=" Descubre nuestra amplia gama de productos de alta calidad para la construcción, que incluye morteros, pegamentos y selladores. Con nuestra línea de construcción, garantizamos la durabilidad y resistencia de tus proyectos. Nuestra línea de pegamentos ofrece soluciones efectivas para unir y sellar, mientras que nuestra línea de sella juntas protege la integridad estructural. Confía en Productos Occidente para encontrar la solución perfecta para tus necesidades de construcción.">
+  <meta name="keywords" content="Mortero impermeabilizante, Mortero para juntas, Mortero de alto rendimiento, Mortero para porcelánicos, Mortero para piscinas, Mortero para grandes formatos">	
+
 <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
 <!-- Optional Theme Stylesheet -->
 <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
