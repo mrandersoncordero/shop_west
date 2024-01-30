@@ -448,7 +448,13 @@ main {
   .product-section {
     margin: 0;
   }
-
+  .header_line {
+    justify-content: flex-start !important;
+  }
+  .header_line h1 img {
+    width: 65px !important;
+    top: -30px !important; 
+  }
   .header_line h1 {
     text-align: center;
     font-size: 1.2rem !important;
