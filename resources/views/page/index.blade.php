@@ -14,7 +14,7 @@
 
 @section('content')
 <div class="gif">
-    <video autoplay loop muted playsinline>
+    <video autoplay muted>
         <source src="{{ asset('images/empresa_lider.mp4') }}" type="video/mp4" />
     </video>
 </div>
@@ -136,8 +136,8 @@
         <div class="glide" style="position: initial" id="space1">
 
           <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i></button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i></button>
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Arrow Left"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Arrow Right"><i class="fa-solid fa-angle-right"></i></button>
           </div>
         </div>
     </div>
@@ -148,27 +148,39 @@
         </header>
         <article class="container-categories">
             <div class="category">
-                <a href="#" style="background: url({{asset('images/categoriy_pegamento.jpg')}}); display: flex; align-items: center; justify-content: center;">
-                <img src="{{ asset('icons/pegamentos.png') }}" alt="" width="50%">
+                <a 
+                    href="{{ route('products_by_subcategory', 1) }}" 
+                    style="background: url({{asset('images/categoriy_pegamento.jpg')}}); display: flex; align-items: center; justify-content: center;"
+                    aria-label="Categoria Pegamentos"
+                >
+                <img src="{{ asset('icons/pegamentos.png') }}" alt="Pegamentos" width="50%">
                 </a>
                 <p>
-                    <a href="#" style="color: var(--blue)">Linea de pegamentos</a>
+                    <a href="{{ route('products_by_subcategory', 1) }}" style="color: var(--blue)">Linea de pegamentos</a>
                 </p>
             </div>
             <div class="category">
-                <a href="#" style="background: url({{asset('images/category_construccion.jpg')}}); display: flex; align-items: center; justify-content: center;">
-                    <img src="{{ asset('icons/contruccion.png') }}" alt="" width="50%">
+                <a 
+                    href="{{ route('products_by_subcategory', 2) }}" 
+                    style="background: url({{asset('images/category_construccion.jpg')}}); display: flex; align-items: center; justify-content: center;"
+                    aria-label="Categoria Contruccion"
+                >
+                    <img src="{{ asset('icons/contruccion.png') }}" alt="Construccion" width="50%">
                 </a>
                 <p>
-                    <a href="#" style="color: var(--red)">Linea de construcción</a>
+                    <a href="{{ route('products_by_subcategory', 2) }}"  style="color: var(--red)">Linea de construcción</a>
                 </p>
             </div>
             <div class="category">
-                <a href="#" style="background: url({{asset('images/category_sella_juntas.jpg')}}); display: flex; align-items: center; justify-content: center;">
-                    <img src="{{ asset('icons/sella_juntas.png') }}" alt="" width="50%">
+                <a 
+                    href="{{ route('products_by_subcategory', 3) }}"  
+                    style="background: url({{asset('images/category_sella_juntas.jpg')}}); display: flex; align-items: center; justify-content: center;"
+                    aria-label="Categoria Sella Juntas"
+                >
+                    <img src="{{ asset('icons/sella_juntas.png') }}" alt="Sella Juntas" width="50%">
                 </a>
                 <p>
-                    <a href="#" style="color: var(--blue)">Linea de sella juntas</a>
+                    <a href="{{ route('products_by_subcategory', 3) }}"  style="color: var(--blue)">Linea de sella juntas</a>
                 </p>
             </div>
         </article>
@@ -198,8 +210,8 @@
                 <div class="glide" style="position: initial" id="space2">
     
                     <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i></button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i></button>
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Arrow Left"><i class="fa-solid fa-angle-left"></i></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Arrow Right"><i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -225,8 +237,8 @@
                                     <p>Anderson Cordero</p>
                                 </div>
                             </div>
-                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
-                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right" alt="Quto Right">
                         </div>
                     </li>
                     <li class="glide__slide">
@@ -240,8 +252,8 @@
                                     <p>Anderson Cordero</p>
                                 </div>
                             </div>
-                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
-                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right" alt="Quto Right">
                         </div>
                     </li>
                     <li class="glide__slide">
@@ -255,8 +267,8 @@
                                     <p>Anderson Cordero</p>
                                 </div>
                             </div>
-                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left">
-                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right">
+                            <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
+                            <img src="{{ asset('icons/quote-right.svg')}}" class="quote-right" alt="Quto Right">
                         </div>
                     </li>
                 </ul>
@@ -266,9 +278,9 @@
                 <div class="glide__track" data-glide-el="track">...</div>
               
                 <div class="glide__bullets" data-glide-el="controls[nav]">
-                  <button class="glide__bullet" data-glide-dir="=0"></button>
-                  <button class="glide__bullet" data-glide-dir="=1"></button>
-                  <button class="glide__bullet" data-glide-dir="=2"></button>
+                  <button class="glide__bullet" data-glide-dir="=0" aria-label="Bullet 0"></button>
+                  <button class="glide__bullet" data-glide-dir="=1" aria-label="Bullet 1"></button>
+                  <button class="glide__bullet" data-glide-dir="=2" aria-label="Bullet 2"></button>
                 </div>
             </div>
         </div>
@@ -313,11 +325,6 @@
             },
         }
     };
-    const glide1 = new Glide('#space3', config3).mount()
-    config3.addEventListener('change', function (event) {
-        glide1.update({
-            type: event.target.value
-        })
-    })
+    const glide1 = new Glide('#space3', config3).mount();
 </script>
 @endsection
