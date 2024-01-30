@@ -192,7 +192,7 @@ main {
 .productos-destacados .content .titulo-destacado div {
   background: var(--blue);
   border-radius: 50%;
-  padding: 8px;
+  padding: 6px 8px;
 }
 .productos-destacados .content .titulo-destacado .fa-star{
   color: var(--white)
@@ -444,13 +444,22 @@ main {
 @media screen and (max-width: 500px) {
   .gif { padding-top: 15% !important; }
   .gif video{ height: 100%;}
-  main { margin-top: 60px !important;  }
+  /* main { margin-top: 60px !important;  } */
+  .product-section {
+    margin: 0;
+  }
 
   .header_line h1 {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.2rem !important;
   }
-
+  .productos-destacados .content .titulo-destacado h2,
+  .productos-destacados .content .titulo-producto-destacado {
+    font-size: 1.2rem;
+  }
+  .image_slide {
+    height: 120px !important;
+  }
   .diana-principal {
     width: 350px;
     height: 350px;
@@ -469,6 +478,7 @@ main {
   .container-categories {
     flex-direction: column;
     margin: 0px !important;
+    gap: 0px;
   }
   .container-categories .category { width: 70%; }
   .container-categories .category  a img {width: 30%; }

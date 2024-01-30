@@ -122,13 +122,13 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             <li class="glide__slide">
-                <img src="{{ asset('images/banners/banner_1.jpg') }}" alt="" style="width: 100%; height: 100%;">
+                <img src="{{ asset('images/banners/banner_1.jpg') }}" class="image_slide" alt="" style="width: 100%; height: 100%;">
             </li>
             <li class="glide__slide">
-                <img src="{{ asset('images/banners/banner_2.jpg') }}" alt="" style="width: 100%; height: 100%;">
+                <img src="{{ asset('images/banners/banner_2.jpg') }}" class="image_slide" alt="" style="width: 100%; height: 100%;">
             </li>
             <li class="glide__slide">
-                <img src="{{ asset('images/banners/banner_3.jpg') }}" alt="" style="width: 100%; height: 100%;">
+                <img src="{{ asset('images/banners/banner_3.jpg') }}" class="image_slide" alt="" style="width: 100%; height: 100%;">
             </li>
           </ul>
         </div>
