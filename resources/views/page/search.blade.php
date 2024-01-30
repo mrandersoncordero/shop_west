@@ -10,7 +10,7 @@
     @if (session('message'))
     @include('templates.message')
     @endif
-    <section class="banner-top" style="background-image: url({{ asset('images/banner_pego.png') }});">
+    <section class="banner-top" style="background-image: url({{ asset('images/banners/banner_pego.png') }});">
     </section>
 
     <section class="container_products">
