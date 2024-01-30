@@ -2,15 +2,26 @@
   <div class="top-navbar">
       <div>
           <span><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> info@pegoccidente.com</a></span>
-          <span><a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank"><i class="fa-brands fa-whatsapp"></i> +58 416 - 4567084</a></span>
+          <span>
+            <a 
+                href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" 
+                target="_blank"><i class="fa-brands fa-whatsapp"
+                aria-label="Whatsapp Productos Occidente"></i> +58 416 - 4567084</a>
+            </span>
       </div>
       <div>
-          <a href="https://www.facebook.com/ProdOccidente" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/prodoccidente?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a 
+            href="https://www.facebook.com/ProdOccidente" 
+            target="_blank" 
+            aria-label="Facebook Productos Occidente"><i class="fa-brands fa-facebook"></i></a>
+          <a 
+            href="https://www.instagram.com/prodoccidente?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+            target="_blank"
+            aria-label="Instagram Productos Occidente"><i class="fa-brands fa-instagram"></i></a>
       </div>
   </div>
   <div class="navbar-content">
-      <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="" class="nav-img"></a>
+      <a href="{{ route('index') }}" aria-label="Inicio"><img src="{{ asset('images/logo.png') }}" alt="Logo" class="nav-img"></a>
       <ul class="ul">
           <li><a href="{{ route('about') }}" class="underline">Nosotros</a></li>
           <li><a href="{{ route('project') }}" class="underline">Proyectos</a></li>
@@ -42,7 +53,7 @@
               <form action="{{ route('search') }}" method="GET" class="form-search">
                   <div class="div-search-input">
                       <input type="text" name="search" placeholder="Buscar Producto" class="search-input">
-                      <button class="button-search">
+                      <button class="button-search" aria-label="Boton Buscar">
                           <i class="fa-solid fa-magnifying-glass"></i>
                       </button>
                   </div>
@@ -50,7 +61,7 @@
           </div>
           {{-- ICON USER --}}
           <div class="icon-user">
-            <button id="action_menu_user"><i class="fa-solid fa-user"></i></button>
+            <button id="action_menu_user" aria-label="Menu de usuario"><i class="fa-solid fa-user"></i></button>
             {{-- DROPDOWN MENU USER --}}
             <div class="menu_user inactive">
                 @auth
