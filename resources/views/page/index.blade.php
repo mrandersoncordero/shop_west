@@ -149,38 +149,38 @@
         <article class="container-categories">
             <div class="category">
                 <a 
-                    href="{{ route('products_by_subcategory', 1) }}" 
+                    href="{{ route('products_by_category', 1) }}" 
                     style="background: url({{asset('images/categoriy_pegamento.jpg')}}); display: flex; align-items: center; justify-content: center;"
                     aria-label="Categoria Pegamentos"
                 >
                 <img src="{{ asset('icons/pegamentos.png') }}" alt="Pegamentos" width="50%">
                 </a>
                 <p>
-                    <a href="{{ route('products_by_subcategory', 1) }}" style="color: var(--blue)">Linea de pegamentos</a>
+                    <a href="{{ route('products_by_category', 1) }}" style="color: var(--blue)">Linea de pegamentos</a>
                 </p>
             </div>
             <div class="category">
                 <a 
-                    href="{{ route('products_by_subcategory', 2) }}" 
+                    href="{{ route('products_by_category', 2) }}" 
                     style="background: url({{asset('images/category_construccion.jpg')}}); display: flex; align-items: center; justify-content: center;"
                     aria-label="Categoria Contruccion"
                 >
                     <img src="{{ asset('icons/contruccion.png') }}" alt="Construccion" width="50%">
                 </a>
                 <p>
-                    <a href="{{ route('products_by_subcategory', 2) }}"  style="color: var(--red)">Linea de construcción</a>
+                    <a href="{{ route('products_by_category', 2) }}"  style="color: var(--red)">Linea de construcción</a>
                 </p>
             </div>
             <div class="category">
                 <a 
-                    href="{{ route('products_by_subcategory', 3) }}"  
+                    href="{{ route('products_by_category', 3) }}"  
                     style="background: url({{asset('images/category_sella_juntas.jpg')}}); display: flex; align-items: center; justify-content: center;"
                     aria-label="Categoria Sella Juntas"
                 >
                     <img src="{{ asset('icons/sella_juntas.png') }}" alt="Sella Juntas" width="50%">
                 </a>
                 <p>
-                    <a href="{{ route('products_by_subcategory', 3) }}"  style="color: var(--blue)">Linea de sella juntas</a>
+                    <a href="{{ route('products_by_category', 3) }}"  style="color: var(--blue)">Linea de sella juntas</a>
                 </p>
             </div>
         </article>
