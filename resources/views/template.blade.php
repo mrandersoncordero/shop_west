@@ -13,7 +13,11 @@
   <meta property="og:image:type" content="image/x-icon">
   <meta property="og:image:width" content="64"> <!-- Ancho del icono en píxeles -->
   <meta property="og:image:height" content="64"> <!-- Altura del icono en píxeles -->
-  
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
   @yield('head_content')
 
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
