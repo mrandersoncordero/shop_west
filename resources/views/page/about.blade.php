@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="sucursal">
-                <img src="{{ asset('images/planta-barquisimeto.png') }}" alt="">
+                <img src="{{ asset('images/planta-trujillo.jpeg') }}" alt="">
                 <div>
                     <p>Trujillo</p>
                 </div>
