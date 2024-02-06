@@ -229,12 +229,11 @@
                     <li class="glide__slide">
                         <div class="testimony_container">
                             <div class="testimony_text">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                                <p>Productos Occidente ha formado parte de la familia Coseimpa desde hace 19 años aproximadamente, brindando calidad en sus productos para la construcción y asegurando un servicio profesional y eficiente. Por ello, estamos contentos de que sean nuestros aliados comerciales.</p>
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('') }}" alt="">
-                                    <p>Anderson Cordero</p>
+                                    <img src="{{ asset('images/coseimpa.webp') }}" alt="Coseimpa aliado comercial" style="width: 100px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
