@@ -15,6 +15,13 @@
 @section('content')
   
 <main>
+    @if (session('message'))
+    @include('templates.message')
+    @endif
+    <div class="banner">
+        <img src="{{ asset('images/banners/banner_pego.png') }}" style="margin:0px;" class="banner_image">
+    </div>
+
     <header class="header_line"  style="margin-bottom: 24px">
         <h1>Sobre nosotros</h1>
     </header>
