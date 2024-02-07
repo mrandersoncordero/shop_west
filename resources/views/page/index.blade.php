@@ -247,7 +247,7 @@
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('images/alpeca.webp') }}" alt="Alpeca aliado comercial" style="width: 150px; height: 50px;">
+                                    <img src="{{ asset('images/alpeca.webp') }}" alt="Alpeca aliado comercial" style="width: 150px; height: 55px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
