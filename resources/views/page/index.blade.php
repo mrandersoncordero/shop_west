@@ -314,6 +314,7 @@
     new Glide('#space2', config2).mount()
 
     const config3 = {
+        startAt: 1,
         perView: 2,
         focusAt: 'center',
         breakpoints: {
