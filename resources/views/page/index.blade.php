@@ -233,7 +233,7 @@
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('images/coseimpa.webp') }}" alt="Coseimpa aliado comercial" style="width: 100px; height: 100px;">
+                                    <img src="{{ asset('images/coseimpa.webp') }}" alt="Coseimpa aliado comercial" style="width: 100px; height: 80px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
