@@ -382,6 +382,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 24px;
   min-height: 260px;
 }
 .testimony_container .testimony_text {
