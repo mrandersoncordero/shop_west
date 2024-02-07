@@ -233,7 +233,7 @@
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('images/coseimpa.webp') }}" alt="Coseimpa aliado comercial" style="width: 100px;">
+                                    <img src="{{ asset('images/coseimpa.webp') }}" alt="Coseimpa aliado comercial" style="width: 100px; height: 100px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
@@ -243,12 +243,11 @@
                     <li class="glide__slide">
                         <div class="testimony_container">
                             <div class="testimony_text">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                                <p> Productos Occidente no solo cumple con nuestros estándares de calidad, sino que también ha demostrado ser un socio comercial confiable. Su experiencia desde 1983 habla por sí misma, y estamos encantados de seguir colaborando con ellos para ofrecer a nuestros clientes los mejores productos para la construcción.</p>
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('') }}" alt="">
-                                    <p>Anderson Cordero</p>
+                                    <img src="{{ asset('images/alpeca.webp') }}" alt="Alpeca aliado comercial" style="width: 150px; height: 50px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
@@ -258,12 +257,11 @@
                     <li class="glide__slide">
                         <div class="testimony_container">
                             <div class="testimony_text">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit placeat tenetur quas asperiores aperiam modi ab corporis nisi, fuga fugit, unde a sint ut eos dignissimos. Cupiditate dolores aut aliquam corporis vel dicta praesentium amet corrupti, neque accusantium aperiam.</p>
+                                <p>El Palacio del Caico se enorgullece de ser un aliado comercial de Productos Occidente. Desde que comenzamos nuestra colaboración, hemos experimentado un servicio excepcional y productos de primera categoría. La amplia gama de productos para construcción, como pegamentos, estucos y adhesivos, ha sido fundamental para ofrecer a nuestros clientes soluciones de alta calidad. </p>
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('') }}" alt="">
-                                    <p>Anderson Cordero</p>
+                                    <img src="{{ asset('images/palacio_del_caico.webp') }}" alt="Alpeca aliado comercial" style="width: 150px; height: 50px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
