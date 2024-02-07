@@ -257,7 +257,7 @@
                     <li class="glide__slide">
                         <div class="testimony_container">
                             <div class="testimony_text">
-                                <p>El Palacio del Caico se enorgullece de ser un aliado comercial de Productos Occidente. Desde que comenzamos nuestra colaboración, hemos experimentado un servicio excepcional y productos de primera categoría. La amplia gama de productos para construcción, como pegamentos, estucos y adhesivos, ha sido fundamental para ofrecer a nuestros clientes soluciones de alta calidad. </p>
+                                <p>El Palacio del Caico se enorgullece de ser aliado de Productos Occidente, con excepcionales servicios y productos de primera categoría. La amplia gama de productos, como pegamentos, estucos y adhesivos, es fundamental para brindar soluciones de alta calidad a nuestros clientes.</p>
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
