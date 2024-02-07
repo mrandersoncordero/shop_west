@@ -272,7 +272,7 @@
             </div>
             
             <div class="glide">
-                <div class="glide__track" data-glide-el="track">...</div>
+                <div class="glide__track" data-glide-el="track"></div>
               
                 <div class="glide__bullets" data-glide-el="controls[nav]">
                   <button class="glide__bullet" data-glide-dir="=0" aria-label="Bullet 0"></button>
