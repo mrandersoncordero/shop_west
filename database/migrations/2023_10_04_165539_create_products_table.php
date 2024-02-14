@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('format', 100)->nullable();
             $table->string('yield', 100)->nullable();
             $table->string('traffic', 100)->nullable();
+            $table->string('type_of_sale', 10);
+            $table->tinyInteger('quantity');
             $table->float('price');
             $table->string('image');
             $table->string('url_sheet')->nullable();
