@@ -18,6 +18,8 @@ class Product extends Model
         'format',
         'yield',
         'traffic',
+        'type_of_sale',
+        'quantity',
         'price',
         'image',
         'url_sheet',
