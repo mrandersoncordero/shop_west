@@ -198,6 +198,8 @@ class CartController extends Controller
                     'order_id' => $order->id,
                     'product_id' => $value['product_id'],
                     'quantity' => $value['quantity'],
+                    'type_of_sale' => $product->type_of_sale,
+                    'quantity_by_type_of_sale' => $product->quantity,
                     'price' => $product->price,
                 ]);
 
