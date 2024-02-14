@@ -91,7 +91,30 @@
           </div> 
           @enderror
         </div>
+
+        <div class="form-floating mb-3">
+          <select class="form-select @error('type_of_sale') is-invalid @enderror" id="Type_of_sale" name="type_of_sale" value="{{ old('type_of_sale', $product->type_of_sale)}}">
+            <option value="Paleta" @if ($product->type_of_sale == 'Paleta') selected @endif>Paleta</option>
+            <option value="Caja" @if ($product->type_of_sale == 'Caja') selected @endif>Caja</option>
+          </select>
+          <label for="Type_of_sale">Tipo de venta</label>
+          @error('type_of_sale')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
+        </div>
         
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control @error('quantity') is-invalid @enderror " name="quantity" value="{{ old('quantity', $product->quantity ) }}">
+          <label>Cantidad para la venta</label>
+          @error('quantity')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div> 
+          @enderror
+        </div>
+
         <div class="form-floating mb-3">
           <input type="number" class="form-control @error('price') is-invalid @enderror " name="price" value="{{ old('price', $product->price)}}">
           <label for="floatingInput">Precio</label>
