@@ -1,7 +1,7 @@
 @extends('templates.dashboard')
 
 @section('head_content')
-<title>Dashboard - Subcategories</title>
+<title>Panel de Control - Subcategorias</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
@@ -9,7 +9,7 @@
 @section('content_primary')
 
     <div class="header_container">
-        <h1 class="text">Subcategoria</h1>
+        <h1 class="text">Subcategorias</h1>
         <button id="buttonModal" class="btn btn-primary">Crear</button>
     </div>
     <table class="table table-hover table-bordered" id="table_subcategory">

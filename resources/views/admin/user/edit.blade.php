@@ -1,7 +1,7 @@
 @extends('templates.dashboard')
 
 @section('head_content')
-<title>Dashboard</title>
+<title>Panel de Control</title>
 
 @endsection
 

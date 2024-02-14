@@ -1,7 +1,7 @@
 @extends('templates.dashboard')
 
 @section('head_content')
-<title>Dashboard</title>
+<title>Panel de Control</title>
 @endsection
 
 @section('content_primary')
@@ -104,7 +104,7 @@
         
         <div class="input-group mb-3">
           <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
-          <label class="input-group-text" for="image">Subir archivo</label>
+          <label class="input-group-text" for="image">Subir imagen</label>
           @error('image')
           <div class="invalid-feedback">
             {{ $message }}

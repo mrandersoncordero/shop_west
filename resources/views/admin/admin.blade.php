@@ -6,7 +6,7 @@
 
 @section('content_primary')
 
-<div class="text">Home Content</div>
-Admin Dashboard
+<div class="text">Contenido del inicio</div>
+Panel de control
 
 @endsection

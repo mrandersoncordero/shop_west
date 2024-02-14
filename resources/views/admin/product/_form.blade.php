@@ -37,7 +37,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" value="{{ old('code','')}}">
-  <label for="floatingInput">Code</label>
+  <label for="floatingInput">Codigo</label>
   @error('code')
   <div class="invalid-feedback">
     {{ $message }}
@@ -47,7 +47,7 @@
 
 <div class="form-floating mb-3">
   <input type="number" class="form-control @error('weight') is-invalid @enderror " name="weight" value="{{ old('weight','')}}">
-  <label for="floatingInput">Weight</label>
+  <label for="floatingInput">Peso</label>
   @error('weight')
   <div class="invalid-feedback">
     {{ $message }}
@@ -57,7 +57,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('format') is-invalid @enderror " name="format" value="{{ old('format','')}}">
-  <label for="floatingInput">Format</label>
+  <label for="floatingInput">Formato</label>
   @error('format')
   <div class="invalid-feedback">
     {{ $message }}
@@ -67,7 +67,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('yield') is-invalid @enderror " name="yield" value="{{ old('yield','')}}">
-  <label for="floatingInput">Yield</label>
+  <label for="floatingInput">Rendimiento</label>
   @error('yield')
   <div class="invalid-feedback">
     {{ $message }}
@@ -77,7 +77,7 @@
 
 <div class="form-floating mb-3">
   <input type="text" class="form-control @error('traffic') is-invalid @enderror " name="traffic" value="{{ old('traffic','')}}">
-  <label for="floatingInput">Traffic</label>
+  <label for="floatingInput">Trafico</label>
   @error('traffic')
   <div class="invalid-feedback">
     {{ $message }}
@@ -87,7 +87,7 @@
 
 <div class="form-floating mb-3">
   <input type="number" class="form-control @error('price') is-invalid @enderror " name="price" value="{{ old('price','')}}">
-  <label for="floatingInput">Price</label>
+  <label for="floatingInput">Precio</label>
   @error('price')
   <div class="invalid-feedback">
     {{ $message }}
@@ -97,7 +97,7 @@
 
 <div class="input-group mb-3">
   <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
-  <label class="input-group-text" for="image">Upload</label>
+  <label class="input-group-text" for="image">Subir imagen</label>
   @error('image')
   <div class="invalid-feedback">
     {{ $message }}

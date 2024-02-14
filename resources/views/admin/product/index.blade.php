@@ -1,7 +1,7 @@
 @extends('templates.dashboard')
 
 @section('head_content')
-<title>Dashboard - Productos</title>
+<title>Panel de Control - Productos</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 @endsection
 
