@@ -21,6 +21,8 @@
                 <th scope="col">Formato</th>
                 <th scope="col">Rendimiento</th>
                 <th scope="col">Trafico</th>
+                <th scope="col">Tipo de Venta</th>
+                <th scope="col">Cantidad por unidad</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Creado el</th>
@@ -37,6 +39,8 @@
                     <td>{{ $product->format }}</td>
                     <td>{{ $product->yield }}</td>
                     <td>{{ $product->traffic }}</td>
+                    <td>{{ $product->type_of_sale }}</td>
+                    <td>{{ $product->quantity }}</td>
                     <td>{{ $product->price }}</td>
                     <td><a href="{{ asset("product/$product->image") }}">{{ $product->image }}</a></td>
                     <td>{{ $product->created_at }}</td>
