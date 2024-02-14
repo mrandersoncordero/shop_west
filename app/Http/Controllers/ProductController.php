@@ -37,6 +37,8 @@ class ProductController extends Controller
                 'format' => 'nullable|string|max:100',
                 'yield' => 'nullable|string|max:100',
                 'traffic' => 'nullable|string|max:100',
+                'type_of_sale' => 'string|max:10',
+                'quantity' => 'integer',
                 'price' => 'regex:/^\d+(\.\d{1,2})?$/',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
@@ -58,6 +60,8 @@ class ProductController extends Controller
                 'format' => $request->format,
                 'yield' => $request->yield,
                 'traffic' => $request->traffic,
+                'type_of_sale' => $request->type_of_sale,
+                'quantity' => $request->quantity,
                 'price' => $request->price,
                 'image' => $imageName, 
             ]);
@@ -83,6 +87,8 @@ class ProductController extends Controller
                 'format' => 'nullable|string|max:100',
                 'yield' => 'nullable|string|max:100',
                 'traffic' => 'nullable|string|max:100',
+                'type_of_sale' => 'string|max:10',
+                'quantity' => 'integer',
                 'price' => 'regex:/^\d+(\.\d{1,2})?$/'
             ]);
     
@@ -97,6 +103,8 @@ class ProductController extends Controller
                     'format' => $request->format,
                     'yield' => $request->yield,
                     'traffic' => $request->traffic,
+                    'type_of_sale' => $request->type_of_sale,
+                    'quantity' => $request->quantity,
                     'price' => $request->price
                 ]);
                 return redirect()->route('products.edit', $product)->with('message', [
@@ -121,6 +129,8 @@ class ProductController extends Controller
                     'format' => $request->format,
                     'yield' => $request->yield,
                     'traffic' => $request->traffic,
+                    'type_of_sale' => $request->type_of_sale,
+                    'quantity' => $request->quantity,
                     'price' => $request->price,
                     'image' => $imageName, 
                 ]);
