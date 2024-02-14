@@ -10,60 +10,60 @@
     <i class='bx bx-menu' id="btn"></i>
   </div>
 
-  <div class="src">
+  <!-- <div class="src">
     <i class='bx bx-search'></i>
     <input type="text" name="" placeholder="Search...">
-  </div>
+  </div>-->
 
   <ul class="nav">
     <li>
       <a href="{{ route('dashboard') }}">
         <i class='bx bx-bar-chart-square'></i>
-        <span class="link_name">Dashboard</span>
+        <span class="link_name">Panel de control</span>
       </a>
-      <span class="tooltip">Dashboard</span>
+      <span class="tooltip">Panel de control</span>
     </li>
     <li>
       <a href="{{ route('categories.index') }}">
         <i class='bx bxs-category' ></i>
-        <span class="link_name">Categories</span>
+        <span class="link_name">Categorias</span>
       </a>
-      <span class="tooltip">Categories</span>
+      <span class="tooltip">Categorias</span>
     </li>
     <li>
       <a href="{{ route('subcategories.index') }}">
         <i class='bx bxs-category-alt' ></i>
-        <span class="link_name">Subcategories</span>
+        <span class="link_name">Subcategorias</span>
       </a>
-      <span class="tooltip">Subcategories</span>
+      <span class="tooltip">Subcategorias</span>
     </li>
     <li>
       <a href="{{ route('products.index') }}">
         <i class='bx bxs-box'></i>
-        <span class="link_name">Products</span>
+        <span class="link_name">Productos</span>
       </a>
-      <span class="tooltip">Products</span>
+      <span class="tooltip">Productos</span>
     </li>
     <li>
       <a href="{{ route('orders.index') }}">
         <i class='bx bx-list-ul' ></i>
-        <span class="link_name">Orders</span>
+        <span class="link_name">Ordenes</span>
       </a>
-      <span class="tooltip">Orders</span>
+      <span class="tooltip">Ordenes</span>
     </li>
     <li>
       <a href="{{ route('payments.index') }}">
         <i class='bx bx-dollar' ></i>
-        <span class="link_name">Payments</span>
+        <span class="link_name">Pagos</span>
       </a>
-      <span class="tooltip">Payments</span>
+      <span class="tooltip">Pagos</span>
     </li>
     <li>
       <a href="{{ route('users.index') }}">
         <i class='bx bxs-user'></i>
-        <span class="link_name">Users</span>
+        <span class="link_name">Usuarios</span>
       </a>
-      <span class="tooltip">Users</span>
+      <span class="tooltip">Usuarios</span>
     </li>
     <li>
       <form action="{{ route('logout') }}" method="POST">
