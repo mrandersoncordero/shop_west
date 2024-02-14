@@ -78,7 +78,10 @@
                 <p><span>Trafico:</span> {{ $product->traffic }}</p>
               </div>
               <div>
-                <p><span>Precio:</span> {{ $product->price }}$</p>
+                <p><span>Tipo de venta:</span> {{ $product->type_of_sale }}</p>
+              </div>
+              <div>
+                <p><span>Cantidad del tipo de venta:</span> {{ $product->quantity }}</p>
               </div>
             </div>
 
