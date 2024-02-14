@@ -13,6 +13,8 @@ class ProductsOfOrder extends Model
         'order_id',
         'product_id',
         'quantity',
+        'type_of_sale',
+        'quantity_by_type_of_sale',
         'price',
     ];
 

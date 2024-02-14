@@ -23,6 +23,10 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->integer('quantity');
+
+            $table->string('type_of_sale', 10)->nullable();
+            $table->tinyInteger('quantity_by_type_of_sale')->nullable();
+            
             $table->float('price');
         });
     }
