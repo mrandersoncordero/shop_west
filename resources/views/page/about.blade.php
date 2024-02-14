@@ -79,7 +79,7 @@
                 <h2>Sucursales</h2>
             </header>
             <div class="sucursal--content">
-                <p>Contamos con dos sucursales estratégicamente ubicadas en Venezuela. Nuestra sede principal se encuentra en Trujillo, donde todo comenzó. La segunda sucursal se encuentra en Lara, lo que nos permite atender a un público más amplio y garantizar un acceso más eficiente a nuestros productos de alta calidad.</p>
+                <p>Contamos con dos sucursales estratégicamente ubicadas en Venezuela. Nuestra sede principal se encuentra en Trujillo. La segunda sucursal se encuentra en Lara, lo que nos permite atender a un público más amplio y garantizar un acceso más eficiente a nuestros productos de alta calidad.</p>
             </div>
         </article>
         <article class="container_sucursales--image">
