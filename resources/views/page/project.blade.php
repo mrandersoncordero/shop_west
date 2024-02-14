@@ -52,6 +52,9 @@
                                 <li>
                                     <a href="{{ route('product_detail', 1) }}">IMPERPLUS</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('product_detail', 17) }}">STUCO</a>
+                                </li>
                                 <!-- Agrega más productos según sea necesario -->
                             </ul>
                         </div>
@@ -109,6 +112,12 @@
                             <ul class="product-list">
                                 <li>
                                     <a href="{{ route('product_detail', 17) }}">STUCO</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('product_detail', 20) }}">OCCICONCRETO</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('product_detail', 5) }}">PEGO SUPREMO BLANCO</a>
                                 </li>
                             </ul>
                         </div>
