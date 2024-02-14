@@ -21,19 +21,18 @@
         <!-- Párrafos con márgenes inferiores y fuente en negrita -->
         <p style="margin-bottom: 16px; font-size: 1.25rem;">El usuario, {{ '@'.$user->name }} ha confirmado su carrito de compra, creando la orden: {{ $order->id }}.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">La informacion de la orden es:</p>
-        
-        <p style="font-size: 1.25rem;"><b>Tipo de pago:</b> {{ $order->payment_type->name }}.</p>
+
         <p style="font-size: 1.25rem;"><b>Estado del pedido:</b> {{ $order->status->name }}.</p>
-        <p style="font-size: 1.25rem;"><b>Subtotal:</b> {{ $order->price_total }}</p>
         <p style="font-size: 1.25rem;">{{ $order->created_at }}</p>
 
         <table style="width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 1rem;">
           <thead>
             <tr style="background-color: #f7f7f7; border-bottom: 2px solid #ddd; font-weight: bold;">
-              <th style="padding: 8px; text-align: left;">#COD</th>
-              <th style="padding: 8px; text-align: left;">Nombre</th>
-              <th style="padding: 8px; text-align: left;">Cantidad</th>
-              <th style="padding: 8px; text-align: left;">Precio unitario</th>
+              <th>#COD</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Tipo de Venta</th>
+              <th>Unidad por tipo de venta</th>
             </tr>
           </thead>
           <tbody>
@@ -42,7 +41,8 @@
                 <td style="padding: 8px;">{{ $item->product->code }}</td>
                 <td style="padding: 8px;">{{ $item->product->name }}</td>
                 <td style="padding: 8px;">{{ $item->quantity }}</td>
-                <td style="padding: 8px;">{{ $item->product->price }}</td>
+                <td style="padding: 8px;">{{ $item->type_of_sale }}</td>
+                <td style="padding: 8px;">{{ $item->quantity_by_type_of_sale }}</td>
               </tr>
             @endforeach
           </tbody>
