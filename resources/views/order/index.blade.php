@@ -18,7 +18,6 @@
         <tr>
           <th>#</th>
           <th>Estado</th>
-          <th>Subtotal</th>
           <th>Fecha de creacion</th>
           <th>Metodo de pago</th>
           <th>Acciones</th>
@@ -41,7 +40,6 @@
               <span>{{ $order->status->name }}</span>
             </p>
           </td>
-          <td><b>{{ $order->price_total }}$</b></td>
           <td>{{ $order->created_at }}</td>
           <td>{{ $order->payment_type->name }}</td>
           <td>

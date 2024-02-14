@@ -99,8 +99,10 @@
               <th>#COD</th>
               <th>Descripcion</th>
               <th>Cantidad</th>
-              <th>Precio unitario</th>
-              <th>Precio total</th>
+              <th>Tipo de Venta</th>
+              <th>Unidad por tipo de venta</th>
+              {{-- <th>Precio unitario</th>
+              <th>Precio total</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -109,20 +111,22 @@
               <td>{{ $item->product->code }}</td>
               <td>{{ $item->product->name }}</td>
               <td>{{ $item->quantity }}</td>
-              <td>{{ $item->price }}$</td>
+              <td>{{ $item->type_of_sale }}</td>
+              <td>{{ $item->quantity_by_type_of_sale }}</td>
+              {{-- <td>{{ $item->price }}$</td>
               <td>
               @php
                 $quantity = $item->price * $item->quantity
               @endphp
               {{ $quantity }}$
-              </td>
+              </td> --}}
             </tr>
             @endforeach
           </tbody>
         </table>
       </div>
 
-      <div class="table-responsive">
+      {{-- <div class="table-responsive">
         <table id="table_detail_order" class="table table-bordered mt-4">
             <thead>
               <tr>
@@ -186,7 +190,7 @@
               </tr>
             </tbody>
         </table>
-      </div>
+      </div> --}}
     </article>
   </section>
 
