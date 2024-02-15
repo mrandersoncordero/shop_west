@@ -408,6 +408,21 @@ class DatabaseSeeder extends Seeder
             'image' => "D' color.png",
             'url_sheet' => 'https://drive.google.com/file/d/1rIiUkSzbK9SOL5DSzxStLL2u0hIQlgnl/view?usp=sharing'
         ]);
+        Product::create([
+            'subcategory_id' => 4,
+            'code' => 'LDCEO1235',
+            'name' => "OCCIGRAFIADO",
+            'description' => 'Mortero aplicado para el relleno de juntas en cerámicas, contiene hidrófugo y antihongos por lo que lo hace resistente a la formación de moho y hongos. Para uso en exteriores e interiores.',
+            'weight' => 2,
+            'format' => '',
+            'yield' => '(m2)3',
+            'traffic' => '',
+            'type_of_sale' => 'Paleta',
+            'quantity' => 20,
+            'price' => 2,
+            'image' => "Occigrafiado.png",
+            'url_sheet' => 'https://drive.google.com/file/d/1rIiUkSzbK9SOL5DSzxStLL2u0hIQlgnl/view?usp=sharing'
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
