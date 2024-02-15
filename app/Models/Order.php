@@ -17,7 +17,8 @@ class Order extends Model
         'is_active',
         'payment_type_id',
         'status_id',
-        'price_total'
+        'price_total',
+        'retreat',
     ];
 
     public function user()
