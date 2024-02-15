@@ -125,11 +125,13 @@
             </button>
             @include('page.partials.modal_form_tab')
             
+            @if ($product->palette_color != null || $product->palette_color != '')
             <button type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#ModalPaleta">
               Paleta de colores
             </button>
             @include('page.partials.paleta_colores')
-          </div>
+          </div> 
+            @endif
 
         <!-- Agrega tu función de JavaScript -->
         <script>
