@@ -40,31 +40,52 @@ class ProductController extends Controller
                 'type_of_sale' => 'string|max:10',
                 'quantity' => 'integer',
                 'price' => 'regex:/^\d+(\.\d{1,2})?$/',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'palette_color' => 'image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             // Procesar la imagen y almacenarla en el disco local
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $imageName = $image->getClientOriginalName();
-                Storage::disk('products')->put($imageName, file_get_contents($image)); // Guardar la imagen en el disco local
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+            Storage::disk('products')->put($imageName, file_get_contents($image)); // Guardar la imagen en el disco local
+
+            if ($request->hasFile('palette_color')) {
+                $palette_color = $request->file('palette_color');
+                $palette_colorName = $palette_color->getClientOriginalName();
+                Storage::disk('palette_color')->put($palette_colorName, file_get_contents($palette_color)); // Guardar la imagen en el disco local
+
+                $product = new Product([
+                    'subcategory_id' => $request->subcategory_id,
+                    'code' => $request->code,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'weight' => $request->weight,
+                    'format' => $request->format,
+                    'yield' => $request->yield,
+                    'traffic' => $request->traffic,
+                    'type_of_sale' => $request->type_of_sale,
+                    'quantity' => $request->quantity,
+                    'price' => $request->price,
+                    'image' => $imageName,
+                    'palette_color' => $palette_colorName,
+                ]);
+            } else {
+                $product = new Product([
+                    'subcategory_id' => $request->subcategory_id,
+                    'code' => $request->code,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'weight' => $request->weight,
+                    'format' => $request->format,
+                    'yield' => $request->yield,
+                    'traffic' => $request->traffic,
+                    'type_of_sale' => $request->type_of_sale,
+                    'quantity' => $request->quantity,
+                    'price' => $request->price,
+                    'image' => $imageName,
+                ]);
             }
-            
-            // Crear el producto con los datos del formulario, incluyendo el nombre del archivo de imagen
-            $product = new Product([
-                'subcategory_id' => $request->subcategory_id,
-                'code' => $request->code,
-                'name' => $request->name,
-                'description' => $request->description,
-                'weight' => $request->weight,
-                'format' => $request->format,
-                'yield' => $request->yield,
-                'traffic' => $request->traffic,
-                'type_of_sale' => $request->type_of_sale,
-                'quantity' => $request->quantity,
-                'price' => $request->price,
-                'image' => $imageName, 
-            ]);
+
             $product->save();
 
             return redirect()->route('products.edit', $product)->with('message', [
@@ -78,10 +99,10 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         if (Auth::user()->hasPermission(11, 'No tienes permisos para editar productos')) {
-            $this->validate($request,[
+            $this->validate($request, [
                 'subcategory_id' => 'required',
                 'code' => 'required|string|max:80',
-                'name' => 'required|unique:subcategories,name,'. $product->id,
+                'name' => 'required|unique:subcategories,name,' . $product->id,
                 'description' => 'required|string|max:255',
                 'weight' => 'nullable|integer',
                 'format' => 'nullable|string|max:100',
@@ -89,11 +110,11 @@ class ProductController extends Controller
                 'traffic' => 'nullable|string|max:100',
                 'type_of_sale' => 'string|max:10',
                 'quantity' => 'integer',
-                'price' => 'regex:/^\d+(\.\d{1,2})?$/'
+                'price' => 'regex:/^\d+(\.\d{1,2})?$/',
             ]);
-    
-            if(!$request->image){
-    
+
+            if (!$request->image && !$request->palette_color) {
+
                 $product->update([
                     'subcategory_id' => $request->subcategory_id,
                     'code' => $request->code,
@@ -112,14 +133,14 @@ class ProductController extends Controller
                     'title' => 'Producto actualizado correctamente',
                     'content' => "El producto {$product->name} fue actualizado correctamente"
                 ]);
-            }else{
-                $this->validate($request,[
-                    'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            } elseif ($request->image && !$request->palette_color) {
+                $this->validate($request, [
+                    'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
                 ]);
                 $image = $request->file('image');
                 $imageName = $image->getClientOriginalName();
                 Storage::disk('products')->put($imageName, file_get_contents($image)); // Guardar la imagen en el disco local
-        
+
                 $product->update([
                     'subcategory_id' => $request->subcategory_id,
                     'code' => $request->code,
@@ -132,7 +153,36 @@ class ProductController extends Controller
                     'type_of_sale' => $request->type_of_sale,
                     'quantity' => $request->quantity,
                     'price' => $request->price,
-                    'image' => $imageName, 
+                    'image' => $imageName,
+                ]);
+                return redirect()->route('products.edit', $product)->with('message', [
+                    'class' => 'alert--warning',
+                    'title' => 'Producto actualizado correctamente',
+                    'content' => "El producto {$product->name} fue actualizado correctamente"
+                ]);
+            } elseif (!$request->image && $request->palette_color) {
+
+                $this->validate($request, [
+                    'palette_color' => 'image|mimes:jpeg,png,jpg|max:2048',
+                ]);
+
+                $palette_color = $request->file('palette_color');
+                $palette_colorName = $palette_color->getClientOriginalName();
+                Storage::disk('palette_color')->put($palette_colorName, file_get_contents($palette_color));
+
+                $product->update([
+                    'subcategory_id' => $request->subcategory_id,
+                    'code' => $request->code,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'weight' => $request->weight,
+                    'format' => $request->format,
+                    'yield' => $request->yield,
+                    'traffic' => $request->traffic,
+                    'type_of_sale' => $request->type_of_sale,
+                    'quantity' => $request->quantity,
+                    'price' => $request->price,
+                    'palette_color' => $palette_colorName,
                 ]);
                 return redirect()->route('products.edit', $product)->with('message', [
                     'class' => 'alert--warning',
@@ -179,7 +229,8 @@ class ProductController extends Controller
         }
     }
 
-    public function rateProduct(Request $request, $productId) {
+    public function rateProduct(Request $request, $productId)
+    {
         $user = Auth::user();
         $product = Product::findOrFail($productId);
         $comment = $request->input('comment');
@@ -187,7 +238,7 @@ class ProductController extends Controller
         $existingRating = ProductRating::where('product_id', $productId)
             ->where('user_id', $user->id)
             ->first();
-    
+
         if ($existingRating) {
             // Si el usuario ya calificó, actualiza la calificación y el comentario
 
@@ -196,7 +247,7 @@ class ProductController extends Controller
                 $existingRating->update([
                     'rating' => $request->input('rating'),
                 ]);
-            }else{
+            } else {
                 $existingRating->update([
                     'rating' => $request->input('rating'),
                     'comment' => $request->input('comment'),
@@ -210,8 +261,7 @@ class ProductController extends Controller
                 'comment' => $request->input('comment'),
             ]);
         }
-    
+
         return redirect()->back()->with('success', 'Calificación y comentario agregados exitosamente');
     }
-    
 }
