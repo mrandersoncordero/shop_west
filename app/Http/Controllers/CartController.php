@@ -175,7 +175,6 @@ class CartController extends Controller
     {
         if (Auth::check()) {
             $request->validate([
-                'payment_type_id' => 'required|integer',
                 'price_total' => 'required',
             ]);
             // Obtén el carrito actual desde la sesión
@@ -186,7 +185,7 @@ class CartController extends Controller
             $order = new Order([
                 'user_id' => $user->id,
                 'is_active' => 1,
-                'payment_type_id' => $request->payment_type_id,
+                'payment_type_id' => 1,
                 'status_id' => 2,
                 'price_total' => $request->price_total
             ]);
