@@ -28,6 +28,7 @@ return new class extends Migration
             $table->tinyInteger('quantity');
             $table->float('price');
             $table->string('image');
+            $table->string('palette_color')->nullable();
             $table->string('url_sheet')->nullable();
             
             $table->timestamps();

@@ -22,6 +22,7 @@ class Product extends Model
         'quantity',
         'price',
         'image',
+        'palette_color',
         'url_sheet',
     ];
 
