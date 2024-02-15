@@ -126,7 +126,7 @@
                             </figure>
                             <div>
                                 <p>{{ $item['product']->name }}</p>
-                                <p>{{ $item['product']->price}}$</p>
+                                {{-- <p>{{ $item['product']->price}}$</p> --}}
                             </div>
                             <form action="{{ route('cart.remove', $item['product']->id) }}" method="POST">
                                 @csrf
@@ -147,12 +147,12 @@
 
                         @endforeach
                     </div>
-                    <div class="order">
+                    {{-- <div class="order">
                         <p>
                           <span class="span_total">Total</span>
                         </p>
                         <p>{{ $price_total }}$</p>
-                    </div>
+                    </div> --}}
 
                     <a href="{{ route('cart.index') }}" class="link_detail_cart">Ver detalle del carrito</a>
 

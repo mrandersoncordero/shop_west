@@ -21,6 +21,30 @@
       @if ($order->status_id == 1)
         <!-- Párrafos con márgenes inferiores y fuente en negrita -->
         <p style="margin-bottom: 16px; font-size: 1.50rem;">En hora buena {{ $order->user->profile->full_name()}} tu pedido #{{ $order->id }} ha sido aprobado.</p>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 1rem;">
+          <thead>
+            <tr style="background-color: #f7f7f7; border-bottom: 2px solid #ddd; font-weight: bold;">
+              <th>#COD</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Tipo de Venta</th>
+              <th>Unidad por tipo de venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($order->order_products as $item)
+              <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 8px;">{{ $item->product->code }}</td>
+                <td style="padding: 8px;">{{ $item->product->name }}</td>
+                <td style="padding: 8px;">{{ $item->quantity }}</td>
+                <td style="padding: 8px;">{{ $item->type_of_sale }}</td>
+                <td style="padding: 8px;">{{ $item->quantity_by_type_of_sale }}</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+        <p style="margin-bottom: 16px; font-size: 1.25rem;">Precio total: {{ $order->price_total }}</p>
+        <p style="margin-bottom: 16px; font-size: 1.25rem;">Metodo de Pago: {{ $order->payment_type->name }}</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Dirigete ahora a <a href="{{ route('order.index') }}">{{ route('order.index') }}</a> y reporta tu pago.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Recuerda que si el metodo de pago que seleccionaste para esta orden es: <b>pago movil o transferencia</b>. Puedes adjuntar tu comprobante y referencia de pago desde la web, en caso contrario te recomendamos ponerte en contacto con nuestro asesor de ventas. <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank" data-v-c02e9916="">asesor de ventas</a> que te indicara como proceder.</p>
       @elseif($order->status_id == 2)

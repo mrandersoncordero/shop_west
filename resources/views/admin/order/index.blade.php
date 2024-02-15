@@ -19,7 +19,6 @@
         <th>Nombre de usuario</th>
         <th>Estado</th>
         <th>Tipo de pago</th>
-        <th>Precio Total</th>
         <th>Fecha de creacion</th>
         <th>Acciones</th>
       </tr>
@@ -31,7 +30,6 @@
         <td>{{ '@'.$order->user->name }}</td>
         <td>{{ $order->status->name }}</td>
         <td>{{ $order->payment_type->name }}</td>
-        <td><b>{{ $order->price_total }}$</b></td>
         <td>{{ $order->created_at }}</td>
         <td>
           <div class="dropdown">
@@ -41,7 +39,10 @@
 
               <ul class="dropdown-menu">
                 <li>
-                  <a href="{{ route('orders.edit', $order)}}" class="dropdown-item">Ver</a></li>
+                  <a href="{{ route('orders.show', $order)}}" class="dropdown-item">Ver</a></li>
+                <li>
+                <li>
+                  <a href="{{ route('orders.edit', $order) }}" class="dropdown-item">Editar</a></li>
                 <li>
                   <form action="{{ route('orders.destroy', $order) }}" method="POST">
                       @csrf

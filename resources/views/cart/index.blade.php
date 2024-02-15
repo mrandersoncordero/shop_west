@@ -41,7 +41,8 @@
             <p><span>Nombre: </span>{{ $item['product']->name }}</p>
             <p><span>Codigo: </span>{{ $item['product']->code }}</p>
             <p><span>Peso: </span>{{ $item['product']->weight }} Kg</p>
-            <p><span>Precio: </span>{{ $item['product']->price }}$</p>
+            <p><span>Tipo de Venta: </span>{{ $item['product']->type_of_sale }}</p>
+            <p><span>Cantidad por unidad de Tipo de Venta: </span>{{ $item['product']->quantity }}</p>
           </section>
   
           <section class="cart_actions">
@@ -76,26 +77,10 @@
       <section class="content_confirt_purchase">
         
         <div class="container mt-4">
-          <div>
-            <p>Total a pagar: <b>{{ $price_total }}$</b></p>
-          </div>
 
           <form action="{{ route('cart.checkout') }}" method="POST">
             @csrf
             <input type="hidden" name="price_total" value="{{ $price_total }}">
-            <div class="form-floating">
-                <select class="form-select @error('payment_type_id') is-invalid @enderror" id="floatingSelect" name="payment_type_id"
-                @foreach ($payment_types as $item)
-                  <option value="{{ $item->id }}">{{ $item->name }}</option>
-                @endforeach
-              </select>
-              <label for="floatingSelect">Selecciona el tipo de pago</label>
-              @error('payment_type_id')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div> 
-              @enderror
-            </div>
             <div class="mt-4" style="display: flex; justify-content: flex-start; gap: 12px;">
 
             <button type="submit" class="btn btn-secondary">Comfirmar compra</button>
