@@ -129,6 +129,16 @@
   @enderror
 </div>
 
+<div class="input-group mb-3">
+  <input type="file" class="form-control @error('palette_color') is-invalid @enderror" id="palette_color" name="palette_color">
+  <label class="input-group-text" for="palette_color">Subir paleta de colores</label>
+  @error('palette_color')
+  <div class="invalid-feedback">
+    {{ $message }}
+  </div> 
+  @enderror
+</div>
+
 <div style="display: flex; align-items: center; margin-top: 10px;">
   <input type="submit" value="Enviar" class="btn btn-primary">
 </div>
