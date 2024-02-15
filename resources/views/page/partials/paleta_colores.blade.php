@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="{{ asset('images/paleta_colores.jpg') }}" alt="paleta de  colores" style="width: 100%">
+                <img src="{{ asset("palette_color/$product->palette_color" )}}" alt="paleta de  colores" style="width: 100%">
             </div>
         </div>
     </div>
