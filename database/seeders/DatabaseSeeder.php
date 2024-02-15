@@ -406,6 +406,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 20,
             'price' => 2,
             'image' => "D' color.png",
+            'palette_color' => 'paleta_d_color.jpg',
             'url_sheet' => 'https://drive.google.com/file/d/1rIiUkSzbK9SOL5DSzxStLL2u0hIQlgnl/view?usp=sharing'
         ]);
         Product::create([
