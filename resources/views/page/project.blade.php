@@ -101,7 +101,26 @@
             </div>
             <div class="card_service" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url({{ asset('images/projects/biotel.png') }})">
+                    <div class="front" style="background-image: url({{ asset('images/projects/proyecto_esmeralda.jpeg') }})">
+                        <div class="inner">
+                            <p>Proyecto esmeralda en Caracas</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <h5>Productos Utilizados:</h5>
+                            <ul class="product-list">
+                                <li>
+                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card_service" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url({{ asset('images/projects/biotel.jpg') }})">
                         <div class="inner">
                             <p>Biotel</p>
                         </div>
