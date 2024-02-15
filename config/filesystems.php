@@ -51,6 +51,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'palette_color' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/palette_color'),
+            'url' => env('APP_URL').'/palette_color',
+            'visibility' => 'public',
+        ],
+
         'proof_of_payment' => [
             'driver' => 'local',
             'root' => storage_path('app/public/proof_of_payment'),
@@ -84,9 +91,10 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        # public_path('storage') => storage_path('app/public'),
         public_path('product') => storage_path('app/public/products'),
         public_path('proof_of_payment') => storage_path('app/public/proof_of_payment'),
+        public_path('palette_color') => storage_path('app/public/palette_color'),
     ],
 
 ];
