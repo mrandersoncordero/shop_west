@@ -25,11 +25,13 @@ return new class extends Migration
             $table->foreign('payment_type_id')
                 ->references('id')
                 ->on('payment_types');
-            
+                
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('order_statuses');
 
             $table->float('price_total');
+
+            $table->string('retreat', 20)->nullable();
             
             $table->timestamps();
         });
