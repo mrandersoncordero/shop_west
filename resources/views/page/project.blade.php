@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="front" style="background-image: url({{ asset('images/projects/proyecto_esmeralda.jpeg') }})">
                         <div class="inner">
-                            <p>Proyecto esmeralda en Caracas</p>
+                            <p>Proyecto Esmeralda en Caracas</p>
                         </div>
                     </div>
                     <div class="back">
