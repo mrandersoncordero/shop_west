@@ -8,6 +8,9 @@ use App\Models\Order;
 use App\Models\Payment;
 use App\Http\Controllers\CartController;
 use App\Models\OrderStatus;
+use App\Models\PaymentType;
+use App\Models\Product;
+use App\Models\ProductsOfOrder;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,25 +57,49 @@ class OrderController extends Controller
         }
     }
 
-    public function edit(Order $order)
+    public function show(Order $order)
     {
         if (Auth::user()->hasPermission(14, 'No tienes permisos para ver detalle de la orden de compra')) {
-            return view('admin.order.edit', [
+            return view('admin.order.show', [
                 'order' => $order
             ]);
         }
     }
 
-    public function change_status_order(Request $request, Order $order)
+    public function edit(Order $order)
     {
-        if (Auth::user()->hasPermission(16, 'No tienes permisos para cambiar estado de la orden de compra')) {
-            $order->update([
-                'status_id' => $request->status_id,
+        if (Auth::user()->hasPermission(14, 'No tienes permisos para ver detalle de la orden de compra')) {
+            return view('admin.order.edit', [
+                'order' => $order,
+                'payment_type' => PaymentType::all(),
+                'order_status' => OrderStatus::all(),
+                'product_by_order' => ProductsOfOrder::all()->where('order_id', $order->id),
+                'products' => Product::all(),
+            ]);
+        }
+    }
+
+    public function update(Request $request, Order $order) 
+    {
+        if (Auth::user()->hasPermission(14, 'No tienes permisos para ver detalle de la orden de compra')) {
+            $request->validate([
+                'payment_type' => 'required|string',
+                'price_total' => 'regex:/^\d+(\.\d{1,2})?$/',
+                'retreat' => 'string',
             ]);
             
-            Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
+            $order->update([
+                'payment_type_id' => $request->payment_type,
+                'price_total' => $request->price_total,
+                'retreat' => $request->retreat,
+            ]);
+            $order->save();
 
-            return redirect()->route('orders.index');
+            return redirect()->route('orders.edit', $order)->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Orden  actualizada',
+                'content' => "Orden actualizada correctamente"
+            ]);
         }
     }
 
@@ -98,6 +125,66 @@ class OrderController extends Controller
                     ]);
                 }
             }
+        }
+    }
+
+    public function change_status_order(Request $request, Order $order)
+    {
+        if (Auth::user()->hasPermission(16, 'No tienes permisos para cambiar estado de la orden de compra')) {
+            $order->update([
+                'status_id' => $request->status_id,
+            ]);
+
+            Mail::to($order->user->email)->send(new ChangeOrderStatusMail($order));
+
+            return redirect()->route('orders.index');
+        }
+    }
+
+
+    public function addProduct(Request $request, Order $order)
+    {
+
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'quantity' => 'required|integer|min:1',
+        ]);
+        
+        $product = Product::find($request->product_id);
+        $existingProduct = $order->order_products()->where('product_id', $request->product_id)->first();
+
+        if ($existingProduct) {
+            // Si el producto ya existe en la orden, actualiza la cantidad
+            $existingProduct->update([
+                'quantity' => $existingProduct->quantity + $request->quantity,
+            ]);
+    
+            return redirect()->route('orders.edit', $order)->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Orden  actualizada',
+                'content' => "Cantidad actualizada correctamente correctamente"
+            ]);
+        } else {
+            // Si el producto no existe en la orden, crea uno nuevo
+            $product = Product::find($request->product_id);
+    
+            $newProduct = new ProductsOfOrder([
+                'order_id' => $order->id,
+                'product_id' => $request->input('product_id'),
+                'quantity' => $request->input('quantity'),
+                'type_of_sale' => $product->type_of_sale,
+                'quantity_by_type_of_sale' => $product->quantity,
+                'price' => $product->price,
+            ]);
+        
+            // Asociar el nuevo producto con la orden
+            $order->order_products()->save($newProduct);
+        
+            return redirect()->route('orders.edit', $order)->with('message', [
+                'class' => 'alert--success',
+                'title' => 'Orden  actualizada',
+                'content' => "Prodcuto agregado correctamente"
+            ]);
         }
     }
 }
