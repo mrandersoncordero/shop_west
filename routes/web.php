@@ -75,7 +75,8 @@ Route::middleware(['role:admin|superuser'])->group(function () {
     Route::resource('dashboard/categories', CategoryController::class)->except('show', 'create');
     Route::resource('dashboard/subcategories', SubcategoryController::class)->except('show', 'create');
     Route::resource('dashboard/products', ProductController::class)->except('show', 'create');
-    Route::resource('dashboard/orders', OrderController::class)->except('show', 'create', 'store');
+    Route::resource('dashboard/orders', OrderController::class)->except('create', 'store');
+    Route::post('dashboard/orders/{order}/add-product', [OrderController::class, 'addProduct'])->name('orders.addProduct');
     Route::put('dashboard/orders/change_status/{order}', [OrderController::class, 'change_status_order'])->name('orders.change_status_order');
     Route::resource('dashboard/users', UserController::class)->except('show', 'create');
 
