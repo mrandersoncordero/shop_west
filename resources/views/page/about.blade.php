@@ -27,7 +27,7 @@
     </header>
     <section class="content_primary">
         <article class="" style="display: flex; align-items: center; justify-content: center;">
-            <img src="{{ asset('images/puntos_occidente.webp')}}" alt="" style="width: 60%">
+            <img src="{{ asset('images/puntos_occidente2.webp')}}" alt="" style="width: 60%">
         </article>
         <div class="glide carrousel_glide_white" style="position: relative">
 
