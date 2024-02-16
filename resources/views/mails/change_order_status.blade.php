@@ -45,6 +45,7 @@
         </table>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Precio total: {{ $order->price_total }}</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Metodo de Pago: {{ $order->payment_type->name }}</p>
+        <p style="margin-bottom: 16px; font-size: 1.25rem;">Retiro: {{ $order->retreat }}</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Dirigete ahora a <a href="{{ route('order.index') }}">{{ route('order.index') }}</a> y reporta tu pago.</p>
         <p style="margin-bottom: 16px; font-size: 1.25rem;">Recuerda que si el metodo de pago que seleccionaste para esta orden es: <b>pago movil o transferencia</b>. Puedes adjuntar tu comprobante y referencia de pago desde la web, en caso contrario te recomendamos ponerte en contacto con nuestro asesor de ventas. <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank" data-v-c02e9916="">asesor de ventas</a> que te indicara como proceder.</p>
       @elseif($order->status_id == 2)

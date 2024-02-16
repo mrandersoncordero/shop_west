@@ -83,7 +83,7 @@
             <input type="hidden" name="price_total" value="{{ $price_total }}">
             <div class="mt-4" style="display: flex; justify-content: flex-start; gap: 12px;">
 
-            <button type="submit" class="btn btn-secondary">Comfirmar compra</button>
+            <button type="submit" class="btn btn-secondary">Confirmar compra</button>
             <form action="{{ route('cart.clear') }}" method="POST">
               @csrf
               <button type="submit" class="btn btn-secondary"><i class="fa-brands fa-bitbucket"></i></button>

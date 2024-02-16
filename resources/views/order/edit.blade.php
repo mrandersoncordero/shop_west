@@ -124,6 +124,7 @@
             @endforeach
           </tbody>
         </table>
+        <p>{{$order->retreat}}</p>
       </div>
 
       {{-- <div class="table-responsive">
