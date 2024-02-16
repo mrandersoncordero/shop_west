@@ -26,8 +26,8 @@
         <h1>Sobre nosotros</h1>
     </header>
     <section class="content_primary">
-        <article class="">
-            <img src="{{ asset('images/about.png')}}" alt="">
+        <article class="" style="display: flex; align-items: center; justify-content: center;">
+            <img src="{{ asset('images/puntos_occidente.webp')}}" alt="" style="width: 60%">
         </article>
         <div class="glide carrousel_glide_white" style="position: relative">
 
