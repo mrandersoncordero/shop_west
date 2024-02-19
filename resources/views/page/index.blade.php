@@ -17,6 +17,12 @@
     <video  autoplay loop muted playsinline>
         <source src="{{ asset('images/empresa_lider.mp4') }}" type="video/mp4" />
     </video>
+    <audio id="miAudio" controls autoplay style="display: none;">
+        <source src="{{ asset('audio/corporation.mp3') }}" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <button id="reproducirBtn" onclick="togglePlayPause()">▶️</button>
 </div>
   
 <main>
@@ -24,6 +30,8 @@
     @if (session('message'))
     @include('templates.message')
     @endif
+
+
 
     <section class="product-section">
         <header class="header_line" style="margin-bottom: 24px">
@@ -292,6 +300,7 @@
 </script>
 <script src="{{ asset('js/productos_destacados.js') }}"></script>
 <script src="{{ asset('js/glide.min.js') }}"></script>
+<script src="{{ asset('js/audio_play.js') }}"></script>
 <script>
     const config1 = {
       type: 'carousel',
