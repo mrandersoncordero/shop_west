@@ -30,10 +30,15 @@
 
     <aside class="menu_contact">
         <div>
-            <a href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" target="_blank">
+            <a href="https://wa.me/+584145769904" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i>
-                <p>Envianos un Whatsapp</p>
-                <p>+58 909 890 89 32</p>
+                <p>Planta Barquisimeto</p>
+                <p>+58 414-5769904</p>
+            </a>
+            <a href="https://wa.me/+584165790964" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <p>Planta Trujillo</p>
+                <p>+58 416-5790964</p>
             </a>
             <a href="mailto:correo_ejemplo@example.com">
                 <i class="fa-solid fa-envelope"></i>
