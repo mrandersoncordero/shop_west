@@ -68,7 +68,7 @@
                     placeholder="name@example.com"
                     name="email"
                 >
-                <label for="email">Correo electronico</label>
+                <label for="email">Correo electrónico</label>
                 @error('complete_name')
                 <div class="invalid-feedback">
                   {{ $message }}
@@ -83,7 +83,7 @@
                     placeholder="name@example.com"
                     name="phone_number"
                 >
-                <label for="phone_number">Numero de telefono</label>
+                <label for="phone_number">Número de teléfono</label>
                 @error('phone_number')
                 <div class="invalid-feedback">
                   {{ $message }}
