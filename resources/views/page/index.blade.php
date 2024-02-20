@@ -210,7 +210,13 @@
                             <img src="{{ asset('images/projects/catedral.jpg') }}" alt="" style="width: 100%; height: 300px;">
                         </li>
                         <li class="glide__slide">
+                            <img src="{{ asset('images/projects/proyecto_esmeralda.jpeg') }}" alt="" style="width: 100%; height: 300px;">
+                        </li>
+                        <li class="glide__slide">
                             <img src="{{ asset('images/projects/parque_la_musica.png') }}" alt="" style="width: 100%; height: 300px;">
+                        </li>
+                        <li class="glide__slide">
+                            <img src="{{ asset('images/projects/biotel.jpg') }}" alt="" style="width: 100%; height: 300px;">
                         </li>
                     </ul>
                 </div>
