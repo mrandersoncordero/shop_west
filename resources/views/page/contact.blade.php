@@ -40,10 +40,10 @@
                 <p>Planta Trujillo</p>
                 <p>+58 416-5790964</p>
             </a>
-            <a href="mailto:correo_ejemplo@example.com">
+            <a href="mailto:info@pegoccidente.com">
                 <i class="fa-solid fa-envelope"></i>
                 <p>Envianos un correo</p>
-                <p>correo_ejemplo@example.com</p>
+                <p>info@pegoccidente.com</p>
             </a>
         </div>
     </aside>

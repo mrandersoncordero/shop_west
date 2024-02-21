@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="top-navbar">
       <div>
-          <span><a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> info@pegoccidente.com</a></span>
+          <span><a href="mailto:info@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>info@pegoccidente.com</a></span>
           <span>
             <a 
                 href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" 
