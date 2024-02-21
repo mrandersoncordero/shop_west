@@ -17,3 +17,15 @@
 .menu_contact div a p:nth-child(2){
   color: var(--grey);
 }
+
+@media screen and (max-width: 500px) {
+  .menu_contact .fa-whatsapp, .menu_contact .fa-envelope {
+    font-size: 1.5rem;
+  }
+  .menu_contact div a{
+    font-size: .7rem;
+  }
+  .menu_contact div {
+    gap: 0;
+  }
+}
