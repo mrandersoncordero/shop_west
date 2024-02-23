@@ -70,8 +70,9 @@
       @endforeach
       </article>
     </section>
-    
+    @include('page.partials.display_whatsapp')
   </main>
 
 @include('templates.footer')
+<script src="{{ asset('js/display_whatsapp.js') }}"></script>
 @endsection

@@ -296,36 +296,8 @@
             </div>
         </div>
     </div>
-
-    <div class="display_whatsapp">
-        <button id="button_display_whatsapp">
-            <ion-icon name="logo-whatsapp"></ion-icon>
-        </button>
-        <ul class="dropdown-list">
-            <li><a href="https://wa.me/+584145769904" target="_blank">Barquisimeto</a></li>
-            <li><a href="https://wa.me/+584165790964" target="_blank">Trujillo</a></li>
-        </ul>
-    </div>
-    
-    
+    @include('page.partials.display_whatsapp')
 </main>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var button = document.getElementById('button_display_whatsapp');
-        var dropdownList = document.querySelector('.dropdown-list');
-
-        button.addEventListener('click', function () {
-            dropdownList.style.display = (dropdownList.style.display === 'flex') ? 'none' : 'flex';
-        });
-
-        window.addEventListener('scroll', function () {
-            var displayWhatsapp = document.querySelector('.display_whatsapp');
-            displayWhatsapp.style.bottom = '2%';
-            displayWhatsapp.style.top = 'initial';
-        });
-    });
-</script>
-
 
 @include('templates.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -336,6 +308,7 @@
 <script src="{{ asset('js/productos_destacados.js') }}"></script>
 <script src="{{ asset('js/glide.min.js') }}"></script>
 <script src="{{ asset('js/audio_play.js') }}"></script>
+<script src="{{ asset('js/display_whatsapp.js') }}"></script>
 <script>
     const config1 = {
       type: 'carousel',

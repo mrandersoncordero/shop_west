@@ -150,6 +150,7 @@
       </section>
 
     </article>
+    @include('page.partials.display_whatsapp')
   </main>
   @include('templates.footer')
 
@@ -157,6 +158,7 @@
 
 @section('scripts')
   <script src="{{ asset('js/glide.min.js') }}"></script>
+  <script src="{{ asset('js/display_whatsapp.js') }}"></script>
   <script>
     const config1 = {
       type: 'carousel',

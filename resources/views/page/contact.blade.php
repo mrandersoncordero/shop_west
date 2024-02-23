@@ -129,6 +129,7 @@
             <button type="submit" class="btn btn-primary mt-4">Enviar</button>
         </form>
     </section>
+    @include('page.partials.display_whatsapp')
 </main>
 
 @include('templates.footer')
@@ -137,6 +138,7 @@
 
 <script src="{{ asset('js/productos_destacados.js') }}"></script>
 <script src="{{ asset('js/glide.min.js') }}"></script>
+<script src="{{ asset('js/display_whatsapp.js') }}"></script>
 <script>
     const config = {
         type: 'carousel',
