@@ -1,12 +1,16 @@
 <nav class="navbar">
   <div class="top-navbar">
       <div>
-          <span><a href="mailto:info@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>info@pegoccidente.com</a></span>
+          <span><a href="mailto:ventasnib@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>ventasnib@pegoccidente.com</a></span>
           <span>
             <a 
+                style="padding-right: 12px;"
                 href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" 
-                target="_blank"><i class="fa-brands fa-whatsapp"
-                aria-label="Whatsapp Productos Occidente"></i> +58 416 - 4567084</a>
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416 - 5790964</a>
+                
+            <a 
+                href="https://wa.me/+584145769904" 
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto | +58 414-5769904</a>
             </span>
       </div>
       <div>
