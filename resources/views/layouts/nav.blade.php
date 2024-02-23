@@ -60,7 +60,7 @@
               </form>
           </div>
           {{-- ICON USER --}}
-          <div class="icon-user">
+          <div class="icon-user" style="display: none">
             <button id="action_menu_user" aria-label="Menu de usuario"><i class="fa-solid fa-user"></i></button>
             {{-- DROPDOWN MENU USER --}}
             <div class="menu_user inactive">
