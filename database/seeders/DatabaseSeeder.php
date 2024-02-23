@@ -422,6 +422,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 20,
             'price' => 2,
             'image' => "Occigrafiado.png",
+            'palette_color' => 'paleta_occigrafiado.png',
             'url_sheet' => 'https://drive.google.com/file/d/1hoPIHrQChGWYiZwZ3A1VFoyST0Lph3EH/view?usp=sharing'
         ]);
 
