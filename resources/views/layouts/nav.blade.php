@@ -83,11 +83,11 @@
                     </li>
                 </ul>
                 @else
-                <ul>
+                {{-- <ul>
                     <li>
                         <a href="{{ route('login') }}">Iniciar sesion</a>
                     </li>
-                </ul>      
+                </ul>       --}}
                 @endauth
             </div>
           </div>
@@ -204,9 +204,9 @@
             </li>
         </ul>
         @else
-        <ul class="mobile_menu_bottom">
+        {{-- <ul class="mobile_menu_bottom">
             <li><a href="{{ route('login') }}">Iniciar sesion</a></li>
-        </ul>
+        </ul> --}}
         @endauth
     </div>
   </div>
