@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('head_content')
-<title>Pegoccidente - Shop</title>
+<title>Productos Occidente - Sobre Nosotros</title>
 <meta name="description" content="Productos Occidente es una empresa líder en la fabricación de pegamentos y morteros de construcción.Nos dedicamos a ofrecer productos de la más alta calidad, fabricados con los mejores materiales y bajo los más estrictos controles de calidad.Nuestros productos son ideales para todo tipo de proyectos de construcción, desde pequeñas reformas hasta grandes obras. Contamos con una amplia gama de productos para satisfacer las necesidades de nuestros clientes.">
 <meta name="keywords" content="Materiales de construcción Barquisimeto, Pegamentos Lara, Morteros Venezuela, Pego Standard Gris, Pego Extra Blanco, Pego Premium, Occifriso Proyectado,	Occifriso Texturizado,	Occimix
 ">
@@ -79,7 +79,7 @@
                 <h2>Sucursales</h2>
             </header>
             <div class="sucursal--content">
-                <p>Contamos con dos sucursales estratégicamente ubicadas en Venezuela. Nuestra sede principal se encuentra en Trujillo. La segunda sucursal se encuentra en Lara, lo que nos permite atender a un público más amplio y garantizar un acceso más eficiente a nuestros productos de alta calidad.</p>
+                <p>Contamos con dos sucursales estratégicamente ubicadas en Venezuela. Una de nuestras sedes se encuentra en Trujillo, mientras que la segunda está ubicada en Lara. Esta distribución nos permite atender a un público más amplio y garantizar un acceso más eficiente a nuestros productos de alta calidad.</p>
             </div>
         </article>
         <article class="container_sucursales--image">

@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('head_content')
-  <title>Pegoccidente - Search</title>
+  <title>Productos Occidente</title>
 @endsection
 
 @section('content')

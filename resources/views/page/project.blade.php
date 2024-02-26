@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('head_content')
-<title>Pegoccidente - Shop</title>
+<title>Productos Occidente - Proyectos</title>
   <meta name="description" content=" Descubre las obras icónicas que han perdurado en el tiempo gracias a la calidad de los productos de construcción de Productos Occidente. Nuestros morteros, pegamentos y selladores garantizan la durabilidad y resistencia de tus proyectos. Confía en Productos Occidente para encontrar la solución perfecta para tus necesidades de construcción y asegura la calidad y durabilidad de tus obras.">
   <meta name="keywords" content="Catedral de Barquisimeto, Obras con Productos Occidente, Residencias Colinas del Viento, Parque la Musica Barquisimeto, Obras Iconicas Productos Occidente, Stuco, Occiconcreto, Imperplus">	
 
