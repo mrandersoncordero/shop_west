@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
 <!-- Optional Theme Stylesheet -->
 <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 @endsection
 
@@ -81,7 +80,7 @@
             <div>
                 <h2>Descarga nuestro catalogo</h2>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button onclick="loadModalScript()" type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Descargar
                 </button>
                   
