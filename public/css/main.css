@@ -1,4 +1,10 @@
-@import url("https://fonts.cdnfonts.com/css/handelgothic-tl");
+@font-face {
+    font-family: 'Handel Gothic TL Kirillica';
+    src: url('https://fonts.cdnfonts.com/css/handelgothic-tl') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Utiliza 'swap' para asegurar que el texto se muestre inmediatamente */
+}
 
 * {
     padding: 0;
@@ -50,7 +56,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "HandelGothic TL", sans-serif;
+    font-family: 'Handel Gothic TL Kirillica', sans-serif;
 }
 .hidden {
     visibility: hidden;
