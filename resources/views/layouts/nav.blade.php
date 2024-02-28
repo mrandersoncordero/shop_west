@@ -6,11 +6,18 @@
             <a 
                 style="padding-right: 12px;"
                 href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" 
-                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416 - 5790964</a>
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416-5790964</a>
+            <a 
+                style="padding-right: 12px;"
+                href="https://wa.me/+584163020497" 
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416-3020497</a>
                 
             <a 
                 href="https://wa.me/+584145769904" 
                 target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto | +58 414-5769904</a>
+            <a 
+                href="https://wa.me/+584164567084" 
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto | +58 416-4567084</a>
             </span>
       </div>
       <div>
