@@ -22,7 +22,7 @@ class ContactController extends Controller
         $clientData = $request->all();
 
         // Dirección de correo electrónico de la empresa
-        $companyEmail = 'acorderofigueroa7@gmail.com';
+        $companyEmail = 'ventasnit@pegoccidente.com';
 
         // Enviar correo a la empresa
         Mail::to($companyEmail)

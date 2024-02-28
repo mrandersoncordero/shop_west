@@ -68,7 +68,7 @@ class PaymentController extends Controller
                 'status_id' => 4
             ]);
 
-            Mail::to('acorderofigueroa7@gmail.com')->send(new PaymentRegisterMail(Auth::user(), $order));
+            Mail::to('ventasnit@pegoccidente.com')->send(new PaymentRegisterMail(Auth::user(), $order));
         }
 
         return redirect()->route('order.index');

@@ -207,7 +207,7 @@ class CartController extends Controller
             
             session()->forget('cart');
             
-            Mail::to('acorderofigueroa7@gmail.com')->send(new CreateOrderMail($user, $order));
+            Mail::to('ventasnit@pegoccidente.com')->send(new CreateOrderMail($user, $order));
             
             
             return back()->with('message', [
