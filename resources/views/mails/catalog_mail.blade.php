@@ -14,7 +14,7 @@
       <td style="text-align: left; padding: 16px;">
         <div>
           <p style="padding-top: 4px; font-size: 1.25rem;">Hola {{ $clientData['first_name'] }}.</p>
-          <p style="padding-top: 4px; font-size: 1.25rem;">Gracias por descargarte el catálogo de este año. Puedes descargarlo desde <a href="https://drive.google.com/file/d/1XDgWmJXARPk95MIM8WB654Na2nYXCxhC/view?usp=drive_link">aquí</a>.</p>
+          <p style="padding-top: 4px; font-size: 1.25rem;">Gracias por descargarte el catálogo de este año. Puedes descargarlo desde <a href="https://bit.ly/4bOo8yR">aquí</a>.</p>
           <p style="padding-top: 4px; font-size: 1.25rem;">En el Catálogo Productos Occidente encontraras toda la información que necesitas sobre nuestros productos.</p>
         </div>
       </td>
@@ -28,7 +28,7 @@
       <td style="text-align: left; padding: 16px;">
         <div>
           <p style="padding: 0px 4px; font-size: 1.25rem;">Gracias por preferirnos.</p>
-          <a href="https://drive.google.com/file/d/1XDgWmJXARPk95MIM8WB654Na2nYXCxhC/view?usp=drive_link" style="display: inline-block;
+          <a href="https://bit.ly/4bOo8yR" style="display: inline-block;
           padding: 10px 20px;
           background-color: #888;
           color: #fff;
