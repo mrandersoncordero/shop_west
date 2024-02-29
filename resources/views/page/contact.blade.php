@@ -66,6 +66,40 @@
                 @enderror
             </div>
             <div class="form-floating mb-3">
+                <select class="form-select @error('zone') is-invalid @enderror" id="zona" name="zone">
+                    <option selected></option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Anzoátegui">Anzoátegui</option>
+                    <option value="Apure">Apure</option>
+                    <option value="Aragua">Aragua</option>
+                    <option value="Barinas">Barinas</option>
+                    <option value="Bolívar">Bolívar</option>
+                    <option value="Carabobo">Carabobo</option>
+                    <option value="Cojedes">Cojedes</option>
+                    <option value="Delta Amacuro">Delta Amacuro</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Falcón">Falcón</option>
+                    <option value="Lara">Lara</option>
+                    <option value="Mérida">Mérida</option>
+                    <option value="Miranda">Miranda</option>
+                    <option value="Monagas">Monagas</option>
+                    <option value="Nueva Esparta">Nueva Esparta</option>
+                    <option value="Portuguesa">Portuguesa</option>
+                    <option value="Sucre">Sucre</option>
+                    <option value="Táchira">Táchira</option>
+                    <option value="Trujillo">Trujillo</option>
+                    <option value="Vargas">Vargas</option>
+                    <option value="Yaracuy">Yaracuy</option>
+                    <option value="Zulia">Zulia</option>
+                  </select>
+                <label for="zona">Zona</label>
+                @error('zone')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div> 
+                @enderror
+            </div>
+            <div class="form-floating mb-3">
                 <input 
                     type="email" 
                     class="form-control @error('email') is-invalid @enderror" 

@@ -18,6 +18,7 @@
                     <ul>
                         <li style="font-size: 1.25rem;"><strong>Email:</strong> {{ $clientData['email'] }}</li>
                         <li style="font-size: 1.25rem;"><strong>Teléfono:</strong> {{ $clientData['phone_number'] ?? 'No proporcionado' }}</li>
+                        <li style="font-size: 1.25rem;"><strong>Zona:</strong> {{ $clientData['zone'] ?? 'No proporcionado' }}</li>
                         <li style="font-size: 1.25rem;"><strong>Asunto:</strong> {{ $clientData['subject'] ?? 'No proporcionado' }}</li>
                         <li style="font-size: 1.25rem;"><strong>Comentario:</strong> {{ $clientData['comment'] ?? 'No proporcionado' }}</li>
                     </ul>

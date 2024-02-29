@@ -17,10 +17,11 @@
                         <li style="font-size: 1.25rem;"><strong>Nombre:</strong> {{ $clientData['complete_name'] ?? 'No proporcionado' }}</li>
                         <li style="font-size: 1.25rem;"><strong>Email:</strong> {{ $clientData['email'] }}</li>
                         <li style="font-size: 1.25rem;"><strong>Teléfono:</strong> {{ $clientData['phone_number'] ?? 'No proporcionado' }}</li>
+                        <li style="font-size: 1.25rem;"><strong>Zona:</strong> {{ $clientData['zone'] ?? 'No proporcionado' }}</li>
                         <li style="font-size: 1.25rem;"><strong>Asunto:</strong> {{ $clientData['subject'] ?? 'No proporcionado' }}</li>
                         <li style="font-size: 1.25rem;"><strong>Comentario:</strong> {{ $clientData['comment'] ?? 'No proporcionado' }}</li>
                     </ul>
-                    <p style="font-size: 1.25rem;">Por favor, responda a este correo para comunicarse directamente con el cliente.</p>
+                    <p style="font-size: 1.25rem;">Por favor, ponte en contacto con el cliente por medio del correo suministrado.</p>
                 </div>
             </td>
         </tr>
