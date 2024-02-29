@@ -24,23 +24,23 @@ class InterestedClientController extends Controller
 
         // Verificar si el correo ya existe
         $existingClient = InterestedClient::where('email', $request->input('email'))->first();
-        
+
         switch ($request->input('name_mail')) {
             case 'catalog':
                 if ($existingClient) {
                     // Enviar correo si el cliente ya existe
                     // Puedes personalizar esta lógica según tus necesidades
                     // Por ejemplo, puedes enviar un recordatorio o una oferta especial.
-                    Mail::to($existingClient->email)->send(new CatalogMail($existingClient, $clientData));
+                    return $this->downloadCatalog();
                 } else {
                     // Crear un nuevo cliente solo si no existe
                     $interestedClient = InterestedClient::create($request->all());
-        
+
                     // Envía el correo si deseas hacerlo también para nuevos clientes
-                    Mail::to($interestedClient->email)->send(new CatalogMail($interestedClient, $clientData));
+                    return $this->downloadCatalog();
                 }
                 break;
-            
+
             case 'sheet':
                 // Obtenemos los datos del producto
                 $product = Product::where('id', $request->input('product'))->first();
@@ -53,7 +53,7 @@ class InterestedClientController extends Controller
                 } else {
                     // Crear un nuevo cliente solo si no existe
                     $interestedClient = InterestedClient::create($request->all());
-        
+
                     // Envía el correo si deseas hacerlo también para nuevos clientes
                     Mail::to($interestedClient->email)->send(new ProductSheet($product, $clientData));
                 }
@@ -74,4 +74,14 @@ class InterestedClientController extends Controller
         ]);
     }
 
+    public function downloadCatalog()
+    {
+        $catalogPath = public_path('download_datainfo/catalog.pdf');
+
+        if (file_exists($catalogPath)) {
+            return response()->json(['url' => asset('download_datainfo/catalog.pdf'), 'message' => 'El catálogo se envió correctamente']);
+        } else {
+            return response()->json(['error' => 'El catálogo no está disponible en este momento.'], 404);
+        }
+    }
 }
