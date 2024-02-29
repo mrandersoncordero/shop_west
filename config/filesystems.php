@@ -39,22 +39,29 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
+        ],
+
+        'download_datainfo' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/download_datainfo'),
+            'url' => env('APP_URL') . '/download_datainfo',
+            'visibility' => 'public',
         ],
 
         'products' => [
             'driver' => 'local',
             'root' => storage_path('app/public/products'),
-            'url' => env('APP_URL').'/product',
+            'url' => env('APP_URL') . '/product',
             'visibility' => 'public',
         ],
 
         'palette_color' => [
             'driver' => 'local',
             'root' => storage_path('app/public/palette_color'),
-            'url' => env('APP_URL').'/palette_color',
+            'url' => env('APP_URL') . '/palette_color',
             'visibility' => 'public',
         ],
 
@@ -92,6 +99,7 @@ return [
 
     'links' => [
         # public_path('storage') => storage_path('app/public'),
+        public_path('download_datainfo') => storage_path('app/public/download_datainfo'),
         public_path('product') => storage_path('app/public/products'),
         public_path('proof_of_payment') => storage_path('app/public/proof_of_payment'),
         public_path('palette_color') => storage_path('app/public/palette_color'),
