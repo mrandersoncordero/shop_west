@@ -1,24 +1,18 @@
 <nav class="navbar">
   <div class="top-navbar">
       <div>
-          <span><a href="mailto:ventasnib@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>ventasnib@pegoccidente.com</a></span>
-          <span>
+          <span><a href="mailto:ventasnit@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>ventasnit@pegoccidente.com</a></span>
+
             <a 
                 style="padding-right: 12px;"
                 href="https://api.whatsapp.com/message/FKHYQ5DCEGCQM1" 
-                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416-5790964</a>
-            <a 
-                style="padding-right: 12px;"
-                href="https://wa.me/+584163020497" 
-                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo | +58 416-3020497</a>
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i> Trujillo +58 416-5790964</a> 
                 
+            <span><a href="mailto:ventasnib@pegoccidente.com" target="_blank"><i class="fa-solid fa-envelope"></i>ventasnib@pegoccidente.com</a></span>               
+            
             <a 
                 href="https://wa.me/+584145769904" 
-                target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto | +58 414-5769904</a>
-            <a 
-                href="https://wa.me/+584164567084" 
-                target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto | +58 416-4567084</a>
-            </span>
+                target="_blank"> <i class="fa-brands fa-whatsapp"></i>Barquisimeto +58 414-5769904</a>
       </div>
       <div>
           <a 

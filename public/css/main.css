@@ -457,10 +457,10 @@ main {
     /* margin: 0; */
     /* z-index: 1; */
     /* background: white; */
-    top: -150%;
-    left: -100%;
+    top: -300%;
+    left: -270%;
     width: 100%;
-    width: 150px;
+    width: 250px;
     display: none;
     flex-direction: column;
 }
