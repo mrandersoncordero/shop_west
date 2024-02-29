@@ -80,7 +80,7 @@
             <div>
                 <h2>Descarga nuestro catalogo</h2>
                 <!-- Button trigger modal -->
-                <button onclick="loadModalScript()" type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn" style="background-color: var(--blue); color: #fff;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Descargar
                 </button>
                   
@@ -93,7 +93,7 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form  action="{{ route('interested-clients.store') }}" method="POST">
+                            <form  method="POST">
                                 @csrf
                                 <div class="mb-3">
                                   <label for="first_name" class="form-label">Nombre</label>
@@ -113,7 +113,7 @@
                                 </div>
                                 
                                 <input type="hidden" name="name_mail" value="catalog">
-                                <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Enviar</button>
+                                <button id="submitButton" class="btn" style="background-color: var(--blue); color: #fff;">Enviar</button>
                             </form>
                         </div>
                       </div>
@@ -341,4 +341,41 @@
     };
     const glide1 = new Glide('#space3', config3).mount();
 </script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Agrega un evento de clic al botón
+        $('#submitButton').click(function (e) {
+            e.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+            // Realiza la solicitud Ajax al controlador
+            $.ajax({
+                url: '{{ route('interested-clients.store') }}',
+                type: 'POST',
+                data: $('form').serialize(), // Serializa los datos del formulario
+                success: function (response) {
+                    // Verifica si la respuesta contiene la URL del catálogo
+                    if (response.url) {
+                        // Crea un enlace oculto y simula un clic para iniciar la descarga
+                        var hiddenLink = document.createElement('a');
+                        hiddenLink.href = response.url;
+                        hiddenLink.download = 'catalogo.pdf';
+                        document.body.appendChild(hiddenLink);
+                        hiddenLink.click();
+                        document.body.removeChild(hiddenLink);
+                        alert(response.message || 'El formulario se envió correctamente.');
+                    } else {
+                        // Muestra un mensaje de éxito o error según la respuesta
+                        alert('El formulario se envió correctamente.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', xhr, status, error);
+                }
+            });
+        });
+    });
+</script>
+
 @endsection
