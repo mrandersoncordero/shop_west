@@ -270,11 +270,11 @@
                     <li class="glide__slide">
                         <div class="testimony_container">
                             <div class="testimony_text">
-                                <p>El Palacio del Caico se enorgullece de ser aliado de Productos Occidente, con excepcionales servicios y productos de primera categoría. La amplia gama de productos, como pegamentos, estucos y adhesivos, es fundamental para brindar soluciones de alta calidad a nuestros clientes.</p>
+                                <p>La empresa Materiales Soci, C.A. se complace en ser aliado comercial de Productos Occidente durante más de 30 años. Damos fe de la calidad de sus productos en la construcción, los cuales han ido innovando a lo largo de los años.</p>
                             </div>
                             <div class="testimony_data_user">
                                 <div class="testimony_user">
-                                    <img src="{{ asset('images/palacio_del_caico.webp') }}" alt="Alpeca aliado comercial" style="width: 150px; height: 80px;">
+                                    <img src="{{ asset('images/materiales_soci.png') }}" alt="Alpeca aliado comercial" style="width: 100px; height: 80px;">
                                 </div>
                             </div>
                             <img src="{{ asset('icons/quote-left.svg')}}" class="quote-left" alt="Quote left">
