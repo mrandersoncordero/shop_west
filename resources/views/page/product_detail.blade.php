@@ -243,4 +243,40 @@
 @include('templates.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="{{ asset('js/display_whatsapp.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Agrega un evento de clic al botón
+        $('#submitButton').click(function (e) {
+            e.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+            // Realiza la solicitud Ajax al controlador
+            $.ajax({
+                url: '{{ route('interested-clients.store') }}',
+                type: 'POST',
+                data: $('form').serialize(), // Serializa los datos del formulario
+                success: function (response) {
+                    // Verifica si la respuesta contiene la URL del catálogo
+                    if (response.url) {
+                        // Crea un enlace oculto y simula un clic para iniciar la descarga
+                        var hiddenLink = document.createElement('a');
+                        hiddenLink.href = response.url;
+                        hiddenLink.download = 'ficha tecnica.pdf';
+                        document.body.appendChild(hiddenLink);
+                        hiddenLink.click();
+                        document.body.removeChild(hiddenLink);
+                        alert(response.message || 'El formulario se envió correctamente.');
+                    } else {
+                        // Muestra un mensaje de éxito o error según la respuesta
+                        alert('El formulario se envió correctamente.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', xhr, status, error);
+                }
+            });
+        });
+    });
+</script>
 @endsection

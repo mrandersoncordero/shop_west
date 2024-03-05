@@ -49,13 +49,12 @@ class InterestedClientController extends Controller
                     // Enviar correo si el cliente ya existe
                     // Puedes personalizar esta lógica según tus necesidades
                     // Por ejemplo, puedes enviar un recordatorio o una oferta especial.
-                    Mail::to($existingClient->email)->send(new ProductSheet($product, $clientData));
+                    return $this->downloadTab($product);
                 } else {
                     // Crear un nuevo cliente solo si no existe
                     $interestedClient = InterestedClient::create($request->all());
 
-                    // Envía el correo si deseas hacerlo también para nuevos clientes
-                    Mail::to($interestedClient->email)->send(new ProductSheet($product, $clientData));
+                    return $this->downloadTab($product);
                 }
                 break;
             default:
@@ -82,6 +81,17 @@ class InterestedClientController extends Controller
             return response()->json(['url' => asset('download_datainfo/catalog.pdf'), 'message' => 'El catálogo se envió correctamente']);
         } else {
             return response()->json(['error' => 'El catálogo no está disponible en este momento.'], 404);
+        }
+    }
+
+    public function downloadTab(Product $product)
+    {
+        $catalogPath = public_path("download_datainfo/{$product->url_sheet}");
+
+        if (file_exists($catalogPath)) {
+            return response()->json(['url' => asset("download_datainfo/{$product->url_sheet}"), 'message' => 'La descarga de la ficha iniciara en breves.']);
+        } else {
+            return response()->json(['error' => 'La Ficha no está disponible en este momento.'], 404);
         }
     }
 }

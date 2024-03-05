@@ -28,7 +28,7 @@
                 
                 <input type="hidden" name="name_mail" value="sheet">
                 <input type="hidden" name="product" value="{{ $product->id }}">
-                <button type="submit" class="btn" style="background-color: var(--blue); color: #fff;">Enviar</button>
+                <button id="submitButton" class="btn" style="background-color: var(--blue); color: #fff;">Enviar</button>
             </form>
         </div>
       </div>
