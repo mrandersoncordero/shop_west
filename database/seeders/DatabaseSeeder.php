@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             'category_id' => 3,
             'description' => 'Descripcion de subcategoria Sella juntas'
         ]);
-        
+
         /**
          * Products
          */
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Imperplus.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1IqQjX1sfDlFnTsdTcTcShqjkhw8jZdr9/view?usp=sharing'
+            'url_sheet' => 'tab_imperplus.pdf'
         ]);
         Product::create([
             'subcategory_id' => 7,
@@ -104,7 +104,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'DColorMarmolina.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1qJTs54ojR50Y4w1W_uxe6pBIFYrOGrvR/view?usp=sharing'
+            'url_sheet' => 'tab_d_color_marmolina.pdf'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'PPremiumGris.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1uXZEEz3xGnJY0NkSCAY2qiFGcEEE4xP5/view?usp=sharing'
+            'url_sheet' => 'tab_premium_gris_grueso.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'OccireparadorP.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
+            'url_sheet' => 'tab_occireparador.pdf'
         ]);
         Product::create([
             'subcategory_id' => 3,
@@ -149,7 +149,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'PSupremo.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
+            'url_sheet' => 'tab_pego_supremo.pdf'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -164,7 +164,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'SuperExtraPiscina.png',
-            'url_sheet' => 'https://drive.google.com/file/d/16eFaIxMfqJfSKDLTpfUzK3HXJxb1mZgg/view?usp=sharing'
+            'url_sheet' => 'tab_super_extra_piscina.pdf'
         ]);
         Product::create([
             'subcategory_id' => 1,
@@ -179,7 +179,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 110,
             'price' => 14,
             'image' => 'Standard gris.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1GbRlURQOQAlWvBBJryI9fVwiapUSQAwB/view?usp=sharing'
+            'url_sheet' => 'tab_standard_gris.pdf'
         ]);
         Product::create([
             'subcategory_id' => 1,
@@ -194,7 +194,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 110,
             'price' => 14,
             'image' => 'Extra blanco.png',
-            'url_sheet' => ''
+            'url_sheet' => 'tab_extra_blanco.pdf'
         ]);
         Product::create([
             'subcategory_id' => 1,
@@ -209,7 +209,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Premium gris.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1uXZEEz3xGnJY0NkSCAY2qiFGcEEE4xP5/view?usp=sharing'
+            'url_sheet' => 'tab_premium_gris.pdf'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Super standard gris.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1GbRlURQOQAlWvBBJryI9fVwiapUSQAwB/view?usp=sharing'
+            'url_sheet' => 'tab_super_standard_gris.pdf'
         ]);
         Product::create([
             'subcategory_id' => 2,
@@ -239,7 +239,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Super extra porcelanato.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1wrBZd-Qx9dGgoJYRTmg9egCjBZK00ekE/view?usp=sharing'
+            'url_sheet' => 'tab_super_extra_porcelanato.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -254,7 +254,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
+            'url_sheet' => 'tab_occifriso.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -269,7 +269,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso AR.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1w86wf7DrQTi0pK6ziltGffHDodJiUdm4/view?usp=sharing'
+            'url_sheet' => 'tab_occifriso_ar.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -284,7 +284,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso proyectado.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1PdLRvw6ZmRS818ZWg9gvRplJqlHnPZ4E/view?usp=sharing'
+            'url_sheet' => 'tab_occifriso_proyectado.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -299,7 +299,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso texturizado.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
+            'url_sheet' => 'falta'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -314,7 +314,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Occimix.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1ZVQB9rZhMllFVw-GX6X8rnmE3swwUcFq/view?usp=sharing'
+            'url_sheet' => 'tab_occimix.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -329,7 +329,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Stuco.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1hpjSnY-vlAALjkQWAvhuoqfAPWegCZVR/view?usp=sharing'
+            'url_sheet' => 'tab_stuco.pdf'
         ]);
         Product::create([
             'subcategory_id' => 5,
@@ -345,7 +345,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Occibloque.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1j6gnCrT6SrqlXwBN5Ng-mj4rdo_fHGgs/view?usp=sharing'
+            'url_sheet' => 'tab_occibloque.pdf'
         ]);
         Product::create([
             'subcategory_id' => 5,
@@ -360,7 +360,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 10,
             'image' => 'Occiteja.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1f3JlbI-SCPGu2DsE_0nAjMZVP_LR938X/view?usp=sharing'
+            'url_sheet' => 'tab_occiteja.pdf'
         ]);
         Product::create([
             'subcategory_id' => 6,
@@ -375,7 +375,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occiconcreto.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1NwSdM9DEgayRJYnHVrvoYXOS0Sefw2RV/view?usp=sharing'
+            'url_sheet' => 'tab_occiconcreto.pdf'
         ]);
         Product::create([
             'subcategory_id' => 6,
@@ -390,7 +390,7 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occiconcreto reforzado.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1Lrk598lzRKRNMrRu3iuPrtkzHSF54Lgb/view?usp=sharing'
+            'url_sheet' => 'tab_occiconcreto_reforzado.pdf'
         ]);
         Product::create([
             'subcategory_id' => 7,
@@ -406,7 +406,7 @@ class DatabaseSeeder extends Seeder
             'price' => 2,
             'image' => "D' color.png",
             'palette_color' => 'paleta_d_color.jpg',
-            'url_sheet' => 'https://drive.google.com/file/d/1rIiUkSzbK9SOL5DSzxStLL2u0hIQlgnl/view?usp=sharing'
+            'url_sheet' => 'tab_d_color.pdf'
         ]);
         Product::create([
             'subcategory_id' => 4,
@@ -422,7 +422,7 @@ class DatabaseSeeder extends Seeder
             'price' => 2,
             'image' => "Occigrafiado.png",
             'palette_color' => 'paleta_occigrafiado.png',
-            'url_sheet' => 'https://drive.google.com/file/d/1hoPIHrQChGWYiZwZ3A1VFoyST0Lph3EH/view?usp=sharing'
+            'url_sheet' => 'tab_occigrafiado.pdf'
         ]);
 
         // \App\Models\User::factory()->create([
