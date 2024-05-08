@@ -33,6 +33,7 @@ class CompanyContact extends Mailable
     public function build()
     {
         return $this->subject($this->clientData['subject'])
+                ->replyTo($this->clientData['email'])
                 ->to('ventasnib@pegoccidente.com')
                 ->to('ventasnit@pegoccidente.com')
                 ->view('mails.companyContact'); // Define la vista del correo
