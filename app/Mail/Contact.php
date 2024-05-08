@@ -34,6 +34,8 @@ class Contact extends Mailable
     {
         return $this->subject($this->clientData['subject'])
                 ->to($this->clientData['email'])
+                ->to('ventasnib@pegoccidente.com')
+                ->to('ventasnit@pegoccidente.com')
                 ->view('mails.contact');
     }
 }
