@@ -32,6 +32,7 @@ Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::post('/interested-clients', [InterestedClientController::class, 'store'])->name('interested-clients.store');
 Route::post('/send-email', [ContactController::class, 'send_email'])->name('send.email');
 
+
 Route::middleware(['auth', 'role:client|admin'])->group(function () {
     /**
      * Rutas del carrito
