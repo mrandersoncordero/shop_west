@@ -21,7 +21,7 @@
   <meta property="og:image:type" content="image/x-icon">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('iamges/diana.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/diana.png') }}">
 
   @yield('head_content')
 
