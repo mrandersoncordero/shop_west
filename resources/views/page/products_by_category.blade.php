@@ -1,12 +1,5 @@
 @extends('template')
 
-@section('head_content')
-  <title>Productos Occidente - Categoria {{ $category->name }} </title>
-	<meta name="description" content="Descubre nuestra amplia gama de productos de alta calidad para la construcción, que incluye morteros, pegamentos y selladores. Con nuestra línea de construcción, garantizamos la durabilidad y resistencia de tus proyectos. Nuestra línea de pegamentos ofrece soluciones efectivas para unir y sellar, mientras que nuestra línea de sella juntas protege la integridad estructural. Confía en Productos Occidente para encontrar la solución perfecta para tus necesidades de construcción.">
-  <meta name="keywords" content="Linea de Pegamentos Productos Occidente, Linea de Morteros Productos Occidente, Linea de Sella Juntas Productos Occidente, Nardi Industrias Barquisimeto, Nardi Industrias Trujillo, Pego Occidente, Pego Occidente Barquisimeto, Pego Occidente Trujillo, Pego Occidente Venezuela">	
-
-@endsection
-
 @section('content')
   <main style="margin-top: 5%">
     {{-- incluir message --}}
@@ -23,7 +16,7 @@
           <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia2" alt="sello de garantia">
         </h1>
       </header>
-      
+
       <div class="menu_between_views">
         <ul>
           <li>

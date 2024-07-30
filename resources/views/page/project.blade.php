@@ -1,22 +1,14 @@
 @extends('template')
 
-@section('head_content')
-<title>Productos Occidente - Proyectos</title>
-  <meta name="description" content=" Descubre las obras icónicas que han perdurado en el tiempo gracias a la calidad de los productos de construcción de Productos Occidente. Nuestros morteros, pegamentos y selladores garantizan la durabilidad y resistencia de tus proyectos. Confía en Productos Occidente para encontrar la solución perfecta para tus necesidades de construcción y asegura la calidad y durabilidad de tus obras.">
-  <meta name="keywords" content="Catedral de Barquisimeto, Obras con Productos Occidente, Residencias Colinas del Viento, Parque la Musica Barquisimeto, Obras Iconicas Productos Occidente, Stuco, Occiconcreto, Imperplus">	
-
-
-
-<link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
-<!-- Optional Theme Stylesheet -->
-<link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/project.css') }}">
-
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
+  <!-- Optional Theme Stylesheet -->
+  <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/project.css') }}">
 @endsection
 
 @section('content')
 
-  
 <main>
     @if (session('message'))
     @include('templates.message')

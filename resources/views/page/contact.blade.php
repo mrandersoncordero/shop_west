@@ -1,21 +1,14 @@
 @extends('template')
 
-@section('head_content')
-<title>Productos Occidente - Contacto</title>
-	<meta name="description" content=" Descubre nuestra amplia gama de productos de alta calidad para la construcción, que incluye morteros, pegamentos y selladores. Con nuestra línea de construcción, garantizamos la durabilidad y resistencia de tus proyectos. Nuestra línea de pegamentos ofrece soluciones efectivas para unir y sellar, mientras que nuestra línea de sella juntas protege la integridad estructural. Confía en Productos Occidente para encontrar la solución perfecta para tus necesidades de construcción.">
-  <meta name="keywords" content="Mortero impermeabilizante, Mortero para juntas, Mortero de alto rendimiento, Mortero para porcelánicos, Mortero para piscinas, Mortero para grandes formatos">	
-
+@section('styles')
 <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
 <!-- Optional Theme Stylesheet -->
 <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
 @endsection
 
 @section('content')
-  
+
 <main>
     @if (session('message'))
     @include('templates.message')
@@ -23,7 +16,7 @@
     <div class="banner">
         <img src="{{ asset('images/banners/banner_pego.png') }}" style="margin:0px;" class="banner_image">
     </div>
-    
+
     <header class="header_line"  style="margin-bottom: 24px">
         <h1>CONTACTANOS</h1>
     </header>
@@ -51,9 +44,9 @@
         <form action="{{ route('send.email') }}" method="POST" class="container">
             @csrf
             <div class="form-floating mb-3">
-                <input 
-                    type="text" 
-                    class="form-control @error('complete_name') is-invalid @enderror" 
+                <input
+                    type="text"
+                    class="form-control @error('complete_name') is-invalid @enderror"
                     id="name_complete"
                     placeholder="joe"
                     name="complete_name"
@@ -62,7 +55,7 @@
                 @error('complete_name')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
             <div class="form-floating mb-3">
@@ -96,14 +89,14 @@
                 @error('zone')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
             <div class="form-floating mb-3">
-                <input 
-                    type="email" 
-                    class="form-control @error('email') is-invalid @enderror" 
-                    id="email" 
+                <input
+                    type="email"
+                    class="form-control @error('email') is-invalid @enderror"
+                    id="email"
                     placeholder="name@example.com"
                     name="email"
                 >
@@ -111,14 +104,14 @@
                 @error('complete_name')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
             <div class="form-floating mb-3">
-                <input 
-                    type="text" 
-                    class="form-control @error('phone_number') is-invalid @enderror" 
-                    id="phone_number" 
+                <input
+                    type="text"
+                    class="form-control @error('phone_number') is-invalid @enderror"
+                    id="phone_number"
                     placeholder="name@example.com"
                     name="phone_number"
                 >
@@ -126,14 +119,14 @@
                 @error('phone_number')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
             <div class="form-floating mb-3">
-                <input 
-                    type="text" 
-                    class="form-control @error('subject') is-invalid @enderror" 
-                    id="subject" 
+                <input
+                    type="text"
+                    class="form-control @error('subject') is-invalid @enderror"
+                    id="subject"
                     placeholder="joe"
                     name="subject"
                 >
@@ -141,14 +134,14 @@
                 @error('subject')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
             <div class="form-floating">
-                <textarea 
-                    class="form-control @error('comment') is-invalid @enderror" 
-                    placeholder="Leave a comment here" 
-                    row="4" 
+                <textarea
+                    class="form-control @error('comment') is-invalid @enderror"
+                    placeholder="Leave a comment here"
+                    row="4"
                     id="comment"
                     name="comment"
                 ></textarea>
@@ -156,7 +149,7 @@
                 @error('comment')
                 <div class="invalid-feedback">
                   {{ $message }}
-                </div> 
+                </div>
                 @enderror
             </div>
 
