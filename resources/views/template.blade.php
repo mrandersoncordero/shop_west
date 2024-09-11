@@ -8,7 +8,7 @@
 
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
   <meta name="description" content="{{ $metaData['description'] ?? 'Fabricamos productos de construcción de alta calidad en Venezuela, incluyendo pegamentos, revestimientos y sella juntas. ¡Conozca nuestra línea completa!' }}">
-  <meta name="keywords" content="{{ $metaData['keywords'] ?? 'pego, construccion, adhesivos, Productos Occidente, pegoccidente, Barquisimeto' }}">
+  <meta name="keywords" content="{{ $metaData['keywords'] ?? 'pegoccidente, pegamento para cerámica, impermeabilizante, porcelanato, exteriores, pego extra fuerte' }}">
   <link rel="canonical" href="{{ $metaData['canonical'] ?? url()->current() }}">
   <meta property="og:locale" content="es_VE">
   <meta property="og:type" content="website">

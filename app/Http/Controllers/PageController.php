@@ -66,15 +66,15 @@ class PageController extends Controller
 
         if ($id == 1) {
             $metaData['description'] = 'Descubra la Línea de Pegamentos de Productos Occidente, que incluye opciones básicas, profesionales y flexibles para todas sus necesidades de construcción en Venezuela.';
-            $metaData['keywords'] = 'Línea de Pegamentos, Productos Occidente, pegamentos básicos, pegamentos profesionales, pegamentos flexibles, productos de construcción, Venezuela';
+            $metaData['keywords'] = 'pegamento para cerámica, pegamento para porcelanato, adhesivo flexible, impermeabilizantes, revestimientos';
             $metaData['og_description'] = 'Descubra la Línea de Pegamentos de Productos Occidente, que incluye opciones básicas, profesionales y flexibles para todas sus necesidades de construcción en Venezuela.';
         }elseif ($id == 2) {
             $metaData['description'] = 'Explore la Línea de Construcción de Productos Occidente, que incluye revestimientos, pegamentos y soluciones estructurales de alta calidad para sus proyectos en Venezuela.';
-            $metaData['keywords'] = 'Línea de Construcción, Productos Occidente, revestimientos, pegamentos, soluciones estructurales, productos de construcción, Venezuela';
+            $metaData['keywords'] = 'productos de construcción, soluciones estructurales, revestimientos impermeables';
             $metaData['og_description'] = 'Explore la Línea de Construcción de Productos Occidente, que incluye revestimientos, pegamentos y soluciones estructurales de alta calidad para sus proyectos en Venezuela.';
         }else{
             $metaData['description'] = 'Descubra los productos de sella juntas de Productos Occidente, diseñados para ofrecer sellado y durabilidad en aplicaciones de construcción en Venezuela.';
-            $metaData['keywords'] = 'Sella juntas, Productos Occidente, productos de construcción, Venezuela';
+            $metaData['keywords'] = 'sellador de juntas, impermeabilización de juntas, sellado flexible, selladores para construcción, productos de sellado';
             $metaData['og_description'] = 'Descubra los productos de sella juntas de Productos Occidente, diseñados para ofrecer sellado y durabilidad en aplicaciones de construcción en Venezuela.';
         }
         return view('page.products_by_category', [
@@ -96,32 +96,32 @@ class PageController extends Controller
 
         if ($id == 1) {
             $metaData['description'] = 'Pegamentos básicos de alta calidad de Productos Occidente, ideales para aplicaciones de construcción generales en Venezuela.';
-            $metaData['keywords'] = 'Pegamentos básicos, Productos Occidente, productos de construcción, pego, pego blanco';
+            $metaData['keywords'] = 'pegamento básico para construcción, adhesivos de uso general, pegamento blanco para baldosas, soluciones básicas para revestimientos, productos de construcción esenciales';
             $metaData['og_description'] = 'Pegamentos básicos de alta calidad de Productos Occidente, ideales para aplicaciones de construcción generales en Venezuela.';
         }elseif ($id == 2) {
             $metaData['description'] = 'Pegamentos profesionales de Productos Occidente, diseñados para aplicaciones de construcción exigentes en Venezuela.';
-            $metaData['keywords'] = 'Pegamentos profesionales, Productos Occidente, productos de construcción, pego blanco, pego, pego occidente';
+            $metaData['keywords'] = 'pegamento profesional, pegamento blanco para cerámica, productos de construcción';
             $metaData['og_description'] = 'Pegamentos profesionales de Productos Occidente, diseñados para aplicaciones de construcción exigentes en Venezuela.';
         }elseif ($id == 3) {
             $metaData['description'] = 'Pegamentos flexibles de Productos Occidente, perfectos para aplicaciones que requieren adaptabilidad y durabilidad en la construcción en Venezuela.';
-            $metaData['keywords'] = 'Pegamentos flexibles, Productos Occidente, productos de construcción, Barquisimeto, pego flexible, pego';
+            $metaData['keywords'] = 'adhesivo flexible para construcción, pegamento elástico para baldosas, soluciones adaptables para revestimientos';
             $metaData['og_description'] = 'Pegamentos flexibles de Productos Occidente, perfectos para aplicaciones que requieren adaptabilidad y durabilidad en la construcción en Venezuela.';
         }elseif ($id == 4) {
             $metaData['description'] = 'Revestimientos de alta calidad de Productos Occidente, ideales para proteger y embellecer superficies en proyectos de construcción en Venezuela.';
-            $metaData['keywords'] = 'Revestimientos, Productos Occidente, productos de construcción, pego, construccion';
+            $metaData['keywords'] = 'revestimientos para exteriores e interiores, adhesivo para superficies decorativas, productos para embellecimiento de paredes, soluciones para revestir baldosas';
             $metaData['og_description'] = 'Revestimientos de alta calidad de Productos Occidente, ideales para proteger y embellecer superficies en proyectos de construcción en Venezuela.';
         }elseif ($id == 5) {
             $metaData['description'] = 'Pegamentos especializados de Productos Occidente, diseñados para aplicaciones de construcción de alta resistencia en Venezuela.';
-            $metaData['keywords'] = 'Pegamentos de construcción, Productos Occidente, productos de construcción, pego, contruccion, morteros';
+            $metaData['keywords'] = 'pegamento para baldosas y porcelanato, adhesivo para cerámica, soluciones de pegamento de alta resistencia, morteros para construcción';
             $metaData['og_description'] = 'Pegamentos especializados de Productos Occidente, diseñados para aplicaciones de construcción de alta resistencia en Venezuela.';
         }elseif ($id == 6) {
             $metaData['description'] = 'Soluciones estructurales de Productos Occidente, ofreciendo durabilidad y resistencia para sus proyectos de construcción en Venezuela.';
-            $metaData['keywords'] = 'Soluciones estructurales, Productos Occidente, productos de construcción, pego, contruccion, morteros';
+            $metaData['keywords'] = 'adhesivos estructurales para construcción, soluciones de alta resistencia para estructuras, mortero estructural, pegamento para aplicaciones estructurales';
             $metaData['og_description'] = 'Soluciones estructurales de Productos Occidente, ofreciendo durabilidad y resistencia para sus proyectos de construcción en Venezuela.';
-        }elseif ($id == 6) {
+        }elseif ($id == 7) {
             $metaData['description'] = 'Soluciones estructurales de Productos Occidente, ofreciendo durabilidad y resistencia para sus proyectos de construcción en Venezuela.';
             $metaData['keywords'] = 'Soluciones estructurales, Productos Occidente, productos de construcción, pego, contruccion, morteros';
-            $metaData['og_description'] = 'Sella juntas, Productos Occidente, productos de construcción, pego';
+            $metaData['og_description'] = 'sellador de juntas para construcción, adhesivo para impermeabilización de juntas, sellado para baldosas y cerámica, pego';
         }
 
         return view('page.products_by_subcategory', [
@@ -137,7 +137,7 @@ class PageController extends Controller
         $metaData = [
             'title' => 'Sobre Nosotros | Productos Occidente',
             'description' => 'Productos Occidente se dedica a la fabricación de productos de construcción en Venezuela. Conozca nuestra historia, misión y compromiso con la calidad.',
-            'keywords' => 'Productos Occidente, empresa de construcción, historia, misión, calidad, Venezuela',
+            'keywords' => 'productos de construcción, revestimiento, impermeabilizante, pegamento para cerámica.',
             'og_description' => 'Productos Occidente se dedica a la fabricación de productos de construcción en Venezuela. Conozca nuestra historia, misión y compromiso con la calidad.',
             'og_title' => 'Sobre Nosotros | Productos Occidente'
         ];
@@ -156,7 +156,7 @@ class PageController extends Controller
         $metaData = [
             'title' => 'Proyectos | Productos Occidente, C.A.',
             'description' => 'Descubra los proyectos destacados de Productos Occidente y cómo nuestros productos de construcción han contribuido al éxito de diversas obras en Venezuela.',
-            'keywords' => 'pegoccidente, Productos Occidente, pego, Barquimeto, mezclilla, construcción',
+            'keywords' => 'pegoccidente, piscina, jacuzzi, exteriores, grafiado, encaminado paredes, impermeabilizante',
             'og_description' => 'Descubra los proyectos destacados de Productos Occidente y cómo nuestros productos de construcción han contribuido al éxito de diversas obras en Venezuela.',
             'og_title' => 'Proyectos | Productos Occidente, C.A.'
         ];
@@ -175,7 +175,7 @@ class PageController extends Controller
         $metaData = [
             'title' => 'Contact | Productos Occidente, C.A.',
             'description' => 'Póngase en contacto con Productos Occidente para más información sobre nuestros productos de construcción. Ubicados en Venezuela, estamos aquí para ayudarle.',
-            'keywords' => 'Contacto, Productos Occidente, productos de construcción, Venezuela, información de contacto',
+            'keywords' => 'Productos Occidente, pegamento para cerámica, impermeabilizante, productos construcción.',
             'og_description' => 'Póngase en contacto con Productos Occidente para más información sobre nuestros productos de construcción. Ubicados en Venezuela, estamos aquí para ayudarle.',
             'og_title' => 'Contact | Productos Occidente, C.A.'
         ];
