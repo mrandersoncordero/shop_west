@@ -1,9 +1,10 @@
 @extends('template')
 
-@section('title', 'Buscador | Productos Occidente, C.A.')
-@section('description', 'Utilice el buscador de PegOccidente para encontrar rápidamente productos de construcción de alta calidad en Venezuela, incluyendo pegamentos, revestimientos y sella juntas.')
-@section('keywords', 'Buscador, buscar productos, productos de construcción, pegamentos, revestimientos, sella juntas, PegOccidente, Venezuela, Barquisimeto')
-@section('og_description', 'Utilice el buscador de PegOccidente para encontrar rápidamente productos de construcción de alta calidad en Venezuela, incluyendo pegamentos, revestimientos y sella juntas.')
+@section('title', $metaData['title'])
+@section('description', $metaData['description'])
+@section('keywords', $metaData['keywords'])
+@section('og_title', $metaData['title'])
+@section('og_description', $metaData['description'])
 
 @section('content')
   <main style="margin-top: 5%; display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh;">

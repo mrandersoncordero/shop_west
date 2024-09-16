@@ -1,11 +1,12 @@
 @extends('template')
 
-@section('head_content')
-  <title>Productos Occidente - Productos</title>
-	<meta name="description" content="Descubre nuestra amplia gama de productos de alta calidad para la construcción, que incluye sublíneas de basica, profesional, flexible, revestimiento, pegamentos, estructural y sellas juntas. Con Productos Occidente, puedes confiar en la calidad y durabilidad de tus proyectos. Visita nuestra página web para explorar nuestra amplia gama de productos y encontrar la solución perfecta para tus necesidades de construcción.">
-  <meta name="keywords" content="Pego Standard Gris, Pego Extra Blanco,	Premium Gris, Pego Premium Gris Grueso, Súper Extra Piscina, Pego Supremo Blanco, Occifriso, Occiteja, Occiconcreto, Occiconcreto Reforzado
-">	
+@section('title', $metaData['title'])
+@section('description', $metaData['description'])
+@section('keywords', $metaData['keywords'])
+@section('og_title', $metaData['title'])
+@section('og_description', $metaData['description'])
 
+@section('head_content')
 
   {{-- Glide js --}}
   <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
@@ -33,7 +34,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             @foreach ($products as $product)
-              @if ($product->subcategory->category->id == 1) 
+              @if ($product->subcategory->category->id == 1)
               {{--  Pegamentos --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
@@ -45,8 +46,8 @@
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>
                 </div>
-              </li> 
-              @endif 
+              </li>
+              @endif
             @endforeach
           </ul>
         </div>
@@ -77,7 +78,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             @foreach ($products as $product)
-              @if ($product->subcategory->category->id == 2) 
+              @if ($product->subcategory->category->id == 2)
               {{--  Construccion --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
@@ -89,8 +90,8 @@
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>
                 </div>
-              </li> 
-              @endif 
+              </li>
+              @endif
             @endforeach
           </ul>
         </div>
@@ -122,7 +123,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             @foreach ($products as $product)
-              @if ($product->subcategory->category->id == 3) 
+              @if ($product->subcategory->category->id == 3)
               {{--  Sella Juntas --}}
               <li class="glide__slide align_items_carrousel">
                 <div class="products_carrousel--container">
@@ -134,8 +135,8 @@
                     <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
                   </div>
                 </div>
-              </li> 
-              @endif 
+              </li>
+              @endif
             @endforeach
           </ul>
         </div>

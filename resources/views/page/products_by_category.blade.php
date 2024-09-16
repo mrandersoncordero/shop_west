@@ -1,5 +1,11 @@
 @extends('template')
 
+@section('title', $metaData['title'])
+@section('description', $metaData['description'])
+@section('keywords', $metaData['keywords'])
+@section('og_title', $metaData['title'])
+@section('og_description', $metaData['description'])
+
 @section('content')
   <main style="margin-top: 5%">
     {{-- incluir message --}}
