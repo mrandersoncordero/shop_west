@@ -29,7 +29,7 @@
 
     <section class="product-section">
       <header class="header_line" style="margin-bottom: 24px">
-        <h1>Productos confiables de construcción y adhesivos</h1>
+        <h1>Producto confiables de construcción: pegos, morteros y sella juntas</h1>
       </header>
       <article class="productos-destacados" style="padding-top: 12px">
         <div class="content">
