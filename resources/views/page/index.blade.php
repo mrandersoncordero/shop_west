@@ -7,16 +7,32 @@
 @endsection
 
 @section('content')
-  <div class="gif">
-    <video autoplay loop muted playsinline>
-      <source src="{{ asset('images/empresa_lider.mp4') }}" type="video/mp4" />
-    </video>
-    <audio id="miAudio" controls autoplay style="display: none;">
-      <source src="{{ asset('audio/corporation.mp3') }}" type="audio/mp3">
-      Tu navegador no soporta el elemento de audio.
-    </audio>
-
-    <button id="reproducirBtn" onclick="togglePlayPause()">▶️</button>
+  <div class="glide" id="carrousel_top">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        <li class="glide__slide">
+          <img src="{{ asset('images/banners/banner_christmas_1.webp') }}" width="100%" alt="" />
+        </li>
+        <li class="glide__slide">
+          <img src="{{ asset('images/banners/banner_christmas_2.webp') }}" width="100%" alt="" />
+        </li>
+      </ul>
+    </div>
+    <!-- Navegación si la necesitas -->
+    <div class="glide" style="position: initial">
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Flecha Izquierda">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="fill: #ffffff">
+            <path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path>
+          </svg>
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Flecha Derecha">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="fill: #ffffff">
+            <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -328,7 +344,14 @@
 <script src="{{ asset('js/glide.min.js') }}"></script>
 <script src="{{ asset('js/audio_play.js') }}"></script>
 <script src="{{ asset('js/display_whatsapp.js') }}"></script>
+<script src="{{ asset('js/popup.js') }}"></script>
 <script>
+  const config_carrousel_top = {
+    type: 'carousel',
+    startAt: 0,
+  };
+  new Glide('#carrousel_top', config_carrousel_top).mount()
+
   const config1 = {
     type: 'carousel',
     perView: 1
