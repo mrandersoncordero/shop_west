@@ -1,5 +1,15 @@
 @extends('template')
 
+@section('head_content')
+  <meta name="google-site-verification" content="R8Kh6UWIlpNNiiewkS8usTjAzFtEWL4Z0wDzD5b0Vjo" />
+@endsection
+
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
+  <!-- Optional Theme Stylesheet -->
+  <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
+@endsection
+
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
   <!-- Optional Theme Stylesheet -->
