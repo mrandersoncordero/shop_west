@@ -11,10 +11,10 @@
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_christmas_1.webp') }}" width="100%" alt="" />
+          <img src="{{ asset('images/banners/banner_christmas_1.webp') }}" width="100%" alt="pegoccidente" />
         </li>
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_christmas_2.webp') }}" width="100%" alt="" />
+          <img src="{{ asset('images/banners/banner_christmas_2.webp') }}" width="100%" alt="productos occidente" />
         </li>
       </ul>
     </div>
