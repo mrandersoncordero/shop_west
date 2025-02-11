@@ -21,10 +21,14 @@
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_christmas_1.webp') }}" width="100%" alt="pegoccidente" />
+          <img src="{{ asset('images/banners/banner_1.jpg') }}" width="100%" style="margin-top: 56px" alt="stuco" />
         </li>
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_christmas_2.webp') }}" width="100%" alt="productos occidente" />
+          <img src="{{ asset('images/banners/banner_2.jpg') }}" width="100%" style="margin-top: 56px" alt="calidad" />
+        </li>
+        <li class="glide__slide">
+          <img src="{{ asset('images/banners/banner_3.jpg') }}" width="100%" style="margin-top: 56px"
+            alt="pegoccidente" />
         </li>
       </ul>
     </div>
