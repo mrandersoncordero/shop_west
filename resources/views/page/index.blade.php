@@ -9,6 +9,17 @@
   <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
   <!-- Optional Theme Stylesheet -->
   <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
+  <style>
+    #carrousel_top {
+      margin-top: 7rem;
+    }
+
+    @media (max-width: 768px) {
+      #carrousel_top {
+        margin-top: 4rem;
+      }
+    }
+  </style>
 @endsection
 
 @section('content')
@@ -16,7 +27,7 @@
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner-aniversario-42.webp') }}" width="100%" style="margin-top: 56px"
+          <img src="{{ asset('images/banners/banner-aniversario-42.webp') }}" width="100%"
             alt="prodcutos occidente aniversario" />
         </li>
       </ul>
