@@ -5,12 +5,7 @@
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
-  <!-- Optional Theme Stylesheet -->
-  <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
-@endsection
-
-@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/partner-section.css') }}">
   <link rel="stylesheet" href="{{ asset('css/glide.core.min.css') }}">
   <!-- Optional Theme Stylesheet -->
   <link rel="stylesheet" href="{{ asset('css/glide.theme.min.css') }}">
@@ -21,14 +16,8 @@
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
         <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_1.jpg') }}" width="100%" style="margin-top: 56px" alt="stuco" />
-        </li>
-        <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_2.jpg') }}" width="100%" style="margin-top: 56px" alt="calidad" />
-        </li>
-        <li class="glide__slide">
-          <img src="{{ asset('images/banners/banner_3.jpg') }}" width="100%" style="margin-top: 56px"
-            alt="pegoccidente" />
+          <img src="{{ asset('images/banners/banner-aniversario-42.webp') }}" width="100%" style="margin-top: 56px"
+            alt="prodcutos occidente aniversario" />
         </li>
       </ul>
     </div>
@@ -374,7 +363,7 @@
 
   const config2 = {
     type: 'carousel',
-    perView: 3,
+    perView: 1,
     breakpoints: {
       1024: {
         perView: 2
