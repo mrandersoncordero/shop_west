@@ -343,11 +343,12 @@
 <script>
   let products = @json($products);
 </script>
+
 <script src="{{ asset('js/productos_destacados.js') }}"></script>
 <script src="{{ asset('js/glide.min.js') }}"></script>
 {{-- <script src="{{ asset('js/audio_play.js') }}"></script> --}}
 <script src="{{ asset('js/display_whatsapp.js') }}"></script>
-<script src="{{ asset('js/popup.js') }}"></script>
+
 <script>
   const config_carrousel_top = {
     type: 'carousel',
