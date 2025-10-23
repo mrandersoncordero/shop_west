@@ -60,15 +60,30 @@
                 <div class="title_about">
                   <img src="{{ asset('images/diana.png') }}" alt="">
                   <header>
-                    <h2>mision y vision</h2>
+                    <h2>Misión</h2>
                   </header>
                 </div>
-                <p>Nuestra misión es simple pero poderosa: brindar productos de construcción que superen las expectativas
-                  de calidad. Nos esforzamos por ser líderes en la industria y ser la elección número uno de quienes
-                  buscan productos confiables y duraderos.</p>
-                <p>Miramos hacia el futuro con determinación. Queremos seguir siendo líderes en la industria de la
-                  construcción, innovando constantemente y expandiendo nuestro alcance para servir a un público cada vez
-                  más diverso.</p>
+                <p>Somos una Empresa dedicada a la fabricación y comercialización de pegamentos, morteros y sella juntas
+                  para el sector de la construcción, remodelación y decoración, nuestros productos son de excelente
+                  calidad, óptimo rendimiento, alta resistencia, durabilidad y fácil uso; empleamos tecnología de punta y
+                  capital humano altamente capacitado, para brindar así a nuestros clientes la mejor relación precio –
+                  valor del mercado.</p>
+              </div>
+
+            </li>
+            <li class="glide__slide">
+
+              <div class="content_about">
+                <div class="title_about">
+                  <img src="{{ asset('images/diana.png') }}" alt="">
+                  <header>
+                    <h2>Visión</h2>
+                  </header>
+                </div>
+                <p>Consolidar nuestro liderazgo en el mercado nacional en la fabricación y comercialización de una diversa
+                  gama de productos de avanzada y novedosa formulación en pro de soluciones transformadoras de la
+                  industria de la construcción, remodelación y decoración, con el fin de garantizar su progreso, el
+                  incremento continuo de la cartera de clientes, su satisfacción y una mejor calidad de vida.</p>
               </div>
 
             </li>
@@ -123,7 +138,7 @@
   <script src="{{ asset('js/display_whatsapp.js') }}"></script>
   <script>
     const config = {
-      type: 'carousel',
+      type: 'slider',
       perView: 1,
     };
     new Glide('.glide', config).mount()
