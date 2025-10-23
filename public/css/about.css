@@ -1,158 +1,159 @@
 /* 400px */
 p {
-  color: var(--grey);
-  line-height: 1.4rem;
+    color: var(--grey);
+    line-height: 1.4rem;
 }
 footer p {
-  color: var(--white);
+    color: var(--white);
 }
 .carrousel_glide_white {
-  max-width: 350px;
+    max-width: 400px;
 }
 .content_primary {
-  display: grid;
-  grid-template-columns: 1fr;
-  place-items: center;
-  margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin-bottom: 24px;
 }
 .glide__arrow--right {
-  right: -.9em;
+    right: -0.9em;
 }
 .glide__arrow--left {
-  left: -.9em;
+    left: -0.9em;
 }
 .content_primary .content_about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 90%;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 90%;
+    margin: auto;
 }
 
 .content_primary .content_about .title_about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .content_primary .content_about .title_about h2 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--blue);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--blue);
 }
 .content_primary .content_about img {
-  width: 80px;
+    width: 80px;
 }
 
-.content_primary .content_about p {
-  text-align: justify;
+.content_primary .content_about p,
+.content_primary .content_about li {
+    text-align: justify;
+    font-size: 0.9rem;
 }
 
 .sucursales {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    place-items: center;
 }
 .container_sucursales--info {
-  width: 400px;
+    width: 400px;
 }
-.container_sucursales--info header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.container_sucursales--info header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.container_sucursales--info header img{
-  width: 40px;
+.container_sucursales--info header img {
+    width: 40px;
 }
-.container_sucursales--info header h2{
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--blue);
+.container_sucursales--info header h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--blue);
 }
 
 .sucursal--content p {
-  padding: 12px;
-  text-align: justify;
+    padding: 12px;
+    text-align: justify;
 }
 
 .container_sucursales--image {
-  margin: auto;
+    margin: auto;
 }
 .container_sucursales--image .sucursal img {
-  width: 100%;
+    width: 100%;
 }
 .container_sucursales--image .sucursal {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 12px;
-  margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 12px;
+    margin: auto;
 }
 .container_sucursales--image .sucursal div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 12px;
-  bottom: -10px;
-  width: 200px;
-  background-color: var(--blue);
-  padding: 18px 24px;
-  z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 12px;
+    bottom: -10px;
+    width: 200px;
+    background-color: var(--blue);
+    padding: 18px 24px;
+    z-index: 20;
 }
 .container_sucursales--image .sucursal div::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -40px;
-  border-top: 58.85px solid transparent;
-  border-left: 41px solid var(--blue)
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -40px;
+    border-top: 58.85px solid transparent;
+    border-left: 41px solid var(--blue);
 }
 
 .container_sucursales--image .sucursal div p {
-  color: var(--white);
-  text-transform: uppercase;
-  font-weight: bold;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
 }
-
 
 @media screen and (max-width: 749px) {
-  .content_primary {
-    grid-template-columns: 1fr;
-  }
-  .content_primary article {
-    display: none;
-  }
+    .content_primary {
+        grid-template-columns: 1fr;
+    }
+    .content_primary article {
+        display: none;
+    }
 }
 @media screen and (min-width: 750px) {
-  .content_primary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-  }
+    .content_primary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-  .carrousel_glide_white {
-    max-width: 600px;
-  }
+    .carrousel_glide_white {
+        max-width: 600px;
+    }
 }
 @media screen and (min-width: 1024px) {
-  .sucursales {
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-  }
-  .sucursal img {
-    width: 400px !important;
-  }
+    .sucursales {
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+    .sucursal img {
+        width: 400px !important;
+    }
 }
 @media screen and (max-width: 400px) {
-  .container_sucursales--info {
-    width: 100% !important;
-  }
+    .container_sucursales--info {
+        width: 100% !important;
+    }
 }
