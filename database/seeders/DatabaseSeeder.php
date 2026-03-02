@@ -23,15 +23,18 @@ class DatabaseSeeder extends Seeder
          */
         Category::create([
             'name' => 'Pegamentos',
-            'description' => 'Descripcion de pegamentos'
+            'slug' => 'pegamentos',
+            'description' => 'Descripcion de pegamentos',
         ]);
         Category::create([
             'name' => 'Construccion',
-            'description' => 'Descripcion de construccion'
+            'slug' => 'construccion',
+            'description' => 'Descripcion de construccion',
         ]);
         Category::create([
             'name' => 'Sella Juntas',
-            'description' => 'Descripcion de sella juntas'
+            'slug' => 'sella-juntas',
+            'description' => 'Descripcion de sella juntas',
         ]);
 
         /**
@@ -39,38 +42,75 @@ class DatabaseSeeder extends Seeder
          */
         Subcategory::create([
             'name' => 'Basicos',
+            'slug' => 'basicos',
             'category_id' => 1,
-            'description' => 'Descripcion de subcategoria basicos'
+            'description' => 'Descripcion de subcategoria basicos',
+        ]);
+        Subcategory::create([
+            'name' => 'Profesional',
+            'slug' => 'profesional',
+            'category_id' => 1,
+            'description' => 'Descripcion de subcategoria profesional',
+        ]);
+        Subcategory::create([
+            'name' => 'Flexible',
+            'slug' => 'flexible',
+            'category_id' => 1,
+            'description' => 'Descripcion de subcategoria Flexible',
+        ]);
+        Subcategory::create([
+            'name' => 'Revestimiento',
+            'slug' => 'revestimiento',
+            'category_id' => 2,
+            'description' => 'Descripcion de subcategoria revestimiento',
+        ]);
+        Subcategory::create([
+            'name' => 'Pegamentos',
+            'slug' => 'pegamentos-construccion',
+            'category_id' => 2,
+            'description' => 'Descripcion de subcategoria Pegamentos',
+        ]);
+        Subcategory::create([
+            'name' => 'Estructural',
+            'slug' => 'estructural',
+            'category_id' => 2,
+            'description' => 'Descripcion de subcategoria Estructural',
+        ]);
+        Subcategory::create([
+            'name' => 'Sella juntas',
+            'slug' => 'sella-juntas',
+            'category_id' => 3,
+            'description' => 'Descripcion de subcategoria Sella juntas',
         ]);
         Subcategory::create([
             'name' => 'Profesional',
             'category_id' => 1,
-            'description' => 'Descripcion de subcategoria profesional'
+            'description' => 'Descripcion de subcategoria profesional',
         ]);
         Subcategory::create([
             'name' => 'Flexible',
             'category_id' => 1,
-            'description' => 'Descripcion de subcategoria Flexible'
+            'description' => 'Descripcion de subcategoria Flexible',
         ]);
         Subcategory::create([
             'name' => 'Revestimiento',
             'category_id' => 2,
-            'description' => 'Descripcion de subcategoria revestimiento'
+            'description' => 'Descripcion de subcategoria revestimiento',
         ]);
         Subcategory::create([
             'name' => 'Pegamentos',
             'category_id' => 2,
-            'description' => 'Descripcion de subcategoria Pegamentos'
+            'description' => 'Descripcion de subcategoria Pegamentos',
         ]);
         Subcategory::create([
             'name' => 'Estructural',
             'category_id' => 2,
-            'description' => 'Descripcion de subcategoria Estructural'
+            'description' => 'Descripcion de subcategoria Estructural',
         ]);
         Subcategory::create([
             'name' => 'Sella juntas',
             'category_id' => 3,
-            'description' => 'Descripcion de subcategoria Sella juntas'
+            'description' => 'Descripcion de subcategoria Sella juntas',
         ]);
 
         /**
@@ -89,12 +129,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Imperplus.png',
-            'url_sheet' => 'tab_imperplus.pdf'
+            'url_sheet' => 'tab_imperplus.pdf',
         ]);
         Product::create([
             'subcategory_id' => 7,
             'code' => 'LDCES123',
-            'name' => "D’ COLOR MARMOLINA",
+            'name' => 'D’ COLOR MARMOLINA',
             'description' => 'Mortero en polvo a base de cemento blanco o gris,  marmolina y arena sílice seleccionada y aditivos  químicos aplicado para el relleno de juntas  anchas de baldosas, cerámicas y toda la gama de  revestimientos rústicos.',
             'weight' => 20,
             'format' => '',
@@ -104,12 +144,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'DColorMarmolina.png',
-            'url_sheet' => 'tab_d_color_marmolina.pdf'
+            'url_sheet' => 'tab_d_color_marmolina.pdf',
         ]);
         Product::create([
             'subcategory_id' => 2,
             'code' => 'LDPPR123',
-            'name' => "PEGO PREMIUM GRIS GRUESO",
+            'name' => 'PEGO PREMIUM GRIS GRUESO',
             'description' => 'Adhesivo a base de cemento Portland, arena sílice de granulometría gruesa controlada y aditivos  químicos para nivelar superficies irregulares con espesores desde 4 hasta 20 mm y pegar  revestimientos cerámicos, piedras.',
             'weight' => 20,
             'format' => '50 X 50',
@@ -119,12 +159,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'PPremiumGris.png',
-            'url_sheet' => 'tab_premium_gris_grueso.pdf'
+            'url_sheet' => 'tab_premium_gris_grueso.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCRE123',
-            'name' => "Occireparador",
+            'name' => 'Occireparador',
             'description' => 'Mortero en polvo a base de cemento, arenas seleccionadas y aditivos químicos, para la restitución y/o sustitución de concreto dañado y protección de la armadura.',
             'weight' => 20,
             'format' => '',
@@ -134,12 +174,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'OccireparadorP.png',
-            'url_sheet' => 'tab_occireparador.pdf'
+            'url_sheet' => 'tab_occireparador.pdf',
         ]);
         Product::create([
             'subcategory_id' => 3,
             'code' => 'LDPFL123',
-            'name' => "PEGO SUPREMO",
+            'name' => 'PEGO SUPREMO',
             'description' => 'Adhesivo (Pego) de alto desempeño a base de cemento Blanco o Gris, arena sílice de granulometría controlada y aditivos químicos, con una excelente trabajabilidad y adherencia en aplicaciones de cerámica sobre cerámica, granito y madera.',
             'weight' => 10,
             'format' => 'Grandes formatos',
@@ -149,12 +189,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'PSupremo.png',
-            'url_sheet' => 'tab_pego_supremo.pdf'
+            'url_sheet' => 'tab_pego_supremo.pdf',
         ]);
         Product::create([
             'subcategory_id' => 2,
             'code' => 'LDPPR213',
-            'name' => "SÚPER EXTRA PISCINA",
+            'name' => 'SÚPER EXTRA PISCINA',
             'description' => 'Adhesivo de altas prestaciones base de  cemento blanco y gris, arena sílice de granulometría  controlada y aditivos químicos que mejoran la trabajabilidad y adherencia del producto en la instalación',
             'weight' => 20,
             'format' => 'Grandes formatos',
@@ -164,12 +204,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'SuperExtraPiscina.png',
-            'url_sheet' => 'tab_super_extra_piscina.pdf'
+            'url_sheet' => 'tab_super_extra_piscina.pdf',
         ]);
         Product::create([
             'subcategory_id' => 1,
             'code' => 'LDPBPSG123',
-            'name' => "PEGO STANDARD GRIS",
+            'name' => 'PEGO STANDARD GRIS',
             'description' => 'Adhesivo (Pego) a base de cemento Portland, arena sílice de granulometría controlada y aditivos químicos que mejoran la trabajabilidad y adherencia del producto en la instalación de cerámicas de alta y media absorción. Para uso en interiores y exteriores.',
             'weight' => 14,
             'format' => '40 x 40',
@@ -179,12 +219,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 110,
             'price' => 14,
             'image' => 'Standard gris.png',
-            'url_sheet' => 'tab_standard_gris.pdf'
+            'url_sheet' => 'tab_standard_gris.pdf',
         ]);
         Product::create([
             'subcategory_id' => 1,
             'code' => 'LDPPEB123',
-            'name' => "PEGO EXTRA BLANCO",
+            'name' => 'PEGO EXTRA BLANCO',
             'description' => 'Adhesivo (Pego) a base de cemento blanco, arena sílice de granulometría controlada y aditivos químicos que mejoran el manejo y adherencia del producto en la instalación de cerámicas de alta y media absorción. Para uso en interiores y exteriores.',
             'weight' => 14,
             'format' => '40 x 40',
@@ -194,12 +234,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 110,
             'price' => 14,
             'image' => 'Extra blanco.png',
-            'url_sheet' => 'tab_extra_blanco.pdf'
+            'url_sheet' => 'tab_extra_blanco.pdf',
         ]);
         Product::create([
             'subcategory_id' => 1,
             'code' => 'LDPBP123',
-            'name' => "PREMIUM",
+            'name' => 'PREMIUM',
             'description' => 'En presentación gris o blanco. Pego a base de cemento Portland, ideal para revestimientos cerámicos y rústicos de alta y media absorción de humedad. Para uso en interiores y exteriores.',
             'weight' => 20,
             'format' => '50 X 50',
@@ -209,12 +249,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Premium gris.png',
-            'url_sheet' => 'tab_premium_gris.pdf'
+            'url_sheet' => 'tab_premium_gris.pdf',
         ]);
         Product::create([
             'subcategory_id' => 2,
             'code' => 'LDPPSSG123',
-            'name' => "SÚPER STANDARD GRIS",
+            'name' => 'SÚPER STANDARD GRIS',
             'description' => 'Adhesivo (Pego) de altas prestaciones a base de cemento Portland, arena sílice de granulometría controlada y aditivos químicos que mejoran el manejo y adherencia del producto en la instalación de todo tipo de baldosas cerámicas.',
             'weight' => 20,
             'format' => 'Grandes formatos y marmol',
@@ -224,12 +264,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Super standard gris.png',
-            'url_sheet' => 'tab_super_standard_gris.pdf'
+            'url_sheet' => 'tab_super_standard_gris.pdf',
         ]);
         Product::create([
             'subcategory_id' => 2,
             'code' => 'LDPPSEP123',
-            'name' => "SÚPER EXTRA PORCELANATO",
+            'name' => 'SÚPER EXTRA PORCELANATO',
             'description' => 'Adhesivo (Pego) a base de cemento Portland, arena sílice de granulometría controlada y aditivos químicos que mejoran la trabajabilidad y adherencia del producto en la instalación de porcelánicos de alta y media absorción.',
             'weight' => 20,
             'format' => 'Grandes formatos',
@@ -239,12 +279,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Super extra porcelanato.png',
-            'url_sheet' => 'tab_super_extra_porcelanato.pdf'
+            'url_sheet' => 'tab_super_extra_porcelanato.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCRO123',
-            'name' => "OCCIFRISO",
+            'name' => 'OCCIFRISO',
             'description' => 'Mortero en polvo a base de cemento, arenas selecciondas y aditivos químicos, para la aplicación de frisos manual y proyectados, en paredes de concreto y bloques de cemento, arcilla, ladrillos.',
             'weight' => 20,
             'format' => '',
@@ -254,12 +294,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso.png',
-            'url_sheet' => 'tab_occifriso.pdf'
+            'url_sheet' => 'tab_occifriso.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCROAR123',
-            'name' => "OCCIFRISO AR",
+            'name' => 'OCCIFRISO AR',
             'description' => 'Mortero en polvo a base de cemento, arenas seleccionadas y aditivos químicos, para la aplicación de frisos manual y proyectados en paredes de concreto.',
             'weight' => 20,
             'format' => '',
@@ -269,12 +309,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso AR.png',
-            'url_sheet' => 'tab_occifriso_ar.pdf'
+            'url_sheet' => 'tab_occifriso_ar.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'DPCOP123',
-            'name' => "OCCIFRISO PROYECTADO",
+            'name' => 'OCCIFRISO PROYECTADO',
             'description' => 'Mortero en polvo a base de cemento, y arena sílice granulométricamente seleccionada, y aditivos hidrófugos, para la aplicación de granito, piedra y canto rodado proyectado.',
             'weight' => 20,
             'format' => '',
@@ -284,12 +324,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso proyectado.png',
-            'url_sheet' => 'tab_occifriso_proyectado.pdf'
+            'url_sheet' => 'tab_occifriso_proyectado.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCROT123',
-            'name' => "OCCIFRISO TEXTURIZADO",
+            'name' => 'OCCIFRISO TEXTURIZADO',
             'description' => 'Mortero en polvo a base de cemento y arena sílice granulométricamente seleccionada, y aditivos hidrófugos, para la aplicación de granito, piedra y canto rodado proyectado.',
             'weight' => 20,
             'format' => '',
@@ -299,12 +339,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occifriso texturizado.png',
-            'url_sheet' => 'falta'
+            'url_sheet' => 'falta',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCROX123',
-            'name' => "OCCIMIX",
+            'name' => 'OCCIMIX',
             'description' => 'Mezclilla pre mezclada en polvo, de granulometría controlada y aditivos especiales diseñado para ser aplicado sobre friso de textura más gruesa o de acabado rugoso.',
             'weight' => 10,
             'format' => '',
@@ -314,12 +354,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Occimix.png',
-            'url_sheet' => 'tab_occimix.pdf'
+            'url_sheet' => 'tab_occimix.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCRS123',
-            'name' => "STUCO",
+            'name' => 'STUCO',
             'description' => 'Mortero en polvo a base de cemento blanco o gris para encamisado de frisos, en presentación gris, blanco y blanco ostra. Para uso en interiores y exteriores.',
             'weight' => 10,
             'format' => '',
@@ -329,12 +369,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Stuco.png',
-            'url_sheet' => 'tab_stuco.pdf'
+            'url_sheet' => 'tab_stuco.pdf',
         ]);
         Product::create([
             'subcategory_id' => 5,
             'code' => 'LDCPO123',
-            'name' => "OCCIBLOQUE",
+            'name' => 'OCCIBLOQUE',
             'description' => 'Mortero en polvo a base de cemento, arenas seleccionadas y aditivo químico para la colocación de bloques de cemento, arcilla, trincote y tablilla.
             Para uso en interiores y exteriores.',
             'weight' => 10,
@@ -345,12 +385,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 150,
             'price' => 10,
             'image' => 'Occibloque.png',
-            'url_sheet' => 'tab_occibloque.pdf'
+            'url_sheet' => 'tab_occibloque.pdf',
         ]);
         Product::create([
             'subcategory_id' => 5,
             'code' => 'LDCPOT123',
-            'name' => "OCCITEJA",
+            'name' => 'OCCITEJA',
             'description' => 'Mortero en polvo a base de cemento, arenas seleccionadas y aditivos químicos, para la colocación de tejas. Para uso en interiores y exteriores.',
             'weight' => 10,
             'format' => '',
@@ -360,12 +400,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 10,
             'image' => 'Occiteja.png',
-            'url_sheet' => 'tab_occiteja.pdf'
+            'url_sheet' => 'tab_occiteja.pdf',
         ]);
         Product::create([
             'subcategory_id' => 6,
             'code' => 'LDCEO123',
-            'name' => "OCCICONCRETO",
+            'name' => 'OCCICONCRETO',
             'description' => 'Mortero seco estructurado a base de cemento y arena seleccionada que lo hace apto para la construcción.',
             'weight' => 20,
             'format' => '',
@@ -375,12 +415,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occiconcreto.png',
-            'url_sheet' => 'tab_occiconcreto.pdf'
+            'url_sheet' => 'tab_occiconcreto.pdf',
         ]);
         Product::create([
             'subcategory_id' => 6,
             'code' => 'LDCEOR123',
-            'name' => "OCCICONCRETO REFORZADO",
+            'name' => 'OCCICONCRETO REFORZADO',
             'description' => 'Concreto con resistencia mayor o igual a 210 Kg/Cm2. Viga de carga o amarre, columnas, losas, placas, aceras, escalinatas y muros.',
             'weight' => 20,
             'format' => '',
@@ -390,12 +430,12 @@ class DatabaseSeeder extends Seeder
             'quantity' => 90,
             'price' => 20,
             'image' => 'Occiconcreto reforzado.png',
-            'url_sheet' => 'tab_occiconcreto_reforzado.pdf'
+            'url_sheet' => 'tab_occiconcreto_reforzado.pdf',
         ]);
         Product::create([
             'subcategory_id' => 7,
             'code' => 'LDSJDC123',
-            'name' => "D’ COLOR",
+            'name' => 'D’ COLOR',
             'description' => 'Mortero aplicado para el relleno de juntas en cerámicas, contiene hidrófugo y antihongos por lo que lo hace resistente a la formación de moho y hongos. Para uso en exteriores e interiores.',
             'weight' => 2,
             'format' => '',
@@ -406,12 +446,12 @@ class DatabaseSeeder extends Seeder
             'price' => 2,
             'image' => "D' color.png",
             'palette_color' => 'paleta_d_color.jpg',
-            'url_sheet' => 'tab_d_color.pdf'
+            'url_sheet' => 'tab_d_color.pdf',
         ]);
         Product::create([
             'subcategory_id' => 4,
             'code' => 'LDCEO1235',
-            'name' => "OCCIGRAFIADO",
+            'name' => 'OCCIGRAFIADO',
             'description' => 'Mortero aplicado para el relleno de juntas en cerámicas, contiene hidrófugo y antihongos por lo que lo hace resistente a la formación de moho y hongos. Para uso en exteriores e interiores.',
             'weight' => 2,
             'format' => '',
@@ -420,9 +460,9 @@ class DatabaseSeeder extends Seeder
             'type_of_sale' => 'Paleta',
             'quantity' => 150,
             'price' => 2,
-            'image' => "Occigrafiado.png",
+            'image' => 'Occigrafiado.png',
             'palette_color' => 'paleta_occigrafiado.png',
-            'url_sheet' => 'tab_occigrafiado.pdf'
+            'url_sheet' => 'tab_occigrafiado.pdf',
         ]);
 
         // \App\Models\User::factory()->create([
