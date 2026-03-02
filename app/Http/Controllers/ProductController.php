@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductRating;
 use App\Models\Subcategory;
-use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +18,7 @@ class ProductController extends Controller
         if (Auth::user()->hasPermission(9, 'No tienes permisos para ver productos')) {
             return view('admin.product.index', [
                 'products' => Product::all(),
-                'subcategories' => Subcategory::all()
+                'subcategories' => Subcategory::all(),
             ]);
         }
     }
@@ -91,7 +90,7 @@ class ProductController extends Controller
             return redirect()->route('products.edit', $product)->with('message', [
                 'class' => 'alert--success',
                 'title' => 'Producto creado exitosamente',
-                'content' => "El producto {$product->name} ha sido creado."
+                'content' => "El producto {$product->name} ha sido creado.",
             ]);
         }
     }
@@ -102,7 +101,7 @@ class ProductController extends Controller
             $this->validate($request, [
                 'subcategory_id' => 'required',
                 'code' => 'required|string|max:80',
-                'name' => 'required|unique:subcategories,name,' . $product->id,
+                'name' => 'required|unique:subcategories,name,'.$product->id,
                 'description' => 'required|string|max:255',
                 'weight' => 'nullable|integer',
                 'format' => 'nullable|string|max:100',
@@ -113,7 +112,7 @@ class ProductController extends Controller
                 'price' => 'regex:/^\d+(\.\d{1,2})?$/',
             ]);
 
-            if (!$request->image && !$request->palette_color) {
+            if (! $request->image && ! $request->palette_color) {
 
                 $product->update([
                     'subcategory_id' => $request->subcategory_id,
@@ -126,14 +125,15 @@ class ProductController extends Controller
                     'traffic' => $request->traffic,
                     'type_of_sale' => $request->type_of_sale,
                     'quantity' => $request->quantity,
-                    'price' => $request->price
+                    'price' => $request->price,
                 ]);
+
                 return redirect()->route('products.edit', $product)->with('message', [
                     'class' => 'alert--warning',
                     'title' => 'Producto actualizado correctamente',
-                    'content' => "El producto {$product->name} fue actualizado correctamente"
+                    'content' => "El producto {$product->name} fue actualizado correctamente",
                 ]);
-            } elseif ($request->image && !$request->palette_color) {
+            } elseif ($request->image && ! $request->palette_color) {
                 $this->validate($request, [
                     'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
                 ]);
@@ -155,12 +155,13 @@ class ProductController extends Controller
                     'price' => $request->price,
                     'image' => $imageName,
                 ]);
+
                 return redirect()->route('products.edit', $product)->with('message', [
                     'class' => 'alert--warning',
                     'title' => 'Producto actualizado correctamente',
-                    'content' => "El producto {$product->name} fue actualizado correctamente"
+                    'content' => "El producto {$product->name} fue actualizado correctamente",
                 ]);
-            } elseif (!$request->image && $request->palette_color) {
+            } elseif (! $request->image && $request->palette_color) {
 
                 $this->validate($request, [
                     'palette_color' => 'image|mimes:jpeg,png,jpg|max:2048',
@@ -184,10 +185,11 @@ class ProductController extends Controller
                     'price' => $request->price,
                     'palette_color' => $palette_colorName,
                 ]);
+
                 return redirect()->route('products.edit', $product)->with('message', [
                     'class' => 'alert--warning',
                     'title' => 'Producto actualizado correctamente',
-                    'content' => "El producto {$product->name} fue actualizado correctamente"
+                    'content' => "El producto {$product->name} fue actualizado correctamente",
                 ]);
             }
         }
@@ -196,10 +198,11 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         if (Auth::user()->hasPermission(11, 'No tienes permisos para editar productos')) {
-            $subcategories =  Subcategory::all();
+            $subcategories = Subcategory::all();
+
             return view('admin.product.edit', [
                 'product' => $product,
-                'subcategories' => $subcategories
+                'subcategories' => $subcategories,
             ]);
         }
     }
@@ -213,7 +216,7 @@ class ProductController extends Controller
                 return back()->with('message', [
                     'class' => 'alert--success',
                     'title' => 'Producto eliminado correctamente',
-                    'content' => "El producto {$product->name} fue eliminado correctamente"
+                    'content' => "El producto {$product->name} fue eliminado correctamente",
                 ]);
             } catch (QueryException $e) {
                 $errorCode = $e->errorInfo[1];
@@ -222,20 +225,19 @@ class ProductController extends Controller
                     return back()->with('message', [
                         'class' => 'alert--danger',
                         'title' => 'Error',
-                        'content' => "No se puede eliminar el producto ({$product->name}) por que posee valores asociados"
+                        'content' => "No se puede eliminar el producto ({$product->name}) por que posee valores asociados",
                     ]);
                 }
             }
         }
     }
 
-    public function rateProduct(Request $request, $productId)
+    public function rateProduct(Request $request, Product $product)
     {
         $user = Auth::user();
-        $product = Product::findOrFail($productId);
         $comment = $request->input('comment');
         // Verifica si el usuario ya calificó el producto
-        $existingRating = ProductRating::where('product_id', $productId)
+        $existingRating = ProductRating::where('product_id', $product->id)
             ->where('user_id', $user->id)
             ->first();
 
