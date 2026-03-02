@@ -1,37 +1,60 @@
 <?php
 
 // Controller
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InterestedClientController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 // Laravel
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /**
- * Rutas de la tienda
+ * Rutas públicas del sitio
  */
-
 Route::get('/', [PageController::class, 'index'])->name('index');
-Route::get('/products', [PageController::class, 'products_view'])->name('products_view');
-Route::get('/products/article/{id}', [PageController::class, 'product_detail'])->name('product_detail');
-Route::get('/products/subcategory/{id}', [PageController::class, 'products_by_subcategory'])->name('products_by_subcategory');
-Route::get('/products/category/{id}', [PageController::class, 'products_by_category'])->name('products_by_category');
-Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/project', [PageController::class, 'project'])->name('project');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::get('/search', [PageController::class, 'search'])->name('search');
-Route::post('/interested-clients', [InterestedClientController::class, 'store'])->name('interested-clients.store');
-Route::post('/send-email', [ContactController::class, 'send_email'])->name('send.email');
+Route::get('/productos', [PageController::class, 'products_view'])->name('products_view');
+Route::get('/productos/articulo/{product:slug}', [PageController::class, 'product_detail'])->name('product_detail');
+Route::get('/productos/subcategoria/{subcategory:slug}', [PageController::class, 'products_by_subcategory'])->name('products_by_subcategory');
+Route::get('/productos/categoria/{category:slug}', [PageController::class, 'products_by_category'])->name('products_by_category');
+Route::get('/nosotros', [PageController::class, 'about'])->name('about');
+Route::get('/proyectos', [PageController::class, 'project'])->name('project');
+Route::get('/contacto', [PageController::class, 'contact'])->name('contact');
+Route::get('/buscar', [PageController::class, 'search'])->name('search');
+Route::post('/clientes-interesados', [InterestedClientController::class, 'store'])->name('interested-clients.store');
+Route::post('/enviar-mensaje', [ContactController::class, 'send_email'])->name('send.email');
 
+/**
+ * Redirects 301 para URLs antiguas (compatibilidad SEO con producción)
+ */
+Route::get('/products', fn () => Redirect::route('products_view', [], 301));
+Route::get('/products/article/{id}', function ($id) {
+    $product = \App\Models\Product::findOrFail($id);
+
+    return Redirect::route('product_detail', $product->slug, 301);
+});
+Route::get('/products/category/{id}', function ($id) {
+    $category = \App\Models\Category::findOrFail($id);
+
+    return Redirect::route('products_by_category', $category->slug, 301);
+});
+Route::get('/products/subcategory/{id}', function ($id) {
+    $subcategory = \App\Models\Subcategory::findOrFail($id);
+
+    return Redirect::route('products_by_subcategory', $subcategory->slug, 301);
+});
+Route::get('/about', fn () => Redirect::route('about', [], 301));
+Route::get('/project', fn () => Redirect::route('project', [], 301));
+Route::get('/contact', fn () => Redirect::route('contact', [], 301));
+Route::get('/search', fn () => Redirect::route('search', [], 301));
 
 Route::middleware(['auth', 'role:client|admin'])->group(function () {
     /**
@@ -54,7 +77,8 @@ Route::middleware(['auth', 'role:client|admin'])->group(function () {
     /**
      * Rating
      */
-    Route::post('/products/{productId}/rate', [ProductController::class, 'rateProduct'])->name('products.rate');
+    Route::post('/productos/{product:slug}/valorar', [ProductController::class, 'rateProduct'])->name('products.rate');
+
     /**
      * Profile
      */
@@ -92,4 +116,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
