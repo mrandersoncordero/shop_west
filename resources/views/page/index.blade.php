@@ -190,36 +190,17 @@
           class="fa-solid fa-quote-right quotes"></i></h1>
     </header>
     <article class="container-categories">
+      @foreach ($categories as $cat)
       <div class="category">
-        <a href="{{ route('products_by_category', 1) }}"
-          style="background: url({{ asset('images/categoriy_pegamento.jpg') }}); display: flex; align-items: center; justify-content: center;"
-          aria-label="Categoria Pegamentos">
-          <img src="{{ asset('icons/pegamentos.png') }}" alt="Pegamentos" width="50%">
+        <a href="{{ route('products_by_category', $cat) }}"
+          style="display: flex; align-items: center; justify-content: center;"
+          aria-label="Categoría {{ $cat->name }}">
         </a>
         <p>
-          <a href="{{ route('products_by_category', 1) }}" style="color: var(--blue)">Linea de pegamentos</a>
+          <a href="{{ route('products_by_category', $cat) }}">Linea de {{ $cat->name }}</a>
         </p>
       </div>
-      <div class="category">
-        <a href="{{ route('products_by_category', 2) }}"
-          style="background: url({{ asset('images/category_construccion.jpg') }}); display: flex; align-items: center; justify-content: center;"
-          aria-label="Categoria Contruccion">
-          <img src="{{ asset('icons/contruccion.png') }}" alt="Construccion" width="50%">
-        </a>
-        <p>
-          <a href="{{ route('products_by_category', 2) }}" style="color: var(--red)">Linea de construcción</a>
-        </p>
-      </div>
-      <div class="category">
-        <a href="{{ route('products_by_category', 3) }}"
-          style="background: url({{ asset('images/category_sella_juntas.jpg') }}); display: flex; align-items: center; justify-content: center;"
-          aria-label="Categoria Sella Juntas">
-          <img src="{{ asset('icons/sella_juntas.png') }}" alt="Sella Juntas" width="50%">
-        </a>
-        <p>
-          <a href="{{ route('products_by_category', 3) }}" style="color: var(--blue)">Linea de sella juntas</a>
-        </p>
-      </div>
+      @endforeach
     </article>
   </section>
 

@@ -37,13 +37,13 @@
             <i class="fa-solid fa-angle-right"></i>
           </div>
           <li>
-            <a href="{{ route('products_by_category', $subcategory->category->id) }}">{{ $subcategory->category->name }}</a>
+            <a href="{{ route('products_by_category', $subcategory->category) }}">{{ $subcategory->category->name }}</a>
           </li>
           <div class="separation_section_menu">
             <i class="fa-solid fa-angle-right"></i>
           </div>
           <li>
-            <a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="latest_section">{{ $subcategory->name }}</a>
+            <a href="{{ route('products_by_subcategory', $subcategory) }}" class="latest_section">{{ $subcategory->name }}</a>
           </li>
         </ul>
       </div>
@@ -54,10 +54,10 @@
             <div class="garantia">
               <img src="{{ asset("images/sello_de_garantia.png" )}}" class="sello_garantia" alt="sello de garantia">
             </div>
-            <a href="{{ route('product_detail', $product->id) }}"><img src="{{ asset("product/$product->image" )}}" alt="{{ $product->name }}"></a>
+            <a href="{{ route('product_detail', $product) }}"><img src="{{ asset("product/$product->image" )}}" alt="{{ $product->name }}"></a>
           </div>
           <div class="product_despcription">
-            <a href="{{ route('product_detail', $product->id) }}">{{ $product->name }}</a>
+            <a href="{{ route('product_detail', $product) }}">{{ $product->name }}</a>
             @auth
             <form action="{{ route('cart.add', $product->id) }}" method="POST" class="container_add--truck center_content ">
               @csrf

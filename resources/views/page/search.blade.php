@@ -24,10 +24,10 @@
       @foreach ($products as $product)
         <section class="product_card">
           <div class="product_img">
-            <a href="{{ route('product_detail', $product->id) }}"><img src="{{ asset("product/$product->image" )}}" alt="{{ $product->name }}"></a>
+            <a href="{{ route('product_detail', $product) }}"><img src="{{ asset("product/$product->image" )}}" alt="{{ $product->name }}"></a>
           </div>
           <div class="product_despcription">
-            <a href="{{ route('product_detail', $product->id) }}">{{ $product->name }}</a>
+            <a href="{{ route('product_detail', $product) }}">{{ $product->name }}</a>
             @auth
             <form action="{{ route('cart.add', $product->id) }}" method="POST" class="container_add--truck center_content ">
               @csrf

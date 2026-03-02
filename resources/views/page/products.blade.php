@@ -43,7 +43,7 @@
                   </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
-                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                    <a href="{{ route('product_detail', $product) }}">ver descripcion</a>
                   </div>
                 </div>
               </li>
@@ -87,7 +87,7 @@
                   </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
-                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                    <a href="{{ route('product_detail', $product) }}">ver descripcion</a>
                   </div>
                 </div>
               </li>
@@ -132,7 +132,7 @@
                   </div>
                   <img src="{{ asset("product/$product->image" )}}" alt="">
                   <div>
-                    <a href="{{ route('product_detail', $product->id) }}">ver descripcion</a>
+                    <a href="{{ route('product_detail', $product) }}">ver descripcion</a>
                   </div>
                 </div>
               </li>

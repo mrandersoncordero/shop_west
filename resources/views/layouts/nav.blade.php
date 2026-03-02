@@ -34,14 +34,14 @@
               <div class="submenu">
                 @foreach ($categories as $category)
                 <div class="submenu-categorias">
-                    <a href="{{ route('products_by_category', $category->id) }}" class="title-category">Linea de {{ $category->name }} <i class="fa-solid fa-angles-right"></i></a>
+                    <a href="{{ route('products_by_category', $category) }}" class="title-category">Linea de {{ $category->name }} <i class="fa-solid fa-angles-right"></i></a>
                     <div class="submenu-subcategoria">
                         @foreach ($category->subcategories as $subcategory)
                         <div>
-                            <header><a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="title-subcategory">{{ $subcategory->name }} <i class="fa-solid fa-angle-right"></i></a></header>
+                            <header><a href="{{ route('products_by_subcategory', $subcategory) }}" class="title-subcategory">{{ $subcategory->name }} <i class="fa-solid fa-angle-right"></i></a></header>
                             <ul>
                                 @foreach ($subcategory->products as $product)
-                                <li><a href="{{ route('product_detail', $product->id) }}" style="text-transform: uppercase"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>{{ $product->name }}</a></li>
+                                <li><a href="{{ route('product_detail', $product) }}" style="text-transform: uppercase"><ion-icon name="radio-button-on-outline" class="icon-diana"></ion-icon>{{ $product->name }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -190,7 +190,7 @@
                 </p>
                 <ul class="mobile-submenu">
                 @foreach ($category->subcategories as $subcategory)
-                    <li><a href="{{ route('products_by_subcategory', $subcategory->id) }}" class="underline">{{ $subcategory->name }}</a></li>
+                    <li><a href="{{ route('products_by_subcategory', $subcategory) }}" class="underline">{{ $subcategory->name }}</a></li>
                 @endforeach
                 </ul>
             </li>

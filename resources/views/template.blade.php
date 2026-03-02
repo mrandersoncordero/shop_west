@@ -18,7 +18,7 @@
   <meta property="og:description" content="@yield('description', 'pegoccidente, pegamento para cerámica, impermeabilizante, porcelanato, exteriores, pego extra fuerte')">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:site_name" content="@yield('title', 'Productos Occidente, C.A.')">
-  <meta property="og:image" content="{{ $metaData['og_image'] ?? asset('favicon.ico') }}">
+  <meta property="og:image" content="{{ isset($metaData['og_image']) ? asset($metaData['og_image']) : asset('favicon.ico') }}">
   <meta property="og:image:secure_url" content="{{ asset('favicon.ico') }}">
   <meta property="og:image:type" content="image/x-icon">
   <meta property="og:image:width" content="1200">

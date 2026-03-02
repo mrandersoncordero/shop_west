@@ -45,13 +45,13 @@
                             <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
                                 <li>
-                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['super-extra-porcelanato']) }}">SÚPER EXTRA PORCELANATO</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('product_detail', 1) }}">IMPERPLUS</a>
+                                    <a href="{{ route('product_detail', $projectProducts['imperplus']) }}">IMPERPLUS</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('product_detail', 17) }}">STUCO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['stuco']) }}">STUCO</a>
                                 </li>
                                 <!-- Agrega más productos según sea necesario -->
                             </ul>
@@ -71,7 +71,7 @@
                             <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
                                 <li>
-                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['super-extra-porcelanato']) }}">SÚPER EXTRA PORCELANATO</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,7 +90,7 @@
                             <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
                                 <li>
-                                    <a href="{{ route('product_detail', 1) }}">IMPERPLUS</a>
+                                    <a href="{{ route('product_detail', $projectProducts['imperplus']) }}">IMPERPLUS</a>
                                 </li>
                             </ul>
                         </div>
@@ -109,7 +109,7 @@
                             <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
                                 <li>
-                                    <a href="{{ route('product_detail', 11) }}">SÚPER EXTRA PORCELANATO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['super-extra-porcelanato']) }}">SÚPER EXTRA PORCELANATO</a>
                                 </li>
                             </ul>
                         </div>
@@ -128,13 +128,13 @@
                             <h5>Productos Utilizados:</h5>
                             <ul class="product-list">
                                 <li>
-                                    <a href="{{ route('product_detail', 17) }}">STUCO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['stuco']) }}">STUCO</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('product_detail', 20) }}">OCCICONCRETO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['occiconcreto']) }}">OCCICONCRETO</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('product_detail', 5) }}">PEGO SUPREMO BLANCO</a>
+                                    <a href="{{ route('product_detail', $projectProducts['pego-supremo']) }}">PEGO SUPREMO BLANCO</a>
                                 </li>
                             </ul>
                         </div>

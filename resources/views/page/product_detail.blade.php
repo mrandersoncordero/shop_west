@@ -28,20 +28,20 @@
         </div>
         <li>
           <a
-            href="{{ route('products_by_category', $product->subcategory->category->id) }}">{{ $product->subcategory->category->name }}</a>
+            href="{{ route('products_by_category', $product->subcategory->category) }}">{{ $product->subcategory->category->name }}</a>
         </li>
         <div class="separation_section_menu">
           <i class="fa-solid fa-angle-right"></i>
         </div>
         <li>
           <a
-            href="{{ route('products_by_subcategory', $product->subcategory->id) }}">{{ $product->subcategory->name }}</a>
+            href="{{ route('products_by_subcategory', $product->subcategory) }}">{{ $product->subcategory->name }}</a>
         </li>
         <div class="separation_section_menu">
           <i class="fa-solid fa-angle-right"></i>
         </div>
         <li>
-          <a href="{{ route('product_detail', $product->id) }}" class="latest_section">{{ $product->name }}</a>
+          <a href="{{ route('product_detail', $product) }}" class="latest_section">{{ $product->name }}</a>
         </li>
       </ul>
     </div>
