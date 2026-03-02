@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Subcategory extends Model
 {
@@ -11,11 +12,34 @@ class Subcategory extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'category_id',
         'description',
     ];
 
     public $timestamps = false;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($subcategory) {
+            if (empty($subcategory->slug)) {
+                $subcategory->slug = Str::slug($subcategory->name);
+            }
+        });
+
+        static::updating(function ($subcategory) {
+            if ($subcategory->isDirty('name') && ! $subcategory->isDirty('slug')) {
+                $subcategory->slug = Str::slug($subcategory->name);
+            }
+        });
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 
     public function category()
     {
