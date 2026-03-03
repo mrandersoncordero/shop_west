@@ -7,6 +7,7 @@
   <title>@yield('title', 'Productos Occidente, C.A.')</title>
 
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+  <meta name="robots" content="noindex, nofollow"> {{-- remove no index in production --}}
 
   <meta name="description" content="@yield('description','Fabricamos productos de construcción de alta calidad en Venezuela, incluyendo pegamentos, revestimientos y sella juntas. ¡Conozca nuestra línea completa!')">
   <meta name="keywords" content="@yield('keywords', 'pegoccidente, pegamento para cerámica, impermeabilizante, porcelanato, exteriores, pego extra fuerte')">
