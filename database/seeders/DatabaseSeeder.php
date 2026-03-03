@@ -82,36 +82,6 @@ class DatabaseSeeder extends Seeder
             'category_id' => 3,
             'description' => 'Descripcion de subcategoria Sella juntas',
         ]);
-        Subcategory::create([
-            'name' => 'Profesional',
-            'category_id' => 1,
-            'description' => 'Descripcion de subcategoria profesional',
-        ]);
-        Subcategory::create([
-            'name' => 'Flexible',
-            'category_id' => 1,
-            'description' => 'Descripcion de subcategoria Flexible',
-        ]);
-        Subcategory::create([
-            'name' => 'Revestimiento',
-            'category_id' => 2,
-            'description' => 'Descripcion de subcategoria revestimiento',
-        ]);
-        Subcategory::create([
-            'name' => 'Pegamentos',
-            'category_id' => 2,
-            'description' => 'Descripcion de subcategoria Pegamentos',
-        ]);
-        Subcategory::create([
-            'name' => 'Estructural',
-            'category_id' => 2,
-            'description' => 'Descripcion de subcategoria Estructural',
-        ]);
-        Subcategory::create([
-            'name' => 'Sella juntas',
-            'category_id' => 3,
-            'description' => 'Descripcion de subcategoria Sella juntas',
-        ]);
 
         /**
          * News
