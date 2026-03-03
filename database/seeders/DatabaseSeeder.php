@@ -114,6 +114,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         /**
+         * News
+         */
+        $this->call([
+            NewsSeeder::class,
+        ]);
+
+        /**
          * Products
          */
         Product::create([
