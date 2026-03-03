@@ -33,6 +33,14 @@ Route::post('/clientes-interesados', [InterestedClientController::class, 'store'
 Route::post('/enviar-mensaje', [ContactController::class, 'send_email'])->name('send.email');
 
 /**
+ * Rutas de Noticias
+ */
+Route::get('/noticias', [App\Http\Controllers\NewsController::class, 'index'])->name('news.index');
+Route::get('/noticias/categoria/{category:slug}', [App\Http\Controllers\NewsController::class, 'byCategory'])->name('news.category');
+Route::get('/noticias/etiqueta/{tag:slug}', [App\Http\Controllers\NewsController::class, 'byTag'])->name('news.tag');
+Route::get('/noticias/{news:slug}', [App\Http\Controllers\NewsController::class, 'show'])->name('news.show');
+
+/**
  * Redirects 301 para URLs antiguas (compatibilidad SEO con producción)
  */
 Route::get('/products', fn () => Redirect::route('products_view', [], 301));
