@@ -10,7 +10,7 @@
 
     <h3 style="color: var(--blue); margin: 2rem 0 1rem;">Nuestra visión deportiva</h3>
     <p style="margin-bottom: 1.5rem;">
-        En Productos Occidente, мы sabemos que el éxito se construye con trabajo en equipo, disciplina y pasión. Estas mismas valores nos han llevado a convertirnos en líderes de la industria de la construcción en Venezuela. Ahora queremos transmitir esos principios al fútbol larense.
+        En Productos Occidente sabemos que el éxito se construye con trabajo en equipo, disciplina y pasión. Estas mismas valores nos han llevado a convertirnos en líderes de la industria de la construcción en Venezuela. Ahora queremos transmitir esos principios al fútbol larense.
     </p>
 
     <div style="background: #f9f9f9; padding: 1.5rem; border-left: 4px solid var(--blue); margin: 2rem 0;">
