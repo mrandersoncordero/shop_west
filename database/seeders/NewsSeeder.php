@@ -58,7 +58,7 @@ class NewsSeeder extends Seeder
                 'title' => 'Alianza estratégica con las leyendas del béisbol venezolano',
                 'excerpt' => 'Firmamos un acuerdo histórico con las leyendas del béisbol venezolano para promover el deporte en las nuevas generaciones.',
                 'content_file' => 'noticia-beisbol',
-                'image' => 'noticia-beisbol.jpg',
+                'image' => 'noticia-beisbol.webp',
                 'seo_title' => 'Alianza estratégica con las leyendas del béisbol | Productos Occidente',
                 'seo_description' => 'Productos Occidente se une a las leyendas del béisbol venezolano para impulsar el deporte nacional.',
                 'is_published' => true,
